@@ -1,0 +1,2 @@
+# Ficheros originales: byte a byte (si git cambiara los finales de línea, el sha256 del manifest dejaría de cuadrar)
+datos-originales/** -text
