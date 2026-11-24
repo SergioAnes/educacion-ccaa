@@ -1,0 +1,22 @@
+[
+  { "id": "ES", "ine": "00", "nombre": "España", "abr": "ESP", "nuts2": "ES", "alias": ["TOTAL", "Total"] },
+  { "id": "AN", "ine": "01", "nombre": "Andalucía", "abr": "AND", "nuts2": "ES61", "alias": ["Andalucía"] },
+  { "id": "AR", "ine": "02", "nombre": "Aragón", "abr": "ARA", "nuts2": "ES24", "alias": ["Aragón"] },
+  { "id": "AS", "ine": "03", "nombre": "Asturias", "abr": "AST", "nuts2": "ES12", "alias": ["Asturias, Principado de"] },
+  { "id": "IB", "ine": "04", "nombre": "Illes Balears", "abr": "BAL", "nuts2": "ES53", "alias": ["Balears, Illes"] },
+  { "id": "CN", "ine": "05", "nombre": "Canarias", "abr": "CAN", "nuts2": "ES70", "alias": ["Canarias"] },
+  { "id": "CB", "ine": "06", "nombre": "Cantabria", "abr": "CNT", "nuts2": "ES13", "alias": ["Cantabria"] },
+  { "id": "CL", "ine": "07", "nombre": "Castilla y León", "abr": "CYL", "nuts2": "ES41", "alias": ["Castilla y León"] },
+  { "id": "CM", "ine": "08", "nombre": "Castilla-La Mancha", "abr": "CLM", "nuts2": "ES42", "alias": ["Castilla-La Mancha"] },
+  { "id": "CT", "ine": "09", "nombre": "Cataluña", "abr": "CAT", "nuts2": "ES51", "alias": ["Cataluña"] },
+  { "id": "VC", "ine": "10", "nombre": "C. Valenciana", "abr": "VAL", "nuts2": "ES52", "alias": ["Comunitat Valenciana"] },
+  { "id": "EX", "ine": "11", "nombre": "Extremadura", "abr": "EXT", "nuts2": "ES43", "alias": ["Extremadura"] },
+  { "id": "GA", "ine": "12", "nombre": "Galicia", "abr": "GAL", "nuts2": "ES11", "alias": ["Galicia"] },
+  { "id": "MD", "ine": "13", "nombre": "Madrid", "abr": "MAD", "nuts2": "ES30", "alias": ["Madrid, Comunidad de"] },
+  { "id": "MC", "ine": "14", "nombre": "Murcia", "abr": "MUR", "nuts2": "ES62", "alias": ["Murcia, Región de"] },
+  { "id": "NC", "ine": "15", "nombre": "Navarra", "abr": "NAV", "nuts2": "ES22", "alias": ["Navarra, Comunidad Foral de", "NAVARRA (Comunidad Foral de)"] },
+  { "id": "PV", "ine": "16", "nombre": "País Vasco", "abr": "PVA", "nuts2": "ES21", "alias": ["País Vasco"] },
+  { "id": "RI", "ine": "17", "nombre": "La Rioja", "abr": "RIO", "nuts2": "ES23", "alias": ["Rioja, La"] },
+  { "id": "CE", "ine": "18", "nombre": "Ceuta", "abr": "CEU", "nuts2": "ES63", "alias": ["Ceuta"], "ciudad": true },
+  { "id": "ML", "ine": "19", "nombre": "Melilla", "abr": "MEL", "nuts2": "ES64", "alias": ["Melilla"], "ciudad": true }
+]

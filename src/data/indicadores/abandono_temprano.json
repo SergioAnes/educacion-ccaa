@@ -1,0 +1,69 @@
+{
+  "id": "abandono_temprano",
+  "grupo": "trayectorias",
+  "nombre": "Abandono temprano de la educación y la formación",
+  "corto": "Abandono temprano",
+  "que": "de los jóvenes de 18 a 24 años",
+  "unidad": "pct",
+  "definicion": "Porcentaje de jóvenes de 18 a 24 años que no han terminado Bachillerato ni FP de grado medio (como mucho tienen la ESO) y no están estudiando ni formándose.",
+  "numerador": "Jóvenes de 18 a 24 años cuyo nivel más alto es la ESO o inferior y que no han seguido ninguna educación o formación en las cuatro semanas anteriores a la encuesta.",
+  "denominador": "Todos los jóvenes de 18 a 24 años que viven en la comunidad (Encuesta de Población Activa del INE, media de los cuatro trimestres).",
+  "no_mide": "No es el «fracaso escolar» ni la tasa de titulación en ESO: quien tiene la ESO y no sigue estudiando cuenta como abandono, y quien no la tiene pero está estudiando, no. Se cuenta donde vive el joven, no donde estudió.",
+  "fiabilidad": "A",
+  "fiabilidad_txt": "Estadística oficial periódica (EPA). Es una encuesta: en las comunidades pequeñas el error de muestreo es grande.",
+  "estado": "definitivo",
+  "fuentes": [
+    {
+      "id": "mefd_epa",
+      "corto": "Ministerio de Educación (EPA del INE)",
+      "nombre": "Ministerio de Educación, Formación Profesional y Deportes: explotación de las variables educativas de la EPA (INE)",
+      "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/Datos.htm?path=/laborales/epa/indi/l0/&file=indi_01.px"
+    },
+    {
+      "id": "eurostat",
+      "corto": "Eurostat",
+      "nombre": "Eurostat, tabla edat_lfse_14 (UE-27) y edat_lfse_16 (regiones, para comprobar)",
+      "url": "https://ec.europa.eu/eurostat/databrowser/view/edat_lfse_14/default/table"
+    }
+  ],
+  "espana": "Dato oficial del Ministerio para el conjunto de España (incluye Ceuta y Melilla). No es la media de las comunidades.",
+  "avisos": [
+    "Es una encuesta: en las comunidades con pocos jóvenes en la muestra, una cifra puede subir o bajar varios puntos de un año a otro sin que cambie nada de fondo. El Ministerio pide tomar con precaución esas comunidades, y Eurostat marca como de baja fiabilidad algunos de sus datos.",
+    "La UE-27 es la composición actual de la Unión (sin el Reino Unido) en todos los años."
+  ],
+  "objetivo": {
+    "valor": 9,
+    "texto": "Objetivo de la UE para 2030: menos del 9 %",
+    "fuente": "Resolución del Consejo relativa a un marco estratégico para la cooperación europea en el ámbito de la educación y la formación con miras al Espacio Europeo de Educación y más allá (2021-2030), DO C 66 de 26.2.2021",
+    "url": "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32021G0226(01)",
+    "nota": "Es un objetivo político, no una estadística. Transcrito a mano: EUR-Lex no permite la descarga automática."
+  },
+  "rango": [
+    0,
+    75
+  ],
+  "rango_nota": "Ceuta, hombres, 2005-2006: 63,7 % y 63,9 %, iguales en Eurostat (marcados como de baja fiabilidad). Por eso el techo es 75 y no 60.",
+  "revisado_hasta": "2025",
+  "revision": "Cambios de más del 15 % frente al año anterior revisados hasta 2025: la mayoría están en comunidades con muestra pequeña o en las series por sexo, y varios caen en años con ruptura de serie. Todos coinciden con Eurostat. La fuente no los explica.",
+  "resumen": true,
+  "encuesta": true,
+  "variantes": [
+    {
+      "sexo": "total",
+      "etiqueta": "Total"
+    },
+    {
+      "sexo": "h",
+      "etiqueta": "Hombres"
+    },
+    {
+      "sexo": "m",
+      "etiqueta": "Mujeres"
+    }
+  ],
+  "filas_ficha": [
+    "total|total",
+    "h|total",
+    "m|total"
+  ]
+}

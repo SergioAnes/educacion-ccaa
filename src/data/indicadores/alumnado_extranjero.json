@@ -1,0 +1,35 @@
+{
+  "id": "alumnado_extranjero",
+  "grupo": "centros",
+  "nombre": "Alumnado extranjero",
+  "corto": "Alumnado extranjero",
+  "que": "del alumnado de Régimen General",
+  "unidad": "pct",
+  "filas_ficha": [
+    "total|total"
+  ],
+  "definicion": "Porcentaje de alumnos con nacionalidad extranjera entre todo el alumnado de Enseñanzas de Régimen General.",
+  "numerador": "Alumnado de nacionalidad extranjera matriculado en Régimen General.",
+  "denominador": "Todo el alumnado de Régimen General matriculado en la comunidad.",
+  "no_mide": "Cuenta la nacionalidad, no el lugar de nacimiento: quien tiene la nacionalidad española no cuenta aunque haya nacido fuera. Tampoco mide el dominio del idioma ni las necesidades educativas.",
+  "fiabilidad": "A",
+  "fiabilidad_txt": "Estadística oficial anual: recuento de todo el alumnado matriculado.",
+  "estado": "definitivo",
+  "fuentes": [
+    {
+      "id": "mefd_educabase",
+      "corto": "Ministerio de Educación (EDUCAbase)",
+      "nombre": "Ministerio de Educación, Formación Profesional y Deportes: Estadística de las Enseñanzas no universitarias, porcentaje de alumnado extranjero",
+      "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/Tabla.htm?path=/no-universitaria/alumnado/matriculado/series/extranjeros/l0/&file=extran_04.px"
+    }
+  ],
+  "espana": "Dato oficial del Ministerio para el conjunto de España.",
+  "avisos": [
+    "El último curso es un avance: puede cambiar cuando se publiquen los resultados definitivos."
+  ],
+  "rango": [
+    0,
+    40
+  ],
+  "revisado_hasta": "2025-26"
+}

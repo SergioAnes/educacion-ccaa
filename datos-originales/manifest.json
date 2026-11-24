@@ -1,0 +1,274 @@
+[
+  {
+    "fuente": "abandono",
+    "fichero": "abandono/2026-11-24/edat_lfse_14.json",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/edat_lfse_14?format=JSON&lang=EN&geo=EU27_2020&geo=ES&sex=T&sex=M&sex=F&wstatus=POP&age=Y18-24&unit=PC",
+    "fecha_captura": "2026-11-24",
+    "bytes": 6015,
+    "sha256": "42a955998eec62ae92810acc2408d546cf0d22baf7d7831e5a19112e3eeb87ec"
+  },
+  {
+    "fuente": "abandono",
+    "fichero": "abandono/2026-11-24/edat_lfse_16.json",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/edat_lfse_16?format=JSON&lang=EN&sex=T&sex=M&sex=F&age=Y18-24&unit=PC&geoLevel=nuts2",
+    "fecha_captura": "2026-11-24",
+    "bytes": 397120,
+    "sha256": "737f445ff89e7bef47e5f6246cd01a75635db2c09305c4cae56d086319f9a427"
+  },
+  {
+    "fuente": "abandono",
+    "fichero": "abandono/2026-11-24/indi_01.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/laborales/epa/indi/l0/indi_01.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 12821,
+    "sha256": "f0e1b78e376d82e66c2b9a5a510edadb6bb1e1365b36d80ee54477bfe8e77660"
+  },
+  {
+    "fuente": "boe",
+    "fichero": "boe/2026-11-24/BOE-A-1990-24172.xml",
+    "url": "https://www.boe.es/diario_boe/xml.php?id=BOE-A-1990-24172",
+    "fecha_captura": "2026-11-24",
+    "bytes": 215818,
+    "sha256": "82dbf1f0cedde95c51e447e1604404e6d4c1a6c78e85008488fa26693b262585"
+  },
+  {
+    "fuente": "boe",
+    "fichero": "boe/2026-11-24/BOE-A-2006-7899.xml",
+    "url": "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2006-7899",
+    "fecha_captura": "2026-11-24",
+    "bytes": 446558,
+    "sha256": "f2d198b19d9a053fbc8cb2a2f29b87caabb40f047560656107aaace73fef0563"
+  },
+  {
+    "fuente": "boe",
+    "fichero": "boe/2026-11-24/BOE-A-2012-5337.xml",
+    "url": "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2012-5337",
+    "fecha_captura": "2026-11-24",
+    "bytes": 68017,
+    "sha256": "e5d5defa2efe20b668871646df8366172dc0116a72f619835e77cee815b7d822"
+  },
+  {
+    "fuente": "boe",
+    "fichero": "boe/2026-11-24/BOE-A-2013-12886.xml",
+    "url": "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2013-12886",
+    "fecha_captura": "2026-11-24",
+    "bytes": 296133,
+    "sha256": "4c56dd62f49acd84a23d9f035ffbe049f86752a129b3ddac6068bf361a9906b5"
+  },
+  {
+    "fuente": "boe",
+    "fichero": "boe/2026-11-24/BOE-A-2020-17264.xml",
+    "url": "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2020-17264",
+    "fecha_captura": "2026-11-24",
+    "bytes": 425483,
+    "sha256": "3fae09a9fced8b63645c2188f1777088524636f1f0eae8134c86ee3fe6d149af"
+  },
+  {
+    "fuente": "boe",
+    "fichero": "boe/2026-11-24/BOE-A-2020-3692.xml",
+    "url": "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2020-3692",
+    "fecha_captura": "2026-11-24",
+    "bytes": 139837,
+    "sha256": "bd2579308f74f473e94fe8d8dbfe4118b40145ccc1be56cd8b7ea4ab7e34da16"
+  },
+  {
+    "fuente": "boe",
+    "fichero": "boe/2026-11-24/BOE-A-2022-5139.xml",
+    "url": "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2022-5139",
+    "fecha_captura": "2026-11-24",
+    "bytes": 326167,
+    "sha256": "f4e36cb9aaf59fe42602ad781145a841ee5d33f768d12ed58b8ff6f5f233b544"
+  },
+  {
+    "fuente": "boe",
+    "fichero": "boe/2026-11-24/BOE-A-2023-7500.xml",
+    "url": "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-7500",
+    "fecha_captura": "2026-11-24",
+    "bytes": 325414,
+    "sha256": "3b38545b5fd76a311bf101e536806bd68731886a13432646eb6cf64a374cfbf4"
+  },
+  {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-24/alumnado_1_01.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/series/AlumnadoGen/l0/alumnado_1_01.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 20888,
+    "sha256": "7b835759337754eb62359cf3cd5fe36faf8ed3054f6fbb18a90d8bc432d9d6ce"
+  },
+  {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-24/escolar_05.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/series/gen-escolar/l0/escolar_05.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 11871,
+    "sha256": "7905a0ed33c0837bf5ea8d821647fbc33ff5ecb9aae788442df98400c6466b1b"
+  },
+  {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-24/extran_02.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/series/extranjeros/l0/extran_02.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 15892,
+    "sha256": "82b390bea1d7518470cbcb319f844d6d6e9f26c88dc43eb2cc6b36003caea6eb"
+  },
+  {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-24/extran_04.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/series/extranjeros/l0/extran_04.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 4529,
+    "sha256": "2b6997fc2e792336db27ae72c2acab3029553b7c98df3c76939a07bc8b88a360"
+  },
+  {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-24/general_01.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/series/gen-porcen-gen/l0/general_01.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 5133,
+    "sha256": "a12ee4f36307fd470a71cb5a383ac7c5c8afca44ea7528ffbe2233f3bbfb3652"
+  },
+  {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-24/idoneidad_05.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/series/gen-idoneidad/l0/idoneidad_05.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 11411,
+    "sha256": "aee7f6fe67a19a3c052258219981dd94278ef1443fe8d6e8114c0868be8d4a03"
+  },
+  {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-24/repetidores_03.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/series/gen-repetidores/l0/repetidores_03.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 40389,
+    "sha256": "7a36020dd124283e425aa05040b9ef5c6a9b1bc1ebb88c70218a2db7a023bd1a"
+  },
+  {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-24/series03.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/profesorado/estadistica/series/l0/series03.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 19156,
+    "sha256": "01d6d9084b2e3b9712c3306a7f1ed632873cd21c32161d28263d6b6124509b1c"
+  },
+  {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-24/series07.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/profesorado/estadistica/series/l0/series07.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 12928,
+    "sha256": "1132b8d3ede5a339fa1e14060c5e02d388ac1170874432ad022791662ddf60db"
+  },
+  {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-24/todas_01_2011-2012.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/2011-2012-rd/gen-todas/l0/todas_01.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 78980,
+    "sha256": "afba8d52d4467d5462cc533f0ed3b4ecb74dfcc2eade9306a6bdf500cb3b81fc"
+  },
+  {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-24/todas_01_2012-2013.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/2012-2013-rd/gen-todas/l0/todas_01.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 78368,
+    "sha256": "2ec03acd1e7675411d007f52926aca9d76485c611a3ed173c5f25044cefcfe92"
+  },
+  {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-24/todas_01_2013-2014.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/2013-2014-rd/gen-todas/l0/todas_01.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 79344,
+    "sha256": "08e3f09a6ef48c27a1df3a159dfd5acf8a0fd4c25a938b321a102ee87a45759a"
+  },
+  {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-24/todas_01_2014-2015.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/2014-2015-rd/gen-todas/l0/todas_01.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 88040,
+    "sha256": "09eea06ebbdfdd48e2155c8e62472608e72f23a29f8d393bcb8ab46c6d835e04"
+  },
+  {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-24/todas_01_2015-2016.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/2015-2016-rd/gen-todas/l0/todas_01.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 87476,
+    "sha256": "7a56489599bf5d26b7edeb1d62dbd526f4904a923b8d6001d33a4fb8aae7385e"
+  },
+  {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-24/todas_01_2016-2017.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/2016-2017-rd/gen-todas/l0/todas_01.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 87620,
+    "sha256": "ca2bd52ebaf324d813c436b9dc10337f8365a417cc57aa959713a385b2976af6"
+  },
+  {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-24/todas_01_2017-2018.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/2017-2018-rd/gen-todas/l0/todas_01.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 83805,
+    "sha256": "f407dcd356ac40e7336fd63eb42c89402713417c4fd064fbd5dd2229f078180f"
+  },
+  {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-24/todas_01_2018-2019.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/2018-2019-rd/gen-todas/l0/todas_01.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 83871,
+    "sha256": "09bf046d4ac962aa9751eb9b911b3f0cedd8a311541b4f36b27983e1a58da1de"
+  },
+  {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-24/todas_01_2019-2020.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/2019-2020-rd/gen-todas/l0/todas_01.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 84018,
+    "sha256": "e7d36ed99d7df8a3029e883a7d46f524aacd4d462a45efc921b764e178c758fa"
+  },
+  {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-24/todas_01_2020-2021.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/2020-2021-rd/gen-todas/l0/todas_01.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 91964,
+    "sha256": "f765276ba0637c903eee2cf40c07b6f78351361925bac1e9d21b568dd0adf45c"
+  },
+  {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-24/todas_01_2021-2022.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/2021-2022-rd/gen-todas/l0/todas_01.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 92341,
+    "sha256": "fb10e0819f01acd19c9432fbc267e03f97c30351bbbab653d39ca7f531c310a7"
+  },
+  {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-24/todas_01_2022-2023.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/2022-2023-rd/gen-todas/l0/todas_01.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 100484,
+    "sha256": "ff8d1560c919e876443d6e8e71a5ee0b6411cd6bd8d7e6c01a14a56fe287c7e2"
+  },
+  {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-24/todas_01_2023-2024.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/2023-2024-rd/gen-todas/l0/todas_01.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 100717,
+    "sha256": "b5c16380dbd7d4dcd6564dbf9924fad1a0511eb3c1d230b5e5f853d56b3ef1fb"
+  },
+  {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-24/todas_01_2024-2025.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/2024-2025-rd/gen-todas/l0/todas_01.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 100644,
+    "sha256": "83b7056a7e7de92d86f06e4ad906ea1a6442fb32a6d458200d3a44d2f63f4b0f"
+  }
+]

@@ -1,0 +1,54 @@
+{
+  "id": "alumnos_profesor",
+  "grupo": "profesorado",
+  "resumen": true,
+  "nombre": "Alumnos por profesor",
+  "corto": "Alumnos por profesor",
+  "que": "por profesor",
+  "unidad": "ratio",
+  "variantes": [
+    {
+      "titularidad": "total",
+      "etiqueta": "Todos los centros"
+    },
+    {
+      "titularidad": "publica",
+      "etiqueta": "Pública"
+    },
+    {
+      "titularidad": "privada",
+      "etiqueta": "Privada (con la concertada)"
+    }
+  ],
+  "filas_ficha": [
+    "total|total",
+    "total|publica",
+    "total|privada"
+  ],
+  "definicion": "Número medio de alumnos por cada profesor en Enseñanzas de Régimen General: todo el alumnado dividido entre todo el profesorado.",
+  "numerador": "Alumnado de Régimen General.",
+  "denominador": "Todo el profesorado de Régimen General, también el que no tiene un grupo propio (apoyos, orientación, equipos directivos…). Cuenta personas, no jornadas completas.",
+  "no_mide": "No es el número de alumnos por clase: siempre sale bastante más bajo. Tampoco distingue etapas, y en cada una la organización del profesorado es distinta.",
+  "fiabilidad": "A",
+  "fiabilidad_txt": "Estadística oficial anual (recuento de alumnado y profesorado).",
+  "estado": "definitivo",
+  "fuentes": [
+    {
+      "id": "mefd_educabase",
+      "corto": "Ministerio de Educación (EDUCAbase)",
+      "nombre": "Ministerio de Educación, Formación Profesional y Deportes: Estadística del Profesorado, número medio de alumnos por profesor",
+      "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/Tabla.htm?path=/no-universitaria/profesorado/estadistica/series/l0/&file=series07.px"
+    }
+  ],
+  "espana": "Dato oficial del Ministerio para el conjunto de España.",
+  "avisos": [
+    "No confundir con alumnos por clase (por grupo): ver «Cómo leer los datos».",
+    "«Privada» incluye la concertada y la no concertada: la tabla no las separa.",
+    "El último curso es un avance."
+  ],
+  "rango": [
+    3,
+    30
+  ],
+  "revisado_hasta": "2025-26"
+}

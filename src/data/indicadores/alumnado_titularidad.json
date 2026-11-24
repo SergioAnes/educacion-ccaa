@@ -1,0 +1,54 @@
+{
+  "id": "alumnado_titularidad",
+  "grupo": "centros",
+  "resumen": true,
+  "nombre": "Alumnado por titularidad del centro",
+  "corto": "Alumnado en la concertada",
+  "que": "del alumnado de Régimen General",
+  "unidad": "pct",
+  "variantes": [
+    {
+      "titularidad": "concertada",
+      "etiqueta": "Concertada"
+    },
+    {
+      "titularidad": "publica",
+      "etiqueta": "Pública"
+    },
+    {
+      "titularidad": "privada_no_concertada",
+      "etiqueta": "Privada no concertada"
+    }
+  ],
+  "filas_ficha": [
+    "total|publica",
+    "total|concertada",
+    "total|privada_no_concertada"
+  ],
+  "reparto": true,
+  "definicion": "Porcentaje del alumnado de Enseñanzas de Régimen General (de Infantil a Bachillerato y FP) que estudia en centros públicos, en centros privados concertados o en centros privados no concertados.",
+  "numerador": "Alumnado matriculado en cada tipo de centro (Estadística de las Enseñanzas no universitarias).",
+  "denominador": "Todo el alumnado de Régimen General matriculado en la comunidad. El porcentaje es un cálculo nuestro con los recuentos oficiales; el de la pública coincide con el que publica el Ministerio.",
+  "no_mide": "No dice cuánto cuesta una plaza en cada red ni compara su calidad. En el primer ciclo de Infantil (0 a 2 años), «concertada» incluye los centros privados que reciben alguna subvención pública, según la nota del Ministerio.",
+  "fiabilidad": "A",
+  "fiabilidad_txt": "Estadística oficial anual: recuento de todo el alumnado matriculado, no una encuesta.",
+  "estado": "definitivo",
+  "fuentes": [
+    {
+      "id": "mefd_educabase",
+      "corto": "Ministerio de Educación (EDUCAbase)",
+      "nombre": "Ministerio de Educación, Formación Profesional y Deportes: Estadística de las Enseñanzas no universitarias, alumnado matriculado por titularidad/financiación (tabla 1 de cada curso)",
+      "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/Tabla.htm?path=/no-universitaria/alumnado/matriculado/2024-2025-rd/gen-todas/l0/&file=todas_01.px"
+    }
+  ],
+  "espana": "Conjunto de España, con Ceuta y Melilla: porcentaje sobre el total del alumnado del país, no la media de las comunidades.",
+  "avisos": [
+    "La serie empieza en 2011-12, el primer curso en que EDUCAbase ofrece esta tabla por comunidad en el mismo formato.",
+    "Esta web no calcula un «coste por alumno» de cada red: el gasto en conciertos irá en una serie aparte."
+  ],
+  "rango": [
+    0,
+    100
+  ],
+  "revisado_hasta": "2024-25"
+}

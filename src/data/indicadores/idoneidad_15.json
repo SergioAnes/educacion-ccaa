@@ -1,0 +1,49 @@
+{
+  "id": "idoneidad_15",
+  "grupo": "trayectorias",
+  "nombre": "Idoneidad a los 15 años",
+  "corto": "Idoneidad a los 15 años",
+  "que": "de los alumnos de 15 años",
+  "unidad": "pct",
+  "variantes": [
+    {
+      "sexo": "total",
+      "etiqueta": "Total"
+    },
+    {
+      "sexo": "h",
+      "etiqueta": "Hombres"
+    },
+    {
+      "sexo": "m",
+      "etiqueta": "Mujeres"
+    }
+  ],
+  "filas_ficha": [
+    "total|total",
+    "h|total",
+    "m|total"
+  ],
+  "definicion": "Porcentaje de alumnos de 15 años que están en el curso que les corresponde por edad (4.º de ESO).",
+  "numerador": "Alumnado de 15 años matriculado en el curso teórico de su edad.",
+  "denominador": "Todo el alumnado de 15 años matriculado.",
+  "no_mide": "No dice por qué un alumno va con retraso: puede haber repetido en Primaria o en ESO, o haberse incorporado tarde al sistema educativo. Tampoco mide el abandono.",
+  "fiabilidad": "A",
+  "fiabilidad_txt": "Estadística oficial anual: recuento de todo el alumnado matriculado.",
+  "estado": "definitivo",
+  "fuentes": [
+    {
+      "id": "mefd_educabase",
+      "corto": "Ministerio de Educación (EDUCAbase)",
+      "nombre": "Ministerio de Educación, Formación Profesional y Deportes: Estadística de las Enseñanzas no universitarias, tasas de idoneidad a los 15 años",
+      "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/Tabla.htm?path=/no-universitaria/alumnado/matriculado/series/gen-idoneidad/l0/&file=idoneidad_05.px"
+    }
+  ],
+  "espana": "Dato oficial del Ministerio para el conjunto de España.",
+  "avisos": [],
+  "rango": [
+    30,
+    100
+  ],
+  "revisado_hasta": "2024-25"
+}

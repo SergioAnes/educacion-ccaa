@@ -1,0 +1,37 @@
+{
+  "id": "escolarizacion_0_2",
+  "grupo": "centros",
+  "resumen": true,
+  "nombre": "Escolarización de 0 a 2 años",
+  "corto": "Escolarización 0-2 años",
+  "que": "de los niños de 0 a 2 años",
+  "unidad": "pct",
+  "filas_ficha": [
+    "total|total"
+  ],
+  "definicion": "Porcentaje de niños de 0 a 2 años matriculados en centros autorizados por la administración educativa, públicos o privados (tasa neta de escolarización).",
+  "numerador": "Niños de 0, 1 y 2 años matriculados en Educación Infantil o Educación Especial en centros autorizados.",
+  "denominador": "Población de 0 a 2 años de la comunidad (INE).",
+  "no_mide": "No son plazas públicas ni dice cuántas familias buscan plaza y no la encuentran. No cuenta a los niños en centros que no están autorizados por la administración educativa.",
+  "fiabilidad": "A",
+  "fiabilidad_txt": "Estadística oficial anual (recuento del alumnado y población del INE).",
+  "estado": "definitivo",
+  "fuentes": [
+    {
+      "id": "mefd_educabase",
+      "corto": "Ministerio de Educación (EDUCAbase)",
+      "nombre": "Ministerio de Educación, Formación Profesional y Deportes: Estadística de las Enseñanzas no universitarias, tasa neta de escolarización de 0 a 2 años",
+      "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/Tabla.htm?path=/no-universitaria/alumnado/matriculado/series/gen-escolar/l0/&file=escolar_05.px"
+    }
+  ],
+  "espana": "Dato oficial del Ministerio para el conjunto de España.",
+  "avisos": [
+    "Se muestra desde 2012-13: desde ese curso el Ministerio calcula la tasa con la población revisada del INE (nota de la tabla). Los cursos anteriores tienen cambios de criterio y cursos sin dato en varias comunidades.",
+    "El último curso es un avance: puede cambiar cuando se publiquen los resultados definitivos."
+  ],
+  "rango": [
+    0,
+    100
+  ],
+  "revisado_hasta": "2025-26"
+}

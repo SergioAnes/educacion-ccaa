@@ -1,0 +1,57 @@
+{
+  "id": "repeticion_eso",
+  "grupo": "trayectorias",
+  "resumen": true,
+  "nombre": "Repetición en ESO",
+  "corto": "Repetidores en ESO",
+  "que": "del alumnado de ESO",
+  "unidad": "pct",
+  "variantes": [
+    {
+      "titularidad": "total",
+      "etiqueta": "Todos los centros"
+    },
+    {
+      "titularidad": "publica",
+      "etiqueta": "Pública"
+    },
+    {
+      "titularidad": "concertada",
+      "etiqueta": "Concertada"
+    },
+    {
+      "titularidad": "privada_no_concertada",
+      "etiqueta": "Privada no concertada"
+    }
+  ],
+  "filas_ficha": [
+    "total|total",
+    "total|publica",
+    "total|concertada"
+  ],
+  "definicion": "Porcentaje de alumnos de ESO (todos los cursos) que están repitiendo el curso en el que se matriculan.",
+  "numerador": "Alumnado de ESO que repite curso.",
+  "denominador": "Todo el alumnado matriculado en ESO.",
+  "no_mide": "No dice cuántos alumnos han repetido alguna vez (eso se ve mejor en la idoneidad) ni por qué. Las normas sobre cuándo se repite curso cambian con las leyes educativas, y las redes pública y concertada no tienen por qué escolarizar al mismo alumnado.",
+  "fiabilidad": "A",
+  "fiabilidad_txt": "Estadística oficial anual: recuento de todo el alumnado matriculado.",
+  "estado": "definitivo",
+  "fuentes": [
+    {
+      "id": "mefd_educabase",
+      "corto": "Ministerio de Educación (EDUCAbase)",
+      "nombre": "Ministerio de Educación, Formación Profesional y Deportes: Estadística de las Enseñanzas no universitarias, tasa de alumnado repetidor en ESO",
+      "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/Tabla.htm?path=/no-universitaria/alumnado/matriculado/series/gen-repetidores/l0/&file=repetidores_03.px"
+    }
+  ],
+  "espana": "Dato oficial del Ministerio para el conjunto de España.",
+  "avisos": [
+    "En la privada no concertada hay pocos alumnos en algunas comunidades: sus porcentajes pueden moverse mucho de un año a otro."
+  ],
+  "rango": [
+    0,
+    50
+  ],
+  "revisado_hasta": "2024-25",
+  "rango_nota": "Asturias, privada no concertada, 2011-12: 41,4 % (dato publicado; red con pocos alumnos en ESO). Por eso el techo es 50."
+}

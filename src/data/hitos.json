@@ -1,0 +1,82 @@
+[
+ {
+  "id": "BOE-A-1990-24172",
+  "corto": "LOGSE",
+  "tipo": "ley",
+  "titulo": "Ley Orgánica 1/1990, de 3 de octubre, de Ordenación General del Sistema Educativo.",
+  "fecha": "1990-10-03",
+  "anio": 1990,
+  "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1990-24172",
+  "fecha_captura": "2026-11-24"
+ },
+ {
+  "id": "BOE-A-2006-7899",
+  "corto": "LOE",
+  "tipo": "ley",
+  "titulo": "Ley Orgánica 2/2006, de 3 de mayo, de Educación.",
+  "fecha": "2006-05-03",
+  "anio": 2006,
+  "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-7899",
+  "fecha_captura": "2026-11-24"
+ },
+ {
+  "id": "BOE-A-2012-5337",
+  "corto": "RDL 14/2012 (gasto educativo)",
+  "tipo": "gasto",
+  "titulo": "Real Decreto-ley 14/2012, de 20 de abril, de medidas urgentes de racionalización del gasto público en el ámbito educativo.",
+  "fecha": "2012-04-20",
+  "anio": 2012,
+  "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2012-5337",
+  "fecha_captura": "2026-11-24"
+ },
+ {
+  "id": "BOE-A-2013-12886",
+  "corto": "LOMCE",
+  "tipo": "ley",
+  "titulo": "Ley Orgánica 8/2013, de 9 de diciembre, para la mejora de la calidad educativa.",
+  "fecha": "2013-12-09",
+  "anio": 2013,
+  "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2013-12886",
+  "fecha_captura": "2026-11-24"
+ },
+ {
+  "id": "BOE-A-2020-3692",
+  "corto": "COVID: estado de alarma",
+  "tipo": "covid",
+  "titulo": "Real Decreto 463/2020, de 14 de marzo, por el que se declara el estado de alarma para la gestión de la situación de crisis sanitaria ocasionada por el COVID-19.",
+  "fecha": "2020-03-14",
+  "anio": 2020,
+  "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2020-3692",
+  "fecha_captura": "2026-11-24"
+ },
+ {
+  "id": "BOE-A-2020-17264",
+  "corto": "LOMLOE",
+  "tipo": "ley",
+  "titulo": "Ley Orgánica 3/2020, de 29 de diciembre, por la que se modifica la Ley Orgánica 2/2006, de 3 de mayo, de Educación.",
+  "fecha": "2020-12-29",
+  "anio": 2020,
+  "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2020-17264",
+  "fecha_captura": "2026-11-24"
+ },
+ {
+  "id": "BOE-A-2022-5139",
+  "corto": "Ley de FP",
+  "tipo": "ley",
+  "titulo": "Ley Orgánica 3/2022, de 31 de marzo, de ordenación e integración de la Formación Profesional.",
+  "fecha": "2022-03-31",
+  "anio": 2022,
+  "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-5139",
+  "fecha_captura": "2026-11-24"
+ },
+ {
+  "id": "BOE-A-2023-7500",
+  "corto": "LOSU (universidades)",
+  "tipo": "ley",
+  "titulo": "Ley Orgánica 2/2023, de 22 de marzo, del Sistema Universitario.",
+  "fecha": "2023-03-22",
+  "anio": 2023,
+  "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7500",
+  "fecha_captura": "2026-11-24"
+ }
+]

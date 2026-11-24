@@ -1,0 +1,20 @@
+node_modules/
+.next/
+out/
+.vercel/
+.env.local
+.DS_Store
+*.tsbuildinfo
+__pycache__/
+
+# Ficheros originales: se suben el manifest.json y los ficheros pequeños (px, json, xml, csv).
+# Los grandes o binarios se quedan en local; su dirección, fecha y sha256 siguen en el manifest.
+datos-originales/**/*.pdf
+datos-originales/**/*.xls
+datos-originales/**/*.xlsx
+datos-originales/**/*.zip
+datos-originales/**/*.sav
+datos-originales/**/*.sas7bdat
+
+# Lo genera Next.js al arrancar en modo desarrollo
+AGENTS.md
