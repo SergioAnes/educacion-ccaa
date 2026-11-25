@@ -1,0 +1,85 @@
+{
+  "id": "becas_comunidad",
+  "grupo": "financiacion",
+  "resumen": false,
+  "nombre": "Becas que paga la comunidad",
+  "corto": "Becas que paga la comunidad",
+  "que": "de las becas",
+  "unidad": "pct",
+  "dimensiones": [
+    {
+      "dim": "etapa",
+      "nombre": "Enseñanza",
+      "opciones": [
+        {
+          "id": "total",
+          "etiqueta": "Todas las enseñanzas"
+        },
+        {
+          "id": "obligatoria",
+          "etiqueta": "Infantil, obligatoria y Educación Especial"
+        },
+        {
+          "id": "postobligatoria",
+          "etiqueta": "Bachillerato, FP y otras no universitarias"
+        },
+        {
+          "id": "universitaria",
+          "etiqueta": "Universidad"
+        }
+      ]
+    },
+    {
+      "dim": "competencia",
+      "nombre": "Medido por",
+      "opciones": [
+        {
+          "id": "importe",
+          "etiqueta": "Dinero"
+        },
+        {
+          "id": "becarios",
+          "etiqueta": "Becarios"
+        }
+      ]
+    }
+  ],
+  "filas_ficha": [
+    {
+      "etapa": "total",
+      "competencia": "importe"
+    },
+    {
+      "etapa": "postobligatoria",
+      "competencia": "importe"
+    }
+  ],
+  "definicion": "Parte de las becas y ayudas al estudio que paga la administración educativa de la comunidad. El resto lo paga el Ministerio de Educación.",
+  "numerador": "Importe (o becarios) de las becas y ayudas que paga la comunidad, en los centros y universidades de esa comunidad.",
+  "denominador": "Importe (o becarios) de todas las becas y ayudas: las de la comunidad más las del Ministerio. Es cálculo propio con las cifras oficiales; el total coincide con el que publica la tabla.",
+  "no_mide": "No dice cuánto se gasta en becas ni si son muchas o pocas: es un reparto. Un porcentaje alto puede deberse a que la comunidad da muchas becas propias o a que llegan pocas del Ministerio. Tampoco incluye los programas de libros y material que muchas comunidades no tratan como becas.",
+  "fiabilidad": "A",
+  "fiabilidad_txt": "Estadística oficial de becas y ayudas al estudio (registros de las administraciones que las conceden); el porcentaje es una división de sus cifras.",
+  "estado": "definitivo",
+  "fuentes": [
+    {
+      "id": "mefd_becas",
+      "corto": "Ministerio de Educación (Estadística de becas)",
+      "nombre": "Ministerio de Educación, Formación Profesional y Deportes: Estadística de Becas y Ayudas al estudio, tabla 2 de cada curso (becarios, becas e importe por comunidad, enseñanza y administración que paga)",
+      "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/Tabla.htm?path=/economicas/becas/2024-2025/todasense/l0/&file=todas2.px"
+    }
+  ],
+  "espana": "Calculado con el total de España de la misma tabla. Desde 2021-22 incluye los datos de Galicia de 2020-21 (ver las notas).",
+  "avisos": [
+    "Por becarios, quien tiene beca del Ministerio y de su comunidad cuenta en las dos (nota de la estadística). Por dinero no hay ese problema.",
+    "En Infantil y obligatoria casi todo son ayudas de las comunidades (libros, comedor, transporte…), y cada una las organiza a su manera: el reparto no compara lo mismo de una comunidad a otra.",
+    "Galicia: desde 2021-22 el Ministerio no tiene datos de su administración en las enseñanzas no universitarias, así que solo tiene cifra en universidad. En 2020-21 sus datos son provisionales.",
+    "Cada beca cuenta en la comunidad donde se estudia; en universidad, la de la universidad. La UNED va aparte y no se asigna a ninguna comunidad.",
+    "Ceuta y Melilla no se muestran: allí la educación la gestiona el Ministerio."
+  ],
+  "rango": [
+    0,
+    100
+  ],
+  "revisado_hasta": "2024-25"
+}

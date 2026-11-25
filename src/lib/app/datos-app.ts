@@ -32,6 +32,8 @@ import becasFicha from "@/data/indicadores/becas_bach_fp.json";
 import becasObs from "@/data/observaciones/becas_bach_fp.json";
 import importeBecaFicha from "@/data/indicadores/importe_becario.json";
 import importeBecaObs from "@/data/observaciones/importe_becario.json";
+import becasComFicha from "@/data/indicadores/becas_comunidad.json";
+import becasComObs from "@/data/observaciones/becas_comunidad.json";
 import edadFicha from "@/data/indicadores/escolarizacion_edad.json";
 import edadObs from "@/data/observaciones/escolarizacion_edad.json";
 import brechaFicha from "@/data/indicadores/pisa_brecha_isec.json";
@@ -144,6 +146,7 @@ export const REGISTRO: { ficha: Ficha; obs: Observaciones }[] = [
   par(gastoFicha, gastoObs),
   par(becasFicha, becasObs),
   par(importeBecaFicha, importeBecaObs),
+  par(becasComFicha, becasComObs),
 ];
 
 export const TERRITORIOS = territoriosJson as Territorio[];
@@ -200,6 +203,8 @@ export function textoComprobacion(obs: Observaciones): string {
     return `En cada curso y comunidad, el porcentaje de todos los centros queda entre los de sus redes (${nf(0).format(obs.comprobacion.pares_comparados)} comprobaciones), como corresponde a una media.`;
   if (obs.indicador_id === "becas_bach_fp" || obs.indicador_id === "importe_becario")
     return `Cada importe medio publicado es el importe total de las becas entre el número de becarios de las tablas del mismo capítulo (${nf(0).format(c.pares_comparados)} comprobaciones), y el porcentaje de Bachillerato y FP queda entre el de cada enseñanza.`;
+  if (obs.indicador_id === "becas_comunidad")
+    return `En cada curso, comunidad y enseñanza, el total de la tabla es lo del Ministerio más lo de la comunidad, y la suma de las filas da el total de España (${nf(0).format(c.pares_comparados)} comprobaciones).`;
   if (obs.indicador_id === "empleo_fp")
     return `Las ${nf(0).format(c.iguales_f19 ?? 0)} cifras de los titulados de 2020-21 en grado medio y superior coinciden con las de «Las cifras de la educación» (tabla F1.9); en cada caso, el total queda entre hombres y mujeres, y la tasa de alta en algún momento de marzo no es menor que la media del mes.`;
   if (obs.indicador_id === "pisa_sexo")

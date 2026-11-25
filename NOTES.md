@@ -202,6 +202,14 @@ scripts de Python y se guardan como JSON en `src/data/`. La base es sanidad-ccaa
   EDUCAbase dan 13,4 (columna que no usamos).
 - Marzo de 2021 (al año para 2019-20, a los tres años para 2017-18) baja: solo se dice que coincide con la pandemia.
 
+### Becas que paga la comunidad (`becas_comunidad`, tema «Financiación», publicado el 25/11/2026)
+- Tabla 2 de la Estadística de Becas (EDUCAbase), cursos 2013-14 a 2024-25 (antes no está en este formato): comunidad /
+  (Ministerio + comunidad), por importe y por becarios y por enseñanza. Cálculo propio sobre cifras oficiales.
+- Comprobado: total = Ministerio + comunidad (importes con 1.000 € de tolerancia por redondeo: Baleares obligatoria
+  2022-23 y 2024-25 difieren 0,5 y 0,3 miles) y suma de filas = total de España (2.048 comprobaciones).
+- Galicia: 2020-21 provisional; 2021-22 repite 2020-21; desde 2022-23 sin datos de su administración. Solo universidad
+  desde 2021-22. Ceuta y Melilla fuera (educación gestionada por el Ministerio).
+
 ### Descargas: ficheros que cambian sin cambiar
 - El servidor de EDUCAbase pone en cada .px la fecha de descarga (CREATION-DATE) y un SUBJECT-CODE que varía. Sin
   ignorarlos, cada descarga parecía un fichero nuevo: `descargar.py` compara el contenido sin esas dos líneas (el

@@ -25,11 +25,99 @@
   },
   {
     "fuente": "becas",
+    "fichero": "becas/2026-11-25/todas2_2013-2014.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/economicas/becas/2013-2014/todasense/l0/todas2.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 8666,
+    "sha256": "4aaae1989097b3267efbb1633d2348ee8881a0ab16a5b4f517ccd54823d1e088"
+  },
+  {
+    "fuente": "becas",
+    "fichero": "becas/2026-11-25/todas2_2014-2015.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/economicas/becas/2014-2015/todasense/l0/todas2.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 8333,
+    "sha256": "33aac048e50915f56a07f4080adeeb5292d15b304a23302e0c8427839b0db2cc"
+  },
+  {
+    "fuente": "becas",
+    "fichero": "becas/2026-11-25/todas2_2015-2016.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/economicas/becas/2015-2016/todasense/l0/todas2.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 8407,
+    "sha256": "69d2fa7334cada0847d5369a3412f9d48db85b4d4d6511f3ffc99e05b5f21094"
+  },
+  {
+    "fuente": "becas",
+    "fichero": "becas/2026-11-25/todas2_2016-2017.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/economicas/becas/2016-2017/todasense/l0/todas2.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 8493,
+    "sha256": "0db4bc7f3d808444d8e7c3950365769219084341565c9da0f792b2d912651780"
+  },
+  {
+    "fuente": "becas",
+    "fichero": "becas/2026-11-25/todas2_2017-2018.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/economicas/becas/2017-2018/todasense/l0/todas2.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 8331,
+    "sha256": "4c97430ea2844f8ff9ec25885150c0091f1a01f72ffc24362c72af2d87b4d0d4"
+  },
+  {
+    "fuente": "becas",
+    "fichero": "becas/2026-11-25/todas2_2018-2019.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/economicas/becas/2018-2019/todasense/l0/todas2.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 8366,
+    "sha256": "2f48eda14ac34335535e488a95ba825ee0bc5a399f8744e5568803ec72863f0c"
+  },
+  {
+    "fuente": "becas",
+    "fichero": "becas/2026-11-25/todas2_2019-2020.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/economicas/becas/2019-2020/todasense/l0/todas2.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 8590,
+    "sha256": "1473dd2d6a3970710f7e0d2eaf1973ce919111a780ec741417c83dc06af06b39"
+  },
+  {
+    "fuente": "becas",
+    "fichero": "becas/2026-11-25/todas2_2020-2021.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/economicas/becas/2020-2021/todasense/l0/todas2.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 9064,
+    "sha256": "dc4526dc725ecd917e3586ff36bc6996704a5b4164d1770d07962fb1fd283440"
+  },
+  {
+    "fuente": "becas",
+    "fichero": "becas/2026-11-25/todas2_2021-2022.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/economicas/becas/2021-2022/todasense/l0/todas2.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 8651,
+    "sha256": "0706921a662c57cf3a24c41001bc3fedade4e17b4ec900bdfcd548e2e4570aed"
+  },
+  {
+    "fuente": "becas",
+    "fichero": "becas/2026-11-25/todas2_2022-2023.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/economicas/becas/2022-2023/todasense/l0/todas2.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 8774,
+    "sha256": "7b755d9eb0f3f28095f30c7fe24d77e3afcb776b1a58325ad81bee5022f4f6fe"
+  },
+  {
+    "fuente": "becas",
     "fichero": "becas/2026-11-25/todas2_2023-2024.px",
     "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/economicas/becas/2023-2024/todasense/l0/todas2.px",
     "fecha_captura": "2026-11-25",
     "bytes": 8803,
     "sha256": "0aea6625cdc6ebddec996be1103e2a9992104c0419bc9bbdffe8c6de9dec9a3b"
+  },
+  {
+    "fuente": "becas",
+    "fichero": "becas/2026-11-25/todas2_2024-2025.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/economicas/becas/2024-2025/todasense/l0/todas2.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 8811,
+    "sha256": "0bfeb04f5c8db56cba8d0c47b6de4565863e450dcce7385669b840d64c2ce107"
   },
   {
     "fuente": "boe",

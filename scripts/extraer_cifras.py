@@ -10,6 +10,8 @@ Indicadores (salida en src/data/observaciones/):
   - becas_bach_fp e importe_becario (tabla B5.5, curso 2023-24): % de alumnado becario e importe medio por becario en
     Bachillerato y FP, de todas las administraciones (Ministerio y comunidades), tal cual los publica el Ministerio.
     Se comprueba con B5.3 y B5.4 (importe / becarios) y con la tabla 2 de la estadística de becas (EDUCAbase).
+  - becas_comunidad (tabla 2 de la Estadística de Becas de EDUCAbase, cursos 2013-14 a 2024-25): parte de las becas que
+    paga la comunidad frente al Ministerio, por importe y por becarios y por enseñanza (cálculo propio).
 
 Comprobaciones: las 19 comunidades y ciudades y España en cada sexo; el valor de ambos sexos queda entre el de hombres
 y el de mujeres (con 0,1 de margen por redondeo); cabecera de enseñanzas y cursos como se espera.
@@ -321,11 +323,103 @@ def _becas_autonomicas(errores: list) -> dict[str, float]:
     return out
 
 
+ENS_REPARTO = {"TODAS LAS ENSEÑANZAS": "total", "Enseñanzas obligatorias, E. Infantil y E. Especial": "obligatoria",
+               "Enseñanzas postobligatorias no universitarias": "postobligatoria", "Enseñanzas universitarias": "universitaria"}
+URL_BECAS = "https://estadisticas.educacion.gob.es/EducaJaxiPx/Tabla.htm?path=/economicas/becas/{c}/todasense/l0/&file=todas2.px"
+
+
+def becas_comunidad(errores: list) -> None:
+    """Parte de las becas (por importe y por becarios) que paga la administración educativa de cada comunidad, frente al
+    Ministerio. Tabla 2 de la Estadística de Becas y Ayudas al estudio, un fichero por curso. Cálculo propio: comunidad /
+    (Ministerio + comunidad), que es el total que publica la tabla (se comprueba)."""
+    obs, notas, n_sumas = [], [], 0
+    for a in range(2013, 2025):
+        curso_largo, curso = f"{a}-{a + 1}", f"{a}-{str(a + 1)[2:]}"
+        m = ultimo_original("becas", f"todas2_{curso_largo}.px")
+        px = leer_px(m["ruta"])
+        c = celdas_px(px)
+        filas_t = px['VALUES("Comunidad autónoma de destino")']
+        medidas = {next(v for v in px['VALUES("Becarios, becas e importe")'] if v.startswith("BECARIOS")): "becarios",
+                   "IMPORTE": "importe"}
+        todas, minis, ccaa = px['VALUES("Nivel de administración educativa financiadora")']
+        if (todas, minis, ccaa) != ("TODAS LAS ADMONES. EDUCATIVAS", "Ministerio", "Admones. educativas de las CC.AA."):
+            errores.append(f"Becas {curso}: administraciones inesperadas")
+            continue
+        if set(px['VALUES("Tipo de enseñanzas")']) != set(ENS_REPARTO):
+            errores.append(f"Becas {curso}: enseñanzas inesperadas")
+            continue
+        # Notas sobre Galicia: provisional (2020-21), repetida del curso anterior (2021-22) o no disponible (2022-23…)
+        nota_gal = next((re.sub(r"\s+", " ", re.sub(r"^\(?\d\)\s*", "", n.strip())) for n in px.get("NOTE", "").split("#")
+                         if "Galicia" in n), None)
+        gal_repetida = bool(nota_gal) and ("del curso 2020-21" in nota_gal or "no disponibles" in nota_gal)
+        gal_prov = bool(nota_gal) and "provisionales" in nota_gal
+        if nota_gal:
+            notas.append({"texto": nota_gal, "territorios": ["12", "00"], "periodos": [curso], "clave": None})
+        for et in filas_t:
+            for med_px, med in medidas.items():
+                for ens_px, ens in ENS_REPARTO.items():
+                    tot, mi, ca = (c[(et, med_px, ens_px, x)] for x in (todas, minis, ccaa))
+                    if tot is not None and mi is not None and ca is not None:
+                        n_sumas += 1
+                        if abs(tot - mi - ca) > (1.0 if med == "importe" else 0):  # importes en miles de euros, redondeados
+                            errores.append(f"Becas {curso} {et} {med} {ens}: total {tot} distinto de {mi} + {ca}")
+                    if et.startswith(("Sin especificar", "UNED")):
+                        continue
+                    ine = "00" if et == "TOTAL" else territorio(et)["ine"]
+                    if ine in ("18", "19"):
+                        continue  # Ceuta y Melilla: la educación la gestiona el Ministerio, no tienen administración propia
+                    if ine == "12" and gal_repetida and ens != "universitaria":
+                        continue  # Galicia: sin dato propio de su administración en las enseñanzas no universitarias
+                    if tot is None or mi is None or ca is None or tot <= 0:
+                        continue
+                    obs.append({"indicador_id": "becas_comunidad", "territorio": ine, "periodo": curso, "titularidad": "total",
+                                "sexo": "total", "etapa": ens, "competencia": med, "valor": round(100 * ca / tot, 2), "unidad": "pct",
+                                "error_estandar": None, "estado": "provisional" if ine == "12" and gal_prov and ens != "universitaria" else "definitivo",
+                                "fuente_id": "mefd_becas", "url_fuente": URL_BECAS.format(c=curso_largo), "fecha_captura": m["fecha_captura"]})
+        # La suma de todas las filas (comunidades, Ceuta, Melilla, sin especificar y UNED) da el total
+        for med_px, med in medidas.items():
+            for ens_px, ens in ENS_REPARTO.items():
+                for x in (minis, ccaa):
+                    vals = [c[(et, med_px, ens_px, x)] for et in filas_t if et != "TOTAL"]
+                    tot = c[("TOTAL", med_px, ens_px, x)]
+                    if None in vals or tot is None:
+                        continue  # Galicia sin dato: el total usa el curso 2020-21
+                    n_sumas += 1
+                    if abs(sum(vals) - tot) > (1.0 if med == "importe" else 0):
+                        errores.append(f"Becas {curso} {med} {ens} {x}: suma de filas {sum(vals)} distinta del total {tot}")
+    hay = {(f["periodo"], f["territorio"]) for f in obs}
+    for a in range(2013, 2025):
+        curso = f"{a}-{str(a + 1)[2:]}"
+        faltan = {f"{i:02d}" for i in range(1, 18) if i != 12} | {"00"}
+        faltan -= {t for (p, t) in hay if p == curso}
+        if faltan:
+            errores.append(f"Becas {curso}: faltan {sorted(faltan)}")
+    periodos = sorted({f["periodo"] for f in obs})
+    escribir_json("observaciones/becas_comunidad.json", {
+        "indicador_id": "becas_comunidad", "periodos": periodos, "notas_fuente": sorted({n["texto"] for n in notas}),
+        "notas": _agrupar_notas(notas),
+        "muestra_pequena": [], "rupturas": [], "definicion_difiere_es": [],
+        "comprobacion": {"pares_comparados": n_sumas, "descripcion": "total = Ministerio + comunidad; suma de filas = total"},
+        "filas": sorted(obs, key=lambda f: (f["territorio"], f["etapa"], f["competencia"], f["periodo"])),
+    })
+    print(f"becas_comunidad: {len(obs)} filas, cursos {periodos[0]} a {periodos[-1]}; {n_sumas} sumas comprobadas")
+
+
+def _agrupar_notas(notas: list[dict]) -> list[dict]:
+    """Una sola nota por texto, con todos los cursos en que aparece."""
+    out: dict[str, dict] = {}
+    for n in notas:
+        o = out.setdefault(n["texto"], {"texto": n["texto"], "territorios": n["territorios"], "periodos": []})
+        o["periodos"] += [p for p in n["periodos"] if p not in o["periodos"]]
+    return list(out.values())
+
+
 def main() -> None:
     errores: list[str] = []
     graduacion(errores)
     gasto_alumno(errores)
     becas(errores)
+    becas_comunidad(errores)
     if errores:
         sys.exit("Comprobaciones fallidas:\n  " + "\n  ".join(errores))
 

@@ -92,7 +92,7 @@ FUENTES: dict[str, list[tuple[str, str]]] = {
         ("f1.pdf", "https://www.educacionfpydeportes.gob.es/dam/jcr:43facf9c-1248-4aef-aafd-6311b762d65e/f1.pdf"),
     ],
     # EDUCAbase: Estadística de Becas y Ayudas al estudio, tabla 2 (becarios por comunidad y administración que paga)
-    "becas": [("todas2_2023-2024.px", f"{PX}/economicas/becas/2023-2024/todasense/l0/todas2.px")],
+    "becas": [(f"todas2_{a}-{a + 1}.px", f"{PX}/economicas/becas/{a}-{a + 1}/todasense/l0/todas2.px") for a in range(2013, 2025)],
     # EDUCAbase: Estadística de inserción laboral de las personas graduadas en FP, por comunidad (1 básica, 2 media, 3 superior),
     # y su metodología
     "insercion": [(f"ccaa_{n}_01.px", f"{PX}/laborales/insercion/ccaa/l0/ccaa_{n}_01.px") for n in (1, 2, 3)] + [
