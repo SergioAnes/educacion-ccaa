@@ -255,6 +255,22 @@
       "titulo": "Inspección de Educación: documento de apoyo a la revisión de horarios 2026-2027, Secundaria y FP (14/9/2026)",
       "url": "https://www.carm.es/",
       "original": "sueldos/2026-11-25/mu-inspeccion-horarios-secundaria-2026-27.pdf"
+    },
+    "na_retribuciones": {
+      "titulo": "Gobierno de Navarra, Gobierno Abierto: retribuciones 2026 (actualización 1,50 %): sueldo inicial por nivel",
+      "url": "https://gobiernoabierto.navarra.es/sites/default/files/assets/files/pagina-interior/transparencia/Retribuciones2026.pdf",
+      "original": "sueldos/2026-11-25/na-retribuciones-2026.pdf"
+    },
+    "na_ley": {
+      "titulo": "Ley Foral 16/2025, de 22 de diciembre, de Presupuestos Generales de Navarra para 2026, art. 19 (complemento específico docente en % del sueldo del nivel)",
+      "url": "https://www.iberley.es/legislacion/articulo-19-presupuestos-generales-ano-2026-navarra",
+      "original": "sueldos/2026-11-25/na-ley-foral-16-2025-art-19.html",
+      "nota": "Texto tomado de Iberley (reproducción de la ley foral)."
+    },
+    "na_instr": {
+      "titulo": "Resolución 333/2026, de 26 de mayo, del director general de Educación y FP: instrucciones de organización y funcionamiento para 2026-2027",
+      "url": "https://www.educacion.navarra.es/documents/27590/0/Resol+333-2026+INSTRUCCIONES+CURSO+2026-2027.pdf/7dc9d00a-5409-e128-52e6-34b1f875cc1a",
+      "original": "sueldos/2026-11-25/na-resolucion-333-2026-instrucciones.pdf"
     }
   },
   "comunidades": {
@@ -1666,6 +1682,66 @@
         "Murcia paga buena parte del sueldo docente como «productividad» (mensual y semestral) y no como complemento específico, que es más bajo que en otras comunidades.",
         "Importes de 2026 calculados: los de 2025 publicados en el BORM más la subida general del 1,5 % (no se ha encontrado la tabla docente de 2026); coinciden con la guía de CCOO de enero de 2026.",
         "No se incluye el tramo I de la carrera profesional horizontal (88,93 € al mes para maestros y 158,23 € para secundaria en 2025): depende de la progresión de cada docente."
+      ]
+    },
+    "15": {
+      "nombre": "Navarra",
+      "estado": "analizada",
+      "regimen": "propio",
+      "cuerpos": {
+        "maestros": {
+          "anual_propio": [
+            {
+              "concepto": "Sueldo inicial del nivel B (14 pagas)",
+              "valor": 26602.94,
+              "fuente": "na_retribuciones",
+              "donde": "Sueldo inicial o base, nivel B, año"
+            },
+            {
+              "concepto": "Complemento específico docente: 38,07 % del sueldo del nivel B",
+              "valor": 10127.74,
+              "fuente": "na_ley",
+              "donde": "art. 19 a)",
+              "comprobacion": "calculo",
+              "nota": "0,3807 × 26.602,94 (la ley da el porcentaje, no el importe)"
+            }
+          ],
+          "horas_lectivas": {
+            "valor": 23,
+            "fuente": "na_instr",
+            "donde": "jornada del profesorado de Infantil y Primaria",
+            "definicion": "23 sesiones de docencia directa de 50 minutos (26 h de cómputo lectivo con otras 5 sesiones y los recreos)"
+          }
+        },
+        "secundaria": {
+          "anual_propio": [
+            {
+              "concepto": "Sueldo inicial del nivel A (14 pagas)",
+              "valor": 31622.5,
+              "fuente": "na_retribuciones",
+              "donde": "Sueldo inicial o base, nivel A, año"
+            },
+            {
+              "concepto": "Complemento específico docente: 33,48 % del sueldo del nivel A",
+              "valor": 10587.21,
+              "fuente": "na_ley",
+              "donde": "art. 19 c)",
+              "comprobacion": "calculo",
+              "nota": "0,3348 × 31.622,50 (la ley da el porcentaje, no el importe)"
+            }
+          ],
+          "horas_lectivas": {
+            "valor": 18,
+            "fuente": "na_instr",
+            "donde": "profesorado de secundaria (Pacto para la Equidad y la Calidad Educativa)",
+            "definicion": "18 horas lectivas semanales en jornada completa"
+          }
+        }
+      },
+      "avisos": [
+        "Navarra tiene un régimen retributivo propio: sueldo inicial por nivel (A para profesores de secundaria, B para maestros) y complemento específico docente en porcentaje del sueldo. No se separa en sueldo estatal, destino y específico.",
+        "No se incluye el «grado» (se gana con antigüedad) ni el complemento especial del 5,45 %, que es solo para los maestros que dan clase en la ESO.",
+        "En Infantil y Primaria las sesiones son de 50 minutos."
       ]
     }
   }

@@ -142,6 +142,9 @@ FUENTES: dict[str, list[tuple[str, str]]] = {
         ("mu-guia-retribuciones-ccoo-enero-2026.pdf", "https://murcia.fe.ccoo.es/5374e343d0772497a4f17e7bc1b26533000063.pdf"),
         ("mu-borm-jornada-docente-2023.pdf", "https://www.borm.es/services/anuncio/ano/2023/numero/3891/pdf?id=820185"),
         ("mu-inspeccion-horarios-secundaria-2026-27.pdf", "https://www.carm.es/web/descarga?ARCHIVO=DOCUMENTO+APOYO+HORARIOS+SECUNDARIA+2026-2027_260812.pdf&ALIAS=ARCH&IDCONTENIDO=178976&IDTIPO=60&RASTRO=c794%24m5042"),
+        ("na-retribuciones-2026.pdf", "https://gobiernoabierto.navarra.es/sites/default/files/assets/files/pagina-interior/transparencia/Retribuciones2026.pdf"),
+        ("na-resolucion-333-2026-instrucciones.pdf", "https://www.educacion.navarra.es/documents/27590/0/Resol+333-2026+INSTRUCCIONES+CURSO+2026-2027.pdf/7dc9d00a-5409-e128-52e6-34b1f875cc1a"),
+        ("na-ley-foral-16-2025-art-19.html", "https://www.iberley.es/legislacion/articulo-19-presupuestos-generales-ano-2026-navarra"),
         ("ar-instrucciones-ies-2026-27.pdf", "https://educa.aragon.es/documents/20126/6844128/CSVFV61LMW0LZ120XFIL+Instrucciones+curso+2026-2027+para+centros+educativos._03+IES+2026-2027+V8-(Instrucciones).pdf/ff9b76e8-b92f-291b-b736-6f093187162c"),
     ],
     # INEE: tablas del informe español de PISA 2025 (Excel dentro de un RAR)

@@ -897,6 +897,30 @@
   },
   {
     "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/na-ley-foral-16-2025-art-19.html",
+    "url": "https://www.iberley.es/legislacion/articulo-19-presupuestos-generales-ano-2026-navarra",
+    "fecha_captura": "2026-11-25",
+    "bytes": 158288,
+    "sha256": "d4437b5800eff0d1534a927d474706babf25d473a3c3f617569d01096ab4e368"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/na-resolucion-333-2026-instrucciones.pdf",
+    "url": "https://www.educacion.navarra.es/documents/27590/0/Resol+333-2026+INSTRUCCIONES+CURSO+2026-2027.pdf/7dc9d00a-5409-e128-52e6-34b1f875cc1a",
+    "fecha_captura": "2026-11-25",
+    "bytes": 1177740,
+    "sha256": "744d512efccafcb70fec327ad377d43c8f464be313599fdd6d61d13aea8dc497"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/na-retribuciones-2026.pdf",
+    "url": "https://gobiernoabierto.navarra.es/sites/default/files/assets/files/pagina-interior/transparencia/Retribuciones2026.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 573707,
+    "sha256": "98dde2e0de3788a249252e6deb200e2c1c3331d189fa23898d815afb19b83f85"
+  },
+  {
+    "fuente": "sueldos",
     "fichero": "sueldos/2026-11-25/pv-decreto-252-2025-acuerdo-regulador.pdf",
     "url": "https://www.euskadi.eus/contenidos/informacion/langile_nominas_servicio/es_def/adjuntos/DECRETO-252-2025-Acuerdo-regulador.pdf",
     "fecha_captura": "2026-11-25",

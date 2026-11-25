@@ -24,7 +24,9 @@
     "Región de Murcia, maestros: Productividad semestral en cada paga extra (factor complemento específico + factor complemento de destino) (anexo XI 4.º (516,33 + 236.69 en 2025) × 1,015)",
     "Región de Murcia, secundaria: pagas adicionales del específico (No se ha encontrado la tabla docente oficial de 2026: importe de 2025 de la resolución del BORM × 1,015 (subida general de 2026, Real Decreto-ley 14/2025); coincide con la guía de CCOO de enero de 2026.)",
     "Región de Murcia, secundaria: Productividad docente mensual (cuantía mínima, 12 pagas) (anexo XI 4.º (437.79 en 2025) × 1,015)",
-    "Región de Murcia, secundaria: Productividad semestral en cada paga extra (factor complemento específico + factor complemento de destino) (anexo XI 4.º (516,33 + 291.5 en 2025) × 1,015)"
+    "Región de Murcia, secundaria: Productividad semestral en cada paga extra (factor complemento específico + factor complemento de destino) (anexo XI 4.º (516,33 + 291.5 en 2025) × 1,015)",
+    "Navarra, maestros: Complemento específico docente: 38,07 % del sueldo del nivel B (0,3807 × 26.602,94 (la ley da el porcentaje, no el importe))",
+    "Navarra, secundaria: Complemento específico docente: 33,48 % del sueldo del nivel A (0,3348 × 31.622,50 (la ley da el porcentaje, no el importe))"
   ],
   "comunidades": {
     "13": {
@@ -736,6 +738,40 @@
         "Murcia paga buena parte del sueldo docente como «productividad» (mensual y semestral) y no como complemento específico, que es más bajo que en otras comunidades.",
         "Importes de 2026 calculados: los de 2025 publicados en el BORM más la subida general del 1,5 % (no se ha encontrado la tabla docente de 2026); coinciden con la guía de CCOO de enero de 2026.",
         "No se incluye el tramo I de la carrera profesional horizontal (88,93 € al mes para maestros y 158,23 € para secundaria en 2025): depende de la progresión de cada docente."
+      ]
+    },
+    "15": {
+      "nombre": "Navarra",
+      "cuerpos": {
+        "maestros": {
+          "bruto_anual": 36730.68,
+          "componentes": {
+            "Sueldo inicial del nivel B (14 pagas)": 26602.94,
+            "Complemento específico docente: 38,07 % del sueldo del nivel B": 10127.74
+          },
+          "otros": [],
+          "regimen_propio": true,
+          "horas_lectivas": 23.0,
+          "horas_definicion": "23 sesiones de docencia directa de 50 minutos (26 h de cómputo lectivo con otras 5 sesiones y los recreos)",
+          "euros_por_hora_semanal": 1596.99
+        },
+        "secundaria": {
+          "bruto_anual": 42209.71,
+          "componentes": {
+            "Sueldo inicial del nivel A (14 pagas)": 31622.5,
+            "Complemento específico docente: 33,48 % del sueldo del nivel A": 10587.21
+          },
+          "otros": [],
+          "regimen_propio": true,
+          "horas_lectivas": 18.0,
+          "horas_definicion": "18 horas lectivas semanales en jornada completa",
+          "euros_por_hora_semanal": 2344.98
+        }
+      },
+      "avisos": [
+        "Navarra tiene un régimen retributivo propio: sueldo inicial por nivel (A para profesores de secundaria, B para maestros) y complemento específico docente en porcentaje del sueldo. No se separa en sueldo estatal, destino y específico.",
+        "No se incluye el «grado» (se gana con antigüedad) ni el complemento especial del 5,45 %, que es solo para los maestros que dan clase en la ESO.",
+        "En Infantil y Primaria las sesiones son de 50 minutos."
       ]
     }
   }

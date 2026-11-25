@@ -67,6 +67,22 @@ def main() -> None:
         res = {"nombre": c["nombre"], "cuerpos": {}, "avisos": c.get("avisos", [])}
         for cuerpo in CUERPOS:
             x = c["cuerpos"][cuerpo]
+            if "anual_propio" in x:
+                # Régimen retributivo propio (Navarra): no hay sueldo/destino/específico estatales; importes anuales con fuente
+                comps = {}
+                for comp in x["anual_propio"]:
+                    comps[comp["concepto"]] = round(dato(ine, cuerpo, comp["concepto"], comp), 2)
+                    if comp.get("comprobacion") in ("supuesto", "calculo"):
+                        supuestos.append(f"{c['nombre']}, {cuerpo}: {comp['concepto']} ({comp.get('nota', comp.get('donde', ''))})")
+                h = x.get("horas_lectivas", {})
+                horas = dato(ine, cuerpo, "horas_lectivas", h)
+                if not h.get("definicion"):
+                    errores.append(f"{c['nombre']} {cuerpo}: horas lectivas sin definición")
+                total = round(sum(comps.values()), 2)
+                res["cuerpos"][cuerpo] = {"bruto_anual": total, "componentes": comps, "otros": [], "regimen_propio": True,
+                                          "horas_lectivas": horas, "horas_definicion": h.get("definicion"),
+                                          "euros_por_hora_semanal": round(total / horas, 2) if horas else None}
+                continue
             g, nivel = x["grupo"], x["nivel_destino"]
             sueldo = dato(ine, cuerpo, "sueldo_mensual", x["sueldo_mensual"])
             extra = dato(ine, cuerpo, "sueldo_paga_extra", x["sueldo_paga_extra"])
