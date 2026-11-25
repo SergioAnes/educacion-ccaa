@@ -29,6 +29,10 @@
       "texto": "Incluye una «consolidación» de unos 25-27 € al mes que la orden no dice a quién se aplica."
     },
     {
+      "territorio": "12",
+      "texto": "Incluye el componente por función titorial y otras funciones docentes (924,56 € al año), que la tabla anual de la Xunta no suma pero cobra todo el profesorado con horario completo."
+    },
+    {
       "territorio": "03",
       "texto": "Las dos pagas adicionales del complemento específico se dan por cobradas también por los docentes: la ley las fija para los funcionarios en general."
     },
@@ -42,7 +46,7 @@
     },
     {
       "territorio": "14",
-      "texto": "Importes de 2026 calculados: los de 2025 publicados en el BORM más la subida general del 1,5 % (coinciden con la guía de CCOO de enero de 2026). Parte del sueldo se paga como «productividad»."
+      "texto": "Importes de 2026 calculados: los de 2025 publicados en el BORM más la subida general del 1,5 % (coinciden con la guía de CCOO de enero de 2026). Parte del sueldo se paga como «productividad». Incluye el componente por acción tutorial (64,21 € al mes) que cobra todo docente sin otro puesto singular."
     },
     {
       "territorio": "15",
@@ -59,10 +63,6 @@
     {
       "territorio": "01",
       "texto": "Dato reconstruido: la Junta no ha publicado la tabla de 2026; se calcula con la tabla oficial de 2024 y los acuerdos publicados en el BOJA (coincide con la tabla de UGT de enero de 2026)."
-    },
-    {
-      "territorio": "12",
-      "texto": "Maestros: cifra tomada de un resumen sindical de la norma oficial (23 horas de presencia lectiva + 5 no lectivas en el centro; jornada de 37,5 h); secundaria: cifra tomada de un resumen sindical de la norma oficial (18 sesiones lectivas fijas (se recuperan como referencia en 2026-27) + 5 complementarias; jornada de 37,5 h)."
     }
   ],
   "notas_fuente": [],
@@ -415,7 +415,7 @@
       "fecha_captura": "2026-11-25",
       "indicador_id": "sueldo_por_hora",
       "periodo": "2026",
-      "valor": 1536.67,
+      "valor": 1576.87,
       "unidad": "eur",
       "fuente_id": "normas_ccaa",
       "url_fuente": "https://www.xunta.gal/dog/Publicados/2026/20260126/AnuncioG0597-220126-0002_es.html"
@@ -430,7 +430,7 @@
       "fecha_captura": "2026-11-25",
       "indicador_id": "sueldo_por_hora",
       "periodo": "2026",
-      "valor": 2193.17,
+      "valor": 2244.53,
       "unidad": "eur",
       "fuente_id": "normas_ccaa",
       "url_fuente": "https://www.xunta.gal/dog/Publicados/2026/20260126/AnuncioG0597-220126-0002_es.html"
@@ -475,7 +475,7 @@
       "fecha_captura": "2026-11-25",
       "indicador_id": "sueldo_por_hora",
       "periodo": "2026",
-      "valor": 1572.58,
+      "valor": 1606.08,
       "unidad": "eur",
       "fuente_id": "normas_ccaa",
       "url_fuente": "https://www.borm.es/services/anuncio/ano/2025/numero/6124/pdf"
@@ -490,7 +490,7 @@
       "fecha_captura": "2026-11-25",
       "indicador_id": "sueldo_por_hora",
       "periodo": "2026",
-      "valor": 2249.53,
+      "valor": 2292.34,
       "unidad": "eur",
       "fuente_id": "normas_ccaa",
       "url_fuente": "https://www.borm.es/services/anuncio/ano/2025/numero/6124/pdf"

@@ -27,16 +27,18 @@
     "Castilla-La Mancha, secundaria: pagas adicionales del específico (La ley lo dice para el personal funcionario de la Administración de la Junta; la Orden 194/2025 (devengo) incluye el específico en las pagas extra, sin precisar el importe docente.)",
     "Castilla-La Mancha, secundaria, 15 años: Formación permanente (sexenios): primer y segundo periodo (94,46 + 88,74) (Las pagas extra incluyen «una mensualidad del complemento específico» (ley de presupuestos, para el personal funcionario de la Junta): mismo supuesto que el específico.)",
     "Región de Murcia, maestros: complemento específico (No se ha encontrado la tabla docente oficial de 2026: importe de 2025 de la resolución del BORM × 1,015 (subida general de 2026, Real Decreto-ley 14/2025); coincide con la guía de CCOO de enero de 2026.)",
-    "Región de Murcia, maestros: pagas adicionales del específico (No se ha encontrado la tabla docente oficial de 2026: importe de 2025 de la resolución del BORM × 1,015 (subida general de 2026, Real Decreto-ley 14/2025); coincide con la guía de CCOO de enero de 2026.)",
+    "Región de Murcia, maestros: pagas adicionales del específico (No se ha encontrado la tabla docente oficial de 2026: importe de 2025 de la resolución del BORM × 1,015 (subida general de 2026, Real Decreto-ley 14/2025); coincide con la guía de CCOO de enero de 2026. Cada paga adicional (260,96) ya incluye el factor del complemento específico singular (236,29 + 24,67, guía de CCOO).)",
     "Región de Murcia, maestros: Productividad docente mensual (cuantía mínima, 12 pagas) (anexo XI 4.º (431.44 en 2025) × 1,015)",
     "Región de Murcia, maestros: Productividad semestral en cada paga extra (factor complemento específico + factor complemento de destino) (anexo XI 4.º (516,33 + 236.69 en 2025) × 1,015)",
+    "Región de Murcia, maestros: Componente singular por acción tutorial de quien no ocupa otro puesto singular (64,21 €/mes, 12 pagas) (anexo XI 2.2, «puestos de trabajo ejercidos por profesores que no desempeñen otro puesto docente singular (acción tutorial)» (63,26 en 2025) × 1,015)",
     "Región de Murcia, maestros, 15 años: Formación permanente (sexenios): primer y segundo periodo (70,45 + 88,89) (Coincide con la guía de CCOO de enero de 2026; en las pagas semestrales los sexenios van en la paga adicional (siguiente concepto).)",
     "Región de Murcia, maestros, 15 años: Paga adicional del específico con 2 sexenios en lugar de 0 (362,87 − 260,96, en cada una de las dos pagas) (Coincide con la guía de CCOO de enero de 2026 (362,87).)",
     "Región de Murcia, maestros, 15 años: Carrera profesional, tramo I (88,93 en 2025 × 1,015) (Mientras no se negocie la evaluación del desempeño, se encuadra en el tramo I a todos los que cumplen el primer sexenio (guía de CCOO); no va en las pagas semestrales.)",
     "Región de Murcia, secundaria: complemento específico (No se ha encontrado la tabla docente oficial de 2026: importe de 2025 de la resolución del BORM × 1,015 (subida general de 2026, Real Decreto-ley 14/2025); coincide con la guía de CCOO de enero de 2026.)",
-    "Región de Murcia, secundaria: pagas adicionales del específico (No se ha encontrado la tabla docente oficial de 2026: importe de 2025 de la resolución del BORM × 1,015 (subida general de 2026, Real Decreto-ley 14/2025); coincide con la guía de CCOO de enero de 2026.)",
+    "Región de Murcia, secundaria: pagas adicionales del específico (No se ha encontrado la tabla docente oficial de 2026: importe de 2025 de la resolución del BORM × 1,015 (subida general de 2026, Real Decreto-ley 14/2025); coincide con la guía de CCOO de enero de 2026. Cada paga adicional (260,96) ya incluye el factor del complemento específico singular (236,29 + 24,67, guía de CCOO).)",
     "Región de Murcia, secundaria: Productividad docente mensual (cuantía mínima, 12 pagas) (anexo XI 4.º (437.79 en 2025) × 1,015)",
     "Región de Murcia, secundaria: Productividad semestral en cada paga extra (factor complemento específico + factor complemento de destino) (anexo XI 4.º (516,33 + 291.5 en 2025) × 1,015)",
+    "Región de Murcia, secundaria: Componente singular por acción tutorial de quien no ocupa otro puesto singular (64,21 €/mes, 12 pagas) (anexo XI 2.2, «puestos de trabajo ejercidos por profesores que no desempeñen otro puesto docente singular (acción tutorial)» (63,26 en 2025) × 1,015)",
     "Región de Murcia, secundaria, 15 años: Formación permanente (sexenios): primer y segundo periodo (70,45 + 88,89) (Coincide con la guía de CCOO de enero de 2026; en las pagas semestrales los sexenios van en la paga adicional (siguiente concepto).)",
     "Región de Murcia, secundaria, 15 años: Paga adicional del específico con 2 sexenios en lugar de 0 (362,87 − 260,96, en cada una de las dos pagas) (Coincide con la guía de CCOO de enero de 2026 (362,87).)",
     "Región de Murcia, secundaria, 15 años: Carrera profesional, tramo I (158,23 en 2025 × 1,015) (Mientras no se negocie la evaluación del desempeño, se encuadra en el tramo I a todos los que cumplen el primer sexenio (guía de CCOO); no va en las pagas semestrales.)",
@@ -175,7 +177,8 @@
         }
       },
       "avisos": [
-        "Los acuerdos de 2026 prevén más subidas del complemento específico hasta llegar a un 30 % y que el complemento de mejora suba en 2028 y 2029; no están incluidas."
+        "Los acuerdos de 2026 prevén más subidas del complemento específico hasta llegar a un 30 % y que el complemento de mejora suba en 2028 y 2029; no están incluidas.",
+        "En primaria, los tutores y los especialistas («llocs base amb complement especialista») cobran 66,56 € al mes más; no se incluye porque depende del puesto."
       ]
     },
     "10": {
@@ -579,20 +582,30 @@
       "nombre": "Galicia",
       "cuerpos": {
         "maestros": {
-          "bruto_anual": 35343.5,
+          "bruto_anual": 36268.06,
           "componentes": {
             "mensualidades": 30851.04,
             "pagas_extra": 2933.88,
             "pagas_adicionales_especifico": 1558.58,
-            "otros_recurrentes": 0,
+            "otros_recurrentes": 924.56,
             "pagos_unicos_del_anio": 0
           },
-          "otros": [],
+          "otros": [
+            {
+              "concepto": "Componente por función titorial y otras funciones docentes (66,04 €/mes, 14 pagas): lo cobra todo el profesorado con horario lectivo completo, sea o no tutor",
+              "importe": 924.56,
+              "tipo": "recurrente",
+              "fuente": "ga_orden_nominas",
+              "donde": "anexo de retribuciones docentes, 4.º (66,04 €/mes); 924,56 €/año en la tabla de transparencia",
+              "comprobacion": "norma",
+              "nota": "Orde do 17/7/2007, art. 4 b): lo perciben los no tutores con 21 horas lectivas (Infantil, Primaria y Especial, contando las guardias) o al menos 18 sesiones (resto de enseñanzas)."
+            }
+          ],
           "horas_lectivas": 23.0,
           "horas_definicion": "23 horas de presencia lectiva + 5 no lectivas en el centro; jornada de 37,5 h",
-          "euros_por_hora_semanal": 1536.67,
+          "euros_por_hora_semanal": 1576.87,
           "con_15_anios": {
-            "bruto_anual": 41141.2,
+            "bruto_anual": 42065.76,
             "sobre_inicial": {
               "cinco_trienios": 2929.8,
               "Sexenios: 1.º y 2.º período (1.254,82 + 1.613,08 al año)": 2867.9
@@ -600,20 +613,30 @@
           }
         },
         "secundaria": {
-          "bruto_anual": 39477.0,
+          "bruto_anual": 40401.56,
           "componentes": {
             "mensualidades": 34748.04,
             "pagas_extra": 3170.38,
             "pagas_adicionales_especifico": 1558.58,
-            "otros_recurrentes": 0,
+            "otros_recurrentes": 924.56,
             "pagos_unicos_del_anio": 0
           },
-          "otros": [],
+          "otros": [
+            {
+              "concepto": "Componente por función titorial y otras funciones docentes (66,04 €/mes, 14 pagas): lo cobra todo el profesorado con horario lectivo completo, sea o no tutor",
+              "importe": 924.56,
+              "tipo": "recurrente",
+              "fuente": "ga_orden_nominas",
+              "donde": "anexo de retribuciones docentes, 4.º (66,04 €/mes); 924,56 €/año en la tabla de transparencia",
+              "comprobacion": "norma",
+              "nota": "Orde do 17/7/2007, art. 4 b): lo perciben los no tutores con 21 horas lectivas (Infantil, Primaria y Especial, contando las guardias) o al menos 18 sesiones (resto de enseñanzas)."
+            }
+          ],
           "horas_lectivas": 18.0,
           "horas_definicion": "18 sesiones lectivas fijas (se recuperan como referencia en 2026-27) + 5 complementarias; jornada de 37,5 h",
-          "euros_por_hora_semanal": 2193.17,
+          "euros_por_hora_semanal": 2244.53,
           "con_15_anios": {
-            "bruto_anual": 45877.9,
+            "bruto_anual": 46802.46,
             "sobre_inicial": {
               "cinco_trienios": 3533.0,
               "Sexenios: 1.º y 2.º período (1.254,82 + 1.613,08 al año)": 2867.9
@@ -623,7 +646,8 @@
       },
       "avisos": [
         "El complemento específico general es el mismo para maestros y profesores de secundaria (779,29 € al mes).",
-        "Las horas de clase salen del resumen sindical de la resolución oficial, que está publicada como escaneo sin texto."
+        "Las horas de clase salen del resumen sindical de la resolución oficial, que está publicada como escaneo sin texto.",
+        "La tabla anual de la Xunta no suma el componente por función titorial y otras funciones docentes (924,56 € al año), pero lo cobra todo el profesorado con horario completo (Orde do 17/7/2007, art. 4): se incluye."
       ]
     },
     "03": {
@@ -871,12 +895,12 @@
       "nombre": "Región de Murcia",
       "cuerpos": {
         "maestros": {
-          "bruto_anual": 36169.42,
+          "bruto_anual": 36939.94,
           "componentes": {
             "mensualidades": 25930.08,
             "pagas_extra": 2933.88,
             "pagas_adicionales_especifico": 521.92,
-            "otros_recurrentes": 6783.54,
+            "otros_recurrentes": 7554.06,
             "pagos_unicos_del_anio": 0
           },
           "otros": [
@@ -895,13 +919,22 @@
               "fuente": "mu_borm_2025",
               "donde": "anexo XI 4.º (516,33 + 236.69 en 2025) × 1,015",
               "comprobacion": "calculo"
+            },
+            {
+              "concepto": "Componente singular por acción tutorial de quien no ocupa otro puesto singular (64,21 €/mes, 12 pagas)",
+              "importe": 770.52,
+              "tipo": "recurrente",
+              "fuente": "mu_borm_2025",
+              "donde": "anexo XI 2.2, «puestos de trabajo ejercidos por profesores que no desempeñen otro puesto docente singular (acción tutorial)» (63,26 en 2025) × 1,015",
+              "comprobacion": "calculo",
+              "nota": "Lo cobra todo docente sin otro puesto singular; la guía de CCOO lo incluye en las «retribuciones comunes» de todos los cuerpos (64,21)."
             }
           ],
           "horas_lectivas": 23.0,
           "horas_definicion": "23 horas lectivas (Infantil y Primaria)",
-          "euros_por_hora_semanal": 1572.58,
+          "euros_por_hora_semanal": 1606.08,
           "con_15_anios": {
-            "bruto_anual": 42298.24,
+            "bruto_anual": 43068.76,
             "sobre_inicial": {
               "cinco_trienios": 2929.8,
               "Formación permanente (sexenios): primer y segundo periodo (70,45 + 88,89)": 1912.08,
@@ -911,12 +944,12 @@
           }
         },
         "secundaria": {
-          "bruto_anual": 40491.58,
+          "bruto_anual": 41262.1,
           "componentes": {
             "mensualidades": 29827.08,
             "pagas_extra": 3170.38,
             "pagas_adicionales_especifico": 521.92,
-            "otros_recurrentes": 6972.2,
+            "otros_recurrentes": 7742.72,
             "pagos_unicos_del_anio": 0
           },
           "otros": [
@@ -935,13 +968,22 @@
               "fuente": "mu_borm_2025",
               "donde": "anexo XI 4.º (516,33 + 291.5 en 2025) × 1,015",
               "comprobacion": "calculo"
+            },
+            {
+              "concepto": "Componente singular por acción tutorial de quien no ocupa otro puesto singular (64,21 €/mes, 12 pagas)",
+              "importe": 770.52,
+              "tipo": "recurrente",
+              "fuente": "mu_borm_2025",
+              "donde": "anexo XI 2.2, «puestos de trabajo ejercidos por profesores que no desempeñen otro puesto docente singular (acción tutorial)» (63,26 en 2025) × 1,015",
+              "comprobacion": "calculo",
+              "nota": "Lo cobra todo docente sin otro puesto singular; la guía de CCOO lo incluye en las «retribuciones comunes» de todos los cuerpos (64,21)."
             }
           ],
           "horas_lectivas": 18.0,
           "horas_definicion": "18 horas lectivas; hasta 19 periodos si la distribución del centro lo exige (Inspección, 2026-27)",
-          "euros_por_hora_semanal": 2249.53,
+          "euros_por_hora_semanal": 2292.34,
           "con_15_anios": {
-            "bruto_anual": 48067.68,
+            "bruto_anual": 48838.2,
             "sobre_inicial": {
               "cinco_trienios": 3533.0,
               "Formación permanente (sexenios): primer y segundo periodo (70,45 + 88,89)": 1912.08,
@@ -954,7 +996,8 @@
       "avisos": [
         "Murcia paga buena parte del sueldo docente como «productividad» (mensual y semestral) y no como complemento específico, que es más bajo que en otras comunidades.",
         "Importes de 2026 calculados: los de 2025 publicados en el BORM más la subida general del 1,5 % (no se ha encontrado la tabla docente de 2026); coinciden con la guía de CCOO de enero de 2026.",
-        "No se incluye el tramo I de la carrera profesional horizontal (88,93 € al mes para maestros y 158,23 € para secundaria en 2025): depende de la progresión de cada docente."
+        "No se incluye el tramo I de la carrera profesional horizontal (88,93 € al mes para maestros y 158,23 € para secundaria en 2025): depende de la progresión de cada docente.",
+        "Incluye el componente singular por acción tutorial (64,21 € al mes) que cobra todo docente que no ocupa otro puesto singular; no es el complemento de tutor."
       ]
     },
     "15": {

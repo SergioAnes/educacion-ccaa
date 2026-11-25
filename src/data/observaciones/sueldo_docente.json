@@ -29,6 +29,10 @@
       "texto": "Incluye una «consolidación» de unos 25-27 € al mes que la orden no dice a quién se aplica."
     },
     {
+      "territorio": "12",
+      "texto": "Incluye el componente por función titorial y otras funciones docentes (924,56 € al año), que la tabla anual de la Xunta no suma pero cobra todo el profesorado con horario completo."
+    },
+    {
       "territorio": "03",
       "texto": "Las dos pagas adicionales del complemento específico se dan por cobradas también por los docentes: la ley las fija para los funcionarios en general."
     },
@@ -42,7 +46,7 @@
     },
     {
       "territorio": "14",
-      "texto": "Importes de 2026 calculados: los de 2025 publicados en el BORM más la subida general del 1,5 % (coinciden con la guía de CCOO de enero de 2026). Parte del sueldo se paga como «productividad»."
+      "texto": "Importes de 2026 calculados: los de 2025 publicados en el BORM más la subida general del 1,5 % (coinciden con la guía de CCOO de enero de 2026). Parte del sueldo se paga como «productividad». Incluye el componente por acción tutorial (64,21 € al mes) que cobra todo docente sin otro puesto singular."
     },
     {
       "territorio": "15",
@@ -411,7 +415,7 @@
       "fecha_captura": "2026-11-25",
       "indicador_id": "sueldo_docente",
       "periodo": "2026",
-      "valor": 35343.5,
+      "valor": 36268.06,
       "unidad": "eur",
       "fuente_id": "normas_ccaa",
       "url_fuente": "https://www.xunta.gal/dog/Publicados/2026/20260126/AnuncioG0597-220126-0002_es.html"
@@ -426,7 +430,7 @@
       "fecha_captura": "2026-11-25",
       "indicador_id": "sueldo_docente",
       "periodo": "2026",
-      "valor": 39477.0,
+      "valor": 40401.56,
       "unidad": "eur",
       "fuente_id": "normas_ccaa",
       "url_fuente": "https://www.xunta.gal/dog/Publicados/2026/20260126/AnuncioG0597-220126-0002_es.html"
@@ -471,7 +475,7 @@
       "fecha_captura": "2026-11-25",
       "indicador_id": "sueldo_docente",
       "periodo": "2026",
-      "valor": 36169.42,
+      "valor": 36939.94,
       "unidad": "eur",
       "fuente_id": "normas_ccaa",
       "url_fuente": "https://www.borm.es/services/anuncio/ano/2025/numero/6124/pdf"
@@ -486,7 +490,7 @@
       "fecha_captura": "2026-11-25",
       "indicador_id": "sueldo_docente",
       "periodo": "2026",
-      "valor": 40491.58,
+      "valor": 41262.1,
       "unidad": "eur",
       "fuente_id": "normas_ccaa",
       "url_fuente": "https://www.borm.es/services/anuncio/ano/2025/numero/6124/pdf"

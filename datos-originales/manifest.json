@@ -1089,6 +1089,14 @@
   },
   {
     "fuente": "sueldos_antiguedad",
+    "fichero": "sueldos_antiguedad/2026-11-25/ga-orde-17-07-2007-funcion-titorial.html",
+    "url": "https://www.xunta.gal/dog/Publicados/2007/20070724/Anuncio28D46_gl.html",
+    "fecha_captura": "2026-11-25",
+    "bytes": 35996,
+    "sha256": "54baff4b051a6e8cf25d8aae11fe2dc32ff525e7445d50a5efc57c27eda9e509"
+  },
+  {
+    "fuente": "sueldos_antiguedad",
     "fichero": "sueldos_antiguedad/2026-11-25/ib-boib-166-2025-carrera-segundo-tramo.pdf",
     "url": "https://intranet.caib.es/eboibfront/pdf/es/2025/166/1208703",
     "fecha_captura": "2026-11-25",

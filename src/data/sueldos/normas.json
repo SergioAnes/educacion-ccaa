@@ -361,6 +361,11 @@
       "titulo": "Proyecto de decreto de la carrera profesional horizontal del personal docente de Castilla y León (22/9/2025; aprobado como Decreto 16/2025)",
       "url": "https://transparencia.jcyl.es/huellanormativa/EDU/2025-284%20Decreto%20carrera%20profesional%20docentes/7.%20Proyecto%20Decreto%20carrera%20profesional%20horizontal%20docente%20(22-09-2025).pdf",
       "original": "sueldos_antiguedad/2026-11-25/cl-proyecto-decreto-carrera-docente-2025.pdf"
+    },
+    "ga_orde_2007": {
+      "titulo": "Orde do 17 de xullo de 2007 pola que se desenvolve a percepción da compoñente do complemento específico por función titorial e outras funcións docentes (DOG, 24/7/2007)",
+      "url": "https://www.xunta.gal/dog/Publicados/2007/20070724/Anuncio28D46_gl.html",
+      "original": "sueldos_antiguedad/2026-11-25/ga-orde-17-07-2007-funcion-titorial.html"
     }
   },
   "comunidades": {
@@ -661,7 +666,8 @@
         "secundaria": 2837.21
       },
       "avisos": [
-        "Los acuerdos de 2026 prevén más subidas del complemento específico hasta llegar a un 30 % y que el complemento de mejora suba en 2028 y 2029; no están incluidas."
+        "Los acuerdos de 2026 prevén más subidas del complemento específico hasta llegar a un 30 % y que el complemento de mejora suba en 2028 y 2029; no están incluidas.",
+        "En primaria, los tutores y los especialistas («llocs base amb complement especialista») cobran 66,56 € al mes más; no se incluye porque depende del puesto."
       ],
       "cautela_web": "Incluye un pago único en mayo de 2026 (839 € maestros, 858 € secundaria), primer tramo de una subida que desde 2027 va en la nómina mensual.",
       "avisos_15": [
@@ -1599,7 +1605,17 @@
             "donde": "el específico anual (10.910,06) = 14 × 779,29",
             "comprobacion": "tabla"
           },
-          "otros_anuales": [],
+          "otros_anuales": [
+            {
+              "concepto": "Componente por función titorial y otras funciones docentes (66,04 €/mes, 14 pagas): lo cobra todo el profesorado con horario lectivo completo, sea o no tutor",
+              "importe": 924.56,
+              "tipo": "recurrente",
+              "fuente": "ga_orden_nominas",
+              "donde": "anexo de retribuciones docentes, 4.º (66,04 €/mes); 924,56 €/año en la tabla de transparencia",
+              "comprobacion": "norma",
+              "nota": "Orde do 17/7/2007, art. 4 b): lo perciben los no tutores con 21 horas lectivas (Infantil, Primaria y Especial, contando las guardias) o al menos 18 sesiones (resto de enseñanzas)."
+            }
+          ],
           "horas_lectivas": {
             "valor": 23,
             "fuente": "ga_xornada",
@@ -1657,7 +1673,17 @@
             "donde": "el específico anual (10.910,06) = 14 × 779,29",
             "comprobacion": "tabla"
           },
-          "otros_anuales": [],
+          "otros_anuales": [
+            {
+              "concepto": "Componente por función titorial y otras funciones docentes (66,04 €/mes, 14 pagas): lo cobra todo el profesorado con horario lectivo completo, sea o no tutor",
+              "importe": 924.56,
+              "tipo": "recurrente",
+              "fuente": "ga_orden_nominas",
+              "donde": "anexo de retribuciones docentes, 4.º (66,04 €/mes); 924,56 €/año en la tabla de transparencia",
+              "comprobacion": "norma",
+              "nota": "Orde do 17/7/2007, art. 4 b): lo perciben los no tutores con 21 horas lectivas (Infantil, Primaria y Especial, contando las guardias) o al menos 18 sesiones (resto de enseñanzas)."
+            }
+          ],
           "horas_lectivas": {
             "valor": 18,
             "fuente": "ga_xornada",
@@ -1699,8 +1725,10 @@
       },
       "avisos": [
         "El complemento específico general es el mismo para maestros y profesores de secundaria (779,29 € al mes).",
-        "Las horas de clase salen del resumen sindical de la resolución oficial, que está publicada como escaneo sin texto."
-      ]
+        "Las horas de clase salen del resumen sindical de la resolución oficial, que está publicada como escaneo sin texto.",
+        "La tabla anual de la Xunta no suma el componente por función titorial y otras funciones docentes (924,56 € al año), pero lo cobra todo el profesorado con horario completo (Orde do 17/7/2007, art. 4): se incluye."
+      ],
+      "cautela_web": "Incluye el componente por función titorial y otras funciones docentes (924,56 € al año), que la tabla anual de la Xunta no suma pero cobra todo el profesorado con horario completo."
     },
     "03": {
       "nombre": "Asturias",
@@ -2326,7 +2354,7 @@
             "fuente": "mu_borm_2025",
             "donde": "anexo XI 4.º, «paga adicional del complemento específico», 0 sexenios (257,10 en 2025) × 1,015",
             "comprobacion": "calculo",
-            "nota": "No se ha encontrado la tabla docente oficial de 2026: importe de 2025 de la resolución del BORM × 1,015 (subida general de 2026, Real Decreto-ley 14/2025); coincide con la guía de CCOO de enero de 2026."
+            "nota": "No se ha encontrado la tabla docente oficial de 2026: importe de 2025 de la resolución del BORM × 1,015 (subida general de 2026, Real Decreto-ley 14/2025); coincide con la guía de CCOO de enero de 2026. Cada paga adicional (260,96) ya incluye el factor del complemento específico singular (236,29 + 24,67, guía de CCOO)."
           },
           "otros_anuales": [
             {
@@ -2344,6 +2372,15 @@
               "fuente": "mu_borm_2025",
               "donde": "anexo XI 4.º (516,33 + 236.69 en 2025) × 1,015",
               "comprobacion": "calculo"
+            },
+            {
+              "concepto": "Componente singular por acción tutorial de quien no ocupa otro puesto singular (64,21 €/mes, 12 pagas)",
+              "importe": 770.52,
+              "tipo": "recurrente",
+              "fuente": "mu_borm_2025",
+              "donde": "anexo XI 2.2, «puestos de trabajo ejercidos por profesores que no desempeñen otro puesto docente singular (acción tutorial)» (63,26 en 2025) × 1,015",
+              "comprobacion": "calculo",
+              "nota": "Lo cobra todo docente sin otro puesto singular; la guía de CCOO lo incluye en las «retribuciones comunes» de todos los cuerpos (64,21)."
             }
           ],
           "horas_lectivas": {
@@ -2424,7 +2461,7 @@
             "fuente": "mu_borm_2025",
             "donde": "anexo XI 4.º, «paga adicional del complemento específico», 0 sexenios (257,10 en 2025) × 1,015",
             "comprobacion": "calculo",
-            "nota": "No se ha encontrado la tabla docente oficial de 2026: importe de 2025 de la resolución del BORM × 1,015 (subida general de 2026, Real Decreto-ley 14/2025); coincide con la guía de CCOO de enero de 2026."
+            "nota": "No se ha encontrado la tabla docente oficial de 2026: importe de 2025 de la resolución del BORM × 1,015 (subida general de 2026, Real Decreto-ley 14/2025); coincide con la guía de CCOO de enero de 2026. Cada paga adicional (260,96) ya incluye el factor del complemento específico singular (236,29 + 24,67, guía de CCOO)."
           },
           "otros_anuales": [
             {
@@ -2442,6 +2479,15 @@
               "fuente": "mu_borm_2025",
               "donde": "anexo XI 4.º (516,33 + 291.5 en 2025) × 1,015",
               "comprobacion": "calculo"
+            },
+            {
+              "concepto": "Componente singular por acción tutorial de quien no ocupa otro puesto singular (64,21 €/mes, 12 pagas)",
+              "importe": 770.52,
+              "tipo": "recurrente",
+              "fuente": "mu_borm_2025",
+              "donde": "anexo XI 2.2, «puestos de trabajo ejercidos por profesores que no desempeñen otro puesto docente singular (acción tutorial)» (63,26 en 2025) × 1,015",
+              "comprobacion": "calculo",
+              "nota": "Lo cobra todo docente sin otro puesto singular; la guía de CCOO lo incluye en las «retribuciones comunes» de todos los cuerpos (64,21)."
             }
           ],
           "horas_lectivas": {
@@ -2495,12 +2541,28 @@
       "avisos": [
         "Murcia paga buena parte del sueldo docente como «productividad» (mensual y semestral) y no como complemento específico, que es más bajo que en otras comunidades.",
         "Importes de 2026 calculados: los de 2025 publicados en el BORM más la subida general del 1,5 % (no se ha encontrado la tabla docente de 2026); coinciden con la guía de CCOO de enero de 2026.",
-        "No se incluye el tramo I de la carrera profesional horizontal (88,93 € al mes para maestros y 158,23 € para secundaria en 2025): depende de la progresión de cada docente."
+        "No se incluye el tramo I de la carrera profesional horizontal (88,93 € al mes para maestros y 158,23 € para secundaria en 2025): depende de la progresión de cada docente.",
+        "Incluye el componente singular por acción tutorial (64,21 € al mes) que cobra todo docente que no ocupa otro puesto singular; no es el complemento de tutor."
       ],
-      "cautela_web": "Importes de 2026 calculados: los de 2025 publicados en el BORM más la subida general del 1,5 % (coinciden con la guía de CCOO de enero de 2026). Parte del sueldo se paga como «productividad».",
+      "cautela_web": "Importes de 2026 calculados: los de 2025 publicados en el BORM más la subida general del 1,5 % (coinciden con la guía de CCOO de enero de 2026). Parte del sueldo se paga como «productividad». Incluye el componente por acción tutorial (64,21 € al mes) que cobra todo docente sin otro puesto singular.",
       "avisos_15": [
         "Incluye el tramo I de la carrera profesional: hoy se reconoce a todo el que cumple el primer sexenio, sin evaluación."
-      ]
+      ],
+      "totales_mensuales_publicados": {
+        "maestros": {
+          "valor": 2662.96,
+          "mas": 502.12,
+          "fuente": "mu_guia_ccoo",
+          "donde": "«Retribuciones comunes», total mes sin antigüedad (sin la carrera): «mas» = productividad fija + componente singular por acción tutorial"
+        },
+        "secundaria": {
+          "valor": 2994.16,
+          "mas": 508.57,
+          "fuente": "mu_guia_ccoo",
+          "donde": "«Retribuciones comunes», total mes sin antigüedad (sin la carrera): «mas» = productividad fija + componente singular por acción tutorial"
+        }
+      },
+      "cautela_web_15": "Incluye el tramo I de la carrera profesional, que hoy se reconoce sin evaluación a todo el que cumple el primer sexenio."
     },
     "15": {
       "nombre": "Navarra",

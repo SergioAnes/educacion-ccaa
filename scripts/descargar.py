@@ -164,6 +164,7 @@ FUENTES: dict[str, list[tuple[str, str]]] = {
         ("ib-boib-166-2025-carrera-segundo-tramo.pdf", "https://intranet.caib.es/eboibfront/pdf/es/2025/166/1208703"),
         ("na-dfl-251-1993-estatuto-consolidado.pdf", "https://www.boe.es/buscar/pdf/1993/BON-n-1993-90004-consolidado.pdf"),
         ("cl-carrera-docente-preguntas-frecuentes.pdf", "https://www.educa.jcyl.es/profesorado/es/gestion-personal-docente/carrera-profesional-horizontal-personal-docente/categoria-profesional-i-proceso-ordinario-acceso-carr-dec9a.ficheros/1825877-Preguntas%20frecuentes.pdf"),
+        ("ga-orde-17-07-2007-funcion-titorial.html", "https://www.xunta.gal/dog/Publicados/2007/20070724/Anuncio28D46_gl.html"),
         ("cl-proyecto-decreto-carrera-docente-2025.pdf", "https://transparencia.jcyl.es/huellanormativa/EDU/2025-284%20Decreto%20carrera%20profesional%20docentes/7.%20Proyecto%20Decreto%20carrera%20profesional%20horizontal%20docente%20(22-09-2025).pdf"),
     ],
     # INEE: tablas del informe español de PISA 2025 (Excel dentro de un RAR)
