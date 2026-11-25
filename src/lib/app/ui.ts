@@ -221,15 +221,25 @@ export function iniciar(DATA: DatosApp): void {
     }
     const cols = oscuro() ? [...Q_AZUL].reverse() : Q_AZUL;
     const asc = o.slice().reverse();
-    const k = (id) => Math.min(4, Math.floor(asc.indexOf(id) * 5 / asc.length));
-    const et = cols.map((_, c) => {
-      const mi = asc.filter((id) => k(id) === c).map((id) => vals[id]);
-      const dd = ind.unidad === "eur" ? 0 : 1;
-      return `<b class="num">${nf(dd).format(Math.min(...mi))}–${nf(dd).format(Math.max(...mi))}</b>${c === 0 ? "las que menos" : c === 4 ? "las que más" : ""}`;
-    });
+    const dd = ind.unidad === "eur" ? 0 : 1;
+    const pie = (txt) => `<span class="pie">${txt} ${unidadTxt(ind)}.${ind.encuesta ? " † = cifra que hay que tomar con precaución." : ""}</span>`;
+    const distintos = [...new Set(asc.map((id) => vals[id]))];
+    if (distintos.length <= 5) {
+      // Pocas cifras distintas (p. ej., horas de clase): un tono por cifra, para que la misma cifra tenga el mismo color
+      const pos = (v) => distintos.length === 1 ? 2 : Math.round(distintos.indexOf(v) * 4 / (distintos.length - 1));
+      return {
+        color: (id) => caja(cols[pos(vals[id])]),
+        leyenda: `<div class="clases">${distintos.map((v) => `<span class="clase"><i style="background:${cols[pos(v)]}"></i><b class="num">${fmt(v, ind.unidad)}</b>(${asc.filter((id) => vals[id] === v).length})</span>`).join("")}</div>` +
+          pie("Cada tono es una cifra; entre paréntesis, cuántas comunidades la tienen."),
+      };
+    }
+    // Cinco grupos de unas 3 o 4 comunidades; las empatadas van siempre en el mismo grupo
+    const k = (id) => Math.min(4, Math.floor(asc.findIndex((x) => vals[x] === vals[id]) * 5 / asc.length));
+    const grupos = cols.map((c, i) => ({ c, mi: asc.filter((id) => k(id) === i).map((id) => vals[id]), i })).filter((g) => g.mi.length);
     return {
       color: (id) => caja(cols[k(id)]),
-      leyenda: `<div class="clases">${cols.map((c, i) => `<span class="clase"><i style="background:${c}"></i>${et[i]}</span>`).join("")}</div><span class="pie">Cada tono agrupa 3 o 4 comunidades, de menos a más. ${unidadTxt(ind)}.${ind.encuesta ? " † = cifra que hay que tomar con precaución." : ""}</span>`,
+      leyenda: `<div class="clases">${grupos.map((g, j) => `<span class="clase"><i style="background:${g.c}"></i><b class="num">${nf(dd).format(Math.min(...g.mi))}–${nf(dd).format(Math.max(...g.mi))}</b>${j === 0 ? "las que menos" : j === grupos.length - 1 ? "las que más" : ""}</span>`).join("")}</div>` +
+        pie("Cada tono agrupa unas 3 o 4 comunidades, de menos a más; las que tienen la misma cifra van juntas."),
     };
   }
 
@@ -398,8 +408,8 @@ export function iniciar(DATA: DatosApp): void {
   }
   function selector(cont) {
     const tarjetas = indsTema().map((i) => {
-      // La tarjeta elegida enseña lo que se ha elegido abajo (etapa, titularidad…); las demás, su primera variante
-      const k0 = i.id === S.ind ? varDe(i) : i.variantes[0].clave, a = ultimoCon(i, k0);
+      // Cada tarjeta enseña lo elegido abajo (etapa, cuerpo, titularidad…) si el indicador lo tiene; si no, su primera opción
+      const k0 = varDe(i), a = ultimoCon(i, k0);
       const tema = S.tema === "resumen" ? `${esc(NOMBRE_TEMA[i.grupo])} · ` : "";
       const cab = `<span class="kpi-n">${esc(i.corto)}${sufijo(i, k0) ? ` · ${esc(sufijo(i, k0))}` : ""} ${chipFiab(i.fiabilidad, "span")}</span>`;
       if (i.sin_espana) {
@@ -449,7 +459,7 @@ export function iniciar(DATA: DatosApp): void {
     // En PISA, el mapa y los gráficos usan la última edición con comunidades
     if (ind.intervalo && !ordenados(valores(ind, a)).length) a = ultimo(ind);
     selector($("#sel-datos"));
-    $("#p-intro").textContent = `Datos oficiales del Ministerio de Educación, el INEE, el INE y Eurostat. Cada cifra lleva su año o curso, su fuente y su fiabilidad. ${DATA.inds.length} indicadores en ${DATA.temas.length} temas; elige uno en las tarjetas.`;
+    $("#p-intro").textContent = `Datos oficiales del Ministerio de Educación, el INEE, el INE, Eurostat y las normas de cada comunidad. Cada cifra lleva su año o curso, su fuente y su fiabilidad. ${DATA.inds.length} indicadores en ${DATA.temas.length} temas; elige uno en las tarjetas.`;
     const vals = valores(ind, a), o = ordenados(vals);
     $("#p-titulo").textContent = o.length
       ? ind.intervalo ? `${ind.nombre}${varFrase(ind)}, ${etq(ind, a)}: cada comunidad ${ind.referencia_cero ? "con su margen de error" : "frente a España"}` : `${ind.nombre}${varFrase(ind)} en ${etq(ind, a)}: la cifra más alta, ${NOMBRE[o[0]]}; la más baja, ${NOMBRE[o.at(-1)]}`
@@ -523,7 +533,7 @@ export function iniciar(DATA: DatosApp): void {
       $("#e-titulo").textContent = ind.intervalo ? `${tit}, ${etq(ind, a)}: cada comunidad con su intervalo al 95 %` : `${tit}, ${etq(ind, a)}: de más a menos`;
       $("#e-sub").textContent = ind.intervalo
         ? `Cada punto es la puntuación; la línea, su intervalo al 95 %. Si la línea cruza la de España, no se distingue de España. Las líneas verticales son España${refsTxt ? ` y la ${refsTxt}` : ""}. No hay puestos del 1 al 17.`
-        : `La línea discontinua es España${refsTxt ? `; la punteada, ${refsTxt}` : ""}.${ind.encuesta ? " No damos puestos del 1 al 17: es una muestra y muchas diferencias son pequeñas." : ""} Pulsa una comunidad para destacarla.`;
+        : `${ind.sin_espana ? "No hay cifra para España." : `La línea discontinua es España${refsTxt ? `; la punteada, ${refsTxt}` : ""}.`}${ind.encuesta ? " No damos puestos del 1 al 17: es una muestra y muchas diferencias son pequeñas." : ""} Pulsa una comunidad para destacarla.`;
       (ind.intervalo ? rankingIC : ranking)($("#e-chart"), ind, a);
       botonPNG($("#e-desc"), "Descargar gráfico (PNG)", () => descargarPNG($("#e-chart svg"), `ranking_${ind.id}_${etq(ind, a)}`, $("#e-titulo").textContent, null, ind));
     } else if (S.vistaE === "reparto") {
@@ -953,7 +963,7 @@ export function iniciar(DATA: DatosApp): void {
     const smin = Math.min(...todos), smax = Math.max(...todos), sw = 120, sh = 34, ki = indice(ind, a);
     const sx = (i) => 2 + (i / Math.max(1, ind.periodos.length - 1)) * (sw - 8), sy = (z) => 4 + (1 - (z - smin) / (smax - smin || 1)) * (sh - 8);
     const path = (s2) => { let ant = -1; return s2.map((z, i) => { if (z == null) return ""; const c = ant < 0 || (ind.periodos.length > 6 && ant !== i - 1) ? "M" : "L"; ant = i; return `${c}${sx(i).toFixed(1)},${sy(z).toFixed(1)}`; }).join(""); };
-    const spark = `<svg viewBox="0 0 ${sw} ${sh}" aria-label="Evolución ${etq(ind, primero(ind))} a ${etq(ind, a)}"><path d="${path(esp)}" fill="none" stroke="${fg}" stroke-width="1.1" stroke-dasharray="3 2"/>${otra ? `<path d="${path(otra)}" fill="none" stroke="${css("--s2")}" stroke-width="1.5"/>` : ""}<path d="${path(serie)}" fill="none" stroke="${acc}" stroke-width="1.8"/>${v != null && !esNoComp ? `<circle cx="${sx(ki)}" cy="${sy(v)}" r="3.5" fill="${acc}" stroke="${surf}" stroke-width="1.5"/>` : ""}</svg><div class="pos">${etq(ind, primero(ind))} a ${etq(ind, a)} · discontinua: España</div>`;
+    const spark = `<svg viewBox="0 0 ${sw} ${sh}" aria-label="Evolución ${etq(ind, primero(ind))} a ${etq(ind, a)}"><path d="${path(esp)}" fill="none" stroke="${fg}" stroke-width="1.1" stroke-dasharray="3 2"/>${otra ? `<path d="${path(otra)}" fill="none" stroke="${css("--s2")}" stroke-width="1.5"/>` : ""}<path d="${path(serie)}" fill="none" stroke="${acc}" stroke-width="1.8"/>${v != null && !esNoComp ? `<circle cx="${sx(ki)}" cy="${sy(v)}" r="3.5" fill="${acc}" stroke="${surf}" stroke-width="1.5"/>` : ""}</svg><div class="pos">${ind.periodos.length > 1 ? `${etq(ind, primero(ind))} a ${etq(ind, a)}` : `Solo ${etq(ind, a)}`}${ind.sin_espana ? "" : " · discontinua: España"}</div>`;
     const nn = notasDe(ind, id, etq(ind, a), k);
     const c = cambioDe(ind, id, k);
     const er = errorT(ind, id, a, k);

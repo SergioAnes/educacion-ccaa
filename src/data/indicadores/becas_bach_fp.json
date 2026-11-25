@@ -1,7 +1,7 @@
 {
   "id": "becas_bach_fp",
   "grupo": "financiacion",
-  "resumen": true,
+  "resumen": false,
   "nombre": "Alumnado de Bachillerato y FP con beca",
   "corto": "Becas en Bachillerato y FP",
   "que": "del alumnado de Bachillerato y FP",

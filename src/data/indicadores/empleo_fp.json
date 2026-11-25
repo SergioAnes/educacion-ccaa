@@ -1,7 +1,7 @@
 {
   "id": "empleo_fp",
   "grupo": "trayectorias",
-  "resumen": true,
+  "resumen": false,
   "nombre": "Titulados de FP con empleo",
   "corto": "Empleo tras la FP",
   "que": "de los titulados",

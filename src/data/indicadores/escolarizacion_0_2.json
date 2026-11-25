@@ -1,7 +1,7 @@
 {
   "id": "escolarizacion_0_2",
   "grupo": "centros",
-  "resumen": true,
+  "resumen": false,
   "nombre": "Escolarización de 0 a 2 años",
   "corto": "Escolarización 0-2 años",
   "que": "de los niños de 0 a 2 años",

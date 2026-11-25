@@ -1,7 +1,7 @@
 {
   "id": "horas_lectivas",
   "grupo": "profesorado",
-  "resumen": true,
+  "resumen": false,
   "nombre": "Horas de clase a la semana del profesorado",
   "corto": "Horas de clase a la semana",
   "que": "de clase a la semana",

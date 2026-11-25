@@ -1,7 +1,7 @@
 {
   "id": "alumnos_profesor",
   "grupo": "profesorado",
-  "resumen": true,
+  "resumen": false,
   "nombre": "Alumnos por profesor",
   "corto": "Alumnos por profesor",
   "que": "por profesor",

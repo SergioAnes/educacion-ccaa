@@ -1,7 +1,7 @@
 {
   "id": "repeticion_eso",
   "grupo": "trayectorias",
-  "resumen": true,
+  "resumen": false,
   "nombre": "Repetición en ESO",
   "corto": "Repetidores en ESO",
   "que": "del alumnado de ESO",

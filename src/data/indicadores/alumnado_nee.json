@@ -1,7 +1,7 @@
 {
   "id": "alumnado_nee",
   "grupo": "equidad",
-  "resumen": true,
+  "resumen": false,
   "nombre": "Alumnado con necesidades educativas especiales",
   "corto": "Necesidades educativas especiales",
   "que": "del alumnado",
