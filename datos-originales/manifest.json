@@ -616,6 +616,62 @@
     "sha256": "42731b8842dd2d0056e92d8f41b29ffe5db4bdf03cadfafac13568dfac1c53eb"
   },
   {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/CVE-DOGC-A-26111079-2026.pdf",
+    "url": "https://dogc.gencat.cat/ca/sumari-del-dogc/?numDOGC=9651 (DOGC núm. 9651, 23/4/2026, CVE-DOGC-A-26111079-2026; descargado a mano: el portal rechaza las descargas automáticas)",
+    "fecha_captura": "2026-11-25",
+    "bytes": 787946,
+    "sha256": "78b743a4e9a641e51a7c844c7af2ae785f22257028ff723d4b6b48b613c2458e"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/ct-doigc-personal-docent.pdf",
+    "url": "https://documents.espai.educacio.gencat.cat/IPCNormativa/DOIGC/ORG_Personal_docent.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 373882,
+    "sha256": "4884f90a76d18c31408a101abd4a2ee585bf8c8e4218f9704761bc762f06682d"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/ct-gov-205-2026.pdf",
+    "url": "https://portaldogc.gencat.cat/utilsEADOP/PDF/9719/2164754.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 792386,
+    "sha256": "768197a243ce4540f24d3ab299ac95b65e640e4981f0b525617cb7cc84c3bece"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/ct-projecte-llei-pressupostos-2026.pdf",
+    "url": "https://www.parlament.cat/document/bopc/442982007.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 3390999,
+    "sha256": "687d2961ca7a8f3f795aef2b390a9c3eeb32e044036bc47e1690bf3f7b47e42d"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/ct-taules-docents-2026.pdf",
+    "url": "https://web.gencat.cat/content/dam/webgencat/documents/la-generalitat/govern-obert/publicitat-activa/servidors-p%C3%BAblics/retribucions-2026/retribucions-personal-docent-no-universitari.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 199339,
+    "sha256": "61d0c871320bc061909d501a4160587f6e6df26cd66c5f93f05310212f5a5447"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/md-instrucciones-inicio-curso-2026-27.pdf",
+    "url": "https://www.comunidad.madrid/docs/2026-07/instrucciones-inicio-de-curso-2026-2027.pdf?VersionId=_c5Q9Tfeyrrw4858fl2O5svnHcAVLidV",
+    "fecha_captura": "2026-11-25",
+    "bytes": 818431,
+    "sha256": "bc6bb45d7fd1d30788192b9a1acbb8ed462ff6fd528499bca10a6254855d34ac"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/md-orden-nominas-2026.pdf",
+    "url": "https://www.bocm.es/boletin/CM_Orden_BOCM/2026/02/09/BOCM-20260209-6.PDF",
+    "fecha_captura": "2026-11-25",
+    "bytes": 1159304,
+    "sha256": "debbfbd9b80d60738362476d966e2a354e61bee895164ffe0a007d57c4699851"
+  },
+  {
     "fuente": "unidades",
     "fichero": "unidades/2026-11-24/alumnado_3_01.px",
     "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/series/AlumnadoGen/l0/alumnado_3_01.px",

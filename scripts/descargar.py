@@ -99,6 +99,16 @@ FUENTES: dict[str, list[tuple[str, str]]] = {
         ("metodo-2025.pdf", "https://www.educacionfpydeportes.gob.es/dam/jcr:1ae997fc-346b-4b39-800c-3d8bde091367/metodo-2025.pdf"),
         ("informe-2025.pdf", "https://www.educacionfpydeportes.gob.es/dam/jcr:21b3b21d-fe39-44ad-848e-e1af5aee3061/informe-2025.pdf"),
     ],
+    # Sueldos del profesorado (tablas y normas de cada comunidad; se completan a mano en src/data/sueldos/normas.json).
+    # El Acuerdo GOV/88/2026 (DOGC 9651) se descargó a mano: el portal del DOGC rechaza las descargas automáticas.
+    "sueldos": [
+        ("md-orden-nominas-2026.pdf", "https://www.bocm.es/boletin/CM_Orden_BOCM/2026/02/09/BOCM-20260209-6.PDF"),
+        ("md-instrucciones-inicio-curso-2026-27.pdf", "https://www.comunidad.madrid/docs/2026-07/instrucciones-inicio-de-curso-2026-2027.pdf?VersionId=_c5Q9Tfeyrrw4858fl2O5svnHcAVLidV"),
+        ("ct-taules-docents-2026.pdf", "https://web.gencat.cat/content/dam/webgencat/documents/la-generalitat/govern-obert/publicitat-activa/servidors-p%C3%BAblics/retribucions-2026/retribucions-personal-docent-no-universitari.pdf"),
+        ("ct-gov-205-2026.pdf", "https://portaldogc.gencat.cat/utilsEADOP/PDF/9719/2164754.pdf"),
+        ("ct-projecte-llei-pressupostos-2026.pdf", "https://www.parlament.cat/document/bopc/442982007.pdf"),
+        ("ct-doigc-personal-docent.pdf", "https://documents.espai.educacio.gencat.cat/IPCNormativa/DOIGC/ORG_Personal_docent.pdf"),
+    ],
     # INEE: tablas del informe español de PISA 2025 (Excel dentro de un RAR)
     "pisa": [("tablas-informe-pisa-2025.rar", "https://www.educacionfpydeportes.gob.es/dam/jcr:4f7056b5-02d7-4e6d-a454-2caa3e04893f/tablas-informe-pisa-2025.rar")],
 }
@@ -121,7 +131,8 @@ def leer_manifest() -> list[dict]:
 
 def descargar(url: str) -> bytes:
     # Sin datos personales en la petición: solo un nombre genérico de cliente.
-    pet = urllib.request.Request(url, headers={"User-Agent": "educacion-ccaa/1.0 (datos abiertos)", "Accept": "application/json, */*"})
+    # Algunas webs autonómicas rechazan un User-Agent que no parezca de navegador; sigue sin datos personales.
+    pet = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (educacion-ccaa; datos abiertos)", "Accept": "application/json, */*"})
     with urllib.request.urlopen(pet, timeout=120) as r:
         if r.status != 200:
             raise RuntimeError(f"{url}: HTTP {r.status}")
@@ -141,6 +152,10 @@ def main(fuentes: list[str]) -> None:
                 print(f"{fuente}/{nombre}: ERROR {e}")
                 continue
             # Si una tabla no existe, el servidor redirige a una página web con código 200: que no se guarde como .px
+            if nombre.endswith(".pdf") and not contenido.startswith(b"%PDF"):
+                fallos.append(f"{fuente}/{nombre}: no es un PDF (¿página de error?)")
+                print(f"{fuente}/{nombre}: ERROR no es un PDF")
+                continue
             if nombre.endswith(".px") and not contenido.lstrip().startswith(b"AXIS-VERSION"):
                 fallos.append(f"{fuente}/{nombre}: no es un PC-Axis (¿tabla inexistente?)")
                 print(f"{fuente}/{nombre}: ERROR no es un PC-Axis")

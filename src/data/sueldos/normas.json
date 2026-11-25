@@ -1,0 +1,280 @@
+{
+  "_leeme": "Escrito a mano. Cada importe lleva la fuente (id de «fuentes») y dónde está en ella. Lo lee scripts/calcular_sueldos.py, que calcula los sueldos anuales y comprueba la coherencia. No se usa todavía en la web: se publicará cuando estén analizadas todas (o casi todas) las comunidades.",
+  "anio": 2026,
+  "casos": {
+    "maestros": "Cuerpo de maestros (Infantil y Primaria), funcionario que empieza: sin trienios, sexenios, cargos, tutorías ni complementos de zona.",
+    "secundaria": "Cuerpo de profesores de enseñanza secundaria (ESO, Bachillerato y FP), funcionario que empieza: sin trienios, sexenios, cargos, tutorías ni complementos de zona."
+  },
+  "estatal": {
+    "_nota": "Retribuciones básicas y complemento de destino: iguales en toda España (Ley de Presupuestos Generales del Estado). Se toman de la orden de Madrid y se comprueba que cada comunidad trae las mismas.",
+    "sueldo_mensual": {
+      "A1": 1387.24,
+      "A2": 1199.52
+    },
+    "sueldo_paga_extra": {
+      "A1": 856.05,
+      "A2": 874.83
+    },
+    "destino_mensual": {
+      "21": 592.11,
+      "24": 729.14
+    },
+    "fuente": "md_orden_nominas",
+    "donde": "Anexo I, apartados 1 (retribuciones básicas) y 2 (complemento de destino)"
+  },
+  "fuentes": {
+    "md_orden_nominas": {
+      "titulo": "Orden de 3 de febrero de 2026, de la Consejería de Economía, Hacienda y Empleo, de instrucciones para la gestión de las nóminas del personal de la Comunidad de Madrid para 2026 (BOCM n.º 33, 9/2/2026)",
+      "url": "https://www.bocm.es/boletin/CM_Orden_BOCM/2026/02/09/BOCM-20260209-6.PDF",
+      "original": "sueldos/2026-11-25/md-orden-nominas-2026.pdf"
+    },
+    "md_instrucciones": {
+      "titulo": "Instrucciones de la Viceconsejería de Política y Organización Educativa sobre comienzo del curso escolar 2026-2027 en centros docentes públicos no universitarios de la Comunidad de Madrid",
+      "url": "https://www.comunidad.madrid/docs/2026-07/instrucciones-inicio-de-curso-2026-2027.pdf",
+      "original": "sueldos/2026-11-25/md-instrucciones-inicio-curso-2026-27.pdf"
+    },
+    "ct_taules": {
+      "titulo": "Generalitat de Catalunya: retribucions del personal docent no universitari 2026 (portal de transparència)",
+      "url": "https://web.gencat.cat/content/dam/webgencat/documents/la-generalitat/govern-obert/publicitat-activa/servidors-p%C3%BAblics/retribucions-2026/retribucions-personal-docent-no-universitari.pdf",
+      "original": "sueldos/2026-11-25/ct-taules-docents-2026.pdf",
+      "nota": "El PDF descoloca las etiquetas de las filas; cada fila se identifica porque sueldo + destino + específico = total mensual y por el sueldo de su grupo."
+    },
+    "ct_gov_88": {
+      "titulo": "Acord GOV/88/2026, de 21 d'abril, d'increment del complement específic del personal funcionari docent no universitari per a l'any 2026 (DOGC n.º 9651, 23/4/2026, CVE-DOGC-A-26111079-2026)",
+      "url": "https://dogc.gencat.cat/ca/sumari-del-dogc/?numDOGC=9651",
+      "original": "sueldos/2026-11-25/CVE-DOGC-A-26111079-2026.pdf"
+    },
+    "ct_gov_205": {
+      "titulo": "Acord GOV/205/2026, de 28 de juliol, pel qual es crea el complement de millora del Servei d'Educació de Catalunya (DOGC n.º 9719, 30/7/2026)",
+      "url": "https://portaldogc.gencat.cat/utilsEADOP/PDF/9719/2164754.pdf",
+      "original": "sueldos/2026-11-25/ct-gov-205-2026.pdf"
+    },
+    "ct_pressupostos": {
+      "titulo": "Projecte de llei de pressupostos de la Generalitat de Catalunya per al 2026 (BOPC n.º 427, 27/2/2026), article 26",
+      "url": "https://www.parlament.cat/document/bopc/442982007.pdf",
+      "original": "sueldos/2026-11-25/ct-projecte-llei-pressupostos-2026.pdf",
+      "nota": "Es el proyecto; falta cotejar el artículo con la ley aprobada y publicada en el DOGC."
+    },
+    "ct_doigc": {
+      "titulo": "Departament d'Educació i FP: documents per a l'organització i la gestió dels centres (DOIGC), «Personal docent», actualitzat el 10/6/2026",
+      "url": "https://documents.espai.educacio.gencat.cat/IPCNormativa/DOIGC/ORG_Personal_docent.pdf",
+      "original": "sueldos/2026-11-25/ct-doigc-personal-docent.pdf"
+    },
+    "md_ley_presupuestos": {
+      "titulo": "Ley 6/2025, de 23 de diciembre, de Presupuestos Generales de la Comunidad de Madrid para 2026 (BOE-A-2026-3218), arts. 21 y 23",
+      "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-3218"
+    },
+    "anpe_madrid_guia": {
+      "titulo": "ANPE-Madrid: Guía del profesorado 2025-2026 (sindicato; no es fuente oficial)",
+      "url": "https://documentos.anpemadrid.es/guia_profesorado.pdf",
+      "nota": "Dice que las pagas adicionales de los docentes son el 100 % del complemento específico más formación y componentes singulares."
+    }
+  },
+  "comunidades": {
+    "13": {
+      "nombre": "Madrid",
+      "estado": "analizada",
+      "cuerpos": {
+        "maestros": {
+          "grupo": "A2",
+          "sueldo_mensual": {
+            "valor": 1199.52,
+            "fuente": "md_orden_nominas",
+            "donde": "Anexo I.1"
+          },
+          "sueldo_paga_extra": {
+            "valor": 874.83,
+            "fuente": "md_orden_nominas",
+            "donde": "Anexo I.1"
+          },
+          "nivel_destino": "21",
+          "destino_mensual": {
+            "valor": 592.11,
+            "fuente": "md_orden_nominas",
+            "donde": "Anexo I.2 y Anexo II.1 (nivel 21)"
+          },
+          "especifico_mensual": {
+            "valor": 781.84,
+            "fuente": "md_orden_nominas",
+            "donde": "Anexo II.1, componente general del complemento específico, Maestros"
+          },
+          "especifico_pagas_adicionales": {
+            "valor": 2,
+            "fuente": "anpe_madrid_guia",
+            "donde": "apartado de retribuciones (pagas adicionales)",
+            "comprobacion": "supuesto",
+            "nota": "Ninguna norma madrileña lo dice expresamente para docentes: la Orden de nóminas (art. 5.4) y la Ley de Presupuestos 2026 (art. 21.1.d) lo establecen para el régimen general de la Ley 1/1986, y el art. 23 dice que los demás funcionarios mantienen su estructura retributiva (la estatal reparte el específico en 14 pagas)."
+          },
+          "otros_anuales": [],
+          "horas_lectivas": {
+            "valor": 25,
+            "fuente": "md_instrucciones",
+            "donde": "4.5.1",
+            "definicion": "25 lectivas + 4 complementarias; cuentan como lectivas los recreos vigilados (4.5.2)"
+          }
+        },
+        "secundaria": {
+          "grupo": "A1",
+          "sueldo_mensual": {
+            "valor": 1387.24,
+            "fuente": "md_orden_nominas",
+            "donde": "Anexo I.1"
+          },
+          "sueldo_paga_extra": {
+            "valor": 856.05,
+            "fuente": "md_orden_nominas",
+            "donde": "Anexo I.1"
+          },
+          "nivel_destino": "24",
+          "destino_mensual": {
+            "valor": 729.14,
+            "fuente": "md_orden_nominas",
+            "donde": "Anexo I.2 y Anexo II.1 (nivel 24)"
+          },
+          "especifico_mensual": {
+            "valor": 798.41,
+            "fuente": "md_orden_nominas",
+            "donde": "Anexo II.1, componente general del complemento específico, Profesores de Enseñanza Secundaria"
+          },
+          "especifico_pagas_adicionales": {
+            "valor": 2,
+            "fuente": "anpe_madrid_guia",
+            "donde": "apartado de retribuciones (pagas adicionales)",
+            "comprobacion": "supuesto",
+            "nota": "Ninguna norma madrileña lo dice expresamente para docentes: la Orden de nóminas (art. 5.4) y la Ley de Presupuestos 2026 (art. 21.1.d) lo establecen para el régimen general de la Ley 1/1986, y el art. 23 dice que los demás funcionarios mantienen su estructura retributiva (la estatal reparte el específico en 14 pagas)."
+          },
+          "otros_anuales": [],
+          "horas_lectivas": {
+            "valor": 19,
+            "fuente": "md_instrucciones",
+            "donde": "6.1.3.1 (Acuerdo de 23/4/2025)",
+            "definicion": "19 periodos lectivos de al menos 55 minutos para quien no es tutor, de 30 periodos en total; los tutores de ESO y Bachillerato, además 1 hora de convivencia"
+          }
+        }
+      },
+      "avisos": [
+        "La Comunidad de Madrid ha anunciado una carrera profesional horizontal con complementos de hasta 350 € (maestros) y 400 € (profesores) al mes desde 2027; es una propuesta y no está incluida."
+      ]
+    },
+    "09": {
+      "nombre": "Cataluña",
+      "estado": "analizada",
+      "cuerpos": {
+        "maestros": {
+          "grupo": "A2",
+          "sueldo_mensual": {
+            "valor": 1199.52,
+            "fuente": "ct_taules",
+            "donde": "pág. 1, fila del cos de mestres (total 2.496,58)"
+          },
+          "sueldo_paga_extra": {
+            "valor": 874.83,
+            "fuente": "ct_taules",
+            "donde": "pág. 1, «Import sou d'una paga extraordinària»"
+          },
+          "nivel_destino": "21",
+          "destino_mensual": {
+            "valor": 592.11,
+            "fuente": "ct_taules",
+            "donde": "pág. 1, fila del cos de mestres"
+          },
+          "especifico_mensual": {
+            "valor": 704.95,
+            "fuente": "ct_taules",
+            "donde": "pág. 1, fila del cos de mestres"
+          },
+          "especifico_pagas_adicionales": {
+            "valor": 2,
+            "fuente": "ct_pressupostos",
+            "donde": "art. 26.d: «es percep en dotze mensualitats ordinàries i dues d'addicionals els mesos de juny i desembre»",
+            "comprobacion": "norma",
+            "nota": "Leído en el proyecto de ley; falta cotejar con la ley publicada."
+          },
+          "otros_anuales": [
+            {
+              "concepto": "Complemento de mejora del Servei d'Educació (50 €/mes, 14 pagas)",
+              "importe": 700.0,
+              "tipo": "recurrente",
+              "fuente": "ct_gov_205",
+              "donde": "punto 5.a: 50 € mensuales y 700 € anuales, efectos desde el 1/1/2026"
+            },
+            {
+              "concepto": "Subida del 8,5 % del complemento específico de 2026, en un único pago en la nómina de mayo (desde 2027 va en la nómina mensual)",
+              "importe": 839.02,
+              "tipo": "pago_unico_2026",
+              "fuente": "ct_gov_88",
+              "donde": "punto 1"
+            }
+          ],
+          "horas_lectivas": {
+            "valor": 23,
+            "fuente": "ct_doigc",
+            "donde": "1.1",
+            "definicion": "23 horas de «docència» (grupos clase, apoyo, tutorías, sustituciones cortas) + 7 complementarias"
+          }
+        },
+        "secundaria": {
+          "grupo": "A1",
+          "sueldo_mensual": {
+            "valor": 1387.24,
+            "fuente": "ct_taules",
+            "donde": "pág. 1, fila del cos de professorat de secundària (total 2.837,21)"
+          },
+          "sueldo_paga_extra": {
+            "valor": 856.05,
+            "fuente": "ct_taules",
+            "donde": "pág. 1, «Import sou d'una paga extraordinària»"
+          },
+          "nivel_destino": "24",
+          "destino_mensual": {
+            "valor": 729.14,
+            "fuente": "ct_taules",
+            "donde": "pág. 1, fila del cos de professorat de secundària"
+          },
+          "especifico_mensual": {
+            "valor": 720.83,
+            "fuente": "ct_taules",
+            "donde": "pág. 1, fila del cos de professorat de secundària"
+          },
+          "especifico_pagas_adicionales": {
+            "valor": 2,
+            "fuente": "ct_pressupostos",
+            "donde": "art. 26.d",
+            "comprobacion": "norma",
+            "nota": "Leído en el proyecto de ley; falta cotejar con la ley publicada."
+          },
+          "otros_anuales": [
+            {
+              "concepto": "Complemento de mejora del Servei d'Educació (50 €/mes, 14 pagas)",
+              "importe": 700.0,
+              "tipo": "recurrente",
+              "fuente": "ct_gov_205",
+              "donde": "punto 5.a"
+            },
+            {
+              "concepto": "Subida del 8,5 % del complemento específico de 2026, en un único pago en la nómina de mayo (desde 2027 va en la nómina mensual)",
+              "importe": 857.92,
+              "tipo": "pago_unico_2026",
+              "fuente": "ct_gov_88",
+              "donde": "punto 1"
+            }
+          ],
+          "horas_lectivas": {
+            "valor": 18,
+            "fuente": "ct_doigc",
+            "donde": "1.2",
+            "definicion": "18 horas lectivas + 6 complementarias de horario fijo"
+          }
+        }
+      },
+      "totales_mensuales_publicados": {
+        "maestros": 2496.58,
+        "secundaria": 2837.21
+      },
+      "avisos": [
+        "Los acuerdos de 2026 prevén más subidas del complemento específico hasta llegar a un 30 % y que el complemento de mejora suba en 2028 y 2029; no están incluidas.",
+        "Desde 2012 los sexenios («estadis») se cobran a los nueve años en lugar de a los seis; por eso el caso con antigüedad no se calcula todavía."
+      ]
+    }
+  }
+}

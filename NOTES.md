@@ -210,6 +210,76 @@ scripts de Python y se guardan como JSON en `src/data/`. La base es sanidad-ccaa
 - Galicia: 2020-21 provisional; 2021-22 repite 2020-21; desde 2022-23 sin datos de su administración. Solo universidad
   desde 2021-22. Ceuta y Melilla fuera (educación gestionada por el Ministerio).
 
+### Sueldos del profesorado por comunidad (EN CURSO, sin publicar; 25/11/2026)
+- ESTADO: estructura hecha (normas.json + calcular_sueldos.py). Analizadas: Madrid y Cataluña (caso «al empezar»).
+  Plan acordado con el usuario: analizar las demás de una en una (guardando en git), y publicar al final con mapa,
+  horas lectivas y € por hora semanal. Siguiente: Comunitat Valenciana. Pendiente: Andalucía solo tiene tabla 2024.
+- Madrid, pagas adicionales del específico para docentes: SUPUESTO (guía ANPE; ninguna norma madrileña lo dice para
+  docentes: Orden art. 5.4 y Ley 6/2025 art. 21.1.d son del régimen de la Ley 1/1986; art. 23 mantiene la estructura).
+- No hay fuente oficial única por comunidad. OCDE (EAG, DSD_EAG_SAL_STA): solo España (2025, USD PPA; relativo a
+  titulados superiores con 15 años: España 1,03 primaria / 1,15 secundaria; OCDE 0,88/0,90; UE25 0,78/0,81). Sin
+  regiones de España. España no envía sueldos reales (DF_TCH_REL vacío).
+- Método propuesto: tablas oficiales de cada consejería, casos tipo (maestro y profesor de secundaria, inicio y 15 años),
+  bruto anual, fiabilidad B; comprobar que sueldo base, trienio y complemento de destino (estatales) coinciden.
+- Madrid: BOCM 9/2/2026, Orden 3/2/2026 de nóminas, Anexo I (sueldo A1 1.387,24; trienio 53,39; extra 856,05) y Anexo II
+  (específico general: secundaria 798,41, maestros 781,84; formación permanente por periodos 93,28 / 117,70 / 156,82 /
+  214,64 / 63,20). Extras: sueldo + trienios + 1 mes de destino, y 2 pagas adicionales de 1 mes de específico
+  (art. 21.1.d Ley Presupuestos 2026; confirmar que alcanza a docentes).
+  https://www.bocm.es/boletin/CM_Orden_BOCM/2026/02/09/BOCM-20260209-6.PDF
+- Cataluña: tabla docente 2026 del portal de transparencia (solo +1,5 %; el acuerdo de junio de 2026 sube el específico
+  un 30 % hasta 2029 y crea un complemento de mejora: comprobar si ya está aplicado). Secundaria 1.387,24 + 729,14 +
+  720,83 = 2.837,21 €/mes; maestros 1.199,52 + 592,11 + 704,95 = 2.496,58. Estadis (sexenios): 128,88 / 135,54 /
+  153,66 / 166,39 / 145,65. El PDF descoloca filas (reconstruidas por las sumas).
+  https://web.gencat.cat/content/dam/webgencat/documents/la-generalitat/govern-obert/publicitat-activa/servidors-p%C3%BAblics/retribucions-2026/retribucions-personal-docent-no-universitari.pdf
+- Andalucía: la Consejería solo publica la tabla de 2024 («tablas fiscalizadas 10/07/2024»); 2026 exigiría aplicar
+  subidas a mano (2025 +2,5 %, acuerdo 2025 +14,50/16,50 € en específico desde sept. 2025, 2026 +1,5 %).
+  https://www.juntadeandalucia.es/educacion/portales/web/educacion/plantilla-docente-y-retribuciones
+- Cataluña 2026, lo que NO está en la tabla mensual publicada (solo +1,5 %):
+  · Acord GOV/205/2026 (DOGC 9719, 30/7/2026): complemento de millora del Servei d'Educació, 50 €/mes y 700 €/año en
+    2026 (14 pagas), efectos 1/1/2026; 2027 igual; 2028 +50; 2029 +70. https://portaldogc.gencat.cat/utilsEADOP/PDF/9719/2164754.pdf
+  · Acord GOV/88/2026 (21/4/2026, DOGC 23/4/2026; modificado por GOV/287/2026 de 17/11/2026): primer tramo (8,5 % según
+    CCOO) de la subida del 30 % del específico. TEXTO OFICIAL (datos-originales/sueldos/2026-11-25/
+    CVE-DOGC-A-26111079-2026.pdf, descargado a mano por el usuario): +8,50 % = 839,02 €/año maestros y 857,92 €/año
+    secundaria, pago único en la nómina de mayo de 2026. (8,5 % × 14 × específico de la tabla da 0,13 € menos: usar el
+    importe del acuerdo.)
+  · Acord GOV/203/2026: complemento por mayor dedicación lectiva (463,51 €/mes, +5 h, voluntario, especialidades de
+    difícil cobertura): no entra en los casos tipo.
+- Madrid: paga adicional = 100 % del específico + formación + singulares (Orden 3/2/2026 y guía ANPE); extras = sueldo
+  + trienios + destino.
+- Decisión del usuario (25/11/2026): no incluir subidas anunciadas (solo aviso); sí lo acordado y en vigor en 2026;
+  empezar por Madrid y Cataluña; reflejar todo lo que no sea plenamente comparable.
+- Cálculo provisional «al empezar» 2026 (sin trienios, sexenios ni cargos), bruto anual: Madrid maestro 35.379,20,
+  secundaria 39.744,68; Cataluña maestro 35.841,76, secundaria 40.216,48 (incluyen los 700 € del complemento nuevo y el
+  pago único de mayo; NO restarlos: los dos continúan desde 2027, uno igual y otro en la nómina mensual).
+  Supuestos SIN norma que los confirme: específico en las extras de Cataluña; pagas adicionales de Madrid para docentes
+  (solo guía ANPE); filas de la tabla catalana reconstruidas por sumas; en Madrid no se han buscado otras normas de 2026.
+  Checklist por comunidad: todas las normas retributivas del año; extras confirmadas con norma; horas solo oficiales. Supuesto en Cataluña: el específico va en las 2 extras (lo apoyan los 700 €/año = 14 × 50
+  del GOV/205 y el 8,5 % calculado sobre 14 pagas). Madrid: extras = sueldo + destino, más 2 pagas adicionales de
+  específico. Sueldo, extras y destino (niveles 21 y 24) coinciden en las dos. Pendiente: caso 15 años (trienios y
+  sexenios/estadis: importes, si entran en extras), horas lectivas, y confirmar con norma catalana lo de las extras.
+- Sexenios: Madrid = «componente por formación permanente» (93,28 + 117,70 + 156,82 + 214,64 + 63,20 €/mes por
+  periodo; exige formación; entra en las 2 pagas adicionales, no en las extras). Cataluña = «estadis» (tabla: 128,88 /
+  135,54 / 153,66 / 166,39 / 145,65), PERO desde 2012 se cobran a los 9 años en vez de 6 («retallada dels sexennis»);
+  el acuerdo de 2026 prevé compensar la deuda (pagos desde 2027, según sindicatos; 112,78 y 118,61 €/mes por estadi
+  según secundaria.info). Situación vigente sin fuente oficial: el caso «15 años» en Cataluña NO es fiable todavía.
+- Horas lectivas 2026-27 (OFICIAL): dependen del cuerpo/centro, no del curso (Infantil = Primaria; ESO = Bachillerato = FP).
+  · Madrid (Instrucciones de inicio de curso 2026-27, Viceconsejería, ref. 59/078633.9/26): maestros 25 lectivas + 4
+    complementarias (4.5.1; cuentan como lectivas los recreos vigilados); secundaria 19 periodos lectivos de ≥ 55 min para
+    no tutores, 30 periodos en total (6.1.3.1, Acuerdo de 23/4/2025); tutores de ESO y Bachillerato, además 1 hora de
+    convivencia. https://www.comunidad.madrid/docs/2026-07/instrucciones-inicio-de-curso-2026-2027.pdf
+  · Cataluña (DOIGC «Personal docent», actualizado 10/6/2026): mestres 23 h de «docència» (incluye apoyo, tutorías y
+    sustituciones cortas) + 7 complementarias; secundaria 18 lectivas + 6 complementarias. Jornada 37,5 h en ambas.
+    https://documents.espai.educacio.gencat.cat/IPCNormativa/DOIGC/ORG_Personal_docent.pdf
+  · No son idénticas las definiciones de «lectiva» (recreos en Madrid; «docència» amplia en Cataluña): € por hora, solo
+    orientativo.
+- Pagas extra Cataluña CONFIRMADO: Projecte de llei de pressupostos 2026 (BOPC 427, 27/2/2026), art. 26: extras = sueldo
+  + trienios + 1 mes de destino; el específico «es percep en dotze mensualitats ordinàries i dues d'addicionals» (falta
+  cotejar con la ley final publicada en el DOGC). https://www.parlament.cat/document/bopc/442982007.pdf
+- Madrid 2026: no hay otra norma retributiva en vigor aparte de la Orden de nóminas; la carrera horizontal es propuesta
+  (efectos 2027). Posible +0,5 % estatal con efectos 1/1/2026 (prensa): afectaría a todas por igual; solo aviso.
+- Madrid anunció carrera profesional horizontal desde el 1/1/2027 (noticia 25/11/2026): los sueldos cambian deprisa,
+  hace falta fijar una fecha de referencia.
+
 ### Descargas: ficheros que cambian sin cambiar
 - El servidor de EDUCAbase pone en cada .px la fecha de descarga (CREATION-DATE) y un SUBJECT-CODE que varía. Sin
   ignorarlos, cada descarga parecía un fichero nuevo: `descargar.py` compara el contenido sin esas dos líneas (el

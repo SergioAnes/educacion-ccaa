@@ -57,6 +57,11 @@ familia de `sanidad-ccaa` y `presupuestos-ccaa` (mismo estilo y mismas reglas). 
   EDUCAbase becas (fuente «becas») para el aviso de la ficha `becas_bach_fp`, que el script exige que cuadre.
 - `extraer_insercion.py`: empleo de los titulados de FP (EDUCAbase inserción laboral, fuente «insercion»), comprobado con
   F1.9 de «Las cifras». El momento («al año» / «a los tres años») va en la dimensión `competencia` de la ficha.
+- Sueldos del profesorado (EN CONSTRUCCIÓN, no está en la web): `src/data/sueldos/normas.json` se escribe A MANO, con
+  fuente y apartado de cada importe; `scripts/calcular_sueldos.py` calcula el bruto anual de los casos tipo (maestro y
+  secundaria que empiezan) y comprueba partes estatales, totales publicados, fuentes y manifest. Los supuestos sin norma
+  explícita se marcan con `"comprobacion": "supuesto"`. Pagos únicos del año aparte de lo recurrente. Se publica cuando
+  estén analizadas (casi) todas las comunidades; estado y pendientes en NOTES.md.
 - `extraer_hitos.py`: leyes desde las fichas XML del BOE → `src/data/hitos.json`.
 - Un salto > 15 % frente al periodo anterior posterior a `revisado_hasta` hace fallar los tests: revisarlo y subir la fecha.
 

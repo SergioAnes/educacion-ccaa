@@ -1,0 +1,116 @@
+{
+  "anio": 2026,
+  "casos": {
+    "maestros": "Cuerpo de maestros (Infantil y Primaria), funcionario que empieza: sin trienios, sexenios, cargos, tutorías ni complementos de zona.",
+    "secundaria": "Cuerpo de profesores de enseñanza secundaria (ESO, Bachillerato y FP), funcionario que empieza: sin trienios, sexenios, cargos, tutorías ni complementos de zona."
+  },
+  "supuestos": [
+    "Madrid, maestros: pagas adicionales del específico (Ninguna norma madrileña lo dice expresamente para docentes: la Orden de nóminas (art. 5.4) y la Ley de Presupuestos 2026 (art. 21.1.d) lo establecen para el régimen general de la Ley 1/1986, y el art. 23 dice que los demás funcionarios mantienen su estructura retributiva (la estatal reparte el específico en 14 pagas).)",
+    "Madrid, secundaria: pagas adicionales del específico (Ninguna norma madrileña lo dice expresamente para docentes: la Orden de nóminas (art. 5.4) y la Ley de Presupuestos 2026 (art. 21.1.d) lo establecen para el régimen general de la Ley 1/1986, y el art. 23 dice que los demás funcionarios mantienen su estructura retributiva (la estatal reparte el específico en 14 pagas).)"
+  ],
+  "comunidades": {
+    "13": {
+      "nombre": "Madrid",
+      "cuerpos": {
+        "maestros": {
+          "bruto_anual": 35379.2,
+          "componentes": {
+            "mensualidades": 30881.64,
+            "pagas_extra": 2933.88,
+            "pagas_adicionales_especifico": 1563.68,
+            "otros_recurrentes": 0,
+            "pagos_unicos_del_anio": 0
+          },
+          "otros": [],
+          "horas_lectivas": 25.0,
+          "horas_definicion": "25 lectivas + 4 complementarias; cuentan como lectivas los recreos vigilados (4.5.2)",
+          "euros_por_hora_semanal": 1415.17
+        },
+        "secundaria": {
+          "bruto_anual": 39744.68,
+          "componentes": {
+            "mensualidades": 34977.48,
+            "pagas_extra": 3170.38,
+            "pagas_adicionales_especifico": 1596.82,
+            "otros_recurrentes": 0,
+            "pagos_unicos_del_anio": 0
+          },
+          "otros": [],
+          "horas_lectivas": 19.0,
+          "horas_definicion": "19 periodos lectivos de al menos 55 minutos para quien no es tutor, de 30 periodos en total; los tutores de ESO y Bachillerato, además 1 hora de convivencia",
+          "euros_por_hora_semanal": 2091.83
+        }
+      },
+      "avisos": [
+        "La Comunidad de Madrid ha anunciado una carrera profesional horizontal con complementos de hasta 350 € (maestros) y 400 € (profesores) al mes desde 2027; es una propuesta y no está incluida."
+      ]
+    },
+    "09": {
+      "nombre": "Cataluña",
+      "cuerpos": {
+        "maestros": {
+          "bruto_anual": 35841.76,
+          "componentes": {
+            "mensualidades": 29958.96,
+            "pagas_extra": 2933.88,
+            "pagas_adicionales_especifico": 1409.9,
+            "otros_recurrentes": 700.0,
+            "pagos_unicos_del_anio": 839.02
+          },
+          "otros": [
+            {
+              "concepto": "Complemento de mejora del Servei d'Educació (50 €/mes, 14 pagas)",
+              "importe": 700.0,
+              "tipo": "recurrente",
+              "fuente": "ct_gov_205",
+              "donde": "punto 5.a: 50 € mensuales y 700 € anuales, efectos desde el 1/1/2026"
+            },
+            {
+              "concepto": "Subida del 8,5 % del complemento específico de 2026, en un único pago en la nómina de mayo (desde 2027 va en la nómina mensual)",
+              "importe": 839.02,
+              "tipo": "pago_unico_2026",
+              "fuente": "ct_gov_88",
+              "donde": "punto 1"
+            }
+          ],
+          "horas_lectivas": 23.0,
+          "horas_definicion": "23 horas de «docència» (grupos clase, apoyo, tutorías, sustituciones cortas) + 7 complementarias",
+          "euros_por_hora_semanal": 1558.34
+        },
+        "secundaria": {
+          "bruto_anual": 40216.48,
+          "componentes": {
+            "mensualidades": 34046.52,
+            "pagas_extra": 3170.38,
+            "pagas_adicionales_especifico": 1441.66,
+            "otros_recurrentes": 700.0,
+            "pagos_unicos_del_anio": 857.92
+          },
+          "otros": [
+            {
+              "concepto": "Complemento de mejora del Servei d'Educació (50 €/mes, 14 pagas)",
+              "importe": 700.0,
+              "tipo": "recurrente",
+              "fuente": "ct_gov_205",
+              "donde": "punto 5.a"
+            },
+            {
+              "concepto": "Subida del 8,5 % del complemento específico de 2026, en un único pago en la nómina de mayo (desde 2027 va en la nómina mensual)",
+              "importe": 857.92,
+              "tipo": "pago_unico_2026",
+              "fuente": "ct_gov_88",
+              "donde": "punto 1"
+            }
+          ],
+          "horas_lectivas": 18.0,
+          "horas_definicion": "18 horas lectivas + 6 complementarias de horario fijo",
+          "euros_por_hora_semanal": 2234.25
+        }
+      },
+      "avisos": [
+        "Los acuerdos de 2026 prevén más subidas del complemento específico hasta llegar a un 30 % y que el complemento de mejora suba en 2028 y 2029; no están incluidas.",
+        "Desde 2012 los sexenios («estadis») se cobran a los nueve años en lugar de a los seis; por eso el caso con antigüedad no se calcula todavía."
+      ]
+    }
+  }
+}
