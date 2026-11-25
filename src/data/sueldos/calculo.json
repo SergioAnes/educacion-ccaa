@@ -2,11 +2,14 @@
   "anio": 2026,
   "casos": {
     "maestros": "Cuerpo de maestros (Infantil y Primaria), funcionario que empieza: sin trienios, sexenios, cargos, tutorías ni complementos de zona.",
-    "secundaria": "Cuerpo de profesores de enseñanza secundaria (ESO, Bachillerato y FP), funcionario que empieza: sin trienios, sexenios, cargos, tutorías ni complementos de zona."
+    "secundaria": "Cuerpo de profesores de enseñanza secundaria (ESO, Bachillerato y FP), funcionario que empieza: sin trienios, sexenios, cargos, tutorías ni complementos de zona.",
+    "con_15_anios": "Funcionario de carrera con 15 años de servicio en el mismo cuerpo: 5 trienios, 2 sexenios (o lo que hace sus veces) y lo que en 2026 llega con los años sin solicitud ni evaluación; sin cargos, tutorías ni complementos de zona."
   },
   "supuestos": [
     "Madrid, maestros: pagas adicionales del específico (Ninguna norma madrileña lo dice expresamente para docentes: la Orden de nóminas (art. 5.4) y la Ley de Presupuestos 2026 (art. 21.1.d) lo establecen para el régimen general de la Ley 1/1986, y el art. 23 dice que los demás funcionarios mantienen su estructura retributiva (la estatal reparte el específico en 14 pagas).)",
+    "Madrid, maestros, 15 años: Componente por formación permanente (sexenios): primer y segundo periodo (93,28 + 117,70) (12 mensualidades y las 2 pagas adicionales, que son «una mensualidad del complemento específico» (art. 5.4), del que la formación permanente es un componente: mismo supuesto que las pagas adicionales.)",
     "Madrid, secundaria: pagas adicionales del específico (Ninguna norma madrileña lo dice expresamente para docentes: la Orden de nóminas (art. 5.4) y la Ley de Presupuestos 2026 (art. 21.1.d) lo establecen para el régimen general de la Ley 1/1986, y el art. 23 dice que los demás funcionarios mantienen su estructura retributiva (la estatal reparte el específico en 14 pagas).)",
+    "Madrid, secundaria, 15 años: Componente por formación permanente (sexenios): primer y segundo periodo (93,28 + 117,70) (12 mensualidades y las 2 pagas adicionales, que son «una mensualidad del complemento específico» (art. 5.4), del que la formación permanente es un componente: mismo supuesto que las pagas adicionales.)",
     "Comunitat Valenciana, maestros: pagas adicionales del específico (El art. 34.1.d de la Ley 6/2025 reparte el específico en 14 pagas para el personal funcionario de la Ley 4/2021 (función pública valenciana); no hay artículo propio para los docentes, aunque sus tablas se publican en el mismo acuerdo.)",
     "Comunitat Valenciana, maestros: Los 75 € también en la paga adicional de diciembre (no lo dice: se supone que la subida va en el complemento específico autonómico (prensa) y que este se cobra en 14 pagas)",
     "Comunitat Valenciana, secundaria: pagas adicionales del específico (El art. 34.1.d de la Ley 6/2025 reparte el específico en 14 pagas para el personal funcionario de la Ley 4/2021 (función pública valenciana); no hay artículo propio para los docentes, aunque sus tablas se publican en el mismo acuerdo.)",
@@ -14,23 +17,35 @@
     "Castilla y León, maestros: «Consolidación Punto 4.º» del Acuerdo de 21 de diciembre de 2000 (25.27 €/mes, 12 pagas) (Anexo V, Cuarto)",
     "Castilla y León, secundaria: «Consolidación Punto 4.º» del Acuerdo de 21 de diciembre de 2000 (27.04 €/mes, 12 pagas) (Anexo V, Cuarto)",
     "Asturias, maestros: pagas adicionales del específico (La ley lo dice para el personal funcionario en general; no hay artículo propio de los docentes sobre las pagas.)",
+    "Asturias, maestros, 15 años: Formación permanente (sexenios): primer y segundo periodo (120,17 + 88,42) (Las pagas extra incluyen «una mensualidad del complemento específico» (ley de presupuestos, para el personal funcionario en general), del que es un componente: mismo supuesto que el específico.)",
     "Asturias, secundaria: pagas adicionales del específico (La ley lo dice para el personal funcionario en general; no hay artículo propio de los docentes sobre las pagas.)",
+    "Asturias, secundaria, 15 años: Formación permanente (sexenios): primer y segundo periodo (120,17 + 88,42) (Las pagas extra incluyen «una mensualidad del complemento específico» (ley de presupuestos, para el personal funcionario en general), del que es un componente: mismo supuesto que el específico.)",
     "Cantabria, maestros: pagas adicionales del específico (La resolución da como anual 12 × 875,10; la ley de presupuestos añade dos pagas adicionales del específico para el personal funcionario de la administración general, sin artículo propio para los docentes. Si no se cobraran, se restarían 1.750,20 €.)",
     "Cantabria, secundaria: pagas adicionales del específico (La resolución da como anual 12 × 875,10; la ley de presupuestos añade dos pagas adicionales del específico para el personal funcionario de la administración general, sin artículo propio para los docentes. Si no se cobraran, se restarían 1.750,20 €.)",
     "Castilla-La Mancha, maestros: pagas adicionales del específico (La ley lo dice para el personal funcionario de la Administración de la Junta; la Orden 194/2025 (devengo) incluye el específico en las pagas extra, sin precisar el importe docente.)",
+    "Castilla-La Mancha, maestros, 15 años: Formación permanente (sexenios): primer y segundo periodo (94,46 + 88,74) (Las pagas extra incluyen «una mensualidad del complemento específico» (ley de presupuestos, para el personal funcionario de la Junta): mismo supuesto que el específico.)",
     "Castilla-La Mancha, secundaria: pagas adicionales del específico (La ley lo dice para el personal funcionario de la Administración de la Junta; la Orden 194/2025 (devengo) incluye el específico en las pagas extra, sin precisar el importe docente.)",
+    "Castilla-La Mancha, secundaria, 15 años: Formación permanente (sexenios): primer y segundo periodo (94,46 + 88,74) (Las pagas extra incluyen «una mensualidad del complemento específico» (ley de presupuestos, para el personal funcionario de la Junta): mismo supuesto que el específico.)",
     "Región de Murcia, maestros: complemento específico (No se ha encontrado la tabla docente oficial de 2026: importe de 2025 de la resolución del BORM × 1,015 (subida general de 2026, Real Decreto-ley 14/2025); coincide con la guía de CCOO de enero de 2026.)",
     "Región de Murcia, maestros: pagas adicionales del específico (No se ha encontrado la tabla docente oficial de 2026: importe de 2025 de la resolución del BORM × 1,015 (subida general de 2026, Real Decreto-ley 14/2025); coincide con la guía de CCOO de enero de 2026.)",
     "Región de Murcia, maestros: Productividad docente mensual (cuantía mínima, 12 pagas) (anexo XI 4.º (431.44 en 2025) × 1,015)",
     "Región de Murcia, maestros: Productividad semestral en cada paga extra (factor complemento específico + factor complemento de destino) (anexo XI 4.º (516,33 + 236.69 en 2025) × 1,015)",
+    "Región de Murcia, maestros, 15 años: Formación permanente (sexenios): primer y segundo periodo (70,45 + 88,89) (Coincide con la guía de CCOO de enero de 2026; en las pagas semestrales los sexenios van en la paga adicional (siguiente concepto).)",
+    "Región de Murcia, maestros, 15 años: Paga adicional del específico con 2 sexenios en lugar de 0 (362,87 − 260,96, en cada una de las dos pagas) (Coincide con la guía de CCOO de enero de 2026 (362,87).)",
+    "Región de Murcia, maestros, 15 años: Carrera profesional, tramo I (88,93 en 2025 × 1,015) (Mientras no se negocie la evaluación del desempeño, se encuadra en el tramo I a todos los que cumplen el primer sexenio (guía de CCOO); no va en las pagas semestrales.)",
     "Región de Murcia, secundaria: complemento específico (No se ha encontrado la tabla docente oficial de 2026: importe de 2025 de la resolución del BORM × 1,015 (subida general de 2026, Real Decreto-ley 14/2025); coincide con la guía de CCOO de enero de 2026.)",
     "Región de Murcia, secundaria: pagas adicionales del específico (No se ha encontrado la tabla docente oficial de 2026: importe de 2025 de la resolución del BORM × 1,015 (subida general de 2026, Real Decreto-ley 14/2025); coincide con la guía de CCOO de enero de 2026.)",
     "Región de Murcia, secundaria: Productividad docente mensual (cuantía mínima, 12 pagas) (anexo XI 4.º (437.79 en 2025) × 1,015)",
     "Región de Murcia, secundaria: Productividad semestral en cada paga extra (factor complemento específico + factor complemento de destino) (anexo XI 4.º (516,33 + 291.5 en 2025) × 1,015)",
+    "Región de Murcia, secundaria, 15 años: Formación permanente (sexenios): primer y segundo periodo (70,45 + 88,89) (Coincide con la guía de CCOO de enero de 2026; en las pagas semestrales los sexenios van en la paga adicional (siguiente concepto).)",
+    "Región de Murcia, secundaria, 15 años: Paga adicional del específico con 2 sexenios en lugar de 0 (362,87 − 260,96, en cada una de las dos pagas) (Coincide con la guía de CCOO de enero de 2026 (362,87).)",
+    "Región de Murcia, secundaria, 15 años: Carrera profesional, tramo I (158,23 en 2025 × 1,015) (Mientras no se negocie la evaluación del desempeño, se encuadra en el tramo I a todos los que cumplen el primer sexenio (guía de CCOO); no va en las pagas semestrales.)",
     "Navarra, maestros: Complemento específico docente: 38,07 % del sueldo del nivel B (0,3807 × 26.602,94 (la ley da el porcentaje, no el importe))",
     "Navarra, secundaria: Complemento específico docente: 33,48 % del sueldo del nivel A (0,3348 × 31.622,50 (la ley da el porcentaje, no el importe))",
     "Andalucía, maestros: complemento específico (No hay tabla oficial de 2026 de la enseñanza pública. Reconstrucción: componente básico de la tabla oficial de 2024 × 1,04547 (subidas generales de 2024 a 2026, factor comprobado con sueldo, paga extra y destino estatales) + tramo de septiembre de 2024 × 1,025 × 1,015 + tramo de septiembre de 2025 × 1,015. Coincide al céntimo con la tabla de UGT de enero de 2026.)",
-    "Andalucía, secundaria: complemento específico (No hay tabla oficial de 2026 de la enseñanza pública. Reconstrucción: componente básico de la tabla oficial de 2024 × 1,04547 (subidas generales de 2024 a 2026, factor comprobado con sueldo, paga extra y destino estatales) + tramo de septiembre de 2024 × 1,025 × 1,015 + tramo de septiembre de 2025 × 1,015. Coincide al céntimo con la tabla de UGT de enero de 2026.)"
+    "Andalucía, maestros, 15 años: Sexenios: 1.º y 2.º (85,62 + 99,51) (Sin tabla oficial de 2026: la tabla oficial de 2024 (81,89 + 95,19) × 1,04547, el factor de la reconstrucción, da 185,13; coincide con UGT.)",
+    "Andalucía, secundaria: complemento específico (No hay tabla oficial de 2026 de la enseñanza pública. Reconstrucción: componente básico de la tabla oficial de 2024 × 1,04547 (subidas generales de 2024 a 2026, factor comprobado con sueldo, paga extra y destino estatales) + tramo de septiembre de 2024 × 1,025 × 1,015 + tramo de septiembre de 2025 × 1,015. Coincide al céntimo con la tabla de UGT de enero de 2026.)",
+    "Andalucía, secundaria, 15 años: Sexenios: 1.º y 2.º (85,62 + 99,51) (Sin tabla oficial de 2026: la tabla oficial de 2024 (81,89 + 95,19) × 1,04547, el factor de la reconstrucción, da 185,13; coincide con UGT.)"
   ],
   "comunidades": {
     "13": {
@@ -48,7 +63,14 @@
           "otros": [],
           "horas_lectivas": 25.0,
           "horas_definicion": "25 lectivas + 4 complementarias; cuentan como lectivas los recreos vigilados (4.5.2)",
-          "euros_por_hora_semanal": 1415.17
+          "euros_por_hora_semanal": 1415.17,
+          "con_15_anios": {
+            "bruto_anual": 41262.72,
+            "sobre_inicial": {
+              "cinco_trienios": 2929.8,
+              "Componente por formación permanente (sexenios): primer y segundo periodo (93,28 + 117,70)": 2953.72
+            }
+          }
         },
         "secundaria": {
           "bruto_anual": 39744.68,
@@ -62,7 +84,14 @@
           "otros": [],
           "horas_lectivas": 19.0,
           "horas_definicion": "19 periodos lectivos de al menos 55 minutos para quien no es tutor, de 30 periodos en total; los tutores de ESO y Bachillerato, además 1 hora de convivencia",
-          "euros_por_hora_semanal": 2091.83
+          "euros_por_hora_semanal": 2091.83,
+          "con_15_anios": {
+            "bruto_anual": 46231.4,
+            "sobre_inicial": {
+              "cinco_trienios": 3533.0,
+              "Componente por formación permanente (sexenios): primer y segundo periodo (93,28 + 117,70)": 2953.72
+            }
+          }
         }
       },
       "avisos": [
@@ -99,7 +128,14 @@
           ],
           "horas_lectivas": 23.0,
           "horas_definicion": "23 horas de «docència» (grupos clase, apoyo, tutorías, sustituciones cortas) + 7 complementarias",
-          "euros_por_hora_semanal": 1558.34
+          "euros_por_hora_semanal": 1558.34,
+          "con_15_anios": {
+            "bruto_anual": 42473.44,
+            "sobre_inicial": {
+              "cinco_trienios": 2929.8,
+              "Estadis (sexenios): primer y segundo (128,88 + 135,54)": 3701.88
+            }
+          }
         },
         "secundaria": {
           "bruto_anual": 40216.48,
@@ -128,12 +164,18 @@
           ],
           "horas_lectivas": 18.0,
           "horas_definicion": "18 horas lectivas + 6 complementarias de horario fijo",
-          "euros_por_hora_semanal": 2234.25
+          "euros_por_hora_semanal": 2234.25,
+          "con_15_anios": {
+            "bruto_anual": 47451.36,
+            "sobre_inicial": {
+              "cinco_trienios": 3533.0,
+              "Estadis (sexenios): primer y segundo (128,88 + 135,54)": 3701.88
+            }
+          }
         }
       },
       "avisos": [
-        "Los acuerdos de 2026 prevén más subidas del complemento específico hasta llegar a un 30 % y que el complemento de mejora suba en 2028 y 2029; no están incluidas.",
-        "Desde 2012 los sexenios («estadis») se cobran a los nueve años en lugar de a los seis; por eso el caso con antigüedad no se calcula todavía."
+        "Los acuerdos de 2026 prevén más subidas del complemento específico hasta llegar a un 30 % y que el complemento de mejora suba en 2028 y 2029; no están incluidas."
       ]
     },
     "10": {
@@ -167,7 +209,14 @@
           ],
           "horas_lectivas": 23.0,
           "horas_definicion": "23 horas lectivas; jornada lectiva del alumnado de 25 h, incluido el patio",
-          "euros_por_hora_semanal": 1527.46
+          "euros_por_hora_semanal": 1527.46,
+          "con_15_anios": {
+            "bruto_anual": 41233.62,
+            "sobre_inicial": {
+              "cinco_trienios": 2929.8,
+              "Sexenios: primero y segundo (128,37 + 135,98)": 3172.2
+            }
+          }
         },
         "secundaria": {
           "bruto_anual": 39329.52,
@@ -197,7 +246,14 @@
           ],
           "horas_lectivas": 18.0,
           "horas_definicion": "18 horas lectivas, ampliables a 20 con compensación de 2 complementarias por cada una",
-          "euros_por_hora_semanal": 2184.97
+          "euros_por_hora_semanal": 2184.97,
+          "con_15_anios": {
+            "bruto_anual": 46034.72,
+            "sobre_inicial": {
+              "cinco_trienios": 3533.0,
+              "Sexenios: primero y segundo (128,37 + 135,98)": 3172.2
+            }
+          }
         }
       },
       "avisos": [
@@ -235,7 +291,15 @@
           ],
           "horas_lectivas": 21.0,
           "horas_definicion": "máximo de 21 horas lectivas en 2026-27 (22 en 2025-26)",
-          "euros_por_hora_semanal": 1992.55
+          "euros_por_hora_semanal": 1992.55,
+          "con_15_anios": {
+            "bruto_anual": 46680.24,
+            "sobre_inicial": {
+              "cinco_trienios": 2929.8,
+              "Diferencia básica de los 5 trienios (completa el trienio docente hasta el de la administración general)": 551.45,
+              "Primer sexenio (el 2.º y el 3.º ya se cobran desde el primer día)": 1355.34
+            }
+          }
         },
         "secundaria": {
           "bruto_anual": 48132.74,
@@ -264,7 +328,15 @@
           ],
           "horas_lectivas": 17.0,
           "horas_definicion": "máximo de 17 horas lectivas, incluidas las de apoyo y refuerzo",
-          "euros_por_hora_semanal": 2831.34
+          "euros_por_hora_semanal": 2831.34,
+          "con_15_anios": {
+            "bruto_anual": 53649.68,
+            "sobre_inicial": {
+              "cinco_trienios": 3533.0,
+              "Diferencia básica de los 5 trienios (completa el trienio docente hasta el de la administración general)": 628.6,
+              "Primer sexenio (el 2.º y el 3.º ya se cobran desde el primer día)": 1355.34
+            }
+          }
         }
       },
       "avisos": [
@@ -303,7 +375,16 @@
           ],
           "horas_lectivas": 23.0,
           "horas_definicion": "máximo de 23 periodos de docencia directa (clases, apoyos, recreo y tutoría); 25 lectivas contando coordinaciones y cargos; jornada de 35 h",
-          "euros_por_hora_semanal": 1628.34
+          "euros_por_hora_semanal": 1628.34,
+          "con_15_anios": {
+            "bruto_anual": 45698.26,
+            "sobre_inicial": {
+              "cinco_trienios": 2929.8,
+              "Sexennis: primer y segon (69,48 + 87,64)": 2199.68,
+              "Complemento de la Comunidad Autónoma: tramo de más de 12 años en lugar del inicial (543,77 − 418,54)": 1502.76,
+              "Carrera profesional, tramos 1 y 2 (53,32 + 81,20)": 1614.24
+            }
+          }
         },
         "secundaria": {
           "bruto_anual": 41763.0,
@@ -332,7 +413,16 @@
           ],
           "horas_lectivas": 18.0,
           "horas_definicion": "máximo de 18 periodos de docencia directa (clases, apoyos y tutoría de grupo); jornada de 35 h",
-          "euros_por_hora_semanal": 2320.17
+          "euros_por_hora_semanal": 2320.17,
+          "con_15_anios": {
+            "bruto_anual": 50612.68,
+            "sobre_inicial": {
+              "cinco_trienios": 3533.0,
+              "Sexennis: primer y segon (69,48 + 87,64)": 2199.68,
+              "Complemento de la Comunidad Autónoma: tramo de más de 12 años en lugar del inicial (543,77 − 418,54)": 1502.76,
+              "Carrera profesional, tramos 1 y 2 (53,32 + 81,20)": 1614.24
+            }
+          }
         }
       },
       "avisos": [
@@ -340,7 +430,7 @@
         "El complemento de la Comunidad Autónoma sube con la antigüedad (de 418,54 € a 619,04 € al mes); se toma el tramo de quien empieza.",
         "La jornada semanal en Baleares es de 35 horas, no de 37,5.",
         "No se cuentan los atrasos de 2020-2021 que se están pagando tras una sentencia del TSJ: son de años anteriores.",
-        "No se incluye el primer tramo de la carrera profesional docente (convocatoria de octubre de 2026): exige una evaluación favorable y pueden pedirlo también interinos y funcionarios en prácticas; no se ha confirmado si exige años de servicio."
+        "No se incluye la carrera profesional docente: su primer tramo exige tener el primer sexenio (6 años) y una evaluación favorable (BOIB n.º 166, 18/12/2025)."
       ]
     },
     "07": {
@@ -368,7 +458,14 @@
           ],
           "horas_lectivas": 24.0,
           "horas_definicion": "24 horas lectivas: 21,5 de docencia directa + 2,5 de recreo vigilado; jornada de 35 h",
-          "euros_por_hora_semanal": 1449.32
+          "euros_por_hora_semanal": 1449.32,
+          "con_15_anios": {
+            "bruto_anual": 39936.5,
+            "sobre_inicial": {
+              "cinco_trienios": 2929.8,
+              "Formación permanente (sexenios): primer y segundo periodo (70,22 + 88,56)": 2222.92
+            }
+          }
         },
         "secundaria": {
           "bruto_anual": 38957.28,
@@ -392,7 +489,14 @@
           ],
           "horas_lectivas": 18.0,
           "horas_definicion": "«18 o 19 periodos lectivos de forma mayoritaria» (se toma 18); jornada de 35 h",
-          "euros_por_hora_semanal": 2164.29
+          "euros_por_hora_semanal": 2164.29,
+          "con_15_anios": {
+            "bruto_anual": 44713.2,
+            "sobre_inicial": {
+              "cinco_trienios": 3533.0,
+              "Formación permanente (sexenios): primer y segundo periodo (70,22 + 88,56)": 2222.92
+            }
+          }
         }
       },
       "avisos": [
@@ -424,7 +528,15 @@
           ],
           "horas_lectivas": 23.0,
           "horas_definicion": "23 horas lectivas semanales desde 2026-27 (antes 24); 30 h de permanencia",
-          "euros_por_hora_semanal": 1513.78
+          "euros_por_hora_semanal": 1513.78,
+          "con_15_anios": {
+            "bruto_anual": 40659.42,
+            "sobre_inicial": {
+              "cinco_trienios": 2929.8,
+              "Sexenios: primer y segundo periodo, mensual (96,53 + 114,53)": 2532.72,
+              "Sexenios en cada paga adicional (86,88 + 103,08)": 379.92
+            }
+          }
         },
         "secundaria": {
           "bruto_anual": 39171.12,
@@ -446,7 +558,15 @@
           ],
           "horas_lectivas": 18.0,
           "horas_definicion": "18 horas lectivas, hasta 21 si la organización del centro lo requiere; 30 h de permanencia",
-          "euros_por_hora_semanal": 2176.17
+          "euros_por_hora_semanal": 2176.17,
+          "con_15_anios": {
+            "bruto_anual": 45616.76,
+            "sobre_inicial": {
+              "cinco_trienios": 3533.0,
+              "Sexenios: primer y segundo periodo, mensual (96,53 + 114,53)": 2532.72,
+              "Sexenios en cada paga adicional (86,88 + 103,08)": 379.92
+            }
+          }
         }
       },
       "avisos": [
@@ -470,7 +590,14 @@
           "otros": [],
           "horas_lectivas": 23.0,
           "horas_definicion": "23 horas de presencia lectiva + 5 no lectivas en el centro; jornada de 37,5 h",
-          "euros_por_hora_semanal": 1536.67
+          "euros_por_hora_semanal": 1536.67,
+          "con_15_anios": {
+            "bruto_anual": 41141.2,
+            "sobre_inicial": {
+              "cinco_trienios": 2929.8,
+              "Sexenios: 1.º y 2.º período (1.254,82 + 1.613,08 al año)": 2867.9
+            }
+          }
         },
         "secundaria": {
           "bruto_anual": 39477.0,
@@ -484,7 +611,14 @@
           "otros": [],
           "horas_lectivas": 18.0,
           "horas_definicion": "18 sesiones lectivas fijas (se recuperan como referencia en 2026-27) + 5 complementarias; jornada de 37,5 h",
-          "euros_por_hora_semanal": 2193.17
+          "euros_por_hora_semanal": 2193.17,
+          "con_15_anios": {
+            "bruto_anual": 45877.9,
+            "sobre_inicial": {
+              "cinco_trienios": 3533.0,
+              "Sexenios: 1.º y 2.º período (1.254,82 + 1.613,08 al año)": 2867.9
+            }
+          }
         }
       },
       "avisos": [
@@ -515,7 +649,15 @@
           ],
           "horas_lectivas": 23.0,
           "horas_definicion": "23 horas lectivas desde 2026-27 (2 menos que en cursos anteriores; Acuerdo de 20/3/2025)",
-          "euros_por_hora_semanal": 1532.2
+          "euros_por_hora_semanal": 1532.2,
+          "con_15_anios": {
+            "bruto_anual": 40284.4,
+            "sobre_inicial": {
+              "cinco_trienios": 2929.8,
+              "Formación permanente (sexenios): primer y segundo periodo (120,17 + 88,42)": 2920.26,
+              "deja_de_cobrar": -806.2
+            }
+          }
         },
         "secundaria": {
           "bruto_anual": 39393.92,
@@ -537,7 +679,15 @@
           ],
           "horas_lectivas": 18.0,
           "horas_definicion": "18 periodos lectivos y 9 complementarios en jornada completa",
-          "euros_por_hora_semanal": 2188.55
+          "euros_por_hora_semanal": 2188.55,
+          "con_15_anios": {
+            "bruto_anual": 45040.98,
+            "sobre_inicial": {
+              "cinco_trienios": 3533.0,
+              "Formación permanente (sexenios): primer y segundo periodo (120,17 + 88,42)": 2920.26,
+              "deja_de_cobrar": -806.2
+            }
+          }
         }
       },
       "avisos": [
@@ -569,7 +719,15 @@
           ],
           "horas_lectivas": 24.0,
           "horas_definicion": "24 horas lectivas (incluidos recreos vigilados y cargos) + 6 complementarias de permanencia",
-          "euros_por_hora_semanal": 1546.42
+          "euros_por_hora_semanal": 1546.42,
+          "con_15_anios": {
+            "bruto_anual": 42027.48,
+            "sobre_inicial": {
+              "cinco_trienios": 2929.8,
+              "Sexenios: primero y segundo (108,86 + 92,21)": 2412.84,
+              "deja_de_cobrar": -429.24
+            }
+          }
         },
         "secundaria": {
           "bruto_anual": 41247.58,
@@ -591,7 +749,15 @@
           ],
           "horas_lectivas": 18.0,
           "horas_definicion": "18 periodos lectivos y 9 complementarios en jornada completa (o 19-8 y 20-7)",
-          "euros_por_hora_semanal": 2291.53
+          "euros_por_hora_semanal": 2291.53,
+          "con_15_anios": {
+            "bruto_anual": 46764.18,
+            "sobre_inicial": {
+              "cinco_trienios": 3533.0,
+              "Sexenios: primero y segundo (108,86 + 92,21)": 2412.84,
+              "deja_de_cobrar": -429.24
+            }
+          }
         }
       },
       "avisos": [
@@ -614,7 +780,14 @@
           "otros": [],
           "horas_lectivas": 23.0,
           "horas_definicion": "23 horas lectivas «con carácter general» (UGT); la Orden 104/2026 compensa con dos periodos lectivos a quien supere el horario de referencia",
-          "euros_por_hora_semanal": 1614.67
+          "euros_por_hora_semanal": 1614.67,
+          "con_15_anios": {
+            "bruto_anual": 42632.06,
+            "sobre_inicial": {
+              "cinco_trienios": 2929.8,
+              "Formación permanente (sexenios): primer y segundo periodo (94,46 + 88,74)": 2564.8
+            }
+          }
         },
         "secundaria": {
           "bruto_anual": 41270.96,
@@ -628,7 +801,14 @@
           "otros": [],
           "horas_lectivas": 18.0,
           "horas_definicion": "18 periodos lectivos semanales; si se superan, 2 horas complementarias menos por cada uno",
-          "euros_por_hora_semanal": 2292.83
+          "euros_por_hora_semanal": 2292.83,
+          "con_15_anios": {
+            "bruto_anual": 47368.76,
+            "sobre_inicial": {
+              "cinco_trienios": 3533.0,
+              "Formación permanente (sexenios): primer y segundo periodo (94,46 + 88,74)": 2564.8
+            }
+          }
         }
       },
       "avisos": [
@@ -651,7 +831,14 @@
           "otros": [],
           "horas_lectivas": 23.0,
           "horas_definicion": "23 periodos lectivos + 7 complementarios",
-          "euros_por_hora_semanal": 1558.24
+          "euros_por_hora_semanal": 1558.24,
+          "con_15_anios": {
+            "bruto_anual": 40926.58,
+            "sobre_inicial": {
+              "cinco_trienios": 2929.8,
+              "Formación permanente (sexenios): acumulado del 2.º periodo (68,14 + 85,95)": 2157.26
+            }
+          }
         },
         "secundaria": {
           "bruto_anual": 39973.02,
@@ -665,7 +852,14 @@
           "otros": [],
           "horas_lectivas": 18.0,
           "horas_definicion": "18 periodos lectivos, hasta 21 excepcionalmente (compensados con CHL)",
-          "euros_por_hora_semanal": 2220.72
+          "euros_por_hora_semanal": 2220.72,
+          "con_15_anios": {
+            "bruto_anual": 45663.28,
+            "sobre_inicial": {
+              "cinco_trienios": 3533.0,
+              "Formación permanente (sexenios): acumulado del 2.º periodo (68,14 + 85,95)": 2157.26
+            }
+          }
         }
       },
       "avisos": [
@@ -705,7 +899,16 @@
           ],
           "horas_lectivas": 23.0,
           "horas_definicion": "23 horas lectivas (Infantil y Primaria)",
-          "euros_por_hora_semanal": 1572.58
+          "euros_por_hora_semanal": 1572.58,
+          "con_15_anios": {
+            "bruto_anual": 42298.24,
+            "sobre_inicial": {
+              "cinco_trienios": 2929.8,
+              "Formación permanente (sexenios): primer y segundo periodo (70,45 + 88,89)": 1912.08,
+              "Paga adicional del específico con 2 sexenios en lugar de 0 (362,87 − 260,96, en cada una de las dos pagas)": 203.82,
+              "Carrera profesional, tramo I (88,93 en 2025 × 1,015)": 1083.12
+            }
+          }
         },
         "secundaria": {
           "bruto_anual": 40491.58,
@@ -736,7 +939,16 @@
           ],
           "horas_lectivas": 18.0,
           "horas_definicion": "18 horas lectivas; hasta 19 periodos si la distribución del centro lo exige (Inspección, 2026-27)",
-          "euros_por_hora_semanal": 2249.53
+          "euros_por_hora_semanal": 2249.53,
+          "con_15_anios": {
+            "bruto_anual": 48067.68,
+            "sobre_inicial": {
+              "cinco_trienios": 3533.0,
+              "Formación permanente (sexenios): primer y segundo periodo (70,45 + 88,89)": 1912.08,
+              "Paga adicional del específico con 2 sexenios en lugar de 0 (362,87 − 260,96, en cada una de las dos pagas)": 203.82,
+              "Carrera profesional, tramo I (158,23 en 2025 × 1,015)": 1927.2
+            }
+          }
         }
       },
       "avisos": [
@@ -758,7 +970,14 @@
           "regimen_propio": true,
           "horas_lectivas": 23.0,
           "horas_definicion": "23 sesiones de docencia directa de 50 minutos (26 h de cómputo lectivo con otras 5 sesiones y los recreos)",
-          "euros_por_hora_semanal": 1596.99
+          "euros_por_hora_semanal": 1596.99,
+          "con_15_anios": {
+            "bruto_anual": 42449.12,
+            "sobre_inicial": {
+              "Grado 3: dos grados retribuidos (el grado 1 no se paga y se asciende cada 6 años y 7 meses)": 4788.56,
+              "Premio de antigüedad: 3 quinquenios (5,5 % del sueldo inicial del nivel E)": 929.88
+            }
+          }
         },
         "secundaria": {
           "bruto_anual": 42209.71,
@@ -770,7 +989,14 @@
           "regimen_propio": true,
           "horas_lectivas": 18.0,
           "horas_definicion": "18 horas lectivas semanales en jornada completa",
-          "euros_por_hora_semanal": 2344.98
+          "euros_por_hora_semanal": 2344.98,
+          "con_15_anios": {
+            "bruto_anual": 48831.71,
+            "sobre_inicial": {
+              "Grado 3: dos grados retribuidos (el grado 1 no se paga y se asciende cada 6 años y 7 meses)": 5692.12,
+              "Premio de antigüedad: 3 quinquenios (5,5 % del sueldo inicial del nivel E)": 929.88
+            }
+          }
         }
       },
       "avisos": [
@@ -794,7 +1020,14 @@
           "otros": [],
           "horas_lectivas": 23.0,
           "horas_definicion": "23 horas lectivas, incluidos los recreos vigilados",
-          "euros_por_hora_semanal": 1558.67
+          "euros_por_hora_semanal": 1558.67,
+          "con_15_anios": {
+            "bruto_anual": 41131.54,
+            "sobre_inicial": {
+              "cinco_trienios": 2929.8,
+              "Formación permanente (sexenios): primer y segundo periodo (74,30 + 93,73)": 2352.42
+            }
+          }
         },
         "secundaria": {
           "bruto_anual": 40123.52,
@@ -808,7 +1041,14 @@
           "otros": [],
           "horas_lectivas": 18.0,
           "horas_definicion": "18 periodos lectivos (deducido de la tabla de reducciones de jornada de las instrucciones)",
-          "euros_por_hora_semanal": 2229.08
+          "euros_por_hora_semanal": 2229.08,
+          "con_15_anios": {
+            "bruto_anual": 46008.94,
+            "sobre_inicial": {
+              "cinco_trienios": 3533.0,
+              "Formación permanente (sexenios): primer y segundo periodo (74,30 + 93,73)": 2352.42
+            }
+          }
         }
       },
       "avisos": [
@@ -839,7 +1079,14 @@
           ],
           "horas_lectivas": 23.0,
           "horas_definicion": "23 horas lectivas en jornada completa (deducido de la tabla de jornadas parciales; Orden de 28/9/2023 y Ley 7/2022, disp. adic. 18.ª)",
-          "euros_por_hora_semanal": 1626.39
+          "euros_por_hora_semanal": 1626.39,
+          "con_15_anios": {
+            "bruto_anual": 41950.5,
+            "sobre_inicial": {
+              "cinco_trienios": 2929.8,
+              "Sexenios: importe con 2 sexenios (119,00 al mes y 92,82 en cada paga extra, el 78 %)": 1613.64
+            }
+          }
         },
         "secundaria": {
           "bruto_anual": 41088.46,
@@ -861,7 +1108,14 @@
           ],
           "horas_lectivas": 18.0,
           "horas_definicion": "18 horas lectivas y 6 complementarias",
-          "euros_por_hora_semanal": 2282.69
+          "euros_por_hora_semanal": 2282.69,
+          "con_15_anios": {
+            "bruto_anual": 46235.1,
+            "sobre_inicial": {
+              "cinco_trienios": 3533.0,
+              "Sexenios: importe con 2 sexenios (119,00 al mes y 92,82 en cada paga extra, el 78 %)": 1613.64
+            }
+          }
         }
       },
       "avisos": [
@@ -886,7 +1140,14 @@
           "otros": [],
           "horas_lectivas": 23.5,
           "horas_definicion": "mínimo de 23,5 horas lectivas (excepcionalmente hasta 25); jornada de 35 h",
-          "euros_por_hora_semanal": 1550.45
+          "euros_por_hora_semanal": 1550.45,
+          "con_15_anios": {
+            "bruto_anual": 41957.26,
+            "sobre_inicial": {
+              "cinco_trienios": 2929.8,
+              "Sexenios: 1.º y 2.º (85,62 + 99,51)": 2591.82
+            }
+          }
         },
         "secundaria": {
           "bruto_anual": 40907.38,
@@ -900,7 +1161,14 @@
           "otros": [],
           "horas_lectivas": 18.0,
           "horas_definicion": "máximo de 18 horas lectivas (excepcionalmente hasta 21); jornada de 35 h",
-          "euros_por_hora_semanal": 2272.63
+          "euros_por_hora_semanal": 2272.63,
+          "con_15_anios": {
+            "bruto_anual": 47032.2,
+            "sobre_inicial": {
+              "cinco_trienios": 3533.0,
+              "Sexenios: 1.º y 2.º (85,62 + 99,51)": 2591.82
+            }
+          }
         }
       },
       "avisos": [

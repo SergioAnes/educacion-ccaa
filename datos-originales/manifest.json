@@ -1064,6 +1064,46 @@
     "sha256": "a0d4d9963ce28b9ca73a08e905ac568e5b2b011a759175a72c6d00aa10ab1aed"
   },
   {
+    "fuente": "sueldos_antiguedad",
+    "fichero": "sueldos_antiguedad/2026-11-25/cl-carrera-docente-preguntas-frecuentes.pdf",
+    "url": "https://www.educa.jcyl.es/profesorado/es/gestion-personal-docente/carrera-profesional-horizontal-personal-docente/categoria-profesional-i-proceso-ordinario-acceso-carr-dec9a.ficheros/1825877-Preguntas%20frecuentes.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 102383,
+    "sha256": "623f7b458940b22c3c8e33c843b65cd993c0c4c73bb9ab50c6b32be40cf0b02a"
+  },
+  {
+    "fuente": "sueldos_antiguedad",
+    "fichero": "sueldos_antiguedad/2026-11-25/cl-proyecto-decreto-carrera-docente-2025.pdf",
+    "url": "https://transparencia.jcyl.es/huellanormativa/EDU/2025-284%20Decreto%20carrera%20profesional%20docentes/7.%20Proyecto%20Decreto%20carrera%20profesional%20horizontal%20docente%20(22-09-2025).pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 398390,
+    "sha256": "d1be0a20ffc4e149febee9975b8cc3a4b6b34cac8fcb1abf8b7fd37a4d9ca3b1"
+  },
+  {
+    "fuente": "sueldos_antiguedad",
+    "fichero": "sueldos_antiguedad/2026-11-25/ct-ordre-edf-56-2025-estadis.pdf",
+    "url": "https://portaldogc.gencat.cat/utilsEADOP/AppJava/PdfProviderServlet?documentId=1011571&type=01&language=ca_ES",
+    "fecha_captura": "2026-11-25",
+    "bytes": 709481,
+    "sha256": "3be3417727f793cc4cccf0b9960feba4b98f8c8beef4335c83461ce18f98d8ab"
+  },
+  {
+    "fuente": "sueldos_antiguedad",
+    "fichero": "sueldos_antiguedad/2026-11-25/ib-boib-166-2025-carrera-segundo-tramo.pdf",
+    "url": "https://intranet.caib.es/eboibfront/pdf/es/2025/166/1208703",
+    "fecha_captura": "2026-11-25",
+    "bytes": 166234,
+    "sha256": "115534b3cffa6fa84c08a14f719dc7187461f4fe6918ee3589872883e32a40fc"
+  },
+  {
+    "fuente": "sueldos_antiguedad",
+    "fichero": "sueldos_antiguedad/2026-11-25/na-dfl-251-1993-estatuto-consolidado.pdf",
+    "url": "https://www.boe.es/buscar/pdf/1993/BON-n-1993-90004-consolidado.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 440076,
+    "sha256": "37348fa6daa5ad8ee8f58d8e2871345302b5166c4b05653513407ccb34a932d2"
+  },
+  {
     "fuente": "unidades",
     "fichero": "unidades/2026-11-24/alumnado_3_01.px",
     "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/series/AlumnadoGen/l0/alumnado_3_01.px",

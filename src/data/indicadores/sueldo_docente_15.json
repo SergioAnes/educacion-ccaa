@@ -1,0 +1,68 @@
+{
+  "id": "sueldo_docente_15",
+  "grupo": "profesorado",
+  "resumen": false,
+  "nombre": "Sueldo bruto anual del profesorado con 15 años de servicio",
+  "corto": "Sueldo del profesorado con 15 años",
+  "que": "brutos al año",
+  "unidad": "eur",
+  "unidad_txt": "euros brutos al año",
+  "dimensiones": [
+    {
+      "dim": "etapa",
+      "nombre": "Cuerpo",
+      "opciones": [
+        {
+          "id": "maestros",
+          "etiqueta": "Maestros, Infantil y Primaria"
+        },
+        {
+          "id": "secundaria",
+          "etiqueta": "Profesorado de secundaria, ESO, Bachillerato y FP"
+        }
+      ]
+    }
+  ],
+  "filas_ficha": [
+    {
+      "etapa": "maestros"
+    },
+    {
+      "etapa": "secundaria"
+    }
+  ],
+  "cautela_titulo": "Aviso",
+  "definicion": "Lo que cobra en 2026 un funcionario docente de la enseñanza pública con 15 años de servicio en su cuerpo: maestro (Infantil y Primaria) o profesor de secundaria (ESO, Bachillerato y FP), en bruto y sumando las doce mensualidades y las pagas extra.",
+  "numerador": "El sueldo al empezar (ver ese indicador) más 5 trienios, 2 sexenios (o lo que hace sus veces en cada comunidad: «estadis» en Cataluña, grados y premio de antigüedad en Navarra) y lo que en 2026 llega con los años sin solicitud ni evaluación (complementos por años, tramos de carrera reconocidos de oficio), menos lo que se deja de cobrar al tener sexenios, según las tablas oficiales de 2026 de cada comunidad.",
+  "denominador": "No hay: es una cantidad por persona y año.",
+  "no_mide": "No es lo que se cobra en mano (faltan IRPF y cotizaciones) ni lo que cobra quien tiene cargos o tutoría. Supone que se tienen los dos sexenios (exigen, además de los años, horas de formación). No incluye la carrera profesional que exige solicitud y evaluación (Castilla y León, La Rioja), que se avisa. No tiene en cuenta el coste de la vida ni las horas de clase.",
+  "fiabilidad": "B",
+  "fiabilidad_txt": "Recopilación propia de tablas y normas oficiales de cada comunidad; Andalucía y Murcia se han calculado porque no publican la tabla de 2026, y algunos conceptos se dan por supuestos (avisados).",
+  "estado": "definitivo",
+  "fuentes": [
+    {
+      "id": "normas_ccaa",
+      "corto": "Tablas y normas de retribuciones de cada comunidad (recopilación propia)",
+      "nombre": "Tablas oficiales de retribuciones docentes de 2026 y normas de cada comunidad (boletines oficiales, portales de transparencia y de educación), recopiladas a mano: cada importe, con su fuente y apartado, en el fichero de datos del proyecto",
+      "url": "https://github.com/SergioAnes/educacion-ccaa/blob/main/src/data/sueldos/normas.json"
+    }
+  ],
+  "espana": "No hay cifra para España: cada comunidad fija su parte del sueldo.",
+  "avisos": [
+    "No hay una cifra oficial para España: cada comunidad fija su parte del sueldo, así que no se calcula una media.",
+    "Datos de 2026 recopilados de las tablas y normas de cada comunidad; las subidas anunciadas o acordadas para 2027 y años siguientes no se incluyen.",
+    "Es el sueldo bruto, antes de impuestos y cotizaciones, y sin ajustar por el coste de la vida.",
+    "El sueldo base, la paga extra y el complemento de destino son iguales en casi toda España; lo que cambia es sobre todo el complemento específico. País Vasco, Asturias y Canarias tienen un complemento de destino propio, y Navarra, un régimen de sueldos propio.",
+    "Baleares y Canarias incluyen la indemnización por residencia de la isla mayor, que cobra todo el personal público.",
+    "Caso «con 15 años»: funcionario de carrera con 15 años en el mismo cuerpo, 5 trienios y 2 sexenios, sin cargos, sin tutoría y sin complementos de zona o de centro.",
+    "Los trienios son iguales en toda España; lo que más cambia entre comunidades son los sexenios (de unos 150 a 265 € al mes con dos) y lo que cada una añade con los años.",
+    "Se suma lo que llega con los años y la formación ordinaria. La carrera profesional se suma solo donde en 2026 se reconoce de oficio por años (Baleares, Murcia); donde exige solicitud y evaluación (Castilla y León, La Rioja) no se suma y se avisa con su importe.",
+    "Cataluña: desde 2024 los estadis (sexenios) vuelven a ser cada 6 años; entre 2012 y 2023 hacían falta 9 para el primero. La deuda de esos años, que se pagará desde 2027, no se incluye."
+  ],
+  "rango": [
+    25000,
+    60000
+  ],
+  "revisado_hasta": "2026",
+  "sin_espana": true
+}

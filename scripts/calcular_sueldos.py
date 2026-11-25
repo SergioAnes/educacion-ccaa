@@ -33,6 +33,7 @@ CUERPOS = ("maestros", "secundaria")
 
 
 def main() -> None:
+    sys.stdout.reconfigure(encoding="utf-8")
     d = json.loads(NORMAS.read_text(encoding="utf-8"))
     errores: list[str] = []
     fuentes = d["fuentes"]
@@ -61,6 +62,55 @@ def main() -> None:
 
     est = d["estatal"]
     salida, supuestos = {}, []
+
+    def quince(c: dict, cuerpo: str, x: dict, total_inicial: float, otros: list, estatal: tuple | None) -> dict | None:
+        """Caso «con 15 años»: el caso inicial menos lo que se deja de cobrar («quita») más 5 trienios (12 mensualidades y
+        2 pagas extra) y los conceptos que llegan con los años (sexenios, grados, tramos), cada uno con su fuente."""
+        q = x.get("quince_anios")
+        if q is None:
+            errores.append(f"{c['nombre']} {cuerpo}: falta el caso con 15 años")
+            return None
+        nombre = f"{c['nombre']} {cuerpo}"
+        comp: dict[str, float] = {}
+        mensual_15 = 0.0  # lo que se suma a la mensualidad ordinaria (para comprobar totales mensuales publicados)
+        if estatal:
+            g, mensual_base = estatal
+            tm = dato(c["nombre"], cuerpo, "trienio_mensual", q.get("trienio_mensual"))
+            te = dato(c["nombre"], cuerpo, "trienio_paga_extra", q.get("trienio_paga_extra"))
+            for campo, v, ref in (("trienio", tm, est["trienio_mensual"][g]), ("trienio de paga extra", te, est["trienio_paga_extra"][g])):
+                if abs(v - ref) > 0.005:
+                    errores.append(f"{nombre}: {campo} {v} distinto del estatal {ref}")
+            comp["cinco_trienios"] = round(5 * (12 * tm + 2 * te), 2)
+            mensual_15 += 5 * tm
+        elif "trienio_mensual" in q:
+            errores.append(f"{nombre}: régimen propio con trienios estatales")
+        for k in q.get("conceptos", []):
+            if k.get("fuente") not in fuentes or not k.get("donde"):
+                errores.append(f"{nombre}: concepto sin fuente o sin apartado: {k.get('concepto')}")
+            if "anual" in k:
+                importe = float(k["anual"])
+            else:
+                importe = float(k["mensual"]) * int(k["pagos"])
+                if int(k["pagos"]) >= 12:
+                    mensual_15 += float(k["mensual"])
+            if k.get("comprobacion") in ("supuesto", "calculo"):
+                supuestos.append(f"{c['nombre']}, {cuerpo}, 15 años: {k['concepto']} ({k.get('nota', k.get('donde', ''))})")
+            comp[k["concepto"]] = round(importe, 2)
+        quitado = 0.0
+        for pref in q.get("quita", []):
+            hay = [o for o in otros if o["concepto"].startswith(pref)]
+            if not hay:
+                errores.append(f"{nombre}: «quita» no encuentra {pref!r} en el caso inicial")
+            quitado += sum(o["importe"] for o in hay)
+        if quitado:
+            comp["deja_de_cobrar"] = round(-quitado, 2)
+        tp = q.get("total_mensual_publicado")
+        if tp:
+            if not estatal:
+                errores.append(f"{nombre}: total mensual publicado en régimen propio")
+            elif abs(mensual_base + mensual_15 + tp.get("mas", 0.0) - tp["valor"]) > 0.005:
+                errores.append(f"{nombre}: con 15 años la mensualidad da {mensual_base + mensual_15 + tp.get('mas', 0.0):.2f} y la publicada es {tp['valor']}")
+        return {"bruto_anual": round(total_inicial + sum(comp.values()), 2), "sobre_inicial": comp}
     for ine, c in d["comunidades"].items():
         if c.get("estado") != "analizada":
             continue
@@ -82,6 +132,7 @@ def main() -> None:
                 res["cuerpos"][cuerpo] = {"bruto_anual": total, "componentes": comps, "otros": [], "regimen_propio": True,
                                           "horas_lectivas": horas, "horas_definicion": h.get("definicion"),
                                           "euros_por_hora_semanal": round(total / horas, 2) if horas else None}
+                res["cuerpos"][cuerpo]["con_15_anios"] = quince(c, cuerpo, x, total, [], None)
                 continue
             g, nivel = x["grupo"], x["nivel_destino"]
             sueldo = dato(ine, cuerpo, "sueldo_mensual", x["sueldo_mensual"])
@@ -144,6 +195,7 @@ def main() -> None:
                 "horas_lectivas": horas, "horas_definicion": h.get("definicion"),
                 "euros_por_hora_semanal": round(total / horas, 2) if horas else None,
             }
+            res["cuerpos"][cuerpo]["con_15_anios"] = quince(c, cuerpo, x, total, otros, (g, sueldo + destino + especifico))
         salida[ine] = res
     if errores:
         sys.exit("Comprobaciones fallidas:\n  " + "\n  ".join(errores))
@@ -168,8 +220,8 @@ def exportar(normas: dict, calculo: dict) -> None:
     horas_lectivas (horas de clase semanales) y sueldo_por_hora (sueldo anual / horas semanales de clase)."""
     fuentes = normas["fuentes"]
     hoy = "2026-11-25"
-    filas = {"sueldo_docente": [], "horas_lectivas": [], "sueldo_por_hora": []}
-    cautela_sueldo, cautela_horas = [], []
+    filas = {"sueldo_docente": [], "horas_lectivas": [], "sueldo_por_hora": [], "sueldo_docente_15": []}
+    cautela_sueldo, cautela_horas, cautela_15 = [], [], []
     for ine, c in calculo["comunidades"].items():
         n = normas["comunidades"][ine]
         for cuerpo, x in c["cuerpos"].items():
@@ -184,8 +236,14 @@ def exportar(normas: dict, calculo: dict) -> None:
                                             "unidad": "horas", "fuente_id": "normas_ccaa", "url_fuente": fuentes[f_horas]["url"]})
             filas["sueldo_por_hora"].append({**base, "indicador_id": "sueldo_por_hora", "periodo": "2026", "valor": x["euros_por_hora_semanal"],
                                              "unidad": "eur", "fuente_id": "normas_ccaa", "url_fuente": fuentes[f_sueldo]["url"]})
+            filas["sueldo_docente_15"].append({**base, "indicador_id": "sueldo_docente_15", "periodo": "2026", "valor": x["con_15_anios"]["bruto_anual"],
+                                               "unidad": "eur", "fuente_id": "normas_ccaa", "url_fuente": fuentes[f_sueldo]["url"]})
         if n.get("cautela_web"):
             cautela_sueldo.append({"territorio": ine, "texto": n["cautela_web"]})
+        # Con 15 años: los avisos del caso inicial siguen valiendo, más los propios de la antigüedad
+        t15 = " ".join(x for x in (n.get("cautela_web"), n.get("cautela_web_15")) if x)
+        if t15:
+            cautela_15.append({"territorio": ine, "texto": t15})
         textos_h = []
         for cuerpo in ("maestros", "secundaria"):
             h = n["cuerpos"][cuerpo]["horas_lectivas"]
@@ -201,6 +259,7 @@ def exportar(normas: dict, calculo: dict) -> None:
         "sueldo_docente": {"periodos": ["2026"], "cautela": cautela_sueldo},
         "horas_lectivas": {"periodos": ["2026-27"], "cautela": cautela_horas},
         "sueldo_por_hora": {"periodos": ["2026"], "cautela": cautela_sueldo + [x for x in cautela_horas if x["territorio"] not in {c["territorio"] for c in cautela_sueldo}]},
+        "sueldo_docente_15": {"periodos": ["2026"], "cautela": cautela_15},
     }
     for ind, extra in salida.items():
         (RAIZ / "src/data/observaciones" / f"{ind}.json").write_text(json.dumps({
@@ -208,7 +267,7 @@ def exportar(normas: dict, calculo: dict) -> None:
             "comprobacion": {"pares_comparados": len(filas[ind]), "descripcion": "importes de cada comunidad con su norma; partes estatales y totales publicados comprobados"},
             "filas": sorted(filas[ind], key=lambda f: (f["territorio"], f["etapa"])),
         }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print("Exportados: sueldo_docente, horas_lectivas, sueldo_por_hora")
+    print("Exportados: sueldo_docente, horas_lectivas, sueldo_por_hora, sueldo_docente_15")
 
 
 if __name__ == "__main__":

@@ -36,6 +36,8 @@ import becasComFicha from "@/data/indicadores/becas_comunidad.json";
 import becasComObs from "@/data/observaciones/becas_comunidad.json";
 import sueldoFicha from "@/data/indicadores/sueldo_docente.json";
 import sueldoObs from "@/data/observaciones/sueldo_docente.json";
+import sueldo15Ficha from "@/data/indicadores/sueldo_docente_15.json";
+import sueldo15Obs from "@/data/observaciones/sueldo_docente_15.json";
 import horasFicha from "@/data/indicadores/horas_lectivas.json";
 import horasObs from "@/data/observaciones/horas_lectivas.json";
 import porHoraFicha from "@/data/indicadores/sueldo_por_hora.json";
@@ -142,6 +144,7 @@ export const REGISTRO: { ficha: Ficha; obs: Observaciones }[] = [
   par(unidadFicha, unidadObs),
   par(profesorFicha, profesorObs),
   par(sueldoFicha, sueldoObs),
+  par(sueldo15Ficha, sueldo15Obs),
   par(horasFicha, horasObs),
   par(porHoraFicha, porHoraObs),
   par(pisaFicha, pisaObs),
@@ -218,7 +221,7 @@ export function textoComprobacion(obs: Observaciones): string {
     return `Cada importe medio publicado es el importe total de las becas entre el número de becarios de las tablas del mismo capítulo (${nf(0).format(c.pares_comparados)} comprobaciones), y el porcentaje de Bachillerato y FP queda entre el de cada enseñanza.`;
   if (obs.indicador_id === "becas_comunidad")
     return `En cada curso, comunidad y enseñanza, el total de la tabla es lo del Ministerio más lo de la comunidad, y la suma de las filas da el total de España (${nf(0).format(c.pares_comparados)} comprobaciones).`;
-  if (["sueldo_docente", "horas_lectivas", "sueldo_por_hora"].includes(obs.indicador_id))
+  if (["sueldo_docente", "sueldo_docente_15", "horas_lectivas", "sueldo_por_hora"].includes(obs.indicador_id))
     return "Cada importe sale de la tabla o norma de su comunidad (con su apartado en el fichero de datos del proyecto). Se comprueba que el sueldo base, la paga extra y el complemento de destino son los estatales (salvo donde la comunidad tiene uno propio, que se avisa) y que las sumas coinciden con los totales mensuales o anuales cuando la comunidad los publica.";
   if (obs.indicador_id === "empleo_fp")
     return `Las ${nf(0).format(c.iguales_f19 ?? 0)} cifras de los titulados de 2020-21 en grado medio y superior coinciden con las de «Las cifras de la educación» (tabla F1.9); en cada caso, el total queda entre hombres y mujeres, y la tasa de alta en algún momento de marzo no es menor que la media del mes.`;

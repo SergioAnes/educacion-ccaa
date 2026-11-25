@@ -158,6 +158,14 @@ FUENTES: dict[str, list[tuple[str, str]]] = {
         ("an-orden-31-08-2026-horario.html", "https://www.juntadeandalucia.es/boja/2026/168/c03/2"),
         ("ar-instrucciones-ies-2026-27.pdf", "https://educa.aragon.es/documents/20126/6844128/CSVFV61LMW0LZ120XFIL+Instrucciones+curso+2026-2027+para+centros+educativos._03+IES+2026-2027+V8-(Instrucciones).pdf/ff9b76e8-b92f-291b-b736-6f093187162c"),
     ],
+    # Sueldos con 15 años de servicio: normas sobre sexenios, grados y carrera que no estaban en «sueldos»
+    "sueldos_antiguedad": [
+        ("ct-ordre-edf-56-2025-estadis.pdf", "https://portaldogc.gencat.cat/utilsEADOP/AppJava/PdfProviderServlet?documentId=1011571&type=01&language=ca_ES"),
+        ("ib-boib-166-2025-carrera-segundo-tramo.pdf", "https://intranet.caib.es/eboibfront/pdf/es/2025/166/1208703"),
+        ("na-dfl-251-1993-estatuto-consolidado.pdf", "https://www.boe.es/buscar/pdf/1993/BON-n-1993-90004-consolidado.pdf"),
+        ("cl-carrera-docente-preguntas-frecuentes.pdf", "https://www.educa.jcyl.es/profesorado/es/gestion-personal-docente/carrera-profesional-horizontal-personal-docente/categoria-profesional-i-proceso-ordinario-acceso-carr-dec9a.ficheros/1825877-Preguntas%20frecuentes.pdf"),
+        ("cl-proyecto-decreto-carrera-docente-2025.pdf", "https://transparencia.jcyl.es/huellanormativa/EDU/2025-284%20Decreto%20carrera%20profesional%20docentes/7.%20Proyecto%20Decreto%20carrera%20profesional%20horizontal%20docente%20(22-09-2025).pdf"),
+    ],
     # INEE: tablas del informe español de PISA 2025 (Excel dentro de un RAR)
     "pisa": [("tablas-informe-pisa-2025.rar", "https://www.educacionfpydeportes.gob.es/dam/jcr:4f7056b5-02d7-4e6d-a454-2caa3e04893f/tablas-informe-pisa-2025.rar")],
 }

@@ -3,7 +3,8 @@
   "anio": 2026,
   "casos": {
     "maestros": "Cuerpo de maestros (Infantil y Primaria), funcionario que empieza: sin trienios, sexenios, cargos, tutorías ni complementos de zona.",
-    "secundaria": "Cuerpo de profesores de enseñanza secundaria (ESO, Bachillerato y FP), funcionario que empieza: sin trienios, sexenios, cargos, tutorías ni complementos de zona."
+    "secundaria": "Cuerpo de profesores de enseñanza secundaria (ESO, Bachillerato y FP), funcionario que empieza: sin trienios, sexenios, cargos, tutorías ni complementos de zona.",
+    "con_15_anios": "Funcionario de carrera con 15 años de servicio en el mismo cuerpo: 5 trienios, 2 sexenios (o lo que hace sus veces) y lo que en 2026 llega con los años sin solicitud ni evaluación; sin cargos, tutorías ni complementos de zona."
   },
   "estatal": {
     "_nota": "Retribuciones básicas y complemento de destino: iguales en toda España (Ley de Presupuestos Generales del Estado). Se toman de la orden de Madrid y se comprueba que cada comunidad trae las mismas.",
@@ -20,7 +21,15 @@
       "24": 729.14
     },
     "fuente": "md_orden_nominas",
-    "donde": "Anexo I, apartados 1 (retribuciones básicas) y 2 (complemento de destino)"
+    "donde": "Anexo I, apartados 1 (retribuciones básicas) y 2 (complemento de destino)",
+    "trienio_mensual": {
+      "A1": 53.39,
+      "A2": 43.54
+    },
+    "trienio_paga_extra": {
+      "A1": 32.96,
+      "A2": 31.74
+    }
   },
   "fuentes": {
     "md_orden_nominas": {
@@ -327,6 +336,31 @@
       "titulo": "Orden de 31 de agosto de 2026, de medidas para la mejora de la organización, el funcionamiento y la gestión del sistema educativo (BOJA n.º 168)",
       "url": "https://www.juntadeandalucia.es/boja/2026/168/c03/2",
       "original": "sueldos/2026-11-25/an-orden-31-08-2026-horario.html"
+    },
+    "ct_edf56": {
+      "titulo": "Ordre EDF/56/2025, de 8 d'abril, per la qual es modifica l'Ordre ENS/330/2014 del procediment de promoció docent per estadis (DOGC n.º 9392, 14/4/2025)",
+      "url": "https://portaldogc.gencat.cat/utilsEADOP/AppJava/PdfProviderServlet?documentId=1011571&type=01&language=ca_ES",
+      "original": "sueldos_antiguedad/2026-11-25/ct-ordre-edf-56-2025-estadis.pdf"
+    },
+    "ib_carrera": {
+      "titulo": "Resolución de la directora general de Personal Docente por la que se aprueba la primera convocatoria del segundo tramo de la carrera profesional docente (BOIB n.º 166, 18/12/2025)",
+      "url": "https://intranet.caib.es/eboibfront/pdf/es/2025/166/1208703",
+      "original": "sueldos_antiguedad/2026-11-25/ib-boib-166-2025-carrera-segundo-tramo.pdf"
+    },
+    "na_estatuto": {
+      "titulo": "Decreto Foral Legislativo 251/1993, Texto Refundido del Estatuto del Personal al servicio de las Administraciones Públicas de Navarra (texto consolidado del BOE)",
+      "url": "https://www.boe.es/buscar/pdf/1993/BON-n-1993-90004-consolidado.pdf",
+      "original": "sueldos_antiguedad/2026-11-25/na-dfl-251-1993-estatuto-consolidado.pdf"
+    },
+    "cl_carrera_faq": {
+      "titulo": "Junta de Castilla y León: preguntas frecuentes sobre la carrera profesional horizontal del personal docente (categoría I)",
+      "url": "https://www.educa.jcyl.es/profesorado/es/gestion-personal-docente/carrera-profesional-horizontal-personal-docente/categoria-profesional-i-proceso-ordinario-acceso-carr-dec9a.ficheros/1825877-Preguntas%20frecuentes.pdf",
+      "original": "sueldos_antiguedad/2026-11-25/cl-carrera-docente-preguntas-frecuentes.pdf"
+    },
+    "cl_carrera_proyecto": {
+      "titulo": "Proyecto de decreto de la carrera profesional horizontal del personal docente de Castilla y León (22/9/2025; aprobado como Decreto 16/2025)",
+      "url": "https://transparencia.jcyl.es/huellanormativa/EDU/2025-284%20Decreto%20carrera%20profesional%20docentes/7.%20Proyecto%20Decreto%20carrera%20profesional%20horizontal%20docente%20(22-09-2025).pdf",
+      "original": "sueldos_antiguedad/2026-11-25/cl-proyecto-decreto-carrera-docente-2025.pdf"
     }
   },
   "comunidades": {
@@ -370,6 +404,29 @@
             "fuente": "md_instrucciones",
             "donde": "4.5.1",
             "definicion": "25 lectivas + 4 complementarias; cuentan como lectivas los recreos vigilados (4.5.2)"
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 43.54,
+              "fuente": "md_orden_nominas",
+              "donde": "Anexo I.1, «un trienio» en pagas ordinarias y extraordinarias"
+            },
+            "trienio_paga_extra": {
+              "valor": 31.74,
+              "fuente": "md_orden_nominas",
+              "donde": "Anexo I.1, «un trienio» en pagas ordinarias y extraordinarias"
+            },
+            "conceptos": [
+              {
+                "concepto": "Componente por formación permanente (sexenios): primer y segundo periodo (93,28 + 117,70)",
+                "mensual": 210.98,
+                "pagos": 14,
+                "fuente": "md_orden_nominas",
+                "donde": "Anexo II.3",
+                "comprobacion": "supuesto",
+                "nota": "12 mensualidades y las 2 pagas adicionales, que son «una mensualidad del complemento específico» (art. 5.4), del que la formación permanente es un componente: mismo supuesto que las pagas adicionales."
+              }
+            ]
           }
         },
         "secundaria": {
@@ -408,13 +465,39 @@
             "fuente": "md_instrucciones",
             "donde": "6.1.3.1 (Acuerdo de 23/4/2025)",
             "definicion": "19 periodos lectivos de al menos 55 minutos para quien no es tutor, de 30 periodos en total; los tutores de ESO y Bachillerato, además 1 hora de convivencia"
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 53.39,
+              "fuente": "md_orden_nominas",
+              "donde": "Anexo I.1, «un trienio» en pagas ordinarias y extraordinarias"
+            },
+            "trienio_paga_extra": {
+              "valor": 32.96,
+              "fuente": "md_orden_nominas",
+              "donde": "Anexo I.1, «un trienio» en pagas ordinarias y extraordinarias"
+            },
+            "conceptos": [
+              {
+                "concepto": "Componente por formación permanente (sexenios): primer y segundo periodo (93,28 + 117,70)",
+                "mensual": 210.98,
+                "pagos": 14,
+                "fuente": "md_orden_nominas",
+                "donde": "Anexo II.3",
+                "comprobacion": "supuesto",
+                "nota": "12 mensualidades y las 2 pagas adicionales, que son «una mensualidad del complemento específico» (art. 5.4), del que la formación permanente es un componente: mismo supuesto que las pagas adicionales."
+              }
+            ]
           }
         }
       },
       "avisos": [
         "La Comunidad de Madrid ha anunciado una carrera profesional horizontal con complementos de hasta 350 € (maestros) y 400 € (profesores) al mes desde 2027; es una propuesta y no está incluida."
       ],
-      "cautela_web": "Las dos pagas adicionales del complemento específico se dan por cobradas también por los docentes: la ley las fija para los funcionarios en general."
+      "cautela_web": "Las dos pagas adicionales del complemento específico se dan por cobradas también por los docentes: la ley las fija para los funcionarios en general.",
+      "avisos_15": [
+        "La carrera profesional anunciada para 2027 no se incluye."
+      ]
     },
     "09": {
       "nombre": "Cataluña",
@@ -471,6 +554,29 @@
             "fuente": "ct_doigc",
             "donde": "1.1",
             "definicion": "23 horas de «docència» (grupos clase, apoyo, tutorías, sustituciones cortas) + 7 complementarias"
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 43.54,
+              "fuente": "ct_taules",
+              "donde": "«Triennis» (grup A y B) e «Import d'un trienni d'una paga extra»"
+            },
+            "trienio_paga_extra": {
+              "valor": 31.74,
+              "fuente": "ct_taules",
+              "donde": "«Triennis» (grup A y B) e «Import d'un trienni d'una paga extra»"
+            },
+            "conceptos": [
+              {
+                "concepto": "Estadis (sexenios): primer y segundo (128,88 + 135,54)",
+                "mensual": 264.42,
+                "pagos": 14,
+                "fuente": "ct_taules",
+                "donde": "«Estadis»",
+                "comprobacion": "norma",
+                "nota": "Los estadis son «nivells retributius del complement específic» (Ordre EDF/56/2025, art. 2.1), que se cobra en 12 mensualidades y 2 adicionales (proyecto de ley de presupuestos, art. 26.d). Desde 2024 cada estadi pide 6 años de servicio y 4 créditos de formación u otras actividades (art. 3)."
+              }
+            ]
           }
         },
         "secundaria": {
@@ -524,6 +630,29 @@
             "fuente": "ct_doigc",
             "donde": "1.2",
             "definicion": "18 horas lectivas + 6 complementarias de horario fijo"
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 53.39,
+              "fuente": "ct_taules",
+              "donde": "«Triennis» (grup A y B) e «Import d'un trienni d'una paga extra»"
+            },
+            "trienio_paga_extra": {
+              "valor": 32.96,
+              "fuente": "ct_taules",
+              "donde": "«Triennis» (grup A y B) e «Import d'un trienni d'una paga extra»"
+            },
+            "conceptos": [
+              {
+                "concepto": "Estadis (sexenios): primer y segundo (128,88 + 135,54)",
+                "mensual": 264.42,
+                "pagos": 14,
+                "fuente": "ct_taules",
+                "donde": "«Estadis»",
+                "comprobacion": "norma",
+                "nota": "Los estadis son «nivells retributius del complement específic» (Ordre EDF/56/2025, art. 2.1), que se cobra en 12 mensualidades y 2 adicionales (proyecto de ley de presupuestos, art. 26.d). Desde 2024 cada estadi pide 6 años de servicio y 4 créditos de formación u otras actividades (art. 3)."
+              }
+            ]
           }
         }
       },
@@ -532,10 +661,12 @@
         "secundaria": 2837.21
       },
       "avisos": [
-        "Los acuerdos de 2026 prevén más subidas del complemento específico hasta llegar a un 30 % y que el complemento de mejora suba en 2028 y 2029; no están incluidas.",
-        "Desde 2012 los sexenios («estadis») se cobran a los nueve años en lugar de a los seis; por eso el caso con antigüedad no se calcula todavía."
+        "Los acuerdos de 2026 prevén más subidas del complemento específico hasta llegar a un 30 % y que el complemento de mejora suba en 2028 y 2029; no están incluidas."
       ],
-      "cautela_web": "Incluye un pago único en mayo de 2026 (839 € maestros, 858 € secundaria), primer tramo de una subida que desde 2027 va en la nómina mensual."
+      "cautela_web": "Incluye un pago único en mayo de 2026 (839 € maestros, 858 € secundaria), primer tramo de una subida que desde 2027 va en la nómina mensual.",
+      "avisos_15": [
+        "Desde 2024 los estadis vuelven a ser cada 6 años (Ordre EDF/56/2025); entre 2012 y 2023 hacían falta 9 años para el primero, y la deuda de esos años se pagará desde 2027 (no incluida)."
+      ]
     },
     "10": {
       "nombre": "Comunitat Valenciana",
@@ -593,6 +724,35 @@
             "fuente": "vc_instr_primaria",
             "donde": "6.1 (Decreto 58/2021)",
             "definicion": "23 horas lectivas; jornada lectiva del alumnado de 25 h, incluido el patio"
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 43.54,
+              "fuente": "vc_tablas_dogv",
+              "donde": "Tabla 1, retribuciones básicas: trienio mensual y trienio extra"
+            },
+            "trienio_paga_extra": {
+              "valor": 31.74,
+              "fuente": "vc_tablas_dogv",
+              "donde": "Tabla 1, retribuciones básicas: trienio mensual y trienio extra"
+            },
+            "conceptos": [
+              {
+                "concepto": "Sexenios: primero y segundo (128,37 + 135,98)",
+                "mensual": 264.35,
+                "pagos": 12,
+                "fuente": "vc_tablas_dogv",
+                "donde": "Tabla 4, sexenios del personal docente (acumulado del 2.º: 264,35)",
+                "comprobacion": "norma",
+                "nota": "La ley de presupuestos (art. 43) excluye de las pagas adicionales el componente de formación permanente (Decreto 164/2017)."
+              }
+            ],
+            "total_mensual_publicado": {
+              "valor": 3086.05,
+              "mas": 75.0,
+              "fuente": "vc_brutos",
+              "donde": "«De 15 a 17 años» (5 trienios, 2 sexenios), maestros/as (A2)"
+            }
           }
         },
         "secundaria": {
@@ -647,6 +807,35 @@
             "fuente": "vc_instr_secundaria",
             "donde": "6.1 (Decreto 58/2021)",
             "definicion": "18 horas lectivas, ampliables a 20 con compensación de 2 complementarias por cada una"
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 53.39,
+              "fuente": "vc_tablas_dogv",
+              "donde": "Tabla 1, retribuciones básicas: trienio mensual y trienio extra"
+            },
+            "trienio_paga_extra": {
+              "valor": 32.96,
+              "fuente": "vc_tablas_dogv",
+              "donde": "Tabla 1, retribuciones básicas: trienio mensual y trienio extra"
+            },
+            "conceptos": [
+              {
+                "concepto": "Sexenios: primero y segundo (128,37 + 135,98)",
+                "mensual": 264.35,
+                "pagos": 12,
+                "fuente": "vc_tablas_dogv",
+                "donde": "Tabla 4, sexenios del personal docente (acumulado del 2.º: 264,35)",
+                "comprobacion": "norma",
+                "nota": "La ley de presupuestos (art. 43) excluye de las pagas adicionales el componente de formación permanente (Decreto 164/2017)."
+              }
+            ],
+            "total_mensual_publicado": {
+              "valor": 3464.65,
+              "mas": 75.0,
+              "fuente": "vc_brutos",
+              "donde": "«De 15 a 17 años» (5 trienios, 2 sexenios), profesores/as (A1)"
+            }
           }
         }
       },
@@ -726,6 +915,35 @@
             "fuente": "pv_decreto_252",
             "donde": "anexo, «Horario lectivo del profesorado» (pág. 65)",
             "definicion": "máximo de 21 horas lectivas en 2026-27 (22 en 2025-26)"
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 43.54,
+              "fuente": "pv_instruccion",
+              "donde": "Primero, tabla de trienios: antigüedad (mes, 12) y paga extra (2)"
+            },
+            "trienio_paga_extra": {
+              "valor": 31.74,
+              "fuente": "pv_instruccion",
+              "donde": "Primero, tabla de trienios: antigüedad (mes, 12) y paga extra (2)"
+            },
+            "conceptos": [
+              {
+                "concepto": "Diferencia básica de los 5 trienios (completa el trienio docente hasta el de la administración general)",
+                "anual": 551.45,
+                "fuente": "pv_instruccion",
+                "donde": "Primero, tabla de trienios: diferencia básica, año (125,72 secundaria; 110,29 maestros) × 5"
+              },
+              {
+                "concepto": "Primer sexenio (el 2.º y el 3.º ya se cobran desde el primer día)",
+                "mensual": 96.81,
+                "pagos": 14,
+                "fuente": "pv_instruccion",
+                "donde": "Tercero b), 1.º: 96,81 al mes (14); 1.355,34 al año",
+                "comprobacion": "norma",
+                "nota": "El Decreto 252/2025 dice que los grados 1.º, 4.º y 5.º se aplican con 6, 24 y 30 años de servicio: con 15 años solo se añade el 1.º."
+              }
+            ]
           }
         },
         "secundaria": {
@@ -780,6 +998,35 @@
             "fuente": "pv_decreto_252",
             "donde": "anexo, «Horario lectivo del profesorado» (pág. 65)",
             "definicion": "máximo de 17 horas lectivas, incluidas las de apoyo y refuerzo"
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 53.39,
+              "fuente": "pv_instruccion",
+              "donde": "Primero, tabla de trienios: antigüedad (mes, 12) y paga extra (2)"
+            },
+            "trienio_paga_extra": {
+              "valor": 32.96,
+              "fuente": "pv_instruccion",
+              "donde": "Primero, tabla de trienios: antigüedad (mes, 12) y paga extra (2)"
+            },
+            "conceptos": [
+              {
+                "concepto": "Diferencia básica de los 5 trienios (completa el trienio docente hasta el de la administración general)",
+                "anual": 628.6,
+                "fuente": "pv_instruccion",
+                "donde": "Primero, tabla de trienios: diferencia básica, año (125,72 secundaria; 110,29 maestros) × 5"
+              },
+              {
+                "concepto": "Primer sexenio (el 2.º y el 3.º ya se cobran desde el primer día)",
+                "mensual": 96.81,
+                "pagos": 14,
+                "fuente": "pv_instruccion",
+                "donde": "Tercero b), 1.º: 96,81 al mes (14); 1.355,34 al año",
+                "comprobacion": "norma",
+                "nota": "El Decreto 252/2025 dice que los grados 1.º, 4.º y 5.º se aplican con 6, 24 y 30 años de servicio: con 15 años solo se añade el 1.º."
+              }
+            ]
           }
         }
       },
@@ -798,7 +1045,10 @@
         "El complemento de destino vasco es propio y más alto que el estatal (701,21 € en el nivel 21 y 880,09 € en el 24, frente a 592,11 y 729,14).",
         "La instrucción recuerda el posible 0,5 % adicional de 2026 si el IPC supera el 1,5 % (Real Decreto-ley 14/2025)."
       ],
-      "cautela_web": "Incluye el segundo y el tercer sexenio, que en el País Vasco se cobran desde el primer día (4.435 € al año), y un complemento de destino propio."
+      "cautela_web": "Incluye el segundo y el tercer sexenio, que en el País Vasco se cobran desde el primer día (4.435 € al año), y un complemento de destino propio.",
+      "avisos_15": [
+        "En el País Vasco el 2.º y el 3.º sexenio ya se cobran desde el primer día; con 15 años solo se añade el 1.º (el 4.º llega a los 24)."
+      ]
     },
     "04": {
       "nombre": "Illes Balears",
@@ -854,6 +1104,43 @@
             "fuente": "ib_horaris",
             "donde": "1.2",
             "definicion": "máximo de 23 periodos de docencia directa (clases, apoyos, recreo y tutoría); 25 lectivas contando coordinaciones y cargos; jornada de 35 h"
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 43.54,
+              "fuente": "ib_retribucions",
+              "donde": "«Triennis», A1 y A2: mensual y pagues extres"
+            },
+            "trienio_paga_extra": {
+              "valor": 31.74,
+              "fuente": "ib_retribucions",
+              "donde": "«Triennis», A1 y A2: mensual y pagues extres"
+            },
+            "conceptos": [
+              {
+                "concepto": "Sexennis: primer y segon (69,48 + 87,64)",
+                "mensual": 157.12,
+                "pagos": 14,
+                "fuente": "ib_retribucions",
+                "donde": "Complement de Formació Permanent: mensual y pagues extres"
+              },
+              {
+                "concepto": "Complemento de la Comunidad Autónoma: tramo de más de 12 años en lugar del inicial (543,77 − 418,54)",
+                "mensual": 125.23,
+                "pagos": 12,
+                "fuente": "ib_retribucions",
+                "donde": "Complement Comunitat Autònoma, «Més d'12 Anys» e «Interins i Funcionaris en Pràctiques»"
+              },
+              {
+                "concepto": "Carrera profesional, tramos 1 y 2 (53,32 + 81,20)",
+                "mensual": 134.52,
+                "pagos": 12,
+                "fuente": "ib_retribucions",
+                "donde": "Carrera Professional tram 1 y tram 2 (sin importe en pagas extra)",
+                "comprobacion": "norma",
+                "nota": "Cada tramo exige el sexenio correspondiente y una evaluación favorable, pero la primera convocatoria de cada tramo lo reconoce de oficio a quien ya tiene el sexenio (BOIB n.º 166, 18/12/2025: el segundo tramo, desde el 1/1/2026)."
+              }
+            ]
           }
         },
         "secundaria": {
@@ -906,6 +1193,43 @@
             "fuente": "ib_horaris",
             "donde": "1.3",
             "definicion": "máximo de 18 periodos de docencia directa (clases, apoyos y tutoría de grupo); jornada de 35 h"
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 53.39,
+              "fuente": "ib_retribucions",
+              "donde": "«Triennis», A1 y A2: mensual y pagues extres"
+            },
+            "trienio_paga_extra": {
+              "valor": 32.96,
+              "fuente": "ib_retribucions",
+              "donde": "«Triennis», A1 y A2: mensual y pagues extres"
+            },
+            "conceptos": [
+              {
+                "concepto": "Sexennis: primer y segon (69,48 + 87,64)",
+                "mensual": 157.12,
+                "pagos": 14,
+                "fuente": "ib_retribucions",
+                "donde": "Complement de Formació Permanent: mensual y pagues extres"
+              },
+              {
+                "concepto": "Complemento de la Comunidad Autónoma: tramo de más de 12 años en lugar del inicial (543,77 − 418,54)",
+                "mensual": 125.23,
+                "pagos": 12,
+                "fuente": "ib_retribucions",
+                "donde": "Complement Comunitat Autònoma, «Més d'12 Anys» e «Interins i Funcionaris en Pràctiques»"
+              },
+              {
+                "concepto": "Carrera profesional, tramos 1 y 2 (53,32 + 81,20)",
+                "mensual": 134.52,
+                "pagos": 12,
+                "fuente": "ib_retribucions",
+                "donde": "Carrera Professional tram 1 y tram 2 (sin importe en pagas extra)",
+                "comprobacion": "norma",
+                "nota": "Cada tramo exige el sexenio correspondiente y una evaluación favorable, pero la primera convocatoria de cada tramo lo reconoce de oficio a quien ya tiene el sexenio (BOIB n.º 166, 18/12/2025: el segundo tramo, desde el 1/1/2026)."
+              }
+            ]
           }
         }
       },
@@ -914,9 +1238,13 @@
         "El complemento de la Comunidad Autónoma sube con la antigüedad (de 418,54 € a 619,04 € al mes); se toma el tramo de quien empieza.",
         "La jornada semanal en Baleares es de 35 horas, no de 37,5.",
         "No se cuentan los atrasos de 2020-2021 que se están pagando tras una sentencia del TSJ: son de años anteriores.",
-        "No se incluye el primer tramo de la carrera profesional docente (convocatoria de octubre de 2026): exige una evaluación favorable y pueden pedirlo también interinos y funcionarios en prácticas; no se ha confirmado si exige años de servicio."
+        "No se incluye la carrera profesional docente: su primer tramo exige tener el primer sexenio (6 años) y una evaluación favorable (BOIB n.º 166, 18/12/2025)."
       ],
-      "cautela_web": "Incluye la indemnización por residencia de Mallorca, que cobra todo el personal público; en Menorca, Ibiza y Formentera es mayor. No incluye el primer tramo de la carrera profesional docente: se cobra tras una evaluación favorable y no se ha podido confirmar si exige años de servicio."
+      "cautela_web": "Incluye la indemnización por residencia de Mallorca, que cobra todo el personal público; en Menorca, Ibiza y Formentera es mayor.",
+      "avisos_15": [
+        "Incluye los tramos 1 y 2 de la carrera profesional: se han reconocido de oficio a quien tenía el primer y el segundo sexenio; en adelante exigirán una evaluación favorable."
+      ],
+      "cautela_web_15": "Incluye los tramos 1 y 2 de la carrera profesional, reconocidos de oficio a quien tenía los sexenios; en adelante exigirán una evaluación."
     },
     "07": {
       "nombre": "Castilla y León",
@@ -967,6 +1295,27 @@
             "fuente": "cl_acuerdo_2022",
             "donde": "punto 3",
             "definicion": "24 horas lectivas: 21,5 de docencia directa + 2,5 de recreo vigilado; jornada de 35 h"
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 43.54,
+              "fuente": "cl_orden_pre_1",
+              "donde": "Anexo I: sueldo y trienios, y cuantías de las pagas extraordinarias"
+            },
+            "trienio_paga_extra": {
+              "valor": 31.74,
+              "fuente": "cl_orden_pre_1",
+              "donde": "Anexo I: sueldo y trienios, y cuantías de las pagas extraordinarias"
+            },
+            "conceptos": [
+              {
+                "concepto": "Formación permanente (sexenios): primer y segundo periodo (70,22 + 88,56)",
+                "mensual": 158.78,
+                "pagos": 14,
+                "fuente": "cl_orden_pre_1",
+                "donde": "Anexo V, Tercero (mensual) y anexo XIII, Cuatro (cuantía a incluir en cada paga extraordinaria)"
+              }
+            ]
           }
         },
         "secundaria": {
@@ -1019,6 +1368,27 @@
               18,
               19
             ]
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 53.39,
+              "fuente": "cl_orden_pre_1",
+              "donde": "Anexo I: sueldo y trienios, y cuantías de las pagas extraordinarias"
+            },
+            "trienio_paga_extra": {
+              "valor": 32.96,
+              "fuente": "cl_orden_pre_1",
+              "donde": "Anexo I: sueldo y trienios, y cuantías de las pagas extraordinarias"
+            },
+            "conceptos": [
+              {
+                "concepto": "Formación permanente (sexenios): primer y segundo periodo (70,22 + 88,56)",
+                "mensual": 158.78,
+                "pagos": 14,
+                "fuente": "cl_orden_pre_1",
+                "donde": "Anexo V, Tercero (mensual) y anexo XIII, Cuatro (cuantía a incluir en cada paga extraordinaria)"
+              }
+            ]
           }
         }
       },
@@ -1027,7 +1397,11 @@
         "Desde septiembre de 2026 los tutores cobran 20 € al mes (Orden EDU/1051/2026); no se incluye porque no todos son tutores.",
         "La jornada semanal en Castilla y León es de 35 horas."
       ],
-      "cautela_web": "Incluye una «consolidación» de unos 25-27 € al mes que la orden no dice a quién se aplica."
+      "cautela_web": "Incluye una «consolidación» de unos 25-27 € al mes que la orden no dice a quién se aplica.",
+      "avisos_15": [
+        "Se puede elegir, en su lugar, la carrera profesional horizontal (incompatible con los sexenios): exige solicitud y evaluación; con 15 años sería la categoría II, 362,54 € al mes (secundaria) o 275,54 € (maestros) en 14 pagas, en lugar de los 158,78 € de los sexenios. No se incluye."
+      ],
+      "cautela_web_15": "Calculado con sexenios; quien elige la carrera profesional horizontal (con solicitud y evaluación) cobra más: unos 2.900 € al año en secundaria y 1.600 € en maestros."
     },
     "02": {
       "nombre": "Aragón",
@@ -1079,7 +1453,35 @@
             "donde": "organización del profesorado (circular de 20/5/2026)",
             "definicion": "23 horas lectivas semanales desde 2026-27 (antes 24); 30 h de permanencia"
           },
-          "_comprobacion_anual_especifico": 8978.48
+          "_comprobacion_anual_especifico": 8978.48,
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 43.54,
+              "fuente": "ar_tablas",
+              "donde": "hoja «mensuales», 1. Sueldo y trienios (y paga extra)"
+            },
+            "trienio_paga_extra": {
+              "valor": 31.74,
+              "fuente": "ar_tablas",
+              "donde": "hoja «mensuales», 1. Sueldo y trienios (y paga extra)"
+            },
+            "conceptos": [
+              {
+                "concepto": "Sexenios: primer y segundo periodo, mensual (96,53 + 114,53)",
+                "mensual": 211.06,
+                "pagos": 12,
+                "fuente": "ar_tablas",
+                "donde": "hoja «mensuales», C. Componente por formación permanente"
+              },
+              {
+                "concepto": "Sexenios en cada paga adicional (86,88 + 103,08)",
+                "mensual": 189.96,
+                "pagos": 2,
+                "fuente": "ar_tablas",
+                "donde": "hoja «adicional», C. Componente por formación permanente"
+              }
+            ]
+          }
         },
         "secundaria": {
           "grupo": "A1",
@@ -1127,7 +1529,35 @@
             "donde": "organización del profesorado (circular de 13/5/2026; Orden ECD/1508/2024)",
             "definicion": "18 horas lectivas, hasta 21 si la organización del centro lo requiere; 30 h de permanencia"
           },
-          "_comprobacion_anual_especifico": 9182.3
+          "_comprobacion_anual_especifico": 9182.3,
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 53.39,
+              "fuente": "ar_tablas",
+              "donde": "hoja «mensuales», 1. Sueldo y trienios (y paga extra)"
+            },
+            "trienio_paga_extra": {
+              "valor": 32.96,
+              "fuente": "ar_tablas",
+              "donde": "hoja «mensuales», 1. Sueldo y trienios (y paga extra)"
+            },
+            "conceptos": [
+              {
+                "concepto": "Sexenios: primer y segundo periodo, mensual (96,53 + 114,53)",
+                "mensual": 211.06,
+                "pagos": 12,
+                "fuente": "ar_tablas",
+                "donde": "hoja «mensuales», C. Componente por formación permanente"
+              },
+              {
+                "concepto": "Sexenios en cada paga adicional (86,88 + 103,08)",
+                "mensual": 189.96,
+                "pagos": 2,
+                "fuente": "ar_tablas",
+                "donde": "hoja «adicional», C. Componente por formación permanente"
+              }
+            ]
+          }
         }
       },
       "avisos": [
@@ -1176,6 +1606,26 @@
             "donde": "distribución de la jornada semanal",
             "definicion": "23 horas de presencia lectiva + 5 no lectivas en el centro; jornada de 37,5 h",
             "comprobacion": "resumen_sindical"
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 43.54,
+              "fuente": "ga_transparencia",
+              "donde": "Retribucións anuais do persoal docente: trienio, importe anual (706,60 A1; 585,96 A2 = 12 mensualidades + 2 pagas)"
+            },
+            "trienio_paga_extra": {
+              "valor": 31.74,
+              "fuente": "ga_transparencia",
+              "donde": "Retribucións anuais do persoal docente: trienio, importe anual (706,60 A1; 585,96 A2 = 12 mensualidades + 2 pagas)"
+            },
+            "conceptos": [
+              {
+                "concepto": "Sexenios: 1.º y 2.º período (1.254,82 + 1.613,08 al año)",
+                "anual": 2867.9,
+                "fuente": "ga_transparencia",
+                "donde": "Complemento específico por formación permanente, euros/ano"
+              }
+            ]
           }
         },
         "secundaria": {
@@ -1214,6 +1664,26 @@
             "donde": "distribución de la jornada semanal",
             "definicion": "18 sesiones lectivas fijas (se recuperan como referencia en 2026-27) + 5 complementarias; jornada de 37,5 h",
             "comprobacion": "resumen_sindical"
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 53.39,
+              "fuente": "ga_transparencia",
+              "donde": "Retribucións anuais do persoal docente: trienio, importe anual (706,60 A1; 585,96 A2 = 12 mensualidades + 2 pagas)"
+            },
+            "trienio_paga_extra": {
+              "valor": 32.96,
+              "fuente": "ga_transparencia",
+              "donde": "Retribucións anuais do persoal docente: trienio, importe anual (706,60 A1; 585,96 A2 = 12 mensualidades + 2 pagas)"
+            },
+            "conceptos": [
+              {
+                "concepto": "Sexenios: 1.º y 2.º período (1.254,82 + 1.613,08 al año)",
+                "anual": 2867.9,
+                "fuente": "ga_transparencia",
+                "donde": "Complemento específico por formación permanente, euros/ano"
+              }
+            ]
           }
         }
       },
@@ -1282,6 +1752,32 @@
             "fuente": "as_circular",
             "donde": "horario del profesorado",
             "definicion": "23 horas lectivas desde 2026-27 (2 menos que en cursos anteriores; Acuerdo de 20/3/2025)"
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 43.54,
+              "fuente": "as_ley",
+              "donde": "retribuciones de funcionarios: sueldo y trienios, y cuantías de cada paga extraordinaria"
+            },
+            "trienio_paga_extra": {
+              "valor": 31.74,
+              "fuente": "as_ley",
+              "donde": "retribuciones de funcionarios: sueldo y trienios, y cuantías de cada paga extraordinaria"
+            },
+            "conceptos": [
+              {
+                "concepto": "Formación permanente (sexenios): primer y segundo periodo (120,17 + 88,42)",
+                "mensual": 208.59,
+                "pagos": 14,
+                "fuente": "as_bopa",
+                "donde": "anexo V, 3.3",
+                "comprobacion": "supuesto",
+                "nota": "Las pagas extra incluyen «una mensualidad del complemento específico» (ley de presupuestos, para el personal funcionario en general), del que es un componente: mismo supuesto que el específico."
+              }
+            ],
+            "quita": [
+              "Complemento personal transitorio"
+            ]
           }
         },
         "secundaria": {
@@ -1330,6 +1826,32 @@
             "fuente": "as_circular",
             "donde": "horario del profesorado",
             "definicion": "18 periodos lectivos y 9 complementarios en jornada completa"
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 53.39,
+              "fuente": "as_ley",
+              "donde": "retribuciones de funcionarios: sueldo y trienios, y cuantías de cada paga extraordinaria"
+            },
+            "trienio_paga_extra": {
+              "valor": 32.96,
+              "fuente": "as_ley",
+              "donde": "retribuciones de funcionarios: sueldo y trienios, y cuantías de cada paga extraordinaria"
+            },
+            "conceptos": [
+              {
+                "concepto": "Formación permanente (sexenios): primer y segundo periodo (120,17 + 88,42)",
+                "mensual": 208.59,
+                "pagos": 14,
+                "fuente": "as_bopa",
+                "donde": "anexo V, 3.3",
+                "comprobacion": "supuesto",
+                "nota": "Las pagas extra incluyen «una mensualidad del complemento específico» (ley de presupuestos, para el personal funcionario en general), del que es un componente: mismo supuesto que el específico."
+              }
+            ],
+            "quita": [
+              "Complemento personal transitorio"
+            ]
           }
         }
       },
@@ -1338,7 +1860,10 @@
         "Asturias publica un complemento de destino un 1 % mayor que el estatal (598,09 € en el nivel 21 y 736,54 € en el 24).",
         "El complemento específico general es el mismo para maestros y profesores de secundaria."
       ],
-      "cautela_web": "Las dos pagas adicionales del complemento específico se dan por cobradas también por los docentes: la ley las fija para los funcionarios en general."
+      "cautela_web": "Las dos pagas adicionales del complemento específico se dan por cobradas también por los docentes: la ley las fija para los funcionarios en general.",
+      "avisos_15": [
+        "Con el primer sexenio se deja de cobrar el complemento personal transitorio (113,85 € al mes desde septiembre de 2026)."
+      ]
     },
     "06": {
       "nombre": "Cantabria",
@@ -1389,6 +1914,32 @@
             "fuente": "cn_instr_ceip",
             "donde": "horario del profesorado (Orden EDU/65/2010)",
             "definicion": "24 horas lectivas (incluidos recreos vigilados y cargos) + 6 complementarias de permanencia"
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 43.54,
+              "fuente": "cn_resolucion",
+              "donde": "preámbulo: retribuciones básicas «en las mismas cuantías que fijan las leyes de presupuestos»",
+              "nota": "La resolución no da el importe: es el estatal."
+            },
+            "trienio_paga_extra": {
+              "valor": 31.74,
+              "fuente": "cn_resolucion",
+              "donde": "preámbulo: retribuciones básicas «en las mismas cuantías que fijan las leyes de presupuestos»",
+              "nota": "La resolución no da el importe: es el estatal."
+            },
+            "conceptos": [
+              {
+                "concepto": "Sexenios: primero y segundo (108,86 + 92,21)",
+                "mensual": 201.07,
+                "pagos": 12,
+                "fuente": "cn_resolucion",
+                "donde": "Dos c), tabla de sexenios: acumulado 201,07; anual 2.412,84 (12 pagas)"
+              }
+            ],
+            "quita": [
+              "Complemento de fomento a la formación"
+            ]
           }
         },
         "secundaria": {
@@ -1441,6 +1992,32 @@
               18,
               20
             ]
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 53.39,
+              "fuente": "cn_resolucion",
+              "donde": "preámbulo: retribuciones básicas «en las mismas cuantías que fijan las leyes de presupuestos»",
+              "nota": "La resolución no da el importe: es el estatal."
+            },
+            "trienio_paga_extra": {
+              "valor": 32.96,
+              "fuente": "cn_resolucion",
+              "donde": "preámbulo: retribuciones básicas «en las mismas cuantías que fijan las leyes de presupuestos»",
+              "nota": "La resolución no da el importe: es el estatal."
+            },
+            "conceptos": [
+              {
+                "concepto": "Sexenios: primero y segundo (108,86 + 92,21)",
+                "mensual": 201.07,
+                "pagos": 12,
+                "fuente": "cn_resolucion",
+                "donde": "Dos c), tabla de sexenios: acumulado 201,07; anual 2.412,84 (12 pagas)"
+              }
+            ],
+            "quita": [
+              "Complemento de fomento a la formación"
+            ]
           }
         }
       },
@@ -1448,7 +2025,10 @@
         "El complemento específico general de Cantabria es el mismo para maestros y profesores de secundaria (875,10 € al mes) y es de los más altos.",
         "Las dos pagas adicionales del específico (1.750,20 € al año) no están confirmadas para docentes en una norma propia."
       ],
-      "cautela_web": "Las dos pagas adicionales del complemento específico se dan por cobradas también por los docentes: la ley las fija para los funcionarios en general."
+      "cautela_web": "Las dos pagas adicionales del complemento específico se dan por cobradas también por los docentes: la ley las fija para los funcionarios en general.",
+      "avisos_15": [
+        "Con el primer sexenio se deja de cobrar el complemento de fomento a la formación (35,77 € al mes)."
+      ]
     },
     "08": {
       "nombre": "Castilla-La Mancha",
@@ -1492,6 +2072,29 @@
             "definicion": "23 horas lectivas «con carácter general» (UGT); la Orden 104/2026 compensa con dos periodos lectivos a quien supere el horario de referencia",
             "comprobacion": "resumen_sindical",
             "fuente_resumen": "https://educacion.fespugtclm.es/instrucciones-26-27/"
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 43.54,
+              "fuente": "cm_orden_194",
+              "donde": "retribuciones básicas: sueldo y trienios, y pagas extraordinarias"
+            },
+            "trienio_paga_extra": {
+              "valor": 31.74,
+              "fuente": "cm_orden_194",
+              "donde": "retribuciones básicas: sueldo y trienios, y pagas extraordinarias"
+            },
+            "conceptos": [
+              {
+                "concepto": "Formación permanente (sexenios): primer y segundo periodo (94,46 + 88,74)",
+                "mensual": 183.2,
+                "pagos": 14,
+                "fuente": "cm_anexo_iii",
+                "donde": "apartado 3",
+                "comprobacion": "supuesto",
+                "nota": "Las pagas extra incluyen «una mensualidad del complemento específico» (ley de presupuestos, para el personal funcionario de la Junta): mismo supuesto que el específico."
+              }
+            ]
           }
         },
         "secundaria": {
@@ -1530,6 +2133,29 @@
             "fuente": "cm_orden_104",
             "donde": "art. 6",
             "definicion": "18 periodos lectivos semanales; si se superan, 2 horas complementarias menos por cada uno"
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 53.39,
+              "fuente": "cm_orden_194",
+              "donde": "retribuciones básicas: sueldo y trienios, y pagas extraordinarias"
+            },
+            "trienio_paga_extra": {
+              "valor": 32.96,
+              "fuente": "cm_orden_194",
+              "donde": "retribuciones básicas: sueldo y trienios, y pagas extraordinarias"
+            },
+            "conceptos": [
+              {
+                "concepto": "Formación permanente (sexenios): primer y segundo periodo (94,46 + 88,74)",
+                "mensual": 183.2,
+                "pagos": 14,
+                "fuente": "cm_anexo_iii",
+                "donde": "apartado 3",
+                "comprobacion": "supuesto",
+                "nota": "Las pagas extra incluyen «una mensualidad del complemento específico» (ley de presupuestos, para el personal funcionario de la Junta): mismo supuesto que el específico."
+              }
+            ]
           }
         }
       },
@@ -1578,6 +2204,27 @@
             "fuente": "ex_instr",
             "donde": "decimonovena (infantil y primaria) / horario de secundaria",
             "definicion": "23 periodos lectivos + 7 complementarios"
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 43.54,
+              "fuente": "ex_tablas",
+              "donde": "Trienios: mensual y P. Extra"
+            },
+            "trienio_paga_extra": {
+              "valor": 31.74,
+              "fuente": "ex_tablas",
+              "donde": "Trienios: mensual y P. Extra"
+            },
+            "conceptos": [
+              {
+                "concepto": "Formación permanente (sexenios): acumulado del 2.º periodo (68,14 + 85,95)",
+                "mensual": 154.09,
+                "pagos": 14,
+                "fuente": "ex_tablas",
+                "donde": "Complemento específico por formación permanente: mensual acumulado y P.A.C.E."
+              }
+            ]
           }
         },
         "secundaria": {
@@ -1615,6 +2262,27 @@
             "fuente": "ex_instr",
             "donde": "decimonovena (infantil y primaria) / horario de secundaria",
             "definicion": "18 periodos lectivos, hasta 21 excepcionalmente (compensados con CHL)"
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 53.39,
+              "fuente": "ex_tablas",
+              "donde": "Trienios: mensual y P. Extra"
+            },
+            "trienio_paga_extra": {
+              "valor": 32.96,
+              "fuente": "ex_tablas",
+              "donde": "Trienios: mensual y P. Extra"
+            },
+            "conceptos": [
+              {
+                "concepto": "Formación permanente (sexenios): acumulado del 2.º periodo (68,14 + 85,95)",
+                "mensual": 154.09,
+                "pagos": 14,
+                "fuente": "ex_tablas",
+                "donde": "Complemento específico por formación permanente: mensual acumulado y P.A.C.E."
+              }
+            ]
           }
         }
       },
@@ -1683,6 +2351,46 @@
             "fuente": "mu_jornada",
             "donde": "punto 1 (en vigor desde septiembre de 2024)",
             "definicion": "23 horas lectivas (Infantil y Primaria)"
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 43.54,
+              "fuente": "mu_guia_ccoo",
+              "donde": "Retribuciones comunes y pagas semestrales: trienios (importes estatales)"
+            },
+            "trienio_paga_extra": {
+              "valor": 31.74,
+              "fuente": "mu_guia_ccoo",
+              "donde": "Retribuciones comunes y pagas semestrales: trienios (importes estatales)"
+            },
+            "conceptos": [
+              {
+                "concepto": "Formación permanente (sexenios): primer y segundo periodo (70,45 + 88,89)",
+                "mensual": 159.34,
+                "pagos": 12,
+                "fuente": "mu_borm_2025",
+                "donde": "anexo XI 3.º (69,41 + 87,58 en 2025) × 1,015",
+                "comprobacion": "calculo",
+                "nota": "Coincide con la guía de CCOO de enero de 2026; en las pagas semestrales los sexenios van en la paga adicional (siguiente concepto)."
+              },
+              {
+                "concepto": "Paga adicional del específico con 2 sexenios en lugar de 0 (362,87 − 260,96, en cada una de las dos pagas)",
+                "anual": 203.82,
+                "fuente": "mu_borm_2025",
+                "donde": "anexo XI 4.º, paga adicional del complemento específico, 2 sexenios (357,51 en 2025) × 1,015",
+                "comprobacion": "calculo",
+                "nota": "Coincide con la guía de CCOO de enero de 2026 (362,87)."
+              },
+              {
+                "concepto": "Carrera profesional, tramo I (88,93 en 2025 × 1,015)",
+                "mensual": 90.26,
+                "pagos": 12,
+                "fuente": "mu_borm_2025",
+                "donde": "anexo XI 5.º",
+                "comprobacion": "calculo",
+                "nota": "Mientras no se negocie la evaluación del desempeño, se encuadra en el tramo I a todos los que cumplen el primer sexenio (guía de CCOO); no va en las pagas semestrales."
+              }
+            ]
           }
         },
         "secundaria": {
@@ -1741,6 +2449,46 @@
             "fuente": "mu_jornada",
             "donde": "punto 1 (en vigor desde septiembre de 2024)",
             "definicion": "18 horas lectivas; hasta 19 periodos si la distribución del centro lo exige (Inspección, 2026-27)"
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 53.39,
+              "fuente": "mu_guia_ccoo",
+              "donde": "Retribuciones comunes y pagas semestrales: trienios (importes estatales)"
+            },
+            "trienio_paga_extra": {
+              "valor": 32.96,
+              "fuente": "mu_guia_ccoo",
+              "donde": "Retribuciones comunes y pagas semestrales: trienios (importes estatales)"
+            },
+            "conceptos": [
+              {
+                "concepto": "Formación permanente (sexenios): primer y segundo periodo (70,45 + 88,89)",
+                "mensual": 159.34,
+                "pagos": 12,
+                "fuente": "mu_borm_2025",
+                "donde": "anexo XI 3.º (69,41 + 87,58 en 2025) × 1,015",
+                "comprobacion": "calculo",
+                "nota": "Coincide con la guía de CCOO de enero de 2026; en las pagas semestrales los sexenios van en la paga adicional (siguiente concepto)."
+              },
+              {
+                "concepto": "Paga adicional del específico con 2 sexenios en lugar de 0 (362,87 − 260,96, en cada una de las dos pagas)",
+                "anual": 203.82,
+                "fuente": "mu_borm_2025",
+                "donde": "anexo XI 4.º, paga adicional del complemento específico, 2 sexenios (357,51 en 2025) × 1,015",
+                "comprobacion": "calculo",
+                "nota": "Coincide con la guía de CCOO de enero de 2026 (362,87)."
+              },
+              {
+                "concepto": "Carrera profesional, tramo I (158,23 en 2025 × 1,015)",
+                "mensual": 160.6,
+                "pagos": 12,
+                "fuente": "mu_borm_2025",
+                "donde": "anexo XI 5.º",
+                "comprobacion": "calculo",
+                "nota": "Mientras no se negocie la evaluación del desempeño, se encuadra en el tramo I a todos los que cumplen el primer sexenio (guía de CCOO); no va en las pagas semestrales."
+              }
+            ]
           }
         }
       },
@@ -1749,7 +2497,10 @@
         "Importes de 2026 calculados: los de 2025 publicados en el BORM más la subida general del 1,5 % (no se ha encontrado la tabla docente de 2026); coinciden con la guía de CCOO de enero de 2026.",
         "No se incluye el tramo I de la carrera profesional horizontal (88,93 € al mes para maestros y 158,23 € para secundaria en 2025): depende de la progresión de cada docente."
       ],
-      "cautela_web": "Importes de 2026 calculados: los de 2025 publicados en el BORM más la subida general del 1,5 % (coinciden con la guía de CCOO de enero de 2026). Parte del sueldo se paga como «productividad»."
+      "cautela_web": "Importes de 2026 calculados: los de 2025 publicados en el BORM más la subida general del 1,5 % (coinciden con la guía de CCOO de enero de 2026). Parte del sueldo se paga como «productividad».",
+      "avisos_15": [
+        "Incluye el tramo I de la carrera profesional: hoy se reconoce a todo el que cumple el primer sexenio, sin evaluación."
+      ]
     },
     "15": {
       "nombre": "Navarra",
@@ -1778,6 +2529,26 @@
             "fuente": "na_instr",
             "donde": "jornada del profesorado de Infantil y Primaria",
             "definicion": "23 sesiones de docencia directa de 50 minutos (26 h de cómputo lectivo con otras 5 sesiones y los recreos)"
+          },
+          "quince_anios": {
+            "conceptos": [
+              {
+                "concepto": "Grado 3: dos grados retribuidos (el grado 1 no se paga y se asciende cada 6 años y 7 meses)",
+                "anual": 4788.56,
+                "fuente": "na_retribuciones",
+                "donde": "Grado (pers, funcionario), nivel B, año (2394,28) × 2",
+                "comprobacion": "norma",
+                "nota": "Estatuto (DFL 251/1993): art. 16.1 (ascenso de grado a los 6 años y 7 meses) y art. 42 (9 % acumulativo del sueldo inicial; «en el grado 1 no se percibirá retribución»)."
+              },
+              {
+                "concepto": "Premio de antigüedad: 3 quinquenios (5,5 % del sueldo inicial del nivel E)",
+                "anual": 929.88,
+                "fuente": "na_retribuciones",
+                "donde": "Premio de antigüedad, 3 quinquenios, retribución anual",
+                "comprobacion": "norma",
+                "nota": "Estatuto, art. 43."
+              }
+            ]
           }
         },
         "secundaria": {
@@ -1802,6 +2573,26 @@
             "fuente": "na_instr",
             "donde": "profesorado de secundaria (Pacto para la Equidad y la Calidad Educativa)",
             "definicion": "18 horas lectivas semanales en jornada completa"
+          },
+          "quince_anios": {
+            "conceptos": [
+              {
+                "concepto": "Grado 3: dos grados retribuidos (el grado 1 no se paga y se asciende cada 6 años y 7 meses)",
+                "anual": 5692.12,
+                "fuente": "na_retribuciones",
+                "donde": "Grado (pers, funcionario), nivel A, año (2846,06) × 2",
+                "comprobacion": "norma",
+                "nota": "Estatuto (DFL 251/1993): art. 16.1 (ascenso de grado a los 6 años y 7 meses) y art. 42 (9 % acumulativo del sueldo inicial; «en el grado 1 no se percibirá retribución»)."
+              },
+              {
+                "concepto": "Premio de antigüedad: 3 quinquenios (5,5 % del sueldo inicial del nivel E)",
+                "anual": 929.88,
+                "fuente": "na_retribuciones",
+                "donde": "Premio de antigüedad, 3 quinquenios, retribución anual",
+                "comprobacion": "norma",
+                "nota": "Estatuto, art. 43."
+              }
+            ]
           }
         }
       },
@@ -1810,7 +2601,10 @@
         "No se incluye el «grado» (se gana con antigüedad) ni el complemento especial del 5,45 %, que es solo para los maestros que dan clase en la ESO.",
         "En Infantil y Primaria las sesiones son de 50 minutos."
       ],
-      "cautela_web": "Navarra tiene un régimen de sueldos propio (sueldo por nivel y complemento docente en porcentaje); el complemento se calcula con el porcentaje de la ley foral."
+      "cautela_web": "Navarra tiene un régimen de sueldos propio (sueldo por nivel y complemento docente en porcentaje); el complemento se calcula con el porcentaje de la ley foral.",
+      "avisos_15": [
+        "En Navarra no hay trienios ni sexenios: con 15 años se cobra el grado 3 (dos grados del 9 % del sueldo inicial) y el premio de antigüedad de 3 quinquenios."
+      ]
     },
     "17": {
       "nombre": "La Rioja",
@@ -1851,6 +2645,35 @@
             "fuente": "ri_instr",
             "donde": "6.5 (con reducción de 1/3: 15 a 16 h) y Orden de julio de 2024 (BOR 24/7/2024)",
             "definicion": "23 horas lectivas, incluidos los recreos vigilados"
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 43.54,
+              "fuente": "ri_tabla",
+              "donde": "1.1 (sueldo y trienios) y 1.2 (pagas extraordinarias)"
+            },
+            "trienio_paga_extra": {
+              "valor": 31.74,
+              "fuente": "ri_tabla",
+              "donde": "1.1 (sueldo y trienios) y 1.2 (pagas extraordinarias)"
+            },
+            "conceptos": [
+              {
+                "concepto": "Formación permanente (sexenios): primer y segundo periodo (74,30 + 93,73)",
+                "mensual": 168.03,
+                "pagos": 14,
+                "fuente": "ri_tabla",
+                "donde": "1.5, componente singular por formación permanente",
+                "comprobacion": "norma",
+                "nota": "Las pagas extraordinarias llevan el complemento específico «o conceptos equivalentes» (ley de presupuestos); el ejemplo de ANPE suma los sexenios en las dos pagas extra."
+              }
+            ],
+            "total_mensual_publicado": {
+              "valor": 3101.5,
+              "mas": 108.72,
+              "fuente": "ri_anpe",
+              "donde": "ejemplo de nómina: maestro con 5 trienios, 2 sexenios y grado II de carrera horizontal («mas» = grado II, que aquí no se suma)"
+            }
           }
         },
         "secundaria": {
@@ -1888,6 +2711,30 @@
             "fuente": "ri_instr",
             "donde": "6.5: con reducción de 1/3, 12 periodos; con 1/2, 9",
             "definicion": "18 periodos lectivos (deducido de la tabla de reducciones de jornada de las instrucciones)"
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 53.39,
+              "fuente": "ri_tabla",
+              "donde": "1.1 (sueldo y trienios) y 1.2 (pagas extraordinarias)"
+            },
+            "trienio_paga_extra": {
+              "valor": 32.96,
+              "fuente": "ri_tabla",
+              "donde": "1.1 (sueldo y trienios) y 1.2 (pagas extraordinarias)",
+              "nota": "La tabla pone 32,86 para el trienio de la paga extra de A1: errata (la ley estatal da 32,96, igual que el resto de comunidades)."
+            },
+            "conceptos": [
+              {
+                "concepto": "Formación permanente (sexenios): primer y segundo periodo (74,30 + 93,73)",
+                "mensual": 168.03,
+                "pagos": 14,
+                "fuente": "ri_tabla",
+                "donde": "1.5, componente singular por formación permanente",
+                "comprobacion": "norma",
+                "nota": "Las pagas extraordinarias llevan el complemento específico «o conceptos equivalentes» (ley de presupuestos); el ejemplo de ANPE suma los sexenios en las dos pagas extra."
+              }
+            ]
           }
         }
       },
@@ -1895,7 +2742,11 @@
         "ANPE La Rioja da en noviembre de 2026 un específico de 837,85 € para secundaria (825,47 × 1,015), frente a 825,47 € en la tabla oficial de enero; no se ha encontrado la norma de esa posible subida y se usa la cifra oficial.",
         "Las horas de secundaria se deducen de la tabla oficial de reducciones de jornada (12 periodos con un tercio menos = 18)."
       ],
-      "cautela_web": "Para secundaria se usa la tabla oficial de enero (825,47 € de específico); una tabla sindical de noviembre da un 1,5 % más."
+      "cautela_web": "Para secundaria se usa la tabla oficial de enero (825,47 € de específico); una tabla sindical de noviembre da un 1,5 % más.",
+      "avisos_15": [
+        "No se incluye la carrera profesional horizontal (grado I: 104,73 € secundaria y 80,52 € maestros al mes; grado II: 141,41 € y 108,72 €): exige solicitud y una puntuación mínima."
+      ],
+      "cautela_web_15": "No incluye la carrera profesional horizontal (exige solicitud y una puntuación mínima): con el grado II serían unos 1.500-2.000 € más al año."
     },
     "05": {
       "nombre": "Canarias",
@@ -1949,6 +2800,28 @@
             "donde": "anexo II 1.5 (tabla de jornadas parciales: 22 h lectivas = 35,5 h de jornada)",
             "definicion": "23 horas lectivas en jornada completa (deducido de la tabla de jornadas parciales; Orden de 28/9/2023 y Ley 7/2022, disp. adic. 18.ª)",
             "comprobacion": "aproximado"
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 43.54,
+              "fuente": "ic_tabla",
+              "donde": "Trienios: mensual y paga extra"
+            },
+            "trienio_paga_extra": {
+              "valor": 31.74,
+              "fuente": "ic_tabla",
+              "donde": "Trienios: mensual y paga extra"
+            },
+            "conceptos": [
+              {
+                "concepto": "Sexenios: importe con 2 sexenios (119,00 al mes y 92,82 en cada paga extra, el 78 %)",
+                "anual": 1613.64,
+                "fuente": "ic_tabla",
+                "donde": "SEXENIOS, fila 2: importe y paga extra",
+                "comprobacion": "tabla",
+                "nota": "La tabla da el importe por número de sexenios (acumulado): con 5, 489 € al mes, en línea con otras comunidades; sumados uno a uno serían 1.321 €."
+              }
+            ]
           }
         },
         "secundaria": {
@@ -1998,6 +2871,28 @@
             "fuente": "ic_res73",
             "donde": "anexo III (art. 39 de la Orden de 9/10/2013)",
             "definicion": "18 horas lectivas y 6 complementarias"
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 53.39,
+              "fuente": "ic_tabla",
+              "donde": "Trienios: mensual y paga extra"
+            },
+            "trienio_paga_extra": {
+              "valor": 32.96,
+              "fuente": "ic_tabla",
+              "donde": "Trienios: mensual y paga extra"
+            },
+            "conceptos": [
+              {
+                "concepto": "Sexenios: importe con 2 sexenios (119,00 al mes y 92,82 en cada paga extra, el 78 %)",
+                "anual": 1613.64,
+                "fuente": "ic_tabla",
+                "donde": "SEXENIOS, fila 2: importe y paga extra",
+                "comprobacion": "tabla",
+                "nota": "La tabla da el importe por número de sexenios (acumulado): con 5, 489 € al mes, en línea con otras comunidades; sumados uno a uno serían 1.321 €."
+              }
+            ]
           }
         }
       },
@@ -2007,7 +2902,10 @@
         "En las pagas extra el específico se cobra al 78 %.",
         "Canarias publica un complemento de destino algo mayor que el estatal (600,31 € en el nivel 21 y 739,26 € en el 24)."
       ],
-      "cautela_web": "Incluye la indemnización por residencia de isla mayor (Gran Canaria y Tenerife); en las islas menores es mayor."
+      "cautela_web": "Incluye la indemnización por residencia de isla mayor (Gran Canaria y Tenerife); en las islas menores es mayor.",
+      "avisos_15": [
+        "La tabla de Canarias da los sexenios como importe total según cuántos se tengan (119 € con dos); se ha leído así."
+      ]
     },
     "01": {
       "nombre": "Andalucía",
@@ -2051,6 +2949,29 @@
             "fuente": "an_orden_horario",
             "donde": "horario del profesorado (art. sobre la parte lectiva del horario regular)",
             "definicion": "mínimo de 23,5 horas lectivas (excepcionalmente hasta 25); jornada de 35 h"
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 43.54,
+              "fuente": "an_ugt",
+              "donde": "Sueldo y trienios (cód. 12): mensual y paga extraordinaria"
+            },
+            "trienio_paga_extra": {
+              "valor": 31.74,
+              "fuente": "an_ugt",
+              "donde": "Sueldo y trienios (cód. 12): mensual y paga extraordinaria"
+            },
+            "conceptos": [
+              {
+                "concepto": "Sexenios: 1.º y 2.º (85,62 + 99,51)",
+                "mensual": 185.13,
+                "pagos": 14,
+                "fuente": "an_ugt",
+                "donde": "Sexenios (59), acumulados; también en la paga adicional (cód. 58)",
+                "comprobacion": "calculo",
+                "nota": "Sin tabla oficial de 2026: la tabla oficial de 2024 (81,89 + 95,19) × 1,04547, el factor de la reconstrucción, da 185,13; coincide con UGT."
+              }
+            ]
           }
         },
         "secundaria": {
@@ -2090,6 +3011,29 @@
             "fuente": "an_orden_horario",
             "donde": "horario del profesorado (art. sobre la parte lectiva del horario regular)",
             "definicion": "máximo de 18 horas lectivas (excepcionalmente hasta 21); jornada de 35 h"
+          },
+          "quince_anios": {
+            "trienio_mensual": {
+              "valor": 53.39,
+              "fuente": "an_ugt",
+              "donde": "Sueldo y trienios (cód. 12): mensual y paga extraordinaria"
+            },
+            "trienio_paga_extra": {
+              "valor": 32.96,
+              "fuente": "an_ugt",
+              "donde": "Sueldo y trienios (cód. 12): mensual y paga extraordinaria"
+            },
+            "conceptos": [
+              {
+                "concepto": "Sexenios: 1.º y 2.º (85,62 + 99,51)",
+                "mensual": 185.13,
+                "pagos": 14,
+                "fuente": "an_ugt",
+                "donde": "Sexenios (59), acumulados; también en la paga adicional (cód. 58)",
+                "comprobacion": "calculo",
+                "nota": "Sin tabla oficial de 2026: la tabla oficial de 2024 (81,89 + 95,19) × 1,04547, el factor de la reconstrucción, da 185,13; coincide con UGT."
+              }
+            ]
           }
         }
       },
