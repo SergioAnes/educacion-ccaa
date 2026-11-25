@@ -456,6 +456,30 @@
     "sha256": "47108af63b3e18ed882de3dfd258ef253074bf2dc20bb2f0097052559f275760"
   },
   {
+    "fuente": "ees",
+    "fichero": "ees/2026-11-26/28191.px",
+    "url": "https://www.ine.es/jaxiT3/files/t/es/px/28191.px",
+    "fecha_captura": "2026-11-26",
+    "bytes": 49900,
+    "sha256": "576a8a86eac04f87f182aeac2b0d3fe251f8d7d4fdec4f8f7835fd9f054f2c25"
+  },
+  {
+    "fuente": "ees",
+    "fichero": "ees/2026-11-26/28213.px",
+    "url": "https://www.ine.es/jaxiT3/files/t/es/px/28213.px",
+    "fecha_captura": "2026-11-26",
+    "bytes": 5892,
+    "sha256": "06f8d2c77e2d7a8200e18cbab815cc9afbc3792f8c3fa9be67f8b937d6d477ca"
+  },
+  {
+    "fuente": "ees",
+    "fichero": "ees/2026-11-26/36848.px",
+    "url": "https://www.ine.es/jaxiT3/files/t/es/px/36848.px",
+    "fecha_captura": "2026-11-26",
+    "bytes": 10636,
+    "sha256": "a5ab261c0f79760a0b3a3b052fa1330cc28749764d1e4641d8a7706af78298fe"
+  },
+  {
     "fuente": "insercion",
     "fichero": "insercion/2026-11-25/ccaa_1_01.px",
     "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/laborales/insercion/ccaa/l0/ccaa_1_01.px",

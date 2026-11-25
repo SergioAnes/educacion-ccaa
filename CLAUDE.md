@@ -57,13 +57,19 @@ familia de `sanidad-ccaa` y `presupuestos-ccaa` (mismo estilo y mismas reglas). 
   EDUCAbase becas (fuente «becas») para el aviso de la ficha `becas_bach_fp`, que el script exige que cuadre.
 - `extraer_insercion.py`: empleo de los titulados de FP (EDUCAbase inserción laboral, fuente «insercion»), comprobado con
   F1.9 de «Las cifras». El momento («al año» / «a los tres años») va en la dimensión `competencia` de la ficha.
-- Sueldos del profesorado (EN CONSTRUCCIÓN, no está en la web): `src/data/sueldos/normas.json` se escribe A MANO, con
+- Sueldos del profesorado (publicados): `src/data/sueldos/normas.json` se escribe A MANO, con
   fuente y apartado de cada importe; `scripts/calcular_sueldos.py` calcula el bruto anual de los casos tipo (maestro y
-  secundaria que empiezan) y comprueba partes estatales, totales publicados, fuentes y manifest. Los supuestos sin norma
-  explícita se marcan con `"comprobacion": "supuesto"`. Pagos únicos del año aparte de lo recurrente. Se publica cuando
-  estén analizadas (casi) todas las comunidades; estado y pendientes en NOTES.md. El script exporta también los
-  indicadores de la web (sueldo_docente, horas_lectivas, sueldo_por_hora), con `sin_espana: true` (no hay cifra de
-  España) y avisos por comunidad (`cautela_web`).
+  secundaria al empezar y con 15 años: `quince_anios`, con trienios, sexenios, «quita» de lo que se deja de cobrar) y
+  comprueba partes estatales, totales publicados, fuentes y manifest. Los supuestos sin norma explícita se marcan con
+  `"comprobacion": "supuesto"`. Pagos únicos del año aparte de lo recurrente. Incluir lo que cobra TODO el profesorado
+  sin cargo aunque se llame «tutorial» (Murcia: acción tutorial; Galicia: función titorial, Orde 17/7/2007). Carrera
+  profesional: solo si en 2026 se reconoce de oficio por años (Baleares, Murcia); si exige solicitud y evaluación, aviso.
+  El script exporta los indicadores (sueldo_docente, sueldo_docente_15, horas_lectivas, sueldo_por_hora), con
+  `sin_espana: true` y avisos por comunidad (`cautela_web`, `cautela_web_15`).
+- `extraer_ees.py`: sueldo medio de los trabajadores (INE, Encuesta Anual de Estructura Salarial, tabla 28191, fuente
+  «ees»), comprobado con la nota de prensa y los coeficientes de variación. Las fichas con `compara_sueldo_medio` sitúan
+  el sueldo docente frente a él SIN dividir uno por otro (años distintos y tiempo parcial): cada cifra frente a su
+  referencia (España / media de las 17).
 - `extraer_hitos.py`: leyes desde las fichas XML del BOE → `src/data/hitos.json`.
 - Un salto > 15 % frente al periodo anterior posterior a `revisado_hasta` hace fallar los tests: revisarlo y subir la fecha.
 

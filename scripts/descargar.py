@@ -158,6 +158,13 @@ FUENTES: dict[str, list[tuple[str, str]]] = {
         ("an-orden-31-08-2026-horario.html", "https://www.juntadeandalucia.es/boja/2026/168/c03/2"),
         ("ar-instrucciones-ies-2026-27.pdf", "https://educa.aragon.es/documents/20126/6844128/CSVFV61LMW0LZ120XFIL+Instrucciones+curso+2026-2027+para+centros+educativos._03+IES+2026-2027+V8-(Instrucciones).pdf/ff9b76e8-b92f-291b-b736-6f093187162c"),
     ],
+    # INE, Encuesta de Estructura Salarial: ganancia media anual por trabajador por comunidad (anual, 2008-…),
+    # sus coeficientes de variación y la cuatrienal de 2022 por tipo de jornada (para medir el efecto del tiempo parcial)
+    "ees": [
+        ("28191.px", "https://www.ine.es/jaxiT3/files/t/es/px/28191.px"),
+        ("28213.px", "https://www.ine.es/jaxiT3/files/t/es/px/28213.px"),
+        ("36848.px", "https://www.ine.es/jaxiT3/files/t/es/px/36848.px"),
+    ],
     # Sueldos con 15 años de servicio: normas sobre sexenios, grados y carrera que no estaban en «sueldos»
     "sueldos_antiguedad": [
         ("ct-ordre-edf-56-2025-estadis.pdf", "https://portaldogc.gencat.cat/utilsEADOP/AppJava/PdfProviderServlet?documentId=1011571&type=01&language=ca_ES"),

@@ -1,0 +1,37 @@
+{
+  "id": "sueldo_medio",
+  "grupo": "profesorado",
+  "resumen": false,
+  "nombre": "Sueldo medio de los trabajadores de la comunidad",
+  "corto": "Sueldo medio de los trabajadores",
+  "que": "brutos al año por trabajador",
+  "unidad": "eur",
+  "unidad_txt": "euros brutos al año por trabajador",
+  "definicion": "Ganancia bruta anual media de los trabajadores por cuenta ajena de cada comunidad, según la Encuesta Anual de Estructura Salarial del INE. Sirve de contexto para los sueldos del profesorado.",
+  "numerador": "Lo que ganan en bruto en el año los asalariados de la encuesta (incluidas las pagas extra), sumado.",
+  "denominador": "Número de trabajadores: cuentan igual los de jornada completa y los de tiempo parcial.",
+  "no_mide": "No es el sueldo de una jornada completa: incluye el tiempo parcial, que lo rebaja (a jornada completa, la media era entre un 12 % y un 18 % mayor según la comunidad en la encuesta de 2022). No incluye a los autónomos, ni la agricultura ni el empleo doméstico. No descuenta impuestos ni el coste de la vida.",
+  "fiabilidad": "A",
+  "fiabilidad_txt": "Estadística oficial del INE. Es una encuesta: el coeficiente de variación de cada dato está por debajo del 5 %.",
+  "estado": "definitivo",
+  "fuentes": [
+    {
+      "id": "ine_ees",
+      "corto": "INE (Encuesta Anual de Estructura Salarial)",
+      "nombre": "Instituto Nacional de Estadística: Encuesta Anual de Estructura Salarial, tabla 28191 «Medias y percentiles por sexo y CCAA» (ambos sexos, media)",
+      "url": "https://www.ine.es/jaxiT3/Tabla.htm?t=28191"
+    }
+  ],
+  "espana": "Dato oficial del INE para el conjunto de España.",
+  "avisos": [
+    "Euros de cada año, sin descontar la inflación.",
+    "El último año publicado es 2024 (el INE lo publica cada mayo con dos años de retraso).",
+    "Ceuta y Melilla no están en la tabla.",
+    "Para comparar con el sueldo del profesorado, mejor fijarse en la posición de cada comunidad frente a España que en la cifra: el sueldo docente es de 2026 y a jornada completa, y este es de 2024 e incluye el tiempo parcial. Usar la media a jornada completa (encuesta de 2022) cambiaría la posición de una comunidad frente a España como mucho en unos 3 puntos."
+  ],
+  "rango": [
+    10000,
+    60000
+  ],
+  "revisado_hasta": "2024"
+}

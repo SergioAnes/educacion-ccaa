@@ -58,12 +58,14 @@
     "Los trienios son iguales en toda España; lo que más cambia entre comunidades son los sexenios (de unos 150 a 265 € al mes con dos) y lo que cada una añade con los años.",
     "Se suma lo que llega con los años y la formación ordinaria. La carrera profesional se suma solo donde en 2026 se reconoce de oficio por años (Baleares, Murcia); donde exige solicitud y evaluación (Castilla y León, La Rioja) no se suma y se avisa con su importe.",
     "Cataluña: desde 2024 los estadis (sexenios) vuelven a ser cada 6 años; entre 2012 y 2023 hacían falta 9 para el primero. La deuda de esos años, que se pagará desde 2027, no se incluye.",
-    "Es el caso del funcionario de carrera. Un interino con 15 años cobra los trienios (Estatuto Básico, art. 25.2), pero en general no la carrera profesional, que el art. 25.1 no incluye para los interinos (en Murcia el tramo I es «del personal funcionario docente de carrera»; en Baleares, en cambio, la convocatoria de 2026 admite interinos), y el reconocimiento de sus sexenios depende de cada comunidad: no se ha comprobado una a una."
+    "Es el caso del funcionario de carrera. Un interino con 15 años cobra los trienios (Estatuto Básico, art. 25.2), pero en general no la carrera profesional, que el art. 25.1 no incluye para los interinos (en Murcia el tramo I es «del personal funcionario docente de carrera»; en Baleares, en cambio, la convocatoria de 2026 admite interinos), y el reconocimiento de sus sexenios depende de cada comunidad: no se ha comprobado una a una.",
+    "La comparación con el sueldo medio de los trabajadores de cada comunidad (INE, 2024) se hace frente a España en las dos cifras, no dividiendo una entre otra: el sueldo docente es de 2026 y a jornada completa, y el sueldo medio es de 2024 e incluye el tiempo parcial."
   ],
   "rango": [
     25000,
     60000
   ],
   "revisado_hasta": "2026",
-  "sin_espana": true
+  "sin_espana": true,
+  "compara_sueldo_medio": true
 }

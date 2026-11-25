@@ -137,6 +137,24 @@ export function iniciar(DATA: DatosApp): void {
     return ind.unidad === "pct" || ind.unidad === "puntos" ? `${nf(1).format(Math.abs(d))} puntos ${d > 0 ? "por encima" : "por debajo"} de España` : `${nf(1).format(Math.abs(d))} ${d > 0 ? "más" : "menos"} que España`;
   };
   const cambioDe = (ind, id, k = varDe(ind)) => ind.cambios.find((c) => c.territorio === id && c.clave === k);
+  // Sin cifra para España, la comunidad se sitúa entre las demás: «5 de las 17 comunidades están por encima»
+  const porEncima = (ind, v, a, k = varDe(ind)) => {
+    const vs = valores(ind, a, k), n = ordenados(vs).length, m = IDS.filter((id) => vs[id] != null && vs[id] > v).length;
+    return m === 0 ? "Es la cifra más alta de las comunidades" : `${m} de las ${n} comunidades ${m === 1 ? "está" : "están"} por encima`;
+  };
+  // Sueldos docentes frente al sueldo medio de la comunidad (INE): las dos cifras frente a su referencia de España,
+  // no una dividida por la otra (años distintos y el sueldo medio incluye el tiempo parcial)
+  // «un 15 % por debajo del de España», «un 2 % por encima de la media de las 17 comunidades»
+  const pctFrente = (r, ref) => { const p = (r - 1) * 100; return Math.abs(p) < 0.5 ? `igual que ${ref.replace(/^del de |^de /, "")}` : `un ${nf(0).format(Math.abs(p))} % ${p > 0 ? "por encima" : "por debajo"} ${ref}`; };
+  const fraseSueldoMedio = (ind, id, v, a, k = varDe(ind)) => {
+    const sm = IND.sueldo_medio;
+    if (!ind.compara_sueldo_medio || !sm || v == null) return "";
+    const asm = ultimo(sm), k0 = sm.variantes[0].clave, s = dato(sm, id, asm, k0), es = dato(sm, "ES", asm, k0);
+    const vs = Object.values(valores(ind, a, k)).filter((x) => x != null);
+    if (s == null || es == null || vs.length < 17) return "";
+    const media = vs.reduce((x, y) => x + y, 0) / vs.length;
+    return `El sueldo medio de los trabajadores de ${NOMBRE[id]} (INE, ${etq(sm, asm)}) está ${pctFrente(s / es, "del de España")}; este sueldo docente, ${pctFrente(v / media, "de la media de las 17 comunidades")}`;
+  };
   const textoCambio = (ind, c) => `${fmtDif(ind, c.diferencia)} desde ${c.desde}${c.et != null ? ` (${masMenos(c.et)})` : ""}`;
   // Notas de la fuente que citan a una comunidad (y, si se da, a un periodo y a una etapa)
   const notasDe = (ind, id, etiqueta, k = varDe(ind)) => ind.notas.filter((n) => n.territorios.includes(id) && (!etiqueta || !n.periodos.length || n.periodos.includes(etiqueta)) && (!n.clave || n.clave === `etapa:${partes(k).etapa}`));
@@ -443,11 +461,6 @@ export function iniciar(DATA: DatosApp): void {
     barraAnios($("#p-anios"), ind, a, (x) => { S.anio = x; S.anioDe = S.ind; render(); });
     botonPNG($("#p-desc"), "Descargar mapa (PNG)", () => descargarPNG($("#p-mapa svg"), `mapa_${ind.id}_${etq(ind, a)}`, $("#p-titulo").textContent, $("#p-leyenda"), ind));
 
-    // Sin cifra para España, la comunidad se sitúa entre las demás: «5 de las 17 comunidades están por encima»
-    const porEncima = (ind, v, a) => {
-      const vs = valores(ind, a), n = ordenados(vs).length, m = IDS.filter((id) => vs[id] != null && vs[id] > v).length;
-      return m === 0 ? "Es la cifra más alta de las comunidades" : `${m} de las ${n} comunidades ${m === 1 ? "está" : "están"} por encima`;
-    };
     // Titulares, con «Tu comunidad» primero (con su propio desplegable)
     const v = dato(ind, S.com, a);
     const ficha = `<a href="#comunidad-${S.com.toLowerCase()}">Ver su ficha</a>`;
@@ -455,7 +468,7 @@ export function iniciar(DATA: DatosApp): void {
     const cC = cambioDe(ind, S.com);
     const tuya = noComp(ind, S.com) ? `<span class="cautela">${esc(ind.no_comparable_txt || "Sin dato comparable")}: ${esc(ind.noComparable[S.com])}</span> ${ficha}`
       : v == null ? `Sin dato en ${etq(ind, a)}. ${ficha}`
-      : `<strong>${fmt(v, ind.unidad)}</strong>${marca(ind, S.com, a)} en ${etq(ind, a)}${ind.sin_espana ? `. ${porEncima(ind, v, a)}` : `: ${frenteEspana(ind, v, a, varDe(ind), S.com)}`}.${lineaIC(ind, S.com, a) ? ` ${lineaIC(ind, S.com, a)}.` : ""}${cC ? ` Cambio: ${textoCambio(ind, cC)}.` : ""}${conCautela(ind, S.com, a) ? ` <span class="cautela">† ${esc(textoCautela(ind, S.com, a))}</span>` : ""}${nn.length ? ` <span class="cautela">Nota de la fuente: ${esc(nn[0].texto)}</span>` : ""} ${ficha}`;
+      : `<strong>${fmt(v, ind.unidad)}</strong>${marca(ind, S.com, a)} en ${etq(ind, a)}${ind.sin_espana ? `. ${porEncima(ind, v, a)}` : `: ${frenteEspana(ind, v, a, varDe(ind), S.com)}`}.${fraseSueldoMedio(ind, S.com, v, a) ? ` ${fraseSueldoMedio(ind, S.com, v, a)}.` : ""}${lineaIC(ind, S.com, a) ? ` ${lineaIC(ind, S.com, a)}.` : ""}${cC ? ` Cambio: ${textoCambio(ind, cC)}.` : ""}${conCautela(ind, S.com, a) ? ` <span class="cautela">† ${esc(textoCautela(ind, S.com, a))}</span>` : ""}${nn.length ? ` <span class="cautela">Nota de la fuente: ${esc(nn[0].texto)}</span>` : ""} ${ficha}`;
     const opciones = [...IDS, ...IDS_CIU].slice().sort((x, y) => NOMBRE[x].localeCompare(NOMBRE[y], "es")).map((k) => `<option value="${k}" ${k === S.com ? "selected" : ""}>${esc(NOMBRE[k])}${CIUDADES[k] ? " (aparte)" : ""}</option>`).join("");
     $("#p-insights").innerHTML = `<div class="insight tuya"><label class="k" for="p-com">Tu comunidad</label><select id="p-com">${opciones}</select><p>${tuya}</p></div>` +
       titulares(ind, a).map((x) => `<div class="insight"><div class="k">${esc(x.k)}</div><p>${x.t}</p></div>`).join("");
@@ -945,7 +958,8 @@ export function iniciar(DATA: DatosApp): void {
     const c = cambioDe(ind, id, k);
     const er = errorT(ind, id, a, k);
     const delta = esNoComp ? `<span class="cautela">${esc(ind.no_comparable_txt || "Sin dato comparable")}. Aviso del INEE: ${esc(ind.noComparable[id])}</span>`
-      : v == null ? "Sin dato para esta comunidad en la fuente." : frenteEspana(ind, v, a, k, id);
+      : v == null ? "Sin dato para esta comunidad en la fuente."
+      : ind.sin_espana ? `${porEncima(ind, v, a, k)}.${fraseSueldoMedio(ind, id, v, a, k) ? ` ${fraseSueldoMedio(ind, id, v, a, k)}.` : ""}` : frenteEspana(ind, v, a, k, id);
     return `<div class="ind${esNoComp ? " no-comp" : ""}">
       <div><div class="n">${esc(titulo)}${esNoComp ? "" : marca(ind, id, a, k)}</div><div class="pos">${chipFiab(ind.fiabilidad, "span")} ${etqEstado(ind, a)} · ${ind.sin_espana ? "sin cifra para España" : `España: ${fmt(e, ind.unidad)}`}${conCautela(ind, id, a, k) ? `<br>† ${esc(textoCautela(ind, id, a, k))}` : ""}${nn.length ? `<br>Nota de la fuente: ${esc(nn[0].texto)}` : ""}</div></div>
       <div><div class="val">${fmt(v, ind.unidad)}${er != null && !esNoComp ? `<span class="ic"> ${masMenos(er)}</span>` : ""}</div><div class="delta">${delta}</div>${c && !esNoComp ? `<div class="vs">Cambio: ${textoCambio(ind, c)}</div>` : ""}${vs ? `<div class="vs">${esc(NOMBRE[vs])}: ${vsNoComp ? esc(minus(ind.no_comparable_txt || "sin dato comparable")) : `${fmt(vv, ind.unidad)}${marca(ind, vs, a, k)}`}</div>` : ""}</div>
