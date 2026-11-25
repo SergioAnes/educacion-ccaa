@@ -109,7 +109,8 @@ def main() -> None:
             componentes = {
                 "mensualidades": round(12 * (sueldo + destino + especifico), 2),
                 "pagas_extra": round(2 * (extra + destino), 2),
-                "pagas_adicionales_especifico": round(n_adic * especifico, 2),
+                # Si la norma fija otro importe para cada paga adicional (Aragón: un 90 % de la mensualidad), se usa ese
+                "pagas_adicionales_especifico": round(n_adic * float(x["especifico_pagas_adicionales"].get("importe_cada_una", especifico)), 2),
                 "otros_recurrentes": round(sum(o["importe"] for o in otros if o["tipo"] == "recurrente"), 2),
                 "pagos_unicos_del_anio": round(sum(o["importe"] for o in otros if o["tipo"] == "pago_unico_2026"), 2),
             }

@@ -625,6 +625,38 @@
   },
   {
     "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/ar-acuerdo-retribuciones-20260114.pdf",
+    "url": "https://www.aragon.es/documents/20127/128260047/Certificado_acuerdo_GA_retribuciones_educacion_20260114.pdf/22e0bb78-ea04-d888-17f6-5ea2edd749fb?version=1.0&download=true",
+    "fecha_captura": "2026-11-25",
+    "bytes": 534570,
+    "sha256": "38750176d6aee4c2a5090ae287045fb9f2c86638bc20f4fdc62565a928059457"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/ar-instrucciones-ceip-2026-27.pdf",
+    "url": "https://educa.aragon.es/documents/20126/6844122/CSVFV3YLJW6LZ120XFIL+Instrucciones+curso+2026-2027+para+centros+educativos._01+CEIP+2026-2027-%28Instrucciones%29+V8.pdf/f5138622-13a8-a516-6f3e-6467cbc50664",
+    "fecha_captura": "2026-11-25",
+    "bytes": 538708,
+    "sha256": "1351583d68d553f5ee87451ec45a44c6660579fa52b0d376ac6bddf6688cb423"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/ar-instrucciones-ies-2026-27.pdf",
+    "url": "https://educa.aragon.es/documents/20126/6844128/CSVFV61LMW0LZ120XFIL+Instrucciones+curso+2026-2027+para+centros+educativos._03+IES+2026-2027+V8-(Instrucciones).pdf/ff9b76e8-b92f-291b-b736-6f093187162c",
+    "fecha_captura": "2026-11-25",
+    "bytes": 660529,
+    "sha256": "8d7a19a5e1413076e0c5934a0188bf5466a1a40e87163f8bf46d8a4a58dd1a51"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/ar-tablas-retribuciones-docentes-2026.xlsx",
+    "url": "https://www.aragon.es/documents/20127/128260047/Tablas_retribuciones_docentes_2026.xlsx/3b5db2d8-f24b-ae7e-6eaf-829018eb5115?version=1.0&download=true",
+    "fecha_captura": "2026-11-25",
+    "bytes": 264158,
+    "sha256": "1c04d2d203adaad4eaf0cf998403de2deb45b56608400622ef76df02f2d14e29"
+  },
+  {
+    "fuente": "sueldos",
     "fichero": "sueldos/2026-11-25/cl-acuerdo-2022-horario-lectivo.pdf",
     "url": "https://bocyl.jcyl.es/boletines/2022/01/27/pdf/BOCYL-D-27012022-9.pdf",
     "fecha_captura": "2026-11-25",
@@ -637,7 +669,7 @@
     "url": "https://bocyl.jcyl.es/boletines/2026/01/05/pdf/BOCYL-D-05012026-2-2.pdf",
     "fecha_captura": "2026-11-25",
     "bytes": 1469706,
-    "sha256": "d8aa8074f3f7bfedd0f99032c1be8f52d7d84defb1d39c533351b269868ebacf"
+    "sha256": "0b96985f569164216dc842e3b82c987e93dfd735ef95aff0e8408358db217b62"
   },
   {
     "fuente": "sueldos",

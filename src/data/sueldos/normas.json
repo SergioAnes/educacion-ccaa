@@ -126,6 +126,27 @@
       "titulo": "Orden EDU/43/2022: Acuerdo de 24 de enero de 2022 de mejoras en las condiciones laborales del personal docente (BOCYL 27/1/2022), punto 3",
       "url": "https://bocyl.jcyl.es/boletines/2022/01/27/pdf/BOCYL-D-27012022-9.pdf",
       "original": "sueldos/2026-11-25/cl-acuerdo-2022-horario-lectivo.pdf"
+    },
+    "ar_tablas": {
+      "titulo": "Gobierno de Aragón, Dirección General de Personal: retribuciones del personal docente no universitario para 2026 (hojas «mensuales», «adicional» y «anuales»)",
+      "url": "https://www.aragon.es/transparencia/administracion-personal/personal-funcionario-docente",
+      "original": "sueldos/2026-11-25/ar-tablas-retribuciones-docentes-2026.xlsx",
+      "nota": "Incluye el tramo autonómico de 2026 del acuerdo de 2024 (BOA 12/12/2024) sobre el acuerdo de Gobierno del 14/1/2026: anual del específico = acuerdo + 12 × (mensual − acuerdo/12) + 2 × (adicional − adicional del acuerdo), comprobado."
+    },
+    "ar_acuerdo_ga": {
+      "titulo": "Acuerdo del Gobierno de Aragón de 14 de enero de 2026 (certificado): específico docente 2026 (+1,5 %) y pagas adicionales",
+      "url": "https://www.aragon.es/transparencia/administracion-personal/personal-funcionario-docente",
+      "original": "sueldos/2026-11-25/ar-acuerdo-retribuciones-20260114.pdf"
+    },
+    "ar_instr_ceip": {
+      "titulo": "Instrucciones de curso 2026-2027 para CEIP (Orden ECU/1065/2026)",
+      "url": "https://educa.aragon.es/-/instrucciones-a-centros",
+      "original": "sueldos/2026-11-25/ar-instrucciones-ceip-2026-27.pdf"
+    },
+    "ar_instr_ies": {
+      "titulo": "Instrucciones de curso 2026-2027 para IES (Orden ECU/1069/2026)",
+      "url": "https://educa.aragon.es/-/instrucciones-a-centros",
+      "original": "sueldos/2026-11-25/ar-instrucciones-ies-2026-27.pdf"
     }
   },
   "comunidades": {
@@ -819,6 +840,113 @@
         "En secundaria el acuerdo de horario habla de «18 o 19 periodos lectivos de forma mayoritaria»: los euros por hora se calculan con 18.",
         "Desde septiembre de 2026 los tutores cobran 20 € al mes (Orden EDU/1051/2026); no se incluye porque no todos son tutores.",
         "La jornada semanal en Castilla y León es de 35 horas."
+      ]
+    },
+    "02": {
+      "nombre": "Aragón",
+      "estado": "analizada",
+      "cuerpos": {
+        "maestros": {
+          "grupo": "A2",
+          "sueldo_mensual": {
+            "valor": 1199.52,
+            "fuente": "ar_tablas",
+            "donde": "hoja «mensuales», 1. Sueldo"
+          },
+          "sueldo_paga_extra": {
+            "valor": 874.83,
+            "fuente": "ar_tablas",
+            "donde": "hoja «mensuales», 1. Paga extra"
+          },
+          "nivel_destino": "21",
+          "destino_mensual": {
+            "valor": 592.11,
+            "fuente": "ar_tablas",
+            "donde": "hoja «mensuales», 2. Complemento de destino, nivel 21"
+          },
+          "especifico_mensual": {
+            "valor": 740.23,
+            "fuente": "ar_tablas",
+            "donde": "hoja «mensuales», complemento específico A. Componente general"
+          },
+          "especifico_pagas_adicionales": {
+            "valor": 2,
+            "importe_cada_una": 666.21,
+            "fuente": "ar_tablas",
+            "donde": "hoja «adicional», A. Componente general (acuerdo de Gobierno de 14/1/2026, punto Segundo)",
+            "comprobacion": "norma",
+            "nota": "Cada paga adicional es menor que una mensualidad del específico (unos 90 %)."
+          },
+          "otros_anuales": [
+            {
+              "concepto": "Complemento de fondos adicionales (Acuerdo de la Mesa General de 15/11/2018; se abona con las pagas extra)",
+              "importe": 168.36,
+              "tipo": "recurrente",
+              "fuente": "ar_tablas",
+              "donde": "hoja «mensuales», «Complemento fondos adicionales»"
+            }
+          ],
+          "horas_lectivas": {
+            "valor": 23,
+            "fuente": "ar_instr_ceip",
+            "donde": "organización del profesorado (circular de 20/5/2026)",
+            "definicion": "23 horas lectivas semanales desde 2026-27 (antes 24); 30 h de permanencia"
+          },
+          "_comprobacion_anual_especifico": 8978.48
+        },
+        "secundaria": {
+          "grupo": "A1",
+          "sueldo_mensual": {
+            "valor": 1387.24,
+            "fuente": "ar_tablas",
+            "donde": "hoja «mensuales», 1. Sueldo"
+          },
+          "sueldo_paga_extra": {
+            "valor": 856.05,
+            "fuente": "ar_tablas",
+            "donde": "hoja «mensuales», 1. Paga extra"
+          },
+          "nivel_destino": "24",
+          "destino_mensual": {
+            "valor": 729.14,
+            "fuente": "ar_tablas",
+            "donde": "hoja «mensuales», 2. Complemento de destino, nivel 24"
+          },
+          "especifico_mensual": {
+            "valor": 756.22,
+            "fuente": "ar_tablas",
+            "donde": "hoja «mensuales», complemento específico A. Componente general"
+          },
+          "especifico_pagas_adicionales": {
+            "valor": 2,
+            "importe_cada_una": 680.59,
+            "fuente": "ar_tablas",
+            "donde": "hoja «adicional», A. Componente general (acuerdo de Gobierno de 14/1/2026, punto Segundo)",
+            "comprobacion": "norma",
+            "nota": "Cada paga adicional es menor que una mensualidad del específico (unos 90 %)."
+          },
+          "otros_anuales": [
+            {
+              "concepto": "Complemento de fondos adicionales (Acuerdo de la Mesa General de 15/11/2018; se abona con las pagas extra)",
+              "importe": 168.36,
+              "tipo": "recurrente",
+              "fuente": "ar_tablas",
+              "donde": "hoja «mensuales», «Complemento fondos adicionales»"
+            }
+          ],
+          "horas_lectivas": {
+            "valor": 18,
+            "fuente": "ar_instr_ies",
+            "donde": "organización del profesorado (circular de 13/5/2026; Orden ECD/1508/2024)",
+            "definicion": "18 horas lectivas, hasta 21 si la organización del centro lo requiere; 30 h de permanencia"
+          },
+          "_comprobacion_anual_especifico": 9182.3
+        }
+      },
+      "avisos": [
+        "Incluye el tramo autonómico de 2026 (en torno al 2,25 %) del acuerdo de 2024 con los sindicatos; en 2027 está previsto otro tramo, no incluido.",
+        "Las dos pagas adicionales del complemento específico son algo menores que una mensualidad.",
+        "Los tutores cobran además 600 € al año; no se incluye porque no todos son tutores."
       ]
     }
   }

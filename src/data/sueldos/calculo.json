@@ -381,6 +381,60 @@
         "Desde septiembre de 2026 los tutores cobran 20 € al mes (Orden EDU/1051/2026); no se incluye porque no todos son tutores.",
         "La jornada semanal en Castilla y León es de 35 horas."
       ]
+    },
+    "02": {
+      "nombre": "Aragón",
+      "cuerpos": {
+        "maestros": {
+          "bruto_anual": 34816.98,
+          "componentes": {
+            "mensualidades": 30382.32,
+            "pagas_extra": 2933.88,
+            "pagas_adicionales_especifico": 1332.42,
+            "otros_recurrentes": 168.36,
+            "pagos_unicos_del_anio": 0
+          },
+          "otros": [
+            {
+              "concepto": "Complemento de fondos adicionales (Acuerdo de la Mesa General de 15/11/2018; se abona con las pagas extra)",
+              "importe": 168.36,
+              "tipo": "recurrente",
+              "fuente": "ar_tablas",
+              "donde": "hoja «mensuales», «Complemento fondos adicionales»"
+            }
+          ],
+          "horas_lectivas": 23.0,
+          "horas_definicion": "23 horas lectivas semanales desde 2026-27 (antes 24); 30 h de permanencia",
+          "euros_por_hora_semanal": 1513.78
+        },
+        "secundaria": {
+          "bruto_anual": 39171.12,
+          "componentes": {
+            "mensualidades": 34471.2,
+            "pagas_extra": 3170.38,
+            "pagas_adicionales_especifico": 1361.18,
+            "otros_recurrentes": 168.36,
+            "pagos_unicos_del_anio": 0
+          },
+          "otros": [
+            {
+              "concepto": "Complemento de fondos adicionales (Acuerdo de la Mesa General de 15/11/2018; se abona con las pagas extra)",
+              "importe": 168.36,
+              "tipo": "recurrente",
+              "fuente": "ar_tablas",
+              "donde": "hoja «mensuales», «Complemento fondos adicionales»"
+            }
+          ],
+          "horas_lectivas": 18.0,
+          "horas_definicion": "18 horas lectivas, hasta 21 si la organización del centro lo requiere; 30 h de permanencia",
+          "euros_por_hora_semanal": 2176.17
+        }
+      },
+      "avisos": [
+        "Incluye el tramo autonómico de 2026 (en torno al 2,25 %) del acuerdo de 2024 con los sindicatos; en 2027 está previsto otro tramo, no incluido.",
+        "Las dos pagas adicionales del complemento específico son algo menores que una mensualidad.",
+        "Los tutores cobran además 600 € al año; no se incluye porque no todos son tutores."
+      ]
     }
   }
 }

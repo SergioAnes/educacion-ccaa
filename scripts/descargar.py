@@ -119,6 +119,10 @@ FUENTES: dict[str, list[tuple[str, str]]] = {
         ("ib-instruccions-horaris-2026-27.pdf", "https://apps.caib.es/sites/planificacioicentres/f/513202"),
         ("cl-orden-pre-1-2026-retribuciones.pdf", "https://bocyl.jcyl.es/boletines/2026/01/05/pdf/BOCYL-D-05012026-2-2.pdf"),
         ("cl-acuerdo-2022-horario-lectivo.pdf", "https://bocyl.jcyl.es/boletines/2022/01/27/pdf/BOCYL-D-27012022-9.pdf"),
+        ("ar-tablas-retribuciones-docentes-2026.xlsx", "https://www.aragon.es/documents/20127/128260047/Tablas_retribuciones_docentes_2026.xlsx/3b5db2d8-f24b-ae7e-6eaf-829018eb5115?version=1.0&download=true"),
+        ("ar-acuerdo-retribuciones-20260114.pdf", "https://www.aragon.es/documents/20127/128260047/Certificado_acuerdo_GA_retribuciones_educacion_20260114.pdf/22e0bb78-ea04-d888-17f6-5ea2edd749fb?version=1.0&download=true"),
+        ("ar-instrucciones-ceip-2026-27.pdf", "https://educa.aragon.es/documents/20126/6844122/CSVFV3YLJW6LZ120XFIL+Instrucciones+curso+2026-2027+para+centros+educativos._01+CEIP+2026-2027-%28Instrucciones%29+V8.pdf/f5138622-13a8-a516-6f3e-6467cbc50664"),
+        ("ar-instrucciones-ies-2026-27.pdf", "https://educa.aragon.es/documents/20126/6844128/CSVFV61LMW0LZ120XFIL+Instrucciones+curso+2026-2027+para+centros+educativos._03+IES+2026-2027+V8-(Instrucciones).pdf/ff9b76e8-b92f-291b-b736-6f093187162c"),
     ],
     # INEE: tablas del informe español de PISA 2025 (Excel dentro de un RAR)
     "pisa": [("tablas-informe-pisa-2025.rar", "https://www.educacionfpydeportes.gob.es/dam/jcr:4f7056b5-02d7-4e6d-a454-2caa3e04893f/tablas-informe-pisa-2025.rar")],
