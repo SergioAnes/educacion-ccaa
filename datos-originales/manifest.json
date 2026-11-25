@@ -657,6 +657,30 @@
   },
   {
     "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/as-bopa-retribuciones-2026.pdf",
+    "url": "https://www.asturias.es/bopa/2026/07/10/2026-05918.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 3567109,
+    "sha256": "c20f5f8c43d2fac84c0020d474c45698d753f4f95d8f3bea9b786a25fd0c5b6b"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/as-circular-inicio-curso-2026-27.pdf",
+    "url": "https://www.educastur.es/documents/34868/38433/CIC_CPUBLICOS_20260715.pdf/6c44c1f6-1982-0b16-6b3d-0e2c57a54440",
+    "fecha_captura": "2026-11-25",
+    "bytes": 1096299,
+    "sha256": "13a026e6d839d4b4a51392884642aad10608116fc49c2932ef9ba0f48cb345ed"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/as-ley-presupuestos-2026.pdf",
+    "url": "https://www.boe.es/boe/dias/2026/02/09/pdfs/BOE-A-2026-2888.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 865764,
+    "sha256": "f29c34ee575aee83be321343d135f69f2c86fd72385509c738f6f25293f7154d"
+  },
+  {
+    "fuente": "sueldos",
     "fichero": "sueldos/2026-11-25/cl-acuerdo-2022-horario-lectivo.pdf",
     "url": "https://bocyl.jcyl.es/boletines/2022/01/27/pdf/BOCYL-D-27012022-9.pdf",
     "fecha_captura": "2026-11-25",
@@ -669,7 +693,7 @@
     "url": "https://bocyl.jcyl.es/boletines/2026/01/05/pdf/BOCYL-D-05012026-2-2.pdf",
     "fecha_captura": "2026-11-25",
     "bytes": 1469706,
-    "sha256": "0b96985f569164216dc842e3b82c987e93dfd735ef95aff0e8408358db217b62"
+    "sha256": "d8aa8074f3f7bfedd0f99032c1be8f52d7d84defb1d39c533351b269868ebacf"
   },
   {
     "fuente": "sueldos",

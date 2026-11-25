@@ -163,6 +163,21 @@
       "url": "https://www.edu.xunta.gal/portal/node/50192",
       "original": "sueldos/2026-11-25/ga-resolucion-xornada-2026-27.pdf",
       "nota": "El PDF oficial es un escaneo sin texto: las horas se han leído en el resumen de CSIF (https://www.csif.es/es/noticia/portada/galiciaeducacion/articulo/92809)."
+    },
+    "as_bopa": {
+      "titulo": "Acuerdo de 6 de julio de 2026, del Consejo de Gobierno, de cuantías de las retribuciones del personal de la Administración del Principado de Asturias para 2026 (BOPA n.º 132, 10/7/2026), anexo V (personal docente no universitario)",
+      "url": "https://www.asturias.es/bopa/2026/07/10/2026-05918.pdf",
+      "original": "sueldos/2026-11-25/as-bopa-retribuciones-2026.pdf"
+    },
+    "as_ley": {
+      "titulo": "Ley de Presupuestos Generales del Principado de Asturias para 2026 (BOE-A-2026-2888): pagas extraordinarias y disposición adicional segunda (Pacto Asturias Educa)",
+      "url": "https://www.boe.es/boe/dias/2026/02/09/pdfs/BOE-A-2026-2888.pdf",
+      "original": "sueldos/2026-11-25/as-ley-presupuestos-2026.pdf"
+    },
+    "as_circular": {
+      "titulo": "Consejería de Educación: circular de inicio de curso 2026-2027 para centros públicos (15/7/2026)",
+      "url": "https://www.educastur.es/-/circulares-inicio-curso-2026-2027",
+      "original": "sueldos/2026-11-25/as-circular-inicio-curso-2026-27.pdf"
     }
   },
   "comunidades": {
@@ -1059,6 +1074,113 @@
       "avisos": [
         "El complemento específico general es el mismo para maestros y profesores de secundaria (779,29 € al mes).",
         "Las horas de clase salen del resumen sindical de la resolución oficial, que está publicada como escaneo sin texto."
+      ]
+    },
+    "03": {
+      "nombre": "Asturias",
+      "estado": "analizada",
+      "cuerpos": {
+        "maestros": {
+          "grupo": "A2",
+          "sueldo_mensual": {
+            "valor": 1199.52,
+            "fuente": "as_bopa",
+            "donde": "anexo V, 1. Sueldo y trienios"
+          },
+          "sueldo_paga_extra": {
+            "valor": 874.83,
+            "fuente": "as_bopa",
+            "donde": "anexo V, 1. Pagas extraordinarias"
+          },
+          "nivel_destino": "21",
+          "destino_mensual": {
+            "valor": 598.09,
+            "fuente": "as_bopa",
+            "donde": "anexo V, 2. Complemento de destino, nivel 21",
+            "propio": true,
+            "nota": "Asturias publica un complemento de destino un 1 % mayor que el estatal (598,09 € en el nivel 21 y 736,54 € en el 24)."
+          },
+          "especifico_mensual": {
+            "valor": 708.37,
+            "fuente": "as_bopa",
+            "donde": "anexo V, 3.1 componente general (igual para secundaria, técnicos de FP y maestros)"
+          },
+          "especifico_pagas_adicionales": {
+            "valor": 2,
+            "fuente": "as_ley",
+            "donde": "art. de retribuciones de funcionarios, e): cada paga extraordinaria incluye «una mensualidad de los importes del complemento de destino, complemento específico y complemento de carrera»",
+            "comprobacion": "supuesto",
+            "nota": "La ley lo dice para el personal funcionario en general; no hay artículo propio de los docentes sobre las pagas."
+          },
+          "otros_anuales": [
+            {
+              "concepto": "Complemento personal transitorio para quien aún no cobra sexenios: 43,85 €/mes hasta agosto y 113,85 €/mes desde septiembre de 2026 (12 mensualidades)",
+              "importe": 806.2,
+              "tipo": "recurrente",
+              "fuente": "as_bopa",
+              "donde": "anexo V, 3.4 (y disposición adicional segunda.2 de la ley: «doce mensualidades»)"
+            }
+          ],
+          "horas_lectivas": {
+            "valor": 23,
+            "fuente": "as_circular",
+            "donde": "horario del profesorado",
+            "definicion": "23 horas lectivas desde 2026-27 (2 menos que en cursos anteriores; Acuerdo de 20/3/2025)"
+          }
+        },
+        "secundaria": {
+          "grupo": "A1",
+          "sueldo_mensual": {
+            "valor": 1387.24,
+            "fuente": "as_bopa",
+            "donde": "anexo V, 1. Sueldo y trienios"
+          },
+          "sueldo_paga_extra": {
+            "valor": 856.05,
+            "fuente": "as_bopa",
+            "donde": "anexo V, 1. Pagas extraordinarias"
+          },
+          "nivel_destino": "24",
+          "destino_mensual": {
+            "valor": 736.54,
+            "fuente": "as_bopa",
+            "donde": "anexo V, 2. Complemento de destino, nivel 24",
+            "propio": true,
+            "nota": "Asturias publica un complemento de destino un 1 % mayor que el estatal (598,09 € en el nivel 21 y 736,54 € en el 24)."
+          },
+          "especifico_mensual": {
+            "valor": 708.37,
+            "fuente": "as_bopa",
+            "donde": "anexo V, 3.1 componente general (igual para secundaria, técnicos de FP y maestros)"
+          },
+          "especifico_pagas_adicionales": {
+            "valor": 2,
+            "fuente": "as_ley",
+            "donde": "art. de retribuciones de funcionarios, e): cada paga extraordinaria incluye «una mensualidad de los importes del complemento de destino, complemento específico y complemento de carrera»",
+            "comprobacion": "supuesto",
+            "nota": "La ley lo dice para el personal funcionario en general; no hay artículo propio de los docentes sobre las pagas."
+          },
+          "otros_anuales": [
+            {
+              "concepto": "Complemento personal transitorio para quien aún no cobra sexenios: 43,85 €/mes hasta agosto y 113,85 €/mes desde septiembre de 2026 (12 mensualidades)",
+              "importe": 806.2,
+              "tipo": "recurrente",
+              "fuente": "as_bopa",
+              "donde": "anexo V, 3.4 (y disposición adicional segunda.2 de la ley: «doce mensualidades»)"
+            }
+          ],
+          "horas_lectivas": {
+            "valor": 18,
+            "fuente": "as_circular",
+            "donde": "horario del profesorado",
+            "definicion": "18 periodos lectivos y 9 complementarios en jornada completa"
+          }
+        }
+      },
+      "avisos": [
+        "El complemento personal transitorio sube en septiembre de 2026 (de 43,85 € a 113,85 € al mes): el año 2026 lleva 8 meses de uno y 4 del otro; desde 2027, el año entero con el importe mayor.",
+        "Asturias publica un complemento de destino un 1 % mayor que el estatal (598,09 € en el nivel 21 y 736,54 € en el 24).",
+        "El complemento específico general es el mismo para maestros y profesores de secundaria."
       ]
     }
   }

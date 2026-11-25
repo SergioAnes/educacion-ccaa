@@ -12,7 +12,9 @@
     "Comunitat Valenciana, secundaria: pagas adicionales del específico (El art. 34.1.d de la Ley 6/2025 reparte el específico en 14 pagas para el personal funcionario de la Ley 4/2021 (función pública valenciana); no hay artículo propio para los docentes, aunque sus tablas se publican en el mismo acuerdo.)",
     "Comunitat Valenciana, secundaria: Los 75 € también en la paga adicional de diciembre (no lo dice: se supone que la subida va en el complemento específico autonómico (prensa) y que este se cobra en 14 pagas)",
     "Castilla y León, maestros: «Consolidación Punto 4.º» del Acuerdo de 21 de diciembre de 2000 (25.27 €/mes, 12 pagas) (Anexo V, Cuarto)",
-    "Castilla y León, secundaria: «Consolidación Punto 4.º» del Acuerdo de 21 de diciembre de 2000 (27.04 €/mes, 12 pagas) (Anexo V, Cuarto)"
+    "Castilla y León, secundaria: «Consolidación Punto 4.º» del Acuerdo de 21 de diciembre de 2000 (27.04 €/mes, 12 pagas) (Anexo V, Cuarto)",
+    "Asturias, maestros: pagas adicionales del específico (La ley lo dice para el personal funcionario en general; no hay artículo propio de los docentes sobre las pagas.)",
+    "Asturias, secundaria: pagas adicionales del específico (La ley lo dice para el personal funcionario en general; no hay artículo propio de los docentes sobre las pagas.)"
   ],
   "comunidades": {
     "13": {
@@ -471,6 +473,60 @@
       "avisos": [
         "El complemento específico general es el mismo para maestros y profesores de secundaria (779,29 € al mes).",
         "Las horas de clase salen del resumen sindical de la resolución oficial, que está publicada como escaneo sin texto."
+      ]
+    },
+    "03": {
+      "nombre": "Asturias",
+      "cuerpos": {
+        "maestros": {
+          "bruto_anual": 35240.54,
+          "componentes": {
+            "mensualidades": 30071.76,
+            "pagas_extra": 2945.84,
+            "pagas_adicionales_especifico": 1416.74,
+            "otros_recurrentes": 806.2,
+            "pagos_unicos_del_anio": 0
+          },
+          "otros": [
+            {
+              "concepto": "Complemento personal transitorio para quien aún no cobra sexenios: 43,85 €/mes hasta agosto y 113,85 €/mes desde septiembre de 2026 (12 mensualidades)",
+              "importe": 806.2,
+              "tipo": "recurrente",
+              "fuente": "as_bopa",
+              "donde": "anexo V, 3.4 (y disposición adicional segunda.2 de la ley: «doce mensualidades»)"
+            }
+          ],
+          "horas_lectivas": 23.0,
+          "horas_definicion": "23 horas lectivas desde 2026-27 (2 menos que en cursos anteriores; Acuerdo de 20/3/2025)",
+          "euros_por_hora_semanal": 1532.2
+        },
+        "secundaria": {
+          "bruto_anual": 39393.92,
+          "componentes": {
+            "mensualidades": 33985.8,
+            "pagas_extra": 3185.18,
+            "pagas_adicionales_especifico": 1416.74,
+            "otros_recurrentes": 806.2,
+            "pagos_unicos_del_anio": 0
+          },
+          "otros": [
+            {
+              "concepto": "Complemento personal transitorio para quien aún no cobra sexenios: 43,85 €/mes hasta agosto y 113,85 €/mes desde septiembre de 2026 (12 mensualidades)",
+              "importe": 806.2,
+              "tipo": "recurrente",
+              "fuente": "as_bopa",
+              "donde": "anexo V, 3.4 (y disposición adicional segunda.2 de la ley: «doce mensualidades»)"
+            }
+          ],
+          "horas_lectivas": 18.0,
+          "horas_definicion": "18 periodos lectivos y 9 complementarios en jornada completa",
+          "euros_por_hora_semanal": 2188.55
+        }
+      },
+      "avisos": [
+        "El complemento personal transitorio sube en septiembre de 2026 (de 43,85 € a 113,85 € al mes): el año 2026 lleva 8 meses de uno y 4 del otro; desde 2027, el año entero con el importe mayor.",
+        "Asturias publica un complemento de destino un 1 % mayor que el estatal (598,09 € en el nivel 21 y 736,54 € en el 24).",
+        "El complemento específico general es el mismo para maestros y profesores de secundaria."
       ]
     }
   }

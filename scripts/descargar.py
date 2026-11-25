@@ -125,6 +125,9 @@ FUENTES: dict[str, list[tuple[str, str]]] = {
         ("ga-retribucions-docentes-2026.pdf", "https://ficheiros-web.xunta.gal/transparencia/retribucions/2026/funcionarios-docentes.pdf"),
         ("ga-orden-nominas-2026.html", "https://www.xunta.gal/dog/Publicados/2026/20260126/AnuncioG0597-220126-0002_es.html"),
         ("ga-resolucion-xornada-2026-27.pdf", "https://www.edu.xunta.gal/portal/sites/web/files/resolucion_instrucions_xornada_de_traballo_docente_2026_2027_sin.pdf"),
+        ("as-bopa-retribuciones-2026.pdf", "https://www.asturias.es/bopa/2026/07/10/2026-05918.pdf"),
+        ("as-ley-presupuestos-2026.pdf", "https://www.boe.es/boe/dias/2026/02/09/pdfs/BOE-A-2026-2888.pdf"),
+        ("as-circular-inicio-curso-2026-27.pdf", "https://www.educastur.es/documents/34868/38433/CIC_CPUBLICOS_20260715.pdf/6c44c1f6-1982-0b16-6b3d-0e2c57a54440"),
         ("ar-instrucciones-ies-2026-27.pdf", "https://educa.aragon.es/documents/20126/6844128/CSVFV61LMW0LZ120XFIL+Instrucciones+curso+2026-2027+para+centros+educativos._03+IES+2026-2027+V8-(Instrucciones).pdf/ff9b76e8-b92f-291b-b736-6f093187162c"),
     ],
     # INEE: tablas del informe español de PISA 2025 (Excel dentro de un RAR)
