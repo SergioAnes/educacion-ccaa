@@ -127,7 +127,8 @@ def cambios(ws, comp: str, desde: str, errores: list) -> tuple[list[dict], dict[
 
 def fila(ind, terr, periodo, valor, unidad, et, fecha, comp, estado="definitivo"):
     return {"indicador_id": ind, "territorio": terr, "periodo": periodo, "titularidad": "total", "sexo": "total", "etapa": "total",
-            "competencia": comp, "valor": round(valor, 2), "unidad": unidad, "error_estandar": None if et is None else round(et, 2),
+            "competencia": comp, "valor": round(valor, 4 if unidad == "indice" else 2), "unidad": unidad,
+            "error_estandar": None if et is None else round(et, 4 if unidad == "indice" else 2),
             "estado": estado, "fuente_id": "inee_pisa", "url_fuente": URL_INEE, "fecha_captura": fecha}
 
 
@@ -206,6 +207,10 @@ def main() -> None:
             if abs((q4 - q1) - dif) > 0.05:
                 errores.append(f"Figura 3.3 {cod}: diferencia {dif:.2f} y cuarto 4 − cuarto 1 = {q4 - q1:.2f}")
             brecha.append({**fila("pisa_brecha_isec", cod, "2025", dif, "puntos", et, m["fecha_captura"], "total")})
+        # Índice socioeconómico y cultural (ISEC, «ESCS» de la OCDE) medio de cada territorio, con su ET (Figura 3.1)
+        isec = []
+        for cod, (v, et, _) in tabla_simple(wb3["Figura 3.1"]).items():
+            isec.append(fila("pisa_isec", cod, "2025", v, "indice", et, m["fecha_captura"], "total"))
         wb3.close()
     # Ninguna tabla de 2025 puede perder una comunidad (p. ej. por una errata en el nombre: «Madrid, Comnidad de»)
     todos = {t["ine"] for t in TERRITORIOS}
@@ -237,6 +242,10 @@ def main() -> None:
     if falta:
         sys.exit(f"Figura 3.3: faltan {sorted(falta)}")
     guardar("pisa_brecha_isec", brecha, {"comprobacion": {"pares_comparados": len(brecha), "descripcion": "diferencia publicada = cuarto 4 − cuarto 1"}})
+    falta = {t["ine"] for t in TERRITORIOS} - {f["territorio"] for f in isec}
+    if falta:
+        sys.exit(f"Figura 3.1: faltan {sorted(falta)}")
+    guardar("pisa_isec", isec, {"comprobacion": {"pares_comparados": len(isec), "descripcion": "las 19 comunidades y ciudades, España, OCDE y UE"}})
     print("no comparable:", list(no_comparable), "| cautela:", list(cautela))
 
 

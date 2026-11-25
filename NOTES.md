@@ -160,6 +160,12 @@ scripts de Python y se guardan como JSON en `src/data/`. La base es sanidad-ccaa
   con ET; comprobado que = cuarto 4 − cuarto 1 en los 22 territorios. Cataluña y Murcia, como en el resto de PISA.
 - «Por encima de España» = brecha mayor; la ficha lo aclara (comparación, no valoración).
 
+### Índice socioeconómico y cultural medio (`pisa_isec`, tema «Equidad», publicado el 25/11/2026)
+- INEE, Tablas_cap_3, Figura 3.1 (ESCS de la OCDE), con ET; 4 decimales (el ET es de centésimas).
+- NO se publica la «puntuación descontando el ISEC» (Figura 3.6): con la pendiente de la Figura 3.5 y el ISEC medio,
+  la referencia implícita del ajuste varía entre territorios (0,11 a 0,41), así que el INEE usa otro modelo que sus
+  tablas no detallan. Pendiente de encontrar su método (el informe español de 2025 no está en la web del INEE).
+
 ### Descargas: ficheros que cambian sin cambiar
 - El servidor de EDUCAbase pone en cada .px la fecha de descarga (CREATION-DATE) y un SUBJECT-CODE que varía. Sin
   ignorarlos, cada descarga parecía un fichero nuevo: `descargar.py` compara el contenido sin esas dos líneas (el

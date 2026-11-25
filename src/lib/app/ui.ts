@@ -28,6 +28,7 @@ export function iniciar(DATA: DatosApp): void {
     if (u === "pct") return nf(1).format(v) + " %";
     if (u === "puntos") return nf(0).format(v);
     if (u === "eur") return nf(0).format(v) + " €";
+    if (u === "indice") return nf(2).format(v);
     return nf(1).format(v);
   }
   // Diferencias: en puntos para porcentajes y PISA; en la misma unidad para lo demás (alumnos por profesor o por grupo)
@@ -35,6 +36,7 @@ export function iniciar(DATA: DatosApp): void {
     if (d == null || !isFinite(d)) return "—";
     const signo = Math.abs(d) < 0.05 ? "≈ " : d > 0 ? "+" : "−";
     if (ind.unidad === "eur") return signo + nf(0).format(Math.abs(d)) + " €";
+    if (ind.unidad === "indice") return (Math.abs(d) < 0.005 ? "≈ " : d > 0 ? "+" : "−") + nf(2).format(Math.abs(d));
     return signo + nf(1).format(Math.abs(d)) + (ind.unidad === "pct" || ind.unidad === "puntos" ? " puntos" : "");
   }
   const fmtCorto = (v, u) => fmt(v, u).replace(" %", "%");
@@ -113,7 +115,8 @@ export function iniciar(DATA: DatosApp): void {
     return lo > es ? 1 : hi < es ? -1 : 0;
   }
   const TXT_CLASE = { 1: "por encima de España", 0: "no se distingue de España", "-1": "por debajo de España" };
-  const masMenos = (e) => `±${nf(1).format(1.96 * e)}`;
+  // Margen al 95 %: una cifra decimal en puntos; dos si es pequeño (el índice socioeconómico)
+  const masMenos = (e) => `±${nf(1.96 * e < 1 ? 2 : 1).format(1.96 * e)}`;
   const frenteEspana = (ind, v, a, k = varDe(ind), id = null) => {
     const e = espana(ind, a, k);
     if (v == null || e == null) return "";
@@ -121,6 +124,7 @@ export function iniciar(DATA: DatosApp): void {
     const d = v - e;
     if (Math.abs(d) < 0.05) return "igual que España";
     if (ind.unidad === "eur") return `${nf(0).format(Math.abs(d))} € ${d > 0 ? "más" : "menos"} que España (${nf(0).format(Math.abs(v / e - 1) * 100)} %)`;
+    if (ind.unidad === "indice") return `${nf(2).format(Math.abs(d))} ${d > 0 ? "por encima" : "por debajo"} de España`;
     return ind.unidad === "pct" || ind.unidad === "puntos" ? `${nf(1).format(Math.abs(d))} puntos ${d > 0 ? "por encima" : "por debajo"} de España` : `${nf(1).format(Math.abs(d))} ${d > 0 ? "más" : "menos"} que España`;
   };
   const cambioDe = (ind, id, k = varDe(ind)) => ind.cambios.find((c) => c.territorio === id && c.clave === k);
@@ -409,7 +413,7 @@ export function iniciar(DATA: DatosApp): void {
     $("#p-titulo").textContent = o.length
       ? ind.intervalo ? `${ind.nombre}${varFrase(ind)}, ${etq(ind, a)}: cada comunidad frente a España` : `${ind.nombre}${varFrase(ind)} en ${etq(ind, a)}: la cifra más alta, ${NOMBRE[o[0]]}; la más baja, ${NOMBRE[o.at(-1)]}`
       : `${ind.nombre}${varFrase(ind)} en ${etq(ind, a)}: sin dato por comunidad`;
-    $("#p-sub").textContent = `${ind.unidad === "pct" ? `Porcentaje ${ind.que}.` : ind.unidad === "puntos" ? "Puntuación media del alumnado de 15 años." : ind.unidad === "eur" ? `Euros ${ind.que}, del año ${etq(ind, a)}.` : `Alumnos ${ind.que}.`}${ind.encuesta ? " Es una muestra: las diferencias pequeñas entre comunidades pueden deberse al azar." : ""}${esAvance(ind, a) ? " Dato de avance: puede cambiar." : ""} Pulsa una comunidad para elegirla como la tuya.`;
+    $("#p-sub").textContent = `${ind.unidad === "pct" ? `Porcentaje ${ind.que}.` : ind.unidad === "puntos" ? "Puntuación media del alumnado de 15 años." : ind.unidad === "eur" ? `Euros ${ind.que}, del año ${etq(ind, a)}.` : ind.unidad === "indice" ? "Índice medio del alumnado de 15 años; la OCDE lo construye para que su media quede en torno a cero." : `Alumnos ${ind.que}.`}${ind.encuesta ? " Es una muestra: las diferencias pequeñas entre comunidades pueden deberse al azar." : ""}${esAvance(ind, a) ? " Dato de avance: puede cambiar." : ""} Pulsa una comunidad para elegirla como la tuya.`;
     $("#p-origen").innerHTML = origen(ind, a);
     const esca = tileMap($("#p-mapa"), vals, ind, { selIds: [S.com], anio: a, onClick: (id) => { S.com = id; render(); } });
     $("#p-leyenda").innerHTML = esca.leyenda;
@@ -569,12 +573,14 @@ export function iniciar(DATA: DatosApp): void {
     const H = top + o.length * fila + 26 + refs.length * 16 + extra + 10;
     const lab = W < 520 ? 96 : 150, der = 72;
     const extremos = [...o, ...ciu].flatMap((id) => { const v = dato(ind, id, a), er = errorT(ind, id, a) ?? 0; return ic(v, er); }).concat(e, ...refs.map((x) => x.v));
-    const lo = Math.floor(Math.min(...extremos) / 10) * 10, hi = Math.ceil(Math.max(...extremos) / 10) * 10;
+    const marcasEje = ticks(Math.min(...extremos), Math.max(...extremos), 6);
+    const pasoEje = marcasEje[1] - marcasEje[0];
+    const lo = marcasEje[0] > Math.min(...extremos) ? marcasEje[0] - pasoEje : marcasEje[0], hi = marcasEje.at(-1) < Math.max(...extremos) ? marcasEje.at(-1) + pasoEje : marcasEje.at(-1);
     const x = (v) => lab + ((v - lo) / (hi - lo || 1)) * (W - lab - der);
     const fg = css("--fg"), muted = css("--muted"), line = css("--line"), surf = css("--surface"), cols = COL_IC();
     const colPunto = (c) => c === 0 ? css("--muted") : cols[c];
     let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(ind.nombre)} por comunidad, con su intervalo al 95 %">`;
-    for (let t = lo; t <= hi; t += (hi - lo > 80 ? 20 : 10)) s += `<line x1="${x(t)}" x2="${x(t)}" y1="${top - 4}" y2="${top + o.length * fila}" stroke="${line}"/><text x="${x(t)}" y="${top + o.length * fila + 14}" text-anchor="middle" font-size="10.5" fill="${muted}" class="num">${t}</text>`;
+    for (let t = lo; t <= hi + pasoEje / 2; t += pasoEje) s += `<line x1="${x(t)}" x2="${x(t)}" y1="${top - 4}" y2="${top + o.length * fila}" stroke="${line}"/><text x="${x(t)}" y="${top + o.length * fila + 14}" text-anchor="middle" font-size="10.5" fill="${muted}" class="num">${fmtCorto(+t.toFixed(6), ind.unidad)}</text>`;
     const punto = (id, y, cursiva) => {
       const v = dato(ind, id, a), er = errorT(ind, id, a), [l, h] = ic(v, er ?? 0), c = claseIC(ind, id, a), sel = colorSel(id);
       return `<g class="barra" data-id="${id}" style="cursor:pointer" tabindex="0" role="button" aria-label="${esc(NOMBRE[id])}: ${esc(fmt(v, ind.unidad))}, ${esc(lineaIC(ind, id, a))}, ${esc(TXT_CLASE[c] ?? "")}">

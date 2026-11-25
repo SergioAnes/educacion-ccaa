@@ -1,0 +1,63 @@
+{
+  "id": "pisa_isec",
+  "grupo": "equidad",
+  "resumen": false,
+  "encuesta": true,
+  "intervalo": true,
+  "nombre": "PISA: índice socioeconómico y cultural (ISEC)",
+  "corto": "Nivel socioeconómico (ISEC)",
+  "que": "de índice medio",
+  "unidad": "indice",
+  "unidad_txt": "puntos del índice",
+  "definicion": "Índice socioeconómico y cultural medio del alumnado de 15 años que hace PISA. La OCDE lo calcula con los estudios y la ocupación de los padres y con los recursos del hogar (libros, ordenador, espacio para estudiar…).",
+  "numerador": "ISEC de cada alumno de la muestra (variable ESCS de la OCDE), ponderado para representar a todo el alumnado.",
+  "denominador": "Alumnado de 15 años representado por la muestra de PISA.",
+  "no_mide": "No mide la renta ni la riqueza de la comunidad, ni la calidad de sus centros. Sirve de contexto para leer las puntuaciones: un alumnado con un ISEC más bajo suele puntuar menos, en todas partes, sin que eso diga nada por sí solo del sistema educativo.",
+  "fiabilidad": "A",
+  "fiabilidad_txt": "Evaluación internacional periódica de la OCDE, con el informe oficial del Ministerio. Es una muestra: cada cifra tiene margen de error.",
+  "estado": "definitivo",
+  "fuentes": [
+    {
+      "id": "inee_pisa",
+      "corto": "INEE (Ministerio de Educación), informe PISA 2025",
+      "nombre": "Instituto Nacional de Evaluación Educativa (Ministerio de Educación, Formación Profesional y Deportes): PISA 2025, informe español, tablas del capítulo 3 (Figura 3.1)",
+      "url": "https://www.educacionfpydeportes.gob.es/inee/evaluaciones-internacionales/pisa/pisa-2025.html"
+    },
+    {
+      "id": "ocde",
+      "corto": "OCDE",
+      "nombre": "OCDE: PISA (programa, documentación técnica y resultados)",
+      "url": "https://www.oecd.org/en/about/programmes/pisa.html"
+    }
+  ],
+  "referencias": [
+    {
+      "id": "OCDE",
+      "nombre": "media OCDE",
+      "fuente_id": "inee_pisa",
+      "ranking": true,
+      "evolucion": false
+    },
+    {
+      "id": "UE",
+      "nombre": "total UE",
+      "fuente_id": "inee_pisa",
+      "ranking": true,
+      "evolucion": false
+    }
+  ],
+  "espana": "Resultado de la muestra de toda España, publicado por el INEE.",
+  "avisos": [
+    "Valores positivos: nivel socioeconómico por encima de la media de la OCDE; negativos, por debajo. Las diferencias de unas centésimas no significan nada.",
+    "El INEE también publica la puntuación «descontando el ISEC», pero sin detallar en sus tablas cómo se calcula: no la mostramos hasta poder explicarla.",
+    "Cataluña: el INEE dice que, por el 23,2 % de alumnado excluido, sus datos no deben compararse con otros territorios ni con ediciones anteriores. No sale en el mapa ni en los gráficos; solo en su ficha, con ese aviso.",
+    "Murcia: el INEE dice que, con un 12,7 % de alumnado excluido, sus datos se pueden comparar, pero con cautela. Se marca con †.",
+    "Ceuta y Melilla se muestran aparte, como en el resto de la web."
+  ],
+  "no_comparable_txt": "Sin dato comparable",
+  "rango": [
+    -2,
+    2
+  ],
+  "revisado_hasta": "2025"
+}
