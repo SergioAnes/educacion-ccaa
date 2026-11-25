@@ -937,7 +937,13 @@ export function iniciar(DATA: DatosApp): void {
 
   // ---------- TU COMUNIDAD ----------
   // Una fila por dato: valor, diferencia con España, puntos de las 17 (la raya es España) y evolución.
-  function filaInd(ind, id, vs, k) {
+  const avisoUnaVez = (txt, vistos) => {
+    if (vistos?.has(txt)) return "<br>† Mismo aviso que arriba.";
+    vistos?.add(txt);
+    return `<br>† ${esc(txt)}`;
+  };
+  // «vistos»: avisos ya mostrados en la ficha; si se repiten (las filas de los sueldos), solo se remite al de arriba
+  function filaInd(ind, id, vs, k, vistos = null) {
     const a = ultimoCon(ind, k);
     const titulo = ind.reparto ? `En la ${varEtq(ind, k).toLowerCase()}` : sufijo(ind, k) ? `${ind.corto}: ${sufijo(ind, k)}` : ind.corto;
     const vals = valores(ind, a, k), o = ordenados(vals), v = dato(ind, id, a, k), e = espana(ind, a, k);
@@ -971,7 +977,7 @@ export function iniciar(DATA: DatosApp): void {
       : v == null ? "Sin dato para esta comunidad en la fuente."
       : ind.sin_espana ? `${porEncima(ind, v, a, k)}.${fraseSueldoMedio(ind, id, v, a, k) ? ` ${fraseSueldoMedio(ind, id, v, a, k)}.` : ""}` : frenteEspana(ind, v, a, k, id);
     return `<div class="ind${esNoComp ? " no-comp" : ""}">
-      <div><div class="n">${esc(titulo)}${esNoComp ? "" : marca(ind, id, a, k)}</div><div class="pos">${chipFiab(ind.fiabilidad, "span")} ${etqEstado(ind, a)} · ${ind.sin_espana ? "sin cifra para España" : `España: ${fmt(e, ind.unidad)}`}${conCautela(ind, id, a, k) ? `<br>† ${esc(textoCautela(ind, id, a, k))}` : ""}${nn.length ? `<br>Nota de la fuente: ${esc(nn[0].texto)}` : ""}</div></div>
+      <div><div class="n">${esc(titulo)}${esNoComp ? "" : marca(ind, id, a, k)}</div><div class="pos">${chipFiab(ind.fiabilidad, "span")} ${etqEstado(ind, a)} · ${ind.sin_espana ? "sin cifra para España" : `España: ${fmt(e, ind.unidad)}`}${conCautela(ind, id, a, k) ? avisoUnaVez(textoCautela(ind, id, a, k), vistos) : ""}${nn.length ? `<br>Nota de la fuente: ${esc(nn[0].texto)}` : ""}</div></div>
       <div><div class="val">${fmt(v, ind.unidad)}${er != null && !esNoComp ? `<span class="ic"> ${masMenos(er)}</span>` : ""}</div><div class="delta">${delta}</div>${c && !esNoComp ? `<div class="vs">Cambio: ${textoCambio(ind, c)}</div>` : ""}${vs ? `<div class="vs">${esc(NOMBRE[vs])}: ${vsNoComp ? esc(minus(ind.no_comparable_txt || "sin dato comparable")) : `${fmt(vv, ind.unidad)}${marca(ind, vs, a, k)}`}</div>` : ""}</div>
       <div class="strip">${strip}${esNoComp ? `<div class="pos">No se coloca entre las demás: la fuente pide no compararla.</div>` : ""}</div>
       <div class="spark">${spark}</div>
@@ -1003,18 +1009,19 @@ export function iniciar(DATA: DatosApp): void {
     }).join("");
     $("#c-resumen").innerHTML = `<ul class="claves">${claves}</ul>` +
       (ciu ? `<span class="cautela">Ciudad autónoma: su educación la gestiona directamente el Ministerio y su muestra en las encuestas es muy pequeña. Se muestra aparte, sin compararla con las 17.</span>` : "");
+    const vistos = new Set();
     const temas = DATA.temas.map((t) => {
       const inds = DATA.inds.filter((i) => i.grupo === t.id);
       const filas = inds.flatMap((i) => (i.filas_ficha?.length ? i.filas_ficha : [{}]).map((c) => {
         const k = claveDe(Object.fromEntries(DIMS.map((d) => [d, c[d] ?? (i.dims.some((x) => x.dim === d) && !c[d] ? partes(i.variantes[0].clave)[d] : "total")])));
-        return existe(i, k) ? filaInd(i, id, S.vs, k) : "";
+        return existe(i, k) ? filaInd(i, id, S.vs, k, vistos) : "";
       })).join("");
       return `<div class="bloque"><h2>${esc(t.nombre)}</h2>
         <p class="sub">El último dato de cada indicador. Cada punto gris es otra comunidad; la raya, España. A la derecha, la evolución.</p>
         <div class="filas">${filas}</div>
         <div class="notas-min">${plegable(`ficha-${t.id}`, "¿Qué mide esto?", inds.map((i) => `<h3>${esc(i.nombre)}</h3>${queMide(i, `ficha-${i.id}`)}`).join(""))}</div></div>`;
     }).join("");
-    $("#c-bloques").innerHTML = temas + `<div class="bloque"><h2>Lo que todavía no está</h2><p class="sub">Iremos añadiendo tasas de graduación, gasto público por alumno, equidad (índice socioeconómico de PISA y diferencias entre alumnado), ediciones anteriores de PISA por comunidad y más escolarización, siempre con datos oficiales y su fuente. Si un dato no existe, lo diremos.</p></div>`;
+    $("#c-bloques").innerHTML = temas + `<div class="bloque"><h2>Lo que todavía no está</h2><p class="sub">Iremos añadiendo más datos oficiales, como la comparación de España con otros países de la OCDE, siempre con su fuente. Si un dato no existe, lo diremos.</p></div>`;
   }
 
   // ---------- CÓMO LEER LOS DATOS ----------

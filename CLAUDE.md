@@ -19,6 +19,8 @@ familia de `sanidad-ccaa` y `presupuestos-ccaa` (mismo estilo y mismas reglas). 
 - `src/lib/app/datos-app.ts` une fichas y observaciones (`REGISTRO`) y hace fallar la compilación si una cifra no tiene
   ficha, fuente con enlace, estado o valor dentro del rango plausible. Solo se muestran los temas con datos.
 - `src/lib/app/ui.ts` pinta todo con DOM imperativo (adaptado de sanidad); `esqueleto.ts` es el HTML fijo.
+- `public/og.png` (1200x630) es la vista previa al compartir: texto a la izquierda y el mapa de gasto por alumno de la
+  propia web (captura de la página compilada). Rehacerla si cambia mucho el diseño.
 - Datos primero: explicaciones plegadas con `plegable()`. Ceuta y Melilla aparte (gestión directa del Ministerio y
   muestras pequeñas): no cambian los colores del mapa ni se comparan con las 17.
 

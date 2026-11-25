@@ -12,9 +12,12 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://educacion-ccaa.vercel.app"),
   title: "Educación por comunidades",
   description: descripcion,
-  // Pendiente: public/og.png (1200x630) con una captura cuando el diseño esté cerrado.
-  openGraph: { title: "¿Cómo está la educación en tu comunidad?", description: descripcion, url: "/", siteName: "Educación por comunidades", locale: "es_ES", type: "website" },
-  twitter: { card: "summary", title: "¿Cómo está la educación en tu comunidad?", description: descripcion },
+  // Vista previa al compartir el enlace (WhatsApp, redes sociales). Imagen: public/og.png (1200x630), captura del mapa de la web.
+  openGraph: {
+    title: "¿Cómo está la educación en tu comunidad?", description: descripcion, url: "/", siteName: "Educación por comunidades", locale: "es_ES", type: "website",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Mapa de España con el gasto público por alumno de cada comunidad" }],
+  },
+  twitter: { card: "summary_large_image", title: "¿Cómo está la educación en tu comunidad?", description: descripcion, images: ["/og.png"] },
 };
 
 export const viewport: Viewport = { width: "device-width", initialScale: 1, viewportFit: "cover" };
