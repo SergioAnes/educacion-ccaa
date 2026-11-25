@@ -913,9 +913,10 @@
         "Incluye la indemnización de residencia de Mallorca, que cobra todo el personal público por la insularidad; en Menorca e Ibiza es de 215,98 € (maestros) y 226,72 € (secundaria) al mes, y en Formentera, 287,53 € y 298,28 €.",
         "El complemento de la Comunidad Autónoma sube con la antigüedad (de 418,54 € a 619,04 € al mes); se toma el tramo de quien empieza.",
         "La jornada semanal en Baleares es de 35 horas, no de 37,5.",
-        "No se cuentan los atrasos de 2020-2021 que se están pagando tras una sentencia del TSJ: son de años anteriores."
+        "No se cuentan los atrasos de 2020-2021 que se están pagando tras una sentencia del TSJ: son de años anteriores.",
+        "No se incluye el primer tramo de la carrera profesional docente (convocatoria de octubre de 2026): exige una evaluación favorable y pueden pedirlo también interinos y funcionarios en prácticas; no se ha confirmado si exige años de servicio."
       ],
-      "cautela_web": "Incluye la indemnización por residencia de Mallorca, que cobra todo el personal público; en Menorca, Ibiza y Formentera es mayor."
+      "cautela_web": "Incluye la indemnización por residencia de Mallorca, que cobra todo el personal público; en Menorca, Ibiza y Formentera es mayor. No incluye el primer tramo de la carrera profesional docente: se cobra tras una evaluación favorable y no se ha podido confirmar si exige años de servicio."
     },
     "07": {
       "nombre": "Castilla y León",
