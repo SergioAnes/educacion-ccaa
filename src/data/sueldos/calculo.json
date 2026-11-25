@@ -252,6 +252,75 @@
         "El complemento de destino vasco es propio y más alto que el estatal (701,21 € en el nivel 21 y 880,09 € en el 24, frente a 592,11 y 729,14).",
         "La instrucción recuerda el posible 0,5 % adicional de 2026 si el IPC supera el 1,5 % (Real Decreto-ley 14/2025)."
       ]
+    },
+    "04": {
+      "nombre": "Illes Balears",
+      "cuerpos": {
+        "maestros": {
+          "bruto_anual": 37451.78,
+          "componentes": {
+            "mensualidades": 26992.56,
+            "pagas_extra": 2933.88,
+            "pagas_adicionales_especifico": 915.5,
+            "otros_recurrentes": 6609.84,
+            "pagos_unicos_del_anio": 0
+          },
+          "otros": [
+            {
+              "concepto": "Complemento de la Comunidad Autónoma, tramo de interinos y funcionarios en prácticas (418,54 €/mes, 12 pagas; sube con los años de servicio)",
+              "importe": 5022.48,
+              "tipo": "recurrente",
+              "fuente": "ib_retribucions",
+              "donde": "«Complement Comunitat Autònoma», «Interins i Funcionaris en Pràctiques»"
+            },
+            {
+              "concepto": "Indemnización de residencia en Mallorca (132.28 €/mes, 12 pagas; es mayor en Menorca, Ibiza y Formentera)",
+              "importe": 1587.36,
+              "tipo": "recurrente",
+              "fuente": "ib_retribucions",
+              "donde": "«Indemnització Residència», «Grup A2 Mallorca»"
+            }
+          ],
+          "horas_lectivas": 23.0,
+          "horas_definicion": "máximo de 23 periodos de docencia directa (clases, apoyos, recreo y tutoría); 25 lectivas contando coordinaciones y cargos; jornada de 35 h",
+          "euros_por_hora_semanal": 1628.34
+        },
+        "secundaria": {
+          "bruto_anual": 41763.0,
+          "componentes": {
+            "mensualidades": 30889.56,
+            "pagas_extra": 3170.38,
+            "pagas_adicionales_especifico": 915.5,
+            "otros_recurrentes": 6787.56,
+            "pagos_unicos_del_anio": 0
+          },
+          "otros": [
+            {
+              "concepto": "Complemento de la Comunidad Autónoma, tramo de interinos y funcionarios en prácticas (418,54 €/mes, 12 pagas; sube con los años de servicio)",
+              "importe": 5022.48,
+              "tipo": "recurrente",
+              "fuente": "ib_retribucions",
+              "donde": "«Complement Comunitat Autònoma», «Interins i Funcionaris en Pràctiques»"
+            },
+            {
+              "concepto": "Indemnización de residencia en Mallorca (147.09 €/mes, 12 pagas; es mayor en Menorca, Ibiza y Formentera)",
+              "importe": 1765.08,
+              "tipo": "recurrente",
+              "fuente": "ib_retribucions",
+              "donde": "«Indemnització Residència», «Grup A1 Mallorca»"
+            }
+          ],
+          "horas_lectivas": 18.0,
+          "horas_definicion": "máximo de 18 periodos de docencia directa (clases, apoyos y tutoría de grupo); jornada de 35 h",
+          "euros_por_hora_semanal": 2320.17
+        }
+      },
+      "avisos": [
+        "Incluye la indemnización de residencia de Mallorca, que cobra todo el personal público por la insularidad; en Menorca e Ibiza es de 215,98 € (maestros) y 226,72 € (secundaria) al mes, y en Formentera, 287,53 € y 298,28 €.",
+        "El complemento de la Comunidad Autónoma sube con la antigüedad (de 418,54 € a 619,04 € al mes); se toma el tramo de quien empieza.",
+        "La jornada semanal en Baleares es de 35 horas, no de 37,5.",
+        "No se cuentan los atrasos de 2020-2021 que se están pagando tras una sentencia del TSJ: son de años anteriores."
+      ]
     }
   }
 }

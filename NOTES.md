@@ -213,7 +213,7 @@ scripts de Python y se guardan como JSON en `src/data/`. La base es sanidad-ccaa
 ### Sueldos del profesorado por comunidad (EN CURSO, sin publicar; 25/11/2026)
 - ESTADO: estructura hecha (normas.json + calcular_sueldos.py). Analizadas: Madrid y Cataluña (caso «al empezar»).
   Plan acordado con el usuario: analizar las demás de una en una (guardando en git), y publicar al final con mapa,
-  horas lectivas y € por hora semanal. Hechas también: Comunitat Valenciana y País Vasco (25/11/2026). Siguiente: Andalucía (solo
+  horas lectivas y € por hora semanal. Hechas también: Comunitat Valenciana, País Vasco e Illes Balears (25/11/2026). Siguiente: Andalucía (solo
   tabla 2024: buscar fuente oficial 2026) o el resto. El ct-gov-205 da error SSL en descargar.py: ya está guardado a mano.
 - Andalucía (pendiente, 25/11/2026): sin tabla oficial 2026 de la pública. Piezas: tabla «fiscalizada» de 10/7/2024
   (juntadeandalucia.es/educacion/portales/web/educacion/plantilla-docente-y-retribuciones); Acuerdo del Consejo de
@@ -221,6 +221,11 @@ scripts de Python y se guardan como JSON en `src/data/`. La base es sanidad-ccaa
   pagas, desde 1/9/2025; «culmina» la equiparación); subidas generales 2025 (+2,5 %) y 2026 (+1,5 %, Ley 8/2025 art. 17).
   Reconstruir = cálculo propio en varios pasos: decidir con el usuario. La resolución de concertada 2026 (BOJA 21,
   2/2/2026) NO sirve para la pública.
+- Baleares: tabla «Retribucions personal funcionari gener 2026» (web nominadelprofessorat = PÚBLICA; la web
+  nominaprofessorat es de la CONCERTADA, no usar). Específico general 457,75 igual para los dos cuerpos (14 pagas);
+  complemento de la Comunidad Autónoma por tramos de antigüedad (418,54 al empezar, 12 pagas); indemnización de
+  residencia (Mallorca 132,28 A2 / 147,09 A1, 12 pagas) incluida y avisada. Horas: 23 y 18 periodos de docencia
+  directa (instrucciones de horario, junio de 2026); jornada de 35 h. Atrasos 2020-21 (sentencia TSJ) no se cuentan.
 - País Vasco: Instrucción de retribuciones de 25/9/2026 (todo en 14 pagas, sin supuestos); destino PROPIO (701,21 nivel
   21; 880,09 nivel 24) → `"propio": true` en normas.json; sexenios 2.º y 3.º «capitalizados» desde el primer día (316,77
   €/mes) y complemento de complejidad docente (113,44 / 132,51 €/mes) entran en el caso «al empezar». Horas: 21 maestros

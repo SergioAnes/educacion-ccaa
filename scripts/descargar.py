@@ -115,6 +115,8 @@ FUENTES: dict[str, list[tuple[str, str]]] = {
         ("vc-instrucciones-infantil-primaria-2026-27.pdf", "https://dogv.gva.es/datos/2026/07/17/pdf/2026_24423_es.pdf"),
         ("pv-instruccion-retribuciones-sep-2026.pdf", "https://www.euskadi.eus/contenidos/informacion/langile_nominas_servicio/es_def/adjuntos/Instruccion-retribuciones_sep_2026-.pdf"),
         ("pv-decreto-252-2025-acuerdo-regulador.pdf", "https://www.euskadi.eus/contenidos/informacion/langile_nominas_servicio/es_def/adjuntos/DECRETO-252-2025-Acuerdo-regulador.pdf"),
+        ("ib-retribucions-funcionari-2026.pdf", "https://www.caib.es/sites/nominadelprofessorat/ca/d/retribucions_personal_funcionari_2026/"),
+        ("ib-instruccions-horaris-2026-27.pdf", "https://apps.caib.es/sites/planificacioicentres/f/513202"),
     ],
     # INEE: tablas del informe español de PISA 2025 (Excel dentro de un RAR)
     "pisa": [("tablas-informe-pisa-2025.rar", "https://www.educacionfpydeportes.gob.es/dam/jcr:4f7056b5-02d7-4e6d-a454-2caa3e04893f/tablas-informe-pisa-2025.rar")],

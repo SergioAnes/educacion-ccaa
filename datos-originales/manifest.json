@@ -657,6 +657,22 @@
   },
   {
     "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/ib-instruccions-horaris-2026-27.pdf",
+    "url": "https://apps.caib.es/sites/planificacioicentres/f/513202",
+    "fecha_captura": "2026-11-25",
+    "bytes": 325977,
+    "sha256": "ca01310799fce057597fa0110edb80fdc70e3c8f6d78c214a735d19698a15476"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/ib-retribucions-funcionari-2026.pdf",
+    "url": "https://www.caib.es/sites/nominadelprofessorat/ca/d/retribucions_personal_funcionari_2026/",
+    "fecha_captura": "2026-11-25",
+    "bytes": 80029,
+    "sha256": "9e41081f637a41d714befc1617e7de176440882d589585313fcadd3a0fadb652"
+  },
+  {
+    "fuente": "sueldos",
     "fichero": "sueldos/2026-11-25/md-instrucciones-inicio-curso-2026-27.pdf",
     "url": "https://www.comunidad.madrid/docs/2026-07/instrucciones-inicio-de-curso-2026-2027.pdf?VersionId=_c5Q9Tfeyrrw4858fl2O5svnHcAVLidV",
     "fecha_captura": "2026-11-25",
