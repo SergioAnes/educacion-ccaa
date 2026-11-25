@@ -810,6 +810,61 @@
         "ANPE La Rioja da en noviembre de 2026 un específico de 837,85 € para secundaria (825,47 × 1,015), frente a 825,47 € en la tabla oficial de enero; no se ha encontrado la norma de esa posible subida y se usa la cifra oficial.",
         "Las horas de secundaria se deducen de la tabla oficial de reducciones de jornada (12 periodos con un tercio menos = 18)."
       ]
+    },
+    "05": {
+      "nombre": "Canarias",
+      "cuerpos": {
+        "maestros": {
+          "bruto_anual": 37407.06,
+          "componentes": {
+            "mensualidades": 31419.36,
+            "pagas_extra": 2950.28,
+            "pagas_adicionales_especifico": 1276.78,
+            "otros_recurrentes": 1760.64,
+            "pagos_unicos_del_anio": 0
+          },
+          "otros": [
+            {
+              "concepto": "Indemnización por residencia en isla mayor (146.72 €/mes, 12 pagas; es mayor en las islas menores)",
+              "importe": 1760.64,
+              "tipo": "recurrente",
+              "fuente": "ic_tabla",
+              "donde": "Indemnización por Residencia, grupo A2, isla mayor"
+            }
+          ],
+          "horas_lectivas": 23.0,
+          "horas_definicion": "23 horas lectivas en jornada completa (deducido de la tabla de jornadas parciales; Orden de 28/9/2023 y Ley 7/2022, disp. adic. 18.ª)",
+          "euros_por_hora_semanal": 1626.39
+        },
+        "secundaria": {
+          "bruto_anual": 41088.46,
+          "componentes": {
+            "mensualidades": 34742.64,
+            "pagas_extra": 3190.62,
+            "pagas_adicionales_especifico": 1199.2,
+            "otros_recurrentes": 1956.0,
+            "pagos_unicos_del_anio": 0
+          },
+          "otros": [
+            {
+              "concepto": "Indemnización por residencia en isla mayor (163.0 €/mes, 12 pagas; es mayor en las islas menores)",
+              "importe": 1956.0,
+              "tipo": "recurrente",
+              "fuente": "ic_tabla",
+              "donde": "Indemnización por Residencia, grupo A1, isla mayor"
+            }
+          ],
+          "horas_lectivas": 18.0,
+          "horas_definicion": "18 horas lectivas y 6 complementarias",
+          "euros_por_hora_semanal": 2282.69
+        }
+      },
+      "avisos": [
+        "Incluye la indemnización por residencia de isla mayor (Gran Canaria y Tenerife), que cobra todo el personal público; en las islas menores es de 488,66 € (maestros) y 542,93 € (secundaria) al mes.",
+        "En Canarias el complemento específico de los maestros (818,45 €) es mayor que el de los profesores de secundaria (768,72 €).",
+        "En las pagas extra el específico se cobra al 78 %.",
+        "Canarias publica un complemento de destino algo mayor que el estatal (600,31 € en el nivel 21 y 739,26 € en el 24)."
+      ]
     }
   }
 }

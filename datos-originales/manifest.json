@@ -849,6 +849,22 @@
   },
   {
     "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/ic-resolucion-73-2026-instrucciones.pdf",
+    "url": "https://www.gobiernodecanarias.org/cmsgob1/export/sites/educacion/web/_galerias/descargas/normativa-internas/resolucion-73-instrucciones-organizacion-funcionamiento-centros-curso-26-27.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 752549,
+    "sha256": "99e11cee930225f2ef8f2d4b96078fc9be74e5750859ceba02c2dcd53194287c"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/ic-retribuciones-2026-personal-docente.pdf",
+    "url": "https://www.gobiernodecanarias.org/cmsgob1/export/sites/transparencia/temas/institucional-organizativa/retribuciones/retribuciones-personal/personal-funcionario/doc/retribuciones-2026-personal-docente.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 771567,
+    "sha256": "5bf89f51f06d86a8395181d3a428d8cfd15b18cd678d8dbde47197e30ebc51b2"
+  },
+  {
+    "fuente": "sueldos",
     "fichero": "sueldos/2026-11-25/md-instrucciones-inicio-curso-2026-27.pdf",
     "url": "https://www.comunidad.madrid/docs/2026-07/instrucciones-inicio-de-curso-2026-2027.pdf?VersionId=_c5Q9Tfeyrrw4858fl2O5svnHcAVLidV",
     "fecha_captura": "2026-11-25",
@@ -901,7 +917,7 @@
     "url": "https://www.iberley.es/legislacion/articulo-19-presupuestos-generales-ano-2026-navarra",
     "fecha_captura": "2026-11-25",
     "bytes": 158288,
-    "sha256": "1a26dcd8f8f692b3e6777accb3e60ae5a207ef26ca12ab5ec9bf8496757412a7"
+    "sha256": "77e94043ad6f67a9bede21842780fd65fa112c45fd72f69f5b93148278609fc5"
   },
   {
     "fuente": "sueldos",

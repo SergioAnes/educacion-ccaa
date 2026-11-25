@@ -213,7 +213,7 @@ scripts de Python y se guardan como JSON en `src/data/`. La base es sanidad-ccaa
 ### Sueldos del profesorado por comunidad (EN CURSO, sin publicar; 25/11/2026)
 - ESTADO: estructura hecha (normas.json + calcular_sueldos.py). Analizadas: Madrid y Cataluña (caso «al empezar»).
   Plan acordado con el usuario: analizar las demás de una en una (guardando en git), y publicar al final con mapa,
-  horas lectivas y € por hora semanal. Hechas también: Comunitat Valenciana, País Vasco, Illes Balears, Castilla y León, Aragón, Galicia, Asturias, Cantabria, Castilla-La Mancha, Extremadura, Murcia, Navarra y La Rioja (25/11/2026). Faltan Canarias y Andalucía. Siguiente: Andalucía (solo
+  horas lectivas y € por hora semanal. Hechas también: Comunitat Valenciana, País Vasco, Illes Balears, Castilla y León, Aragón, Galicia, Asturias, Cantabria, Castilla-La Mancha, Extremadura, Murcia, Navarra, La Rioja y Canarias (25/11/2026). Falta Andalucía (decisión pendiente del usuario). Siguiente: Andalucía (solo
   tabla 2024: buscar fuente oficial 2026) o el resto. El ct-gov-205 da error SSL en descargar.py: ya está guardado a mano.
 - Andalucía (pendiente, 25/11/2026): sin tabla oficial 2026 de la pública. Piezas: tabla «fiscalizada» de 10/7/2024
   (juntadeandalucia.es/educacion/portales/web/educacion/plantilla-docente-y-retribuciones); Acuerdo del Consejo de
@@ -221,6 +221,10 @@ scripts de Python y se guardan como JSON en `src/data/`. La base es sanidad-ccaa
   pagas, desde 1/9/2025; «culmina» la equiparación); subidas generales 2025 (+2,5 %) y 2026 (+1,5 %, Ley 8/2025 art. 17).
   Reconstruir = cálculo propio en varios pasos: decidir con el usuario. La resolución de concertada 2026 (BOJA 21,
   2/2/2026) NO sirve para la pública.
+- Canarias: tabla de transparencia «retribuciones 2026 personal docente»: destino PROPIO (600,31 / 739,26); específico
+  maestros 818,45 > secundaria 768,72; extras con destino al 100 % y específico al 78 % (599,60 / 638,39); residencia de
+  isla mayor (146,72 A2 / 163,00 A1, 12 pagas) incluida y avisada. Horas (Res. 73/2026): secundaria 18; maestros 23
+  deducido de la tabla de jornadas parciales (22 h = 35,5 h de jornada) → aproximado.
 - La Rioja: tabla oficial «Retribuciones 2026» de la Consejería (enero): específico general 815,42 maestros / 825,47
   secundaria; ANPE (nov. 2026) da 837,85 para secundaria (= 825,47 × 1,015): no se encontró norma → se usa la oficial y se
   avisa. Extras con específico: ley de presupuestos 2026. Horas: maestros 23 (Orden de julio de 2024); secundaria 18
