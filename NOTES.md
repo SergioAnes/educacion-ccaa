@@ -213,7 +213,7 @@ scripts de Python y se guardan como JSON en `src/data/`. La base es sanidad-ccaa
 ### Sueldos del profesorado por comunidad (EN CURSO, sin publicar; 25/11/2026)
 - ESTADO: estructura hecha (normas.json + calcular_sueldos.py). Analizadas: Madrid y Cataluña (caso «al empezar»).
   Plan acordado con el usuario: analizar las demás de una en una (guardando en git), y publicar al final con mapa,
-  horas lectivas y € por hora semanal. Hechas también: Comunitat Valenciana, País Vasco e Illes Balears (25/11/2026). Siguiente: Andalucía (solo
+  horas lectivas y € por hora semanal. Hechas también: Comunitat Valenciana, País Vasco, Illes Balears y Castilla y León (25/11/2026). Siguiente: Andalucía (solo
   tabla 2024: buscar fuente oficial 2026) o el resto. El ct-gov-205 da error SSL en descargar.py: ya está guardado a mano.
 - Andalucía (pendiente, 25/11/2026): sin tabla oficial 2026 de la pública. Piezas: tabla «fiscalizada» de 10/7/2024
   (juntadeandalucia.es/educacion/portales/web/educacion/plantilla-docente-y-retribuciones); Acuerdo del Consejo de
@@ -221,6 +221,10 @@ scripts de Python y se guardan como JSON en `src/data/`. La base es sanidad-ccaa
   pagas, desde 1/9/2025; «culmina» la equiparación); subidas generales 2025 (+2,5 %) y 2026 (+1,5 %, Ley 8/2025 art. 17).
   Reconstruir = cálculo propio en varios pasos: decidir con el usuario. La resolución de concertada 2026 (BOJA 21,
   2/2/2026) NO sirve para la pública.
+- Castilla y León: Orden PRE/1/2026 (BOCYL 5/1/2026), Anexo V: específico = parte general 294,20 + autonómica (423,45
+  maestros / 424,79 profesores), en extras por el Anexo XIII.5; «Consolidación Punto 4.º» (25,27 / 27,04) incluida como
+  supuesto (no dice a quién se aplica). Horas: Acuerdo 24/1/2022 (Orden EDU/43/2022): maestros 24 (21,5 + 2,5 de
+  recreo); secundaria «18 o 19 periodos de forma mayoritaria» → 18, marcado aproximado. Jornada 35 h.
 - Baleares: tabla «Retribucions personal funcionari gener 2026» (web nominadelprofessorat = PÚBLICA; la web
   nominaprofessorat es de la CONCERTADA, no usar). Específico general 457,75 igual para los dos cuerpos (14 pagas);
   complemento de la Comunidad Autónoma por tramos de antigüedad (418,54 al empezar, 12 pagas); indemnización de

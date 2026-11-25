@@ -10,7 +10,9 @@
     "Comunitat Valenciana, maestros: pagas adicionales del específico (El art. 34.1.d de la Ley 6/2025 reparte el específico en 14 pagas para el personal funcionario de la Ley 4/2021 (función pública valenciana); no hay artículo propio para los docentes, aunque sus tablas se publican en el mismo acuerdo.)",
     "Comunitat Valenciana, maestros: Los 75 € también en la paga adicional de diciembre (no lo dice: se supone que la subida va en el complemento específico autonómico (prensa) y que este se cobra en 14 pagas)",
     "Comunitat Valenciana, secundaria: pagas adicionales del específico (El art. 34.1.d de la Ley 6/2025 reparte el específico en 14 pagas para el personal funcionario de la Ley 4/2021 (función pública valenciana); no hay artículo propio para los docentes, aunque sus tablas se publican en el mismo acuerdo.)",
-    "Comunitat Valenciana, secundaria: Los 75 € también en la paga adicional de diciembre (no lo dice: se supone que la subida va en el complemento específico autonómico (prensa) y que este se cobra en 14 pagas)"
+    "Comunitat Valenciana, secundaria: Los 75 € también en la paga adicional de diciembre (no lo dice: se supone que la subida va en el complemento específico autonómico (prensa) y que este se cobra en 14 pagas)",
+    "Castilla y León, maestros: «Consolidación Punto 4.º» del Acuerdo de 21 de diciembre de 2000 (25.27 €/mes, 12 pagas) (Anexo V, Cuarto)",
+    "Castilla y León, secundaria: «Consolidación Punto 4.º» del Acuerdo de 21 de diciembre de 2000 (27.04 €/mes, 12 pagas) (Anexo V, Cuarto)"
   ],
   "comunidades": {
     "13": {
@@ -320,6 +322,64 @@
         "El complemento de la Comunidad Autónoma sube con la antigüedad (de 418,54 € a 619,04 € al mes); se toma el tramo de quien empieza.",
         "La jornada semanal en Baleares es de 35 horas, no de 37,5.",
         "No se cuentan los atrasos de 2020-2021 que se están pagando tras una sentencia del TSJ: son de años anteriores."
+      ]
+    },
+    "07": {
+      "nombre": "Castilla y León",
+      "cuerpos": {
+        "maestros": {
+          "bruto_anual": 34783.78,
+          "componentes": {
+            "mensualidades": 30111.36,
+            "pagas_extra": 2933.88,
+            "pagas_adicionales_especifico": 1435.3,
+            "otros_recurrentes": 303.24,
+            "pagos_unicos_del_anio": 0
+          },
+          "otros": [
+            {
+              "concepto": "«Consolidación Punto 4.º» del Acuerdo de 21 de diciembre de 2000 (25.27 €/mes, 12 pagas)",
+              "importe": 303.24,
+              "tipo": "recurrente",
+              "fuente": "cl_orden_pre_1",
+              "donde": "Anexo V, Cuarto",
+              "comprobacion": "supuesto",
+              "nota": "La orden da el importe por grupo sin decir a quién se aplica; se supone que a todo el profesorado funcionario."
+            }
+          ],
+          "horas_lectivas": 24.0,
+          "horas_definicion": "24 horas lectivas: 21,5 de docencia directa + 2,5 de recreo vigilado; jornada de 35 h",
+          "euros_por_hora_semanal": 1449.32
+        },
+        "secundaria": {
+          "bruto_anual": 38957.28,
+          "componentes": {
+            "mensualidades": 34024.44,
+            "pagas_extra": 3170.38,
+            "pagas_adicionales_especifico": 1437.98,
+            "otros_recurrentes": 324.48,
+            "pagos_unicos_del_anio": 0
+          },
+          "otros": [
+            {
+              "concepto": "«Consolidación Punto 4.º» del Acuerdo de 21 de diciembre de 2000 (27.04 €/mes, 12 pagas)",
+              "importe": 324.48,
+              "tipo": "recurrente",
+              "fuente": "cl_orden_pre_1",
+              "donde": "Anexo V, Cuarto",
+              "comprobacion": "supuesto",
+              "nota": "La orden da el importe por grupo sin decir a quién se aplica; se supone que a todo el profesorado funcionario."
+            }
+          ],
+          "horas_lectivas": 18.0,
+          "horas_definicion": "«18 o 19 periodos lectivos de forma mayoritaria» (se toma 18); jornada de 35 h",
+          "euros_por_hora_semanal": 2164.29
+        }
+      },
+      "avisos": [
+        "En secundaria el acuerdo de horario habla de «18 o 19 periodos lectivos de forma mayoritaria»: los euros por hora se calculan con 18.",
+        "Desde septiembre de 2026 los tutores cobran 20 € al mes (Orden EDU/1051/2026); no se incluye porque no todos son tutores.",
+        "La jornada semanal en Castilla y León es de 35 horas."
       ]
     }
   }

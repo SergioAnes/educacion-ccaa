@@ -625,6 +625,22 @@
   },
   {
     "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/cl-acuerdo-2022-horario-lectivo.pdf",
+    "url": "https://bocyl.jcyl.es/boletines/2022/01/27/pdf/BOCYL-D-27012022-9.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 864724,
+    "sha256": "6d31353e969ec1cdf7a9455a649643603025985d848bc1471873bb994d1d9719"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/cl-orden-pre-1-2026-retribuciones.pdf",
+    "url": "https://bocyl.jcyl.es/boletines/2026/01/05/pdf/BOCYL-D-05012026-2-2.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 1469706,
+    "sha256": "d8aa8074f3f7bfedd0f99032c1be8f52d7d84defb1d39c533351b269868ebacf"
+  },
+  {
+    "fuente": "sueldos",
     "fichero": "sueldos/2026-11-25/ct-doigc-personal-docent.pdf",
     "url": "https://documents.espai.educacio.gencat.cat/IPCNormativa/DOIGC/ORG_Personal_docent.pdf",
     "fecha_captura": "2026-11-25",
