@@ -24,6 +24,8 @@ import repeticionFicha from "@/data/indicadores/repeticion_eso.json";
 import repeticionObs from "@/data/observaciones/repeticion_eso.json";
 import graduacionFicha from "@/data/indicadores/tasa_graduacion.json";
 import graduacionObs from "@/data/observaciones/tasa_graduacion.json";
+import empleoFpFicha from "@/data/indicadores/empleo_fp.json";
+import empleoFpObs from "@/data/observaciones/empleo_fp.json";
 import gastoFicha from "@/data/indicadores/gasto_alumno.json";
 import gastoObs from "@/data/observaciones/gasto_alumno.json";
 import becasFicha from "@/data/indicadores/becas_bach_fp.json";
@@ -102,7 +104,7 @@ export type Observaciones = {
   cautela?: { territorio: string; texto: string }[];
   cambios?: { territorio: string; competencia: string; desde: string; hasta: string; diferencia: number; error_estandar: number | null; nota?: string }[];
   comprobacion: {
-    pares_comparados: number; descripcion?: string; coinciden?: number; tolerancia?: number; tolerancia_puntos?: number;
+    pares_comparados: number; descripcion?: string; coinciden?: number; iguales_f19?: number; tolerancia?: number; tolerancia_puntos?: number;
     diferencias?: Diferencia[]; diferencias_mayores_que_redondeo?: unknown[];
   };
   filas: Fila[];
@@ -138,6 +140,7 @@ export const REGISTRO: { ficha: Ficha; obs: Observaciones }[] = [
   par(idoneidadFicha, idoneidadObs),
   par(repeticionFicha, repeticionObs),
   par(graduacionFicha, graduacionObs),
+  par(empleoFpFicha, empleoFpObs),
   par(gastoFicha, gastoObs),
   par(becasFicha, becasObs),
   par(importeBecaFicha, importeBecaObs),
@@ -197,6 +200,8 @@ export function textoComprobacion(obs: Observaciones): string {
     return `En cada curso y comunidad, el porcentaje de todos los centros queda entre los de sus redes (${nf(0).format(obs.comprobacion.pares_comparados)} comprobaciones), como corresponde a una media.`;
   if (obs.indicador_id === "becas_bach_fp" || obs.indicador_id === "importe_becario")
     return `Cada importe medio publicado es el importe total de las becas entre el número de becarios de las tablas del mismo capítulo (${nf(0).format(c.pares_comparados)} comprobaciones), y el porcentaje de Bachillerato y FP queda entre el de cada enseñanza.`;
+  if (obs.indicador_id === "empleo_fp")
+    return `Las ${nf(0).format(c.iguales_f19 ?? 0)} cifras de los titulados de 2020-21 en grado medio y superior coinciden con las de «Las cifras de la educación» (tabla F1.9); en cada caso, el total queda entre hombres y mujeres, y la tasa de alta en algún momento de marzo no es menor que la media del mes.`;
   if (obs.indicador_id === "pisa_sexo")
     return "En cada territorio y competencia, la diferencia publicada es la puntuación de las chicas menos la de los chicos.";
   if (obs.indicador_id === "pisa_isec")

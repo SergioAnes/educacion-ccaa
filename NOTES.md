@@ -190,6 +190,18 @@ scripts de Python y se guardan como JSON en `src/data/`. La base es sanidad-ccaa
   el % de becarios postobligatorios no universitarios de la propia comunidad (≥ 10 %; tabla 2 de EDUCAbase becas
   2023-24): `extraer_cifras.py` falla si el texto de la ficha deja de cuadrar con los datos.
 
+### Empleo de los titulados de FP (`empleo_fp`, tema «Trayectorias», publicado el 25/11/2026)
+- EDUCAbase, Estadística de inserción laboral de las personas graduadas en FP, resultados por comunidad: tablas
+  ccaa_1_01 (FP básica, desde 2015-16), ccaa_2_01 (grado medio) y ccaa_3_01 (grado superior), cohortes 2011-12 a
+  2022-23 (las dos últimas, provisionales). Se usa la «tasa de afiliación» (alta laboral algún día de marzo; es la de
+  F1.9), no la «tasa media». Primer año = marzo de t+2; tercer año = marzo de t+4 (metodología 2025).
+- Comunidad = la del centro donde se tituló (informe 2025). Ceuta y Melilla vienen juntas: no se muestran.
+- Comprobado: la cohorte 2020-21 coincide con F1.9 de «Las cifras» (216 cifras); ambos sexos entre hombres y mujeres
+  (1.060 casos); tasa ≥ tasa media.
+- Errata de la fuente: en el Excel de F1.9, Cataluña grado medio «previo a la graduación» ambos sexos = 89,0; el PDF y
+  EDUCAbase dan 13,4 (columna que no usamos).
+- Marzo de 2021 (al año para 2019-20, a los tres años para 2017-18) baja: solo se dice que coincide con la pandemia.
+
 ### Descargas: ficheros que cambian sin cambiar
 - El servidor de EDUCAbase pone en cada .px la fecha de descarga (CREATION-DATE) y un SUBJECT-CODE que varía. Sin
   ignorarlos, cada descarga parecía un fichero nuevo: `descargar.py` compara el contenido sin esas dos líneas (el

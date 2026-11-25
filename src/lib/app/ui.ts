@@ -49,8 +49,8 @@ export function iniciar(DATA: DatosApp): void {
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
   const lista = (xs) => xs.length > 1 ? `${xs.slice(0, -1).join(", ")} y ${xs.at(-1)}` : xs[0] || "";
-  // Primera letra en minúscula, salvo siglas («ESO», «FP básica»)
-  const minus = (s) => /^\p{Lu}\p{Ll}/u.test(s) ? s.charAt(0).toLowerCase() + s.slice(1) : s;
+  // Primera letra en minúscula («Grado medio», «A los tres años»), salvo siglas («ESO», «FP básica»)
+  const minus = (s) => /^\p{Lu}(\p{Ll}|\s)/u.test(s) ? s.charAt(0).toLowerCase() + s.slice(1) : s;
 
   // ---------- periodos (año, curso o edición de PISA) ----------
   const periodos = (ind) => ind.periodos;

@@ -88,9 +88,17 @@ FUENTES: dict[str, list[tuple[str, str]]] = {
         ("b4.pdf", "https://www.educacionfpydeportes.gob.es/dam/jcr:889aecfe-3db1-4964-a3a8-5734c716234b/b4.pdf"),    # metodología de B4.6
         ("b5.xlsx", "https://www.educacionfpydeportes.gob.es/dam/jcr:5fc7ccb7-8e3e-434e-903f-f7a1970eae13/b5.xlsx"),  # B5.3-B5.5 becas
         ("b5.pdf", "https://www.educacionfpydeportes.gob.es/dam/jcr:84688174-3025-4371-87ea-cac6574c6431/b5.pdf"),    # notas de B5.5
+        ("f1.xlsx", "https://www.educacionfpydeportes.gob.es/dam/jcr:3326bdd0-8638-4a23-9903-d4480db11ccb/f1.xlsx"),  # F1.9 inserción FP
+        ("f1.pdf", "https://www.educacionfpydeportes.gob.es/dam/jcr:43facf9c-1248-4aef-aafd-6311b762d65e/f1.pdf"),
     ],
     # EDUCAbase: Estadística de Becas y Ayudas al estudio, tabla 2 (becarios por comunidad y administración que paga)
     "becas": [("todas2_2023-2024.px", f"{PX}/economicas/becas/2023-2024/todasense/l0/todas2.px")],
+    # EDUCAbase: Estadística de inserción laboral de las personas graduadas en FP, por comunidad (1 básica, 2 media, 3 superior),
+    # y su metodología
+    "insercion": [(f"ccaa_{n}_01.px", f"{PX}/laborales/insercion/ccaa/l0/ccaa_{n}_01.px") for n in (1, 2, 3)] + [
+        ("metodo-2025.pdf", "https://www.educacionfpydeportes.gob.es/dam/jcr:1ae997fc-346b-4b39-800c-3d8bde091367/metodo-2025.pdf"),
+        ("informe-2025.pdf", "https://www.educacionfpydeportes.gob.es/dam/jcr:21b3b21d-fe39-44ad-848e-e1af5aee3061/informe-2025.pdf"),
+    ],
     # INEE: tablas del informe español de PISA 2025 (Excel dentro de un RAR)
     "pisa": [("tablas-informe-pisa-2025.rar", "https://www.educacionfpydeportes.gob.es/dam/jcr:4f7056b5-02d7-4e6d-a454-2caa3e04893f/tablas-informe-pisa-2025.rar")],
 }

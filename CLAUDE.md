@@ -55,6 +55,8 @@ familia de `sanidad-ccaa` y `presupuestos-ccaa` (mismo estilo y mismas reglas). 
 - `extraer_cifras.py`: tablas Excel de «Las cifras de la educación» (C2.9 graduación, B4.6 gasto por alumno, B5.5 becas en
   Bachillerato y FP comprobadas con B5.3/B5.4; fuente «cifras», xlsx solo en local). Las becas usan también la tabla 2 de
   EDUCAbase becas (fuente «becas») para el aviso de la ficha `becas_bach_fp`, que el script exige que cuadre.
+- `extraer_insercion.py`: empleo de los titulados de FP (EDUCAbase inserción laboral, fuente «insercion»), comprobado con
+  F1.9 de «Las cifras». El momento («al año» / «a los tres años») va en la dimensión `competencia` de la ficha.
 - `extraer_hitos.py`: leyes desde las fichas XML del BOE → `src/data/hitos.json`.
 - Un salto > 15 % frente al periodo anterior posterior a `revisado_hasta` hace fallar los tests: revisarlo y subir la fecha.
 

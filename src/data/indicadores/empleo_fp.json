@@ -1,0 +1,106 @@
+{
+  "id": "empleo_fp",
+  "grupo": "trayectorias",
+  "resumen": true,
+  "nombre": "Titulados de FP con empleo",
+  "corto": "Empleo tras la FP",
+  "que": "de los titulados",
+  "unidad": "pct",
+  "dimensiones": [
+    {
+      "dim": "etapa",
+      "nombre": "Grado",
+      "opciones": [
+        {
+          "id": "fp_medio",
+          "etiqueta": "Grado medio"
+        },
+        {
+          "id": "fp_superior",
+          "etiqueta": "Grado superior"
+        },
+        {
+          "id": "fp_basica",
+          "etiqueta": "FP básica"
+        }
+      ]
+    },
+    {
+      "dim": "competencia",
+      "nombre": "Cuándo",
+      "opciones": [
+        {
+          "id": "al_anio",
+          "etiqueta": "Al año de titularse"
+        },
+        {
+          "id": "tres_anios",
+          "etiqueta": "A los tres años"
+        }
+      ]
+    },
+    {
+      "dim": "sexo",
+      "nombre": "Sexo",
+      "opciones": [
+        {
+          "id": "total",
+          "etiqueta": "Total"
+        },
+        {
+          "id": "h",
+          "etiqueta": "Hombres"
+        },
+        {
+          "id": "m",
+          "etiqueta": "Mujeres"
+        }
+      ]
+    }
+  ],
+  "filas_ficha": [
+    {
+      "etapa": "fp_medio",
+      "competencia": "tres_anios"
+    },
+    {
+      "etapa": "fp_superior",
+      "competencia": "tres_anios"
+    }
+  ],
+  "definicion": "Porcentaje de las personas que se titularon en FP en un curso que estaban dadas de alta como trabajadoras en la Seguridad Social en algún momento del mes de marzo, al año y a los tres años de titularse.",
+  "numerador": "Titulados de ese curso con algún día de alta laboral en la Seguridad Social (por cuenta ajena o propia) en marzo del año correspondiente. No cuentan las prestaciones por desempleo ni otras situaciones que la Seguridad Social no considera alta laboral.",
+  "denominador": "Todas las personas que se titularon en ese grado de FP en ese curso, en la comunidad del centro donde se titularon (vivan donde vivan después).",
+  "no_mide": "No es la tasa de paro: quien no está de alta puede estar estudiando (muchos titulados de grado medio pasan a grado superior, y de grado superior a la universidad), buscando empleo o trabajando fuera de España. El propio Ministerio advierte de que las diferencias dependen en parte de cuántos siguen estudiando. Tampoco dice si el trabajo tiene que ver con lo estudiado ni cuánto se cobra.",
+  "fiabilidad": "A",
+  "fiabilidad_txt": "Registros administrativos completos (todos los titulados de FP cruzados con la afiliación a la Seguridad Social), no una encuesta.",
+  "estado": "definitivo",
+  "fuentes": [
+    {
+      "id": "mefd_insercion",
+      "corto": "Ministerio de Educación (inserción laboral de la FP)",
+      "nombre": "Ministerio de Educación, Formación Profesional y Deportes: Estadística de inserción laboral de las personas graduadas en enseñanzas de FP (con la Tesorería General de la Seguridad Social), resultados por comunidad autónoma, tablas 1.1, 2.1 y 3.1; metodología e informe 2025",
+      "url": "https://www.educacionfpydeportes.gob.es/servicios-al-ciudadano/estadisticas/laborales/insercion.html"
+    },
+    {
+      "id": "mefd_cifras",
+      "corto": "Ministerio de Educación (Las cifras de la educación)",
+      "nombre": "Ministerio de Educación, Formación Profesional y Deportes: Las cifras de la educación en España, edición 2026, tabla F1.9 (usada para comprobar la cohorte 2020-21)",
+      "url": "https://www.educacionfpydeportes.gob.es/servicios-al-ciudadano/estadisticas/indicadores/cifras-educacion-espana/2023-2024.html"
+    }
+  ],
+  "espana": "Dato oficial del Ministerio para el conjunto de España.",
+  "avisos": [
+    "El año del gráfico es el curso en que se titularon. Para quienes se titularon en 2020-21, «al año» es marzo de 2022 y «a los tres años», marzo de 2024.",
+    "Los cursos 2021-22 y 2022-23 son provisionales: su seguimiento de cuatro años no ha terminado. El de 2022-23 aún no tiene dato a los tres años.",
+    "Las cifras medidas en marzo de 2021 (al año para quienes se titularon en 2019-20; a los tres años para los de 2017-18) son más bajas: coincide con la pandemia.",
+    "Hasta los titulados de 2015-16, la lista de titulados sale del Registro Estatal de Títulos no Universitarios; desde 2016-17, de la Estadística del Alumnado de FP (metodología de la estadística).",
+    "Ceuta y Melilla vienen juntas en la fuente y no se muestran. En FP básica falta alguna comunidad algunos años: el Ministerio no publica porcentajes con menos de 50 titulados o menos de 10 afiliados.",
+    "No cuenta a quien trabaja por cuenta propia en una mutualidad profesional ni a quien trabaja en el extranjero; según el Ministerio, su peso es poco significativo."
+  ],
+  "rango": [
+    0,
+    100
+  ],
+  "revisado_hasta": "2022-23"
+}

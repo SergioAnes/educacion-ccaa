@@ -136,6 +136,22 @@
     "sha256": "09407060d55c9a669ad4f8f284c153f04b28ca23873abeb47a8685ee317b399d"
   },
   {
+    "fuente": "cifras",
+    "fichero": "cifras/2026-11-25/f1.pdf",
+    "url": "https://www.educacionfpydeportes.gob.es/dam/jcr:43facf9c-1248-4aef-aafd-6311b762d65e/f1.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 504119,
+    "sha256": "7d313e4ca8577924cd6e6e3b4a64876396167965ee181e6edc9ec795ee084dcd"
+  },
+  {
+    "fuente": "cifras",
+    "fichero": "cifras/2026-11-25/f1.xlsx",
+    "url": "https://www.educacionfpydeportes.gob.es/dam/jcr:3326bdd0-8638-4a23-9903-d4480db11ccb/f1.xlsx",
+    "fecha_captura": "2026-11-25",
+    "bytes": 107925,
+    "sha256": "a897b42361383a445b84a61212741770dc92eb8c8084815924fcd9b756ecc75c"
+  },
+  {
     "fuente": "educabase",
     "fichero": "educabase/2026-11-24/alumnado_1_01.px",
     "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/series/AlumnadoGen/l0/alumnado_1_01.px",
@@ -350,6 +366,46 @@
     "fecha_captura": "2026-11-25",
     "bytes": 7689,
     "sha256": "47108af63b3e18ed882de3dfd258ef253074bf2dc20bb2f0097052559f275760"
+  },
+  {
+    "fuente": "insercion",
+    "fichero": "insercion/2026-11-25/ccaa_1_01.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/laborales/insercion/ccaa/l0/ccaa_1_01.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 24165,
+    "sha256": "d44ae8c6fd5318943aedd4493620ade427bb016eb52fe027777ce71dbcfb78e6"
+  },
+  {
+    "fuente": "insercion",
+    "fichero": "insercion/2026-11-25/ccaa_2_01.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/laborales/insercion/ccaa/l0/ccaa_2_01.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 35586,
+    "sha256": "963e559087ac1c1747b823999db0266bc05a1c3f2fb859212dd264242a02a9bb"
+  },
+  {
+    "fuente": "insercion",
+    "fichero": "insercion/2026-11-25/ccaa_3_01.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/laborales/insercion/ccaa/l0/ccaa_3_01.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 35899,
+    "sha256": "e59eb446dfb07d1d4a38a2cec7766c0d3d869a152f4ef9d30cb0e3d4fbda2267"
+  },
+  {
+    "fuente": "insercion",
+    "fichero": "insercion/2026-11-25/informe-2025.pdf",
+    "url": "https://www.educacionfpydeportes.gob.es/dam/jcr:21b3b21d-fe39-44ad-848e-e1af5aee3061/informe-2025.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 4174688,
+    "sha256": "6c1bb05f6bfcd1339e4a637325625a0c9ba085547e8423f121637e5bbe3a0e8e"
+  },
+  {
+    "fuente": "insercion",
+    "fichero": "insercion/2026-11-25/metodo-2025.pdf",
+    "url": "https://www.educacionfpydeportes.gob.es/dam/jcr:1ae997fc-346b-4b39-800c-3d8bde091367/metodo-2025.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 545232,
+    "sha256": "91e87dbac49d801099a7a87ac3090bba48752918d3975fc5220c9afd99220ff7"
   },
   {
     "fuente": "nee",

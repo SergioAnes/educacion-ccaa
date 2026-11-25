@@ -22,6 +22,7 @@ sha256).
 python scripts/descargar.py          # descarga las fuentes
 python scripts/extraer_abandono.py   # genera src/data/observaciones/abandono.json
 python scripts/extraer_educabase.py  # genera los indicadores de EDUCAbase
+python scripts/extraer_insercion.py  # empleo de los titulados de FP
 python scripts/extraer_hitos.py      # genera src/data/hitos.json
 npm install
 npm test

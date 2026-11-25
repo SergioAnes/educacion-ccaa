@@ -7,7 +7,7 @@
   { "id": "CN", "ine": "05", "nombre": "Canarias", "abr": "CAN", "nuts2": "ES70", "alias": ["Canarias"] },
   { "id": "CB", "ine": "06", "nombre": "Cantabria", "abr": "CNT", "nuts2": "ES13", "alias": ["Cantabria"] },
   { "id": "CL", "ine": "07", "nombre": "Castilla y León", "abr": "CYL", "nuts2": "ES41", "alias": ["Castilla y León"] },
-  { "id": "CM", "ine": "08", "nombre": "Castilla-La Mancha", "abr": "CLM", "nuts2": "ES42", "alias": ["Castilla-La Mancha"] },
+  { "id": "CM", "ine": "08", "nombre": "Castilla-La Mancha", "abr": "CLM", "nuts2": "ES42", "alias": ["Castilla-La Mancha", "Castilla - La Mancha"] },
   { "id": "CT", "ine": "09", "nombre": "Cataluña", "abr": "CAT", "nuts2": "ES51", "alias": ["Cataluña"] },
   { "id": "VC", "ine": "10", "nombre": "C. Valenciana", "abr": "VAL", "nuts2": "ES52", "alias": ["Comunitat Valenciana", "C. Valenciana", "Com. Valenciana"] },
   { "id": "EX", "ine": "11", "nombre": "Extremadura", "abr": "EXT", "nuts2": "ES43", "alias": ["Extremadura"] },
