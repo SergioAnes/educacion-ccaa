@@ -184,6 +184,74 @@
         "La subida de septiembre de 2026 (75 €/mes) forma parte de un acuerdo de 200 €/mes: 75 € más en enero de 2027 y 50 € en enero de 2028, no incluidos. No se ha encontrado el acuerdo en el DOGV; la cifra sale de la tabla oficial de la Conselleria.",
         "La Conselleria avisa de que se sumará un 0,5 % si el IPC de 2026 llega al 1,5 % (Real Decreto-ley 14/2025)."
       ]
+    },
+    "16": {
+      "nombre": "País Vasco",
+      "cuerpos": {
+        "maestros": {
+          "bruto_anual": 41843.65,
+          "componentes": {
+            "mensualidades": 31260.12,
+            "pagas_extra": 3152.08,
+            "pagas_adicionales_especifico": 1408.56,
+            "otros_recurrentes": 6022.89,
+            "pagos_unicos_del_anio": 0
+          },
+          "otros": [
+            {
+              "concepto": "Sexenios segundo y tercero «capitalizados»: se cobran desde el primer día de servicio (316,77 €/mes, 14 pagas)",
+              "importe": 4434.78,
+              "tipo": "recurrente",
+              "fuente": "pv_instruccion",
+              "donde": "Tercero b)"
+            },
+            {
+              "concepto": "Complemento específico de complejidad docente (14 pagas)",
+              "importe": 1588.11,
+              "tipo": "recurrente",
+              "fuente": "pv_instruccion",
+              "donde": "Tercero c)"
+            }
+          ],
+          "horas_lectivas": 21.0,
+          "horas_definicion": "máximo de 21 horas lectivas en 2026-27 (22 en 2025-26)",
+          "euros_por_hora_semanal": 1992.55
+        },
+        "secundaria": {
+          "bruto_anual": 48132.74,
+          "componentes": {
+            "mensualidades": 36775.92,
+            "pagas_extra": 3472.28,
+            "pagas_adicionales_especifico": 1594.66,
+            "otros_recurrentes": 6289.88,
+            "pagos_unicos_del_anio": 0
+          },
+          "otros": [
+            {
+              "concepto": "Sexenios segundo y tercero «capitalizados»: se cobran desde el primer día de servicio (316,77 €/mes, 14 pagas)",
+              "importe": 4434.78,
+              "tipo": "recurrente",
+              "fuente": "pv_instruccion",
+              "donde": "Tercero b)"
+            },
+            {
+              "concepto": "Complemento específico de complejidad docente (14 pagas)",
+              "importe": 1855.1,
+              "tipo": "recurrente",
+              "fuente": "pv_instruccion",
+              "donde": "Tercero c)"
+            }
+          ],
+          "horas_lectivas": 17.0,
+          "horas_definicion": "máximo de 17 horas lectivas, incluidas las de apoyo y refuerzo",
+          "euros_por_hora_semanal": 2831.34
+        }
+      },
+      "avisos": [
+        "En el País Vasco el docente que empieza ya cobra el segundo y el tercer sexenio («capitalizados»): en otras comunidades es pago por antigüedad. Sin ellos, el sueldo de entrada sería 4.434,78 € menor.",
+        "El complemento de destino vasco es propio y más alto que el estatal (701,21 € en el nivel 21 y 880,09 € en el 24, frente a 592,11 y 729,14).",
+        "La instrucción recuerda el posible 0,5 % adicional de 2026 si el IPC supera el 1,5 % (Real Decreto-ley 14/2025)."
+      ]
     }
   }
 }

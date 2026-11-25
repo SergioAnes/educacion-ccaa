@@ -76,9 +76,12 @@ def main() -> None:
             if x["especifico_pagas_adicionales"].get("comprobacion") == "supuesto":
                 supuestos.append(f"{c['nombre']}, {cuerpo}: pagas adicionales del específico ({x['especifico_pagas_adicionales'].get('nota', '')})")
             # Partes estatales
+            destino_propio = bool(x["destino_mensual"].get("propio"))
+            if destino_propio and not x["destino_mensual"].get("nota"):
+                errores.append(f"{c['nombre']} {cuerpo}: complemento de destino propio sin explicación")
             for campo, v, ref in (("sueldo", sueldo, est["sueldo_mensual"][g]), ("sueldo de paga extra", extra, est["sueldo_paga_extra"][g]),
-                                  (f"destino nivel {nivel}", destino, est["destino_mensual"][nivel])):
-                if abs(v - ref) > 0.005:
+                                  (f"destino nivel {nivel}", destino, None if destino_propio else est["destino_mensual"][nivel])):
+                if ref is not None and abs(v - ref) > 0.005:
                     errores.append(f"{c['nombre']} {cuerpo}: {campo} {v} distinto del estatal {ref}")
             tot_pub = c.get("totales_mensuales_publicados", {}).get(cuerpo)
             if isinstance(tot_pub, dict):  # total publicado que ya incluye una subida posterior («mas»)
@@ -89,6 +92,10 @@ def main() -> None:
                 mas = 0.0
             if tot_pub is not None and abs(sueldo + destino + especifico + mas - tot_pub) > 0.005:
                 errores.append(f"{c['nombre']} {cuerpo}: {sueldo} + {destino} + {especifico} + {mas} no da el total publicado {tot_pub}")
+            anual_pub = c.get("totales_anuales_publicados", {}).get(cuerpo, {})
+            for campo, mensual in (("destino", destino), ("especifico", especifico)):
+                if campo in anual_pub and abs(14 * mensual - anual_pub[campo]) > 0.05:
+                    errores.append(f"{c['nombre']} {cuerpo}: 14 × {campo} {mensual} no da el anual publicado {anual_pub[campo]}")
             otros = x.get("otros_anuales", [])
             for o in otros:
                 if o.get("comprobacion") == "supuesto":

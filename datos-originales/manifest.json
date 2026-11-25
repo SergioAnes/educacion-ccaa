@@ -673,6 +673,22 @@
   },
   {
     "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/pv-decreto-252-2025-acuerdo-regulador.pdf",
+    "url": "https://www.euskadi.eus/contenidos/informacion/langile_nominas_servicio/es_def/adjuntos/DECRETO-252-2025-Acuerdo-regulador.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 1520035,
+    "sha256": "a0beef6095337539329569cc602e75a109db6c69dd8c39ffd4cbef944c194dc9"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/pv-instruccion-retribuciones-sep-2026.pdf",
+    "url": "https://www.euskadi.eus/contenidos/informacion/langile_nominas_servicio/es_def/adjuntos/Instruccion-retribuciones_sep_2026-.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 333951,
+    "sha256": "37b4dee8aa571c77dcde219f88145a618e837b3355b18317821bc173b7102f2e"
+  },
+  {
+    "fuente": "sueldos",
     "fichero": "sueldos/2026-11-25/vc-dogv-tablas-retributivas-2026.pdf",
     "url": "https://dogv.gva.es/datos/2026/02/27/pdf/2026_6352_es.pdf",
     "fecha_captura": "2026-11-25",

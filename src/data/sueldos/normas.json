@@ -94,6 +94,16 @@
       "titulo": "Resolución de 15 de julio de 2026, de la Secretaría Autonómica de Educación, instrucciones de Infantil de segundo ciclo y Primaria para 2026-2027 (DOGV n.º 10407)",
       "url": "https://dogv.gva.es/datos/2026/07/17/pdf/2026_24423_es.pdf",
       "original": "sueldos/2026-11-25/vc-instrucciones-infantil-primaria-2026-27.pdf"
+    },
+    "pv_instruccion": {
+      "titulo": "Instrucción de 25 de septiembre de 2026, del Director de Gestión de Personal del Departamento de Educación del Gobierno Vasco, de retribuciones del personal docente no universitario",
+      "url": "https://www.euskadi.eus/contenidos/informacion/langile_nominas_servicio/es_def/adjuntos/Instruccion-retribuciones_sep_2026-.pdf",
+      "original": "sueldos/2026-11-25/pv-instruccion-retribuciones-sep-2026.pdf"
+    },
+    "pv_decreto_252": {
+      "titulo": "Decreto 252/2025, de 30 de diciembre, Acuerdo regulador de las condiciones de trabajo del personal funcionario docente no universitario (BOPV n.º 19, 29/1/2026), anexo «Horario lectivo del profesorado»",
+      "url": "https://www.euskadi.eus/contenidos/informacion/langile_nominas_servicio/es_def/adjuntos/DECRETO-252-2025-Acuerdo-regulador.pdf",
+      "original": "sueldos/2026-11-25/pv-decreto-252-2025-acuerdo-regulador.pdf"
     }
   },
   "comunidades": {
@@ -432,6 +442,135 @@
       "avisos": [
         "La subida de septiembre de 2026 (75 €/mes) forma parte de un acuerdo de 200 €/mes: 75 € más en enero de 2027 y 50 € en enero de 2028, no incluidos. No se ha encontrado el acuerdo en el DOGV; la cifra sale de la tabla oficial de la Conselleria.",
         "La Conselleria avisa de que se sumará un 0,5 % si el IPC de 2026 llega al 1,5 % (Real Decreto-ley 14/2025)."
+      ]
+    },
+    "16": {
+      "nombre": "País Vasco",
+      "estado": "analizada",
+      "cuerpos": {
+        "maestros": {
+          "grupo": "A2",
+          "sueldo_mensual": {
+            "valor": 1199.52,
+            "fuente": "pv_instruccion",
+            "donde": "Primero (sueldo y paga extra semestral)"
+          },
+          "sueldo_paga_extra": {
+            "valor": 874.83,
+            "fuente": "pv_instruccion",
+            "donde": "Primero"
+          },
+          "nivel_destino": "21",
+          "destino_mensual": {
+            "valor": 701.21,
+            "fuente": "pv_instruccion",
+            "donde": "Segundo, nivel 21: importe mes (14)",
+            "propio": true,
+            "nota": "El País Vasco paga un complemento de destino propio, más alto que el estatal (régimen retributivo específico de sus cuerpos docentes, según la propia instrucción)."
+          },
+          "especifico_mensual": {
+            "valor": 704.28,
+            "fuente": "pv_instruccion",
+            "donde": "Tercero a): complemento específico general, importe mensual (14)"
+          },
+          "especifico_pagas_adicionales": {
+            "valor": 2,
+            "fuente": "pv_instruccion",
+            "donde": "Tercero a): «importe mensual (14)»",
+            "comprobacion": "norma"
+          },
+          "otros_anuales": [
+            {
+              "concepto": "Sexenios segundo y tercero «capitalizados»: se cobran desde el primer día de servicio (316,77 €/mes, 14 pagas)",
+              "importe": 4434.78,
+              "tipo": "recurrente",
+              "fuente": "pv_instruccion",
+              "donde": "Tercero b)"
+            },
+            {
+              "concepto": "Complemento específico de complejidad docente (14 pagas)",
+              "importe": 1588.11,
+              "tipo": "recurrente",
+              "fuente": "pv_instruccion",
+              "donde": "Tercero c)"
+            }
+          ],
+          "horas_lectivas": {
+            "valor": 21,
+            "fuente": "pv_decreto_252",
+            "donde": "anexo, «Horario lectivo del profesorado» (pág. 65)",
+            "definicion": "máximo de 21 horas lectivas en 2026-27 (22 en 2025-26)"
+          }
+        },
+        "secundaria": {
+          "grupo": "A1",
+          "sueldo_mensual": {
+            "valor": 1387.24,
+            "fuente": "pv_instruccion",
+            "donde": "Primero (sueldo y paga extra semestral)"
+          },
+          "sueldo_paga_extra": {
+            "valor": 856.05,
+            "fuente": "pv_instruccion",
+            "donde": "Primero"
+          },
+          "nivel_destino": "24",
+          "destino_mensual": {
+            "valor": 880.09,
+            "fuente": "pv_instruccion",
+            "donde": "Segundo, nivel 24: importe mes (14)",
+            "propio": true,
+            "nota": "El País Vasco paga un complemento de destino propio, más alto que el estatal (régimen retributivo específico de sus cuerpos docentes, según la propia instrucción)."
+          },
+          "especifico_mensual": {
+            "valor": 797.33,
+            "fuente": "pv_instruccion",
+            "donde": "Tercero a): complemento específico general, importe mensual (14)"
+          },
+          "especifico_pagas_adicionales": {
+            "valor": 2,
+            "fuente": "pv_instruccion",
+            "donde": "Tercero a): «importe mensual (14)»",
+            "comprobacion": "norma"
+          },
+          "otros_anuales": [
+            {
+              "concepto": "Sexenios segundo y tercero «capitalizados»: se cobran desde el primer día de servicio (316,77 €/mes, 14 pagas)",
+              "importe": 4434.78,
+              "tipo": "recurrente",
+              "fuente": "pv_instruccion",
+              "donde": "Tercero b)"
+            },
+            {
+              "concepto": "Complemento específico de complejidad docente (14 pagas)",
+              "importe": 1855.1,
+              "tipo": "recurrente",
+              "fuente": "pv_instruccion",
+              "donde": "Tercero c)"
+            }
+          ],
+          "horas_lectivas": {
+            "valor": 17,
+            "fuente": "pv_decreto_252",
+            "donde": "anexo, «Horario lectivo del profesorado» (pág. 65)",
+            "definicion": "máximo de 17 horas lectivas, incluidas las de apoyo y refuerzo"
+          }
+        }
+      },
+      "totales_anuales_publicados": {
+        "maestros": {
+          "destino": 9816.94,
+          "especifico": 9859.92
+        },
+        "secundaria": {
+          "destino": 12321.26,
+          "especifico": 11162.62
+        }
+      },
+      "avisos": [
+        "En el País Vasco el docente que empieza ya cobra el segundo y el tercer sexenio («capitalizados»): en otras comunidades es pago por antigüedad. Sin ellos, el sueldo de entrada sería 4.434,78 € menor.",
+        "El complemento de destino vasco es propio y más alto que el estatal (701,21 € en el nivel 21 y 880,09 € en el 24, frente a 592,11 y 729,14).",
+        "La instrucción recuerda el posible 0,5 % adicional de 2026 si el IPC supera el 1,5 % (Real Decreto-ley 14/2025)."
       ]
     }
   }
