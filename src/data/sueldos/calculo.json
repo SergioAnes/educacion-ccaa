@@ -435,6 +435,43 @@
         "Las dos pagas adicionales del complemento específico son algo menores que una mensualidad.",
         "Los tutores cobran además 600 € al año; no se incluye porque no todos son tutores."
       ]
+    },
+    "12": {
+      "nombre": "Galicia",
+      "cuerpos": {
+        "maestros": {
+          "bruto_anual": 35343.5,
+          "componentes": {
+            "mensualidades": 30851.04,
+            "pagas_extra": 2933.88,
+            "pagas_adicionales_especifico": 1558.58,
+            "otros_recurrentes": 0,
+            "pagos_unicos_del_anio": 0
+          },
+          "otros": [],
+          "horas_lectivas": 23.0,
+          "horas_definicion": "23 horas de presencia lectiva + 5 no lectivas en el centro; jornada de 37,5 h",
+          "euros_por_hora_semanal": 1536.67
+        },
+        "secundaria": {
+          "bruto_anual": 39477.0,
+          "componentes": {
+            "mensualidades": 34748.04,
+            "pagas_extra": 3170.38,
+            "pagas_adicionales_especifico": 1558.58,
+            "otros_recurrentes": 0,
+            "pagos_unicos_del_anio": 0
+          },
+          "otros": [],
+          "horas_lectivas": 18.0,
+          "horas_definicion": "18 sesiones lectivas fijas (se recuperan como referencia en 2026-27) + 5 complementarias; jornada de 37,5 h",
+          "euros_por_hora_semanal": 2193.17
+        }
+      },
+      "avisos": [
+        "El complemento específico general es el mismo para maestros y profesores de secundaria (779,29 € al mes).",
+        "Las horas de clase salen del resumen sindical de la resolución oficial, que está publicada como escaneo sin texto."
+      ]
     }
   }
 }

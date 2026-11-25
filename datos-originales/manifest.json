@@ -705,6 +705,30 @@
   },
   {
     "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/ga-orden-nominas-2026.html",
+    "url": "https://www.xunta.gal/dog/Publicados/2026/20260126/AnuncioG0597-220126-0002_es.html",
+    "fecha_captura": "2026-11-25",
+    "bytes": 478483,
+    "sha256": "1f9ff7e831bcc54d44d0cb5dde3bb41b2a1f7e13c257c773b71f8155f437c612"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/ga-resolucion-xornada-2026-27.pdf",
+    "url": "https://www.edu.xunta.gal/portal/sites/web/files/resolucion_instrucions_xornada_de_traballo_docente_2026_2027_sin.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 2094101,
+    "sha256": "2d4c3a9d22d252f36746332a720978081fe0f67b922cea885c46ecd5ed922bdd"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/ga-retribucions-docentes-2026.pdf",
+    "url": "https://ficheiros-web.xunta.gal/transparencia/retribucions/2026/funcionarios-docentes.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 321363,
+    "sha256": "093f623d73bbd6a78ef1eb431c0677e76df3f11ef68870cd186d24b4bec7bf2b"
+  },
+  {
+    "fuente": "sueldos",
     "fichero": "sueldos/2026-11-25/ib-instruccions-horaris-2026-27.pdf",
     "url": "https://apps.caib.es/sites/planificacioicentres/f/513202",
     "fecha_captura": "2026-11-25",

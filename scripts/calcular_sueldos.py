@@ -115,6 +115,12 @@ def main() -> None:
                 "pagos_unicos_del_anio": round(sum(o["importe"] for o in otros if o["tipo"] == "pago_unico_2026"), 2),
             }
             total = round(sum(componentes.values()), 2)
+            # Total anual publicado por la comunidad (sin los «otros» importes): debe coincidir con el cálculo
+            tot_anual = anual_pub.get("total_sin_otros")
+            if tot_anual is not None:
+                sin_otros = componentes["mensualidades"] + componentes["pagas_extra"] + componentes["pagas_adicionales_especifico"]
+                if abs(sin_otros - tot_anual) > 0.1:
+                    errores.append(f"{c['nombre']} {cuerpo}: el cálculo da {sin_otros:.2f} y el total anual publicado es {tot_anual}")
             res["cuerpos"][cuerpo] = {
                 "bruto_anual": total, "componentes": componentes, "otros": otros,
                 "horas_lectivas": horas, "horas_definicion": h.get("definicion"),
