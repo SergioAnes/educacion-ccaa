@@ -135,6 +135,9 @@ FUENTES: dict[str, list[tuple[str, str]]] = {
         ("cm-orden-194-2025.pdf", "https://anpecastillalamancha.es/openFile.php?link=notices/att/7/orden-194_2025normas-ejecucion-presupuestos-2026_t1767869346_7_2.pdf"),
         ("cm-ley-5-2025-presupuestos.pdf", "https://anpecastillalamancha.es/openFile.php?link=notices/att/7/leypresupuestosclm_2026_t1767869346_7_1.pdf"),
         ("cm-orden-104-2026-instrucciones.pdf", "https://docm.jccm.es/portaldocm/descargarArchivo.do?ruta=2026%2F07%2F10%2Fpdf%2F2026_5253.pdf&tipo=rutaDocm"),
+        ("ex-doe-65-2026-anuncio-tablas.pdf", "https://doe.juntaex.es/pdfs/doe/2026/650o/26080505.pdf"),
+        ("ex-tablas-retributivas-docentes-2026.pdf", "https://anpeextremadura.es/openFile.php?link=retribuciones%2F12%2Fretribuciones-2026_t1779992191_12_a.pdf"),
+        ("ex-instruccion-15-2026-inicio-curso.pdf", "https://www.educarex.es/pub/cont/com/0054/documentos/Instrucciones_inicio_curso_26_27%28F%29%281%29.pdf"),
         ("ar-instrucciones-ies-2026-27.pdf", "https://educa.aragon.es/documents/20126/6844128/CSVFV61LMW0LZ120XFIL+Instrucciones+curso+2026-2027+para+centros+educativos._03+IES+2026-2027+V8-(Instrucciones).pdf/ff9b76e8-b92f-291b-b736-6f093187162c"),
     ],
     # INEE: tablas del informe español de PISA 2025 (Excel dentro de un RAR)

@@ -622,6 +622,43 @@
         "El complemento específico general de Castilla-La Mancha es el mismo para maestros y profesores de secundaria (907,43 € al mes) y es de los más altos.",
         "La cifra de 23 horas de clase de los maestros sale de un resumen sindical: la orden de instrucciones no la da."
       ]
+    },
+    "11": {
+      "nombre": "Extremadura",
+      "cuerpos": {
+        "maestros": {
+          "bruto_anual": 35839.52,
+          "componentes": {
+            "mensualidades": 31276.2,
+            "pagas_extra": 2933.88,
+            "pagas_adicionales_especifico": 1629.44,
+            "otros_recurrentes": 0,
+            "pagos_unicos_del_anio": 0
+          },
+          "otros": [],
+          "horas_lectivas": 23.0,
+          "horas_definicion": "23 periodos lectivos + 7 complementarios",
+          "euros_por_hora_semanal": 1558.24
+        },
+        "secundaria": {
+          "bruto_anual": 39973.02,
+          "componentes": {
+            "mensualidades": 35173.2,
+            "pagas_extra": 3170.38,
+            "pagas_adicionales_especifico": 1629.44,
+            "otros_recurrentes": 0,
+            "pagos_unicos_del_anio": 0
+          },
+          "otros": [],
+          "horas_lectivas": 18.0,
+          "horas_definicion": "18 periodos lectivos, hasta 21 excepcionalmente (compensados con CHL)",
+          "euros_por_hora_semanal": 2220.72
+        }
+      },
+      "avisos": [
+        "Incluye la subida de 80 € brutos al mes desde enero de 2026 (Acuerdo de Consejo de Gobierno de 13/1/2026).",
+        "El complemento específico (general + autonómico) es el mismo para maestros y profesores de secundaria."
+      ]
     }
   }
 }

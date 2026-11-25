@@ -693,7 +693,7 @@
     "url": "https://bocyl.jcyl.es/boletines/2026/01/05/pdf/BOCYL-D-05012026-2-2.pdf",
     "fecha_captura": "2026-11-25",
     "bytes": 1469706,
-    "sha256": "0b96985f569164216dc842e3b82c987e93dfd735ef95aff0e8408358db217b62"
+    "sha256": "d8aa8074f3f7bfedd0f99032c1be8f52d7d84defb1d39c533351b269868ebacf"
   },
   {
     "fuente": "sueldos",
@@ -782,6 +782,30 @@
     "fecha_captura": "2026-11-25",
     "bytes": 199339,
     "sha256": "61d0c871320bc061909d501a4160587f6e6df26cd66c5f93f05310212f5a5447"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/ex-doe-65-2026-anuncio-tablas.pdf",
+    "url": "https://doe.juntaex.es/pdfs/doe/2026/650o/26080505.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 107431,
+    "sha256": "b883d2a43816689e6088adaac4a5a53bea4e0183fd66731d59d9fe1fec22017d"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/ex-instruccion-15-2026-inicio-curso.pdf",
+    "url": "https://www.educarex.es/pub/cont/com/0054/documentos/Instrucciones_inicio_curso_26_27%28F%29%281%29.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 530842,
+    "sha256": "ef16d39a9df6dae4d447488fcf7a74a10e493e03901e8ca06239d6be248daf2b"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/ex-tablas-retributivas-docentes-2026.pdf",
+    "url": "https://anpeextremadura.es/openFile.php?link=retribuciones%2F12%2Fretribuciones-2026_t1779992191_12_a.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 49101,
+    "sha256": "e995c3c0d5dea1d6fa3be78533960dc2f7bcf428a92563afc17e4063debb5d5c"
   },
   {
     "fuente": "sueldos",

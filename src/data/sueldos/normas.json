@@ -218,6 +218,22 @@
       "titulo": "Orden 194/2025, de 29 de diciembre, de normas de ejecución de los presupuestos de 2026 (DOCM n.º 3, 7/1/2026), anexo I: retribuciones de 2026 (con el +1,5 %)",
       "url": "https://docm.jccm.es/",
       "original": "sueldos/2026-11-25/cm-orden-194-2025.pdf"
+    },
+    "ex_tablas": {
+      "titulo": "Junta de Extremadura, Dirección General de Personal Docente: retribuciones del personal docente no universitario para 2026 (incluido el Acuerdo de Consejo de Gobierno de 13/1/2026), publicadas en PROFEX y anunciadas en el DOE n.º 65 (7/4/2026)",
+      "url": "https://profex.educarex.es/web/personal-docente/regimen-retributivo/tablas-retributivas",
+      "original": "sueldos/2026-11-25/ex-tablas-retributivas-docentes-2026.pdf",
+      "nota": "El PDF de la Dirección General se ha descargado de ANPE Extremadura (PROFEX no da enlace estable); el anuncio del DOE también está guardado. Columnas «Mensual» y «P.A.C.E.» (paga adicional del complemento específico)."
+    },
+    "ex_doe": {
+      "titulo": "Anuncio de 16 de enero de 2026 de publicidad de las tablas retributivas del personal docente (DOE n.º 65, 7/4/2026): +80 € brutos mensuales desde el 1/1/2026",
+      "url": "https://doe.juntaex.es/pdfs/doe/2026/650o/26080505.pdf",
+      "original": "sueldos/2026-11-25/ex-doe-65-2026-anuncio-tablas.pdf"
+    },
+    "ex_instr": {
+      "titulo": "Instrucción n.º 15/2026, de 24 de junio, de la Secretaría General de Educación, de inicio y desarrollo del curso 2026/2027",
+      "url": "https://www.educarex.es/pub/cont/com/0054/documentos/Instrucciones_inicio_curso_26_27%28F%29%281%29.pdf",
+      "original": "sueldos/2026-11-25/ex-instruccion-15-2026-inicio-curso.pdf"
     }
   },
   "comunidades": {
@@ -1418,6 +1434,90 @@
       "avisos": [
         "El complemento específico general de Castilla-La Mancha es el mismo para maestros y profesores de secundaria (907,43 € al mes) y es de los más altos.",
         "La cifra de 23 horas de clase de los maestros sale de un resumen sindical: la orden de instrucciones no la da."
+      ]
+    },
+    "11": {
+      "nombre": "Extremadura",
+      "estado": "analizada",
+      "cuerpos": {
+        "maestros": {
+          "grupo": "A2",
+          "sueldo_mensual": {
+            "valor": 1199.52,
+            "fuente": "ex_tablas",
+            "donde": "Sueldo, mensual"
+          },
+          "sueldo_paga_extra": {
+            "valor": 874.83,
+            "fuente": "ex_tablas",
+            "donde": "Sueldo, P. Extra"
+          },
+          "nivel_destino": "21",
+          "destino_mensual": {
+            "valor": 592.11,
+            "fuente": "ex_tablas",
+            "donde": "Complemento de destino, nivel 21"
+          },
+          "especifico_mensual": {
+            "valor": 814.72,
+            "fuente": "ex_tablas",
+            "donde": "Complemento específico general (544,43) + complemento específico Comunidad Autónoma (270,29), iguales para maestros y secundaria"
+          },
+          "especifico_pagas_adicionales": {
+            "valor": 2,
+            "fuente": "ex_tablas",
+            "donde": "columna P.A.C.E. de los dos específicos (mismo importe que la mensual)",
+            "comprobacion": "tabla"
+          },
+          "otros_anuales": [],
+          "horas_lectivas": {
+            "valor": 23,
+            "fuente": "ex_instr",
+            "donde": "decimonovena (infantil y primaria) / horario de secundaria",
+            "definicion": "23 periodos lectivos + 7 complementarios"
+          }
+        },
+        "secundaria": {
+          "grupo": "A1",
+          "sueldo_mensual": {
+            "valor": 1387.24,
+            "fuente": "ex_tablas",
+            "donde": "Sueldo, mensual"
+          },
+          "sueldo_paga_extra": {
+            "valor": 856.05,
+            "fuente": "ex_tablas",
+            "donde": "Sueldo, P. Extra"
+          },
+          "nivel_destino": "24",
+          "destino_mensual": {
+            "valor": 729.14,
+            "fuente": "ex_tablas",
+            "donde": "Complemento de destino, nivel 24"
+          },
+          "especifico_mensual": {
+            "valor": 814.72,
+            "fuente": "ex_tablas",
+            "donde": "Complemento específico general (544,43) + complemento específico Comunidad Autónoma (270,29), iguales para maestros y secundaria"
+          },
+          "especifico_pagas_adicionales": {
+            "valor": 2,
+            "fuente": "ex_tablas",
+            "donde": "columna P.A.C.E. de los dos específicos (mismo importe que la mensual)",
+            "comprobacion": "tabla"
+          },
+          "otros_anuales": [],
+          "horas_lectivas": {
+            "valor": 18,
+            "fuente": "ex_instr",
+            "donde": "decimonovena (infantil y primaria) / horario de secundaria",
+            "definicion": "18 periodos lectivos, hasta 21 excepcionalmente (compensados con CHL)"
+          }
+        }
+      },
+      "avisos": [
+        "Incluye la subida de 80 € brutos al mes desde enero de 2026 (Acuerdo de Consejo de Gobierno de 13/1/2026).",
+        "El complemento específico (general + autonómico) es el mismo para maestros y profesores de secundaria."
       ]
     }
   }
