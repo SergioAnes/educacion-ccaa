@@ -151,6 +151,11 @@ FUENTES: dict[str, list[tuple[str, str]]] = {
         ("ri-anpe-retribuciones-2026-nov.pdf", "https://documentos.anperioja.es/Retribuciones_La_Rioja.pdf"),
         ("ic-retribuciones-2026-personal-docente.pdf", "https://www.gobiernodecanarias.org/cmsgob1/export/sites/transparencia/temas/institucional-organizativa/retribuciones/retribuciones-personal/personal-funcionario/doc/retribuciones-2026-personal-docente.pdf"),
         ("ic-resolucion-73-2026-instrucciones.pdf", "https://www.gobiernodecanarias.org/cmsgob1/export/sites/educacion/web/_galerias/descargas/normativa-internas/resolucion-73-instrucciones-organizacion-funcionamiento-centros-curso-26-27.pdf"),
+        ("an-tablas-retribuciones-docentes-2024.pdf", "https://www.juntadeandalucia.es/educacion/portales/documents/20123/999421/tablas_fiscalizadas_10_07_2024.pdf/5f7c7109-0587-e99a-013d-8950f7719993?version=1.0"),
+        ("an-boja-150-2024-acuerdo-curso-2024-25.pdf", "https://www.juntadeandalucia.es/boja/2024/150/BOJA24-150-00002-49031-01_00305981.pdf"),
+        ("an-boja-123-2025-acuerdo-curso-2025-26.pdf", "https://www.juntadeandalucia.es/eboja/2025/123/BOJA25-123-00002-9205-01_00322804.pdf"),
+        ("an-ugt-retribuciones-enero-2026.pdf", "https://ugtserviciospublicosandalucia.es/images/2023/ENSE%C3%91ANZA/PDF/RETRIBUCIONES_DEL_PROFESORADO_enero2026.pdf"),
+        ("an-orden-31-08-2026-horario.html", "https://www.juntadeandalucia.es/boja/2026/168/c03/2"),
         ("ar-instrucciones-ies-2026-27.pdf", "https://educa.aragon.es/documents/20126/6844128/CSVFV61LMW0LZ120XFIL+Instrucciones+curso+2026-2027+para+centros+educativos._03+IES+2026-2027+V8-(Instrucciones).pdf/ff9b76e8-b92f-291b-b736-6f093187162c"),
     ],
     # INEE: tablas del informe español de PISA 2025 (Excel dentro de un RAR)

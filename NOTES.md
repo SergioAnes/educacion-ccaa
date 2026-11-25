@@ -213,9 +213,15 @@ scripts de Python y se guardan como JSON en `src/data/`. La base es sanidad-ccaa
 ### Sueldos del profesorado por comunidad (EN CURSO, sin publicar; 25/11/2026)
 - ESTADO: estructura hecha (normas.json + calcular_sueldos.py). Analizadas: Madrid y Cataluña (caso «al empezar»).
   Plan acordado con el usuario: analizar las demás de una en una (guardando en git), y publicar al final con mapa,
-  horas lectivas y € por hora semanal. Hechas también: Comunitat Valenciana, País Vasco, Illes Balears, Castilla y León, Aragón, Galicia, Asturias, Cantabria, Castilla-La Mancha, Extremadura, Murcia, Navarra, La Rioja y Canarias (25/11/2026). Falta Andalucía (decisión pendiente del usuario). Siguiente: Andalucía (solo
+  horas lectivas y € por hora semanal. Hechas también: Comunitat Valenciana, País Vasco, Illes Balears, Castilla y León, Aragón, Galicia, Asturias, Cantabria, Castilla-La Mancha, Extremadura, Murcia, Navarra, La Rioja, Canarias y Andalucía (25/11/2026): LAS 17 ANALIZADAS. Siguiente: Andalucía (solo
   tabla 2024: buscar fuente oficial 2026) o el resto. El ct-gov-205 da error SSL en descargar.py: ya está guardado a mano.
-- Andalucía (pendiente, 25/11/2026): sin tabla oficial 2026 de la pública. Piezas: tabla «fiscalizada» de 10/7/2024
+- Andalucía (RECONSTRUIDA, decisión del usuario: «intentar la A y señalarlo»; campo `"reconstruido": true`): específico
+  2026 = componente básico de la tabla oficial 2024 × 1,04547 (factor 2024→2026 comprobado en 6 conceptos estatales:
+  sueldo, extra y destino) + tramo sept. 2024 (BOJA 150/2024: +43,50 A2 / +49,50 A1) × 1,025 × 1,015 + tramo sept. 2025
+  (BOJA 123/2025: +14,50 / +16,50) × 1,015 = 857,30 / 881,46, igual al céntimo que la tabla de UGT de enero de 2026. ¡OJO!
+  la tabla de julio de 2024 NO incluye el tramo de septiembre de 2024. 14 pagas: los BOJA dicen «en 14 pagas». Horas
+  (Orden de 31/8/2026, BOJA 168): maestros mínimo 23,5 (hasta 25), secundaria máximo 18 (hasta 21); jornada 35 h.
+- Andalucía (antes): sin tabla oficial 2026 de la pública. Piezas: tabla «fiscalizada» de 10/7/2024
   (juntadeandalucia.es/educacion/portales/web/educacion/plantilla-docente-y-retribuciones); Acuerdo del Consejo de
   Gobierno de 25/6/2025 (BOJA 123, 30/6/2025: +14,50 €/mes A2 y +16,50 € A1 en el componente básico del específico, 14
   pagas, desde 1/9/2025; «culmina» la equiparación); subidas generales 2025 (+2,5 %) y 2026 (+1,5 %, Ley 8/2025 art. 17).

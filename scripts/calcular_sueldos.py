@@ -89,6 +89,8 @@ def main() -> None:
             destino = dato(ine, cuerpo, "destino_mensual", x["destino_mensual"])
             especifico = dato(ine, cuerpo, "especifico_mensual", x["especifico_mensual"])
             n_adic = int(dato(ine, cuerpo, "especifico_pagas_adicionales", x["especifico_pagas_adicionales"]))
+            if x["especifico_mensual"].get("comprobacion") in ("supuesto", "calculo"):
+                supuestos.append(f"{c['nombre']}, {cuerpo}: complemento específico ({x['especifico_mensual'].get('nota', '')})")
             if x["especifico_pagas_adicionales"].get("comprobacion") in ("supuesto", "calculo"):
                 supuestos.append(f"{c['nombre']}, {cuerpo}: pagas adicionales del específico ({x['especifico_pagas_adicionales'].get('nota', '')})")
             # Partes estatales

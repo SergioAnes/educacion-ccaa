@@ -625,6 +625,46 @@
   },
   {
     "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/an-boja-123-2025-acuerdo-curso-2025-26.pdf",
+    "url": "https://www.juntadeandalucia.es/eboja/2025/123/BOJA25-123-00002-9205-01_00322804.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 156911,
+    "sha256": "5a6f086930639744adb82464ddf166836b2b2dc62aa9ff68dbc1212c21f50265"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/an-boja-150-2024-acuerdo-curso-2024-25.pdf",
+    "url": "https://www.juntadeandalucia.es/boja/2024/150/BOJA24-150-00002-49031-01_00305981.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 150152,
+    "sha256": "96a27623644097e2c18656535a5bbabb5da346aa77cbfc40ba1f37b956ccf714"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/an-orden-31-08-2026-horario.html",
+    "url": "https://www.juntadeandalucia.es/boja/2026/168/c03/2",
+    "fecha_captura": "2026-11-25",
+    "bytes": 365206,
+    "sha256": "5fec0e38a952c6a0d7746094868e20b2415e0dadeae70eda773fcf5eee6982d5"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/an-tablas-retribuciones-docentes-2024.pdf",
+    "url": "https://www.juntadeandalucia.es/educacion/portales/documents/20123/999421/tablas_fiscalizadas_10_07_2024.pdf/5f7c7109-0587-e99a-013d-8950f7719993?version=1.0",
+    "fecha_captura": "2026-11-25",
+    "bytes": 506171,
+    "sha256": "d1dc56caba0509ea8fb16619ebc89fd29107660a62243d06997faa213e56aae8"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/an-ugt-retribuciones-enero-2026.pdf",
+    "url": "https://ugtserviciospublicosandalucia.es/images/2023/ENSE%C3%91ANZA/PDF/RETRIBUCIONES_DEL_PROFESORADO_enero2026.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 243629,
+    "sha256": "560906394ba4d2361c4c5e5fdfe0c55ed853c9aa35d8e8f15dd172625a3db167"
+  },
+  {
+    "fuente": "sueldos",
     "fichero": "sueldos/2026-11-25/ar-acuerdo-retribuciones-20260114.pdf",
     "url": "https://www.aragon.es/documents/20127/128260047/Certificado_acuerdo_GA_retribuciones_educacion_20260114.pdf/22e0bb78-ea04-d888-17f6-5ea2edd749fb?version=1.0&download=true",
     "fecha_captura": "2026-11-25",
@@ -917,7 +957,7 @@
     "url": "https://www.iberley.es/legislacion/articulo-19-presupuestos-generales-ano-2026-navarra",
     "fecha_captura": "2026-11-25",
     "bytes": 158288,
-    "sha256": "77e94043ad6f67a9bede21842780fd65fa112c45fd72f69f5b93148278609fc5"
+    "sha256": "72136f5643d153fb4972c686351dd1aeb92a3ac11227f29601a42ae84910b399"
   },
   {
     "fuente": "sueldos",

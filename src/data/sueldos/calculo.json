@@ -19,14 +19,18 @@
     "Cantabria, secundaria: pagas adicionales del específico (La resolución da como anual 12 × 875,10; la ley de presupuestos añade dos pagas adicionales del específico para el personal funcionario de la administración general, sin artículo propio para los docentes. Si no se cobraran, se restarían 1.750,20 €.)",
     "Castilla-La Mancha, maestros: pagas adicionales del específico (La ley lo dice para el personal funcionario de la Administración de la Junta; la Orden 194/2025 (devengo) incluye el específico en las pagas extra, sin precisar el importe docente.)",
     "Castilla-La Mancha, secundaria: pagas adicionales del específico (La ley lo dice para el personal funcionario de la Administración de la Junta; la Orden 194/2025 (devengo) incluye el específico en las pagas extra, sin precisar el importe docente.)",
+    "Región de Murcia, maestros: complemento específico (No se ha encontrado la tabla docente oficial de 2026: importe de 2025 de la resolución del BORM × 1,015 (subida general de 2026, Real Decreto-ley 14/2025); coincide con la guía de CCOO de enero de 2026.)",
     "Región de Murcia, maestros: pagas adicionales del específico (No se ha encontrado la tabla docente oficial de 2026: importe de 2025 de la resolución del BORM × 1,015 (subida general de 2026, Real Decreto-ley 14/2025); coincide con la guía de CCOO de enero de 2026.)",
     "Región de Murcia, maestros: Productividad docente mensual (cuantía mínima, 12 pagas) (anexo XI 4.º (431.44 en 2025) × 1,015)",
     "Región de Murcia, maestros: Productividad semestral en cada paga extra (factor complemento específico + factor complemento de destino) (anexo XI 4.º (516,33 + 236.69 en 2025) × 1,015)",
+    "Región de Murcia, secundaria: complemento específico (No se ha encontrado la tabla docente oficial de 2026: importe de 2025 de la resolución del BORM × 1,015 (subida general de 2026, Real Decreto-ley 14/2025); coincide con la guía de CCOO de enero de 2026.)",
     "Región de Murcia, secundaria: pagas adicionales del específico (No se ha encontrado la tabla docente oficial de 2026: importe de 2025 de la resolución del BORM × 1,015 (subida general de 2026, Real Decreto-ley 14/2025); coincide con la guía de CCOO de enero de 2026.)",
     "Región de Murcia, secundaria: Productividad docente mensual (cuantía mínima, 12 pagas) (anexo XI 4.º (437.79 en 2025) × 1,015)",
     "Región de Murcia, secundaria: Productividad semestral en cada paga extra (factor complemento específico + factor complemento de destino) (anexo XI 4.º (516,33 + 291.5 en 2025) × 1,015)",
     "Navarra, maestros: Complemento específico docente: 38,07 % del sueldo del nivel B (0,3807 × 26.602,94 (la ley da el porcentaje, no el importe))",
-    "Navarra, secundaria: Complemento específico docente: 33,48 % del sueldo del nivel A (0,3348 × 31.622,50 (la ley da el porcentaje, no el importe))"
+    "Navarra, secundaria: Complemento específico docente: 33,48 % del sueldo del nivel A (0,3348 × 31.622,50 (la ley da el porcentaje, no el importe))",
+    "Andalucía, maestros: complemento específico (No hay tabla oficial de 2026 de la enseñanza pública. Reconstrucción: componente básico de la tabla oficial de 2024 × 1,04547 (subidas generales de 2024 a 2026, factor comprobado con sueldo, paga extra y destino estatales) + tramo de septiembre de 2024 × 1,025 × 1,015 + tramo de septiembre de 2025 × 1,015. Coincide al céntimo con la tabla de UGT de enero de 2026.)",
+    "Andalucía, secundaria: complemento específico (No hay tabla oficial de 2026 de la enseñanza pública. Reconstrucción: componente básico de la tabla oficial de 2024 × 1,04547 (subidas generales de 2024 a 2026, factor comprobado con sueldo, paga extra y destino estatales) + tramo de septiembre de 2024 × 1,025 × 1,015 + tramo de septiembre de 2025 × 1,015. Coincide al céntimo con la tabla de UGT de enero de 2026.)"
   ],
   "comunidades": {
     "13": {
@@ -864,6 +868,44 @@
         "En Canarias el complemento específico de los maestros (818,45 €) es mayor que el de los profesores de secundaria (768,72 €).",
         "En las pagas extra el específico se cobra al 78 %.",
         "Canarias publica un complemento de destino algo mayor que el estatal (600,31 € en el nivel 21 y 739,26 € en el 24)."
+      ]
+    },
+    "01": {
+      "nombre": "Andalucía",
+      "cuerpos": {
+        "maestros": {
+          "bruto_anual": 36435.64,
+          "componentes": {
+            "mensualidades": 31787.16,
+            "pagas_extra": 2933.88,
+            "pagas_adicionales_especifico": 1714.6,
+            "otros_recurrentes": 0,
+            "pagos_unicos_del_anio": 0
+          },
+          "otros": [],
+          "horas_lectivas": 23.5,
+          "horas_definicion": "mínimo de 23,5 horas lectivas (excepcionalmente hasta 25); jornada de 35 h",
+          "euros_por_hora_semanal": 1550.45
+        },
+        "secundaria": {
+          "bruto_anual": 40907.38,
+          "componentes": {
+            "mensualidades": 35974.08,
+            "pagas_extra": 3170.38,
+            "pagas_adicionales_especifico": 1762.92,
+            "otros_recurrentes": 0,
+            "pagos_unicos_del_anio": 0
+          },
+          "otros": [],
+          "horas_lectivas": 18.0,
+          "horas_definicion": "máximo de 18 horas lectivas (excepcionalmente hasta 21); jornada de 35 h",
+          "euros_por_hora_semanal": 2272.63
+        }
+      },
+      "avisos": [
+        "DATO RECONSTRUIDO: la Junta de Andalucía no ha publicado la tabla de retribuciones docentes de 2026; el complemento específico se ha calculado a partir de la tabla oficial de 2024 y de los acuerdos publicados en el BOJA, y coincide con la tabla de UGT de enero de 2026.",
+        "En Andalucía el horario lectivo de los maestros es de un mínimo de 23,5 horas.",
+        "La jornada semanal es de 35 horas."
       ]
     }
   }

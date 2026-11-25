@@ -301,6 +301,32 @@
       "titulo": "Resolución n.º 73/2026 de las Viceconsejerías de Educación y de FP: instrucciones de organización y funcionamiento de los centros públicos para 2026-2027",
       "url": "https://www.gobiernodecanarias.org/cmsgob1/export/sites/educacion/web/_galerias/descargas/normativa-internas/resolucion-73-instrucciones-organizacion-funcionamiento-centros-curso-26-27.pdf",
       "original": "sueldos/2026-11-25/ic-resolucion-73-2026-instrucciones.pdf"
+    },
+    "an_tabla_2024": {
+      "titulo": "Consejería de Desarrollo Educativo y FP: tablas de retribuciones del personal docente no universitario, año 2024 (fiscalizadas el 10/7/2024); es la última tabla oficial publicada",
+      "url": "https://www.juntadeandalucia.es/educacion/portales/web/educacion/plantilla-docente-y-retribuciones",
+      "original": "sueldos/2026-11-25/an-tablas-retribuciones-docentes-2024.pdf"
+    },
+    "an_boja_2024": {
+      "titulo": "Acuerdo de 30 de julio de 2024, del Consejo de Gobierno: incremento del curso 2024/2025, +43,50 € (A2) y +49,50 € (A1) mensuales en el componente básico del específico, 14 pagas, desde 1/9/2024 (BOJA n.º 150, 2/8/2024)",
+      "url": "https://www.juntadeandalucia.es/boja/2024/150/32",
+      "original": "sueldos/2026-11-25/an-boja-150-2024-acuerdo-curso-2024-25.pdf"
+    },
+    "an_boja_2025": {
+      "titulo": "Acuerdo de 25 de junio de 2025, del Consejo de Gobierno: incremento del curso 2025/2026, +14,50 € (A2) y +16,50 € (A1) mensuales en el componente básico del específico, 14 pagas, desde 1/9/2025 (BOJA n.º 123, 30/6/2025)",
+      "url": "https://www.juntadeandalucia.es/boja/2025/123/23",
+      "original": "sueldos/2026-11-25/an-boja-123-2025-acuerdo-curso-2025-26.pdf"
+    },
+    "an_ugt": {
+      "titulo": "UGT Servicios Públicos Andalucía: retribuciones del profesorado andaluz, enero de 2026 (sindicato; no oficial)",
+      "url": "https://ugtserviciospublicosandalucia.es/images/2023/ENSE%C3%91ANZA/PDF/RETRIBUCIONES_DEL_PROFESORADO_enero2026.pdf",
+      "original": "sueldos/2026-11-25/an-ugt-retribuciones-enero-2026.pdf",
+      "nota": "Coincide al céntimo con la reconstrucción (857,30 y 881,46) y con el sueldo, el destino y los sexenios estatales."
+    },
+    "an_orden_horario": {
+      "titulo": "Orden de 31 de agosto de 2026, de medidas para la mejora de la organización, el funcionamiento y la gestión del sistema educativo (BOJA n.º 168)",
+      "url": "https://www.juntadeandalucia.es/boja/2026/168/c03/2",
+      "original": "sueldos/2026-11-25/an-orden-31-08-2026-horario.html"
     }
   },
   "comunidades": {
@@ -1967,6 +1993,96 @@
         "En Canarias el complemento específico de los maestros (818,45 €) es mayor que el de los profesores de secundaria (768,72 €).",
         "En las pagas extra el específico se cobra al 78 %.",
         "Canarias publica un complemento de destino algo mayor que el estatal (600,31 € en el nivel 21 y 739,26 € en el 24)."
+      ]
+    },
+    "01": {
+      "nombre": "Andalucía",
+      "estado": "analizada",
+      "reconstruido": true,
+      "cuerpos": {
+        "maestros": {
+          "grupo": "A2",
+          "sueldo_mensual": {
+            "valor": 1199.52,
+            "fuente": "an_ugt",
+            "donde": "sueldo (estatal 2026)"
+          },
+          "sueldo_paga_extra": {
+            "valor": 874.83,
+            "fuente": "an_ugt",
+            "donde": "paga extraordinaria estatal, sueldo"
+          },
+          "nivel_destino": "21",
+          "destino_mensual": {
+            "valor": 592.11,
+            "fuente": "an_ugt",
+            "donde": "complemento de destino nivel 21 (estatal)"
+          },
+          "especifico_mensual": {
+            "valor": 857.3,
+            "fuente": "an_tabla_2024",
+            "donde": "componente básico 2024 (762.64) reconstruido a 2026 con los tramos de los BOJA de 2024 (+43.5) y 2025 (+14.5)",
+            "comprobacion": "calculo",
+            "nota": "No hay tabla oficial de 2026 de la enseñanza pública. Reconstrucción: componente básico de la tabla oficial de 2024 × 1,04547 (subidas generales de 2024 a 2026, factor comprobado con sueldo, paga extra y destino estatales) + tramo de septiembre de 2024 × 1,025 × 1,015 + tramo de septiembre de 2025 × 1,015. Coincide al céntimo con la tabla de UGT de enero de 2026."
+          },
+          "especifico_pagas_adicionales": {
+            "valor": 2,
+            "fuente": "an_boja_2025",
+            "donde": "los tramos del componente básico se cobran «en 14 pagas»; la paga adicional autonómica (cód. 58) lleva el componente básico completo (tabla UGT)",
+            "comprobacion": "norma"
+          },
+          "otros_anuales": [],
+          "horas_lectivas": {
+            "valor": 23.5,
+            "fuente": "an_orden_horario",
+            "donde": "horario del profesorado (art. sobre la parte lectiva del horario regular)",
+            "definicion": "mínimo de 23,5 horas lectivas (excepcionalmente hasta 25); jornada de 35 h"
+          }
+        },
+        "secundaria": {
+          "grupo": "A1",
+          "sueldo_mensual": {
+            "valor": 1387.24,
+            "fuente": "an_ugt",
+            "donde": "sueldo (estatal 2026)"
+          },
+          "sueldo_paga_extra": {
+            "valor": 856.05,
+            "fuente": "an_ugt",
+            "donde": "paga extraordinaria estatal, sueldo"
+          },
+          "nivel_destino": "24",
+          "destino_mensual": {
+            "valor": 729.14,
+            "fuente": "an_ugt",
+            "donde": "complemento de destino nivel 24 (estatal)"
+          },
+          "especifico_mensual": {
+            "valor": 881.46,
+            "fuente": "an_tabla_2024",
+            "donde": "componente básico 2024 (777.84) reconstruido a 2026 con los tramos de los BOJA de 2024 (+49.5) y 2025 (+16.5)",
+            "comprobacion": "calculo",
+            "nota": "No hay tabla oficial de 2026 de la enseñanza pública. Reconstrucción: componente básico de la tabla oficial de 2024 × 1,04547 (subidas generales de 2024 a 2026, factor comprobado con sueldo, paga extra y destino estatales) + tramo de septiembre de 2024 × 1,025 × 1,015 + tramo de septiembre de 2025 × 1,015. Coincide al céntimo con la tabla de UGT de enero de 2026."
+          },
+          "especifico_pagas_adicionales": {
+            "valor": 2,
+            "fuente": "an_boja_2025",
+            "donde": "los tramos del componente básico se cobran «en 14 pagas»; la paga adicional autonómica (cód. 58) lleva el componente básico completo (tabla UGT)",
+            "comprobacion": "norma"
+          },
+          "otros_anuales": [],
+          "horas_lectivas": {
+            "valor": 18,
+            "fuente": "an_orden_horario",
+            "donde": "horario del profesorado (art. sobre la parte lectiva del horario regular)",
+            "definicion": "máximo de 18 horas lectivas (excepcionalmente hasta 21); jornada de 35 h"
+          }
+        }
+      },
+      "avisos": [
+        "DATO RECONSTRUIDO: la Junta de Andalucía no ha publicado la tabla de retribuciones docentes de 2026; el complemento específico se ha calculado a partir de la tabla oficial de 2024 y de los acuerdos publicados en el BOJA, y coincide con la tabla de UGT de enero de 2026.",
+        "En Andalucía el horario lectivo de los maestros es de un mínimo de 23,5 horas.",
+        "La jornada semanal es de 35 horas."
       ]
     }
   }
