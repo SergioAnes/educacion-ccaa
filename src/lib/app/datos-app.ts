@@ -34,6 +34,12 @@ import importeBecaFicha from "@/data/indicadores/importe_becario.json";
 import importeBecaObs from "@/data/observaciones/importe_becario.json";
 import becasComFicha from "@/data/indicadores/becas_comunidad.json";
 import becasComObs from "@/data/observaciones/becas_comunidad.json";
+import sueldoFicha from "@/data/indicadores/sueldo_docente.json";
+import sueldoObs from "@/data/observaciones/sueldo_docente.json";
+import horasFicha from "@/data/indicadores/horas_lectivas.json";
+import horasObs from "@/data/observaciones/horas_lectivas.json";
+import porHoraFicha from "@/data/indicadores/sueldo_por_hora.json";
+import porHoraObs from "@/data/observaciones/sueldo_por_hora.json";
 import edadFicha from "@/data/indicadores/escolarizacion_edad.json";
 import edadObs from "@/data/observaciones/escolarizacion_edad.json";
 import brechaFicha from "@/data/indicadores/pisa_brecha_isec.json";
@@ -84,6 +90,10 @@ export type Ficha = {
   aditivo?: boolean;
   referencias?: Referencia[];
   no_comparable_txt?: string;
+  /** No hay cifra de España (p. ej., sueldos docentes): las combinaciones existen si alguna comunidad tiene dato */
+  sin_espana?: boolean;
+  /** Rótulo de los avisos por comunidad («cautela»); por defecto, «Aviso del INEE» */
+  cautela_titulo?: string;
   /** Intervalo frente a cero (no frente a España) y nombres de los tres grupos */
   referencia_cero?: boolean;
   clases?: Record<string, string>;
@@ -131,6 +141,9 @@ export const REGISTRO: { ficha: Ficha; obs: Observaciones }[] = [
   par(extranjeroFicha, extranjeroObs),
   par(unidadFicha, unidadObs),
   par(profesorFicha, profesorObs),
+  par(sueldoFicha, sueldoObs),
+  par(horasFicha, horasObs),
+  par(porHoraFicha, porHoraObs),
   par(pisaFicha, pisaObs),
   par(pisaBajoFicha, pisaBajoObs),
   par(pisaAltoFicha, pisaAltoObs),
@@ -205,6 +218,8 @@ export function textoComprobacion(obs: Observaciones): string {
     return `Cada importe medio publicado es el importe total de las becas entre el número de becarios de las tablas del mismo capítulo (${nf(0).format(c.pares_comparados)} comprobaciones), y el porcentaje de Bachillerato y FP queda entre el de cada enseñanza.`;
   if (obs.indicador_id === "becas_comunidad")
     return `En cada curso, comunidad y enseñanza, el total de la tabla es lo del Ministerio más lo de la comunidad, y la suma de las filas da el total de España (${nf(0).format(c.pares_comparados)} comprobaciones).`;
+  if (["sueldo_docente", "horas_lectivas", "sueldo_por_hora"].includes(obs.indicador_id))
+    return "Cada importe sale de la tabla o norma de su comunidad (con su apartado en el fichero de datos del proyecto). Se comprueba que el sueldo base, la paga extra y el complemento de destino son los estatales (salvo donde la comunidad tiene uno propio, que se avisa) y que las sumas coinciden con los totales mensuales o anuales cuando la comunidad los publica.";
   if (obs.indicador_id === "empleo_fp")
     return `Las ${nf(0).format(c.iguales_f19 ?? 0)} cifras de los titulados de 2020-21 en grado medio y superior coinciden con las de «Las cifras de la educación» (tabla F1.9); en cada caso, el total queda entre hombres y mujeres, y la tasa de alta en algún momento de marzo no es menor que la media del mes.`;
   if (obs.indicador_id === "pisa_sexo")
@@ -270,7 +285,8 @@ function construirIndicador(ficha: Ficha, obs: Observaciones): IndApp {
   // Variantes: las combinaciones de las opciones de cada dimensión que tienen dato de España, en el orden de la ficha
   let combos: Combinacion[] = [{}];
   for (const d of dims) combos = combos.flatMap((c) => d.opciones.map((o) => ({ ...c, [d.dim]: o.id })));
-  const variantes = combos.filter((c) => serie[clave(c)]?.ES).map((c) => ({
+  // Una combinación existe si tiene dato de España; en los indicadores sin cifra de España («sin_espana»), si tiene alguna comunidad
+  const variantes = combos.filter((c) => ficha.sin_espana ? Object.keys(serie[clave(c)] ?? {}).length > 0 : serie[clave(c)]?.ES).map((c) => ({
     clave: clave(c),
     etiqueta: dims.map((d) => d.opciones.find((o) => o.id === c[d.dim])?.etiqueta).filter(Boolean).join(" · ") || "Total",
   }));

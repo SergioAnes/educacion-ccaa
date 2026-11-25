@@ -141,7 +141,8 @@ describe("EDUCAbase", () => {
   it("cada variante tiene España y, en su último periodo con dato, al menos 12 comunidades", () => {
     const d = construirDatos();
     for (const i of d.inds) for (const v of i.variantes) {
-      const es = i.serie[v.clave].ES, k = es.map((x) => x != null).lastIndexOf(true);
+      // Sin cifra de España (sueldos docentes): se mira el último periodo de la serie
+      const es = i.serie[v.clave].ES, k = i.sin_espana && !es ? i.periodos.length - 1 : es.map((x) => x != null).lastIndexOf(true);
       const n = Object.entries(i.serie[v.clave]).filter(([id, s]) => id.length === 2 && id !== "ES" && s[k] != null).length;
       expect(k, `${i.id} ${v.clave}`).toBeGreaterThanOrEqual(0);
       expect(n, `${i.id} ${v.clave}`).toBeGreaterThanOrEqual(12);

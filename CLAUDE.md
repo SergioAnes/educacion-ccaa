@@ -61,7 +61,9 @@ familia de `sanidad-ccaa` y `presupuestos-ccaa` (mismo estilo y mismas reglas). 
   fuente y apartado de cada importe; `scripts/calcular_sueldos.py` calcula el bruto anual de los casos tipo (maestro y
   secundaria que empiezan) y comprueba partes estatales, totales publicados, fuentes y manifest. Los supuestos sin norma
   explícita se marcan con `"comprobacion": "supuesto"`. Pagos únicos del año aparte de lo recurrente. Se publica cuando
-  estén analizadas (casi) todas las comunidades; estado y pendientes en NOTES.md.
+  estén analizadas (casi) todas las comunidades; estado y pendientes en NOTES.md. El script exporta también los
+  indicadores de la web (sueldo_docente, horas_lectivas, sueldo_por_hora), con `sin_espana: true` (no hay cifra de
+  España) y avisos por comunidad (`cautela_web`).
 - `extraer_hitos.py`: leyes desde las fichas XML del BOE → `src/data/hitos.json`.
 - Un salto > 15 % frente al periodo anterior posterior a `revisado_hasta` hace fallar los tests: revisarlo y subir la fecha.
 

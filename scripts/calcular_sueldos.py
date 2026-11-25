@@ -153,9 +153,62 @@ def main() -> None:
         for cuerpo, x in r["cuerpos"].items():
             print(f"{r['nombre']:10} {cuerpo:10} {x['bruto_anual']:10.2f} € al año ({x['horas_lectivas']:.0f} h de clase; "
                   f"{x['euros_por_hora_semanal']:.0f} € por hora semanal)  {x['componentes']}")
+    exportar(d, json.loads(SALIDA.read_text(encoding="utf-8")))
     print(f"Supuestos sin norma explícita o importes calculados: {len(supuestos)}")
     for s in supuestos:
         print("  -", s[:160])
+
+
+
+# ---------- Exportación a indicadores de la web ----------
+
+
+def exportar(normas: dict, calculo: dict) -> None:
+    """Escribe tres ficheros de observaciones (formato largo de la web): sueldo_docente (bruto anual al empezar),
+    horas_lectivas (horas de clase semanales) y sueldo_por_hora (sueldo anual / horas semanales de clase)."""
+    fuentes = normas["fuentes"]
+    hoy = "2026-11-25"
+    filas = {"sueldo_docente": [], "horas_lectivas": [], "sueldo_por_hora": []}
+    cautela_sueldo, cautela_horas = [], []
+    for ine, c in calculo["comunidades"].items():
+        n = normas["comunidades"][ine]
+        for cuerpo, x in c["cuerpos"].items():
+            cn = n["cuerpos"][cuerpo]
+            f_sueldo = (cn.get("especifico_mensual") or cn["anual_propio"][-1])["fuente"]
+            f_horas = cn["horas_lectivas"]["fuente"]
+            base = {"territorio": ine, "titularidad": "total", "sexo": "total", "etapa": cuerpo, "error_estandar": None,
+                    "estado": "definitivo", "fecha_captura": hoy}
+            filas["sueldo_docente"].append({**base, "indicador_id": "sueldo_docente", "periodo": "2026", "valor": x["bruto_anual"],
+                                            "unidad": "eur", "fuente_id": "normas_ccaa", "url_fuente": fuentes[f_sueldo]["url"]})
+            filas["horas_lectivas"].append({**base, "indicador_id": "horas_lectivas", "periodo": "2026-27", "valor": x["horas_lectivas"],
+                                            "unidad": "horas", "fuente_id": "normas_ccaa", "url_fuente": fuentes[f_horas]["url"]})
+            filas["sueldo_por_hora"].append({**base, "indicador_id": "sueldo_por_hora", "periodo": "2026", "valor": x["euros_por_hora_semanal"],
+                                             "unidad": "eur", "fuente_id": "normas_ccaa", "url_fuente": fuentes[f_sueldo]["url"]})
+        if n.get("cautela_web"):
+            cautela_sueldo.append({"territorio": ine, "texto": n["cautela_web"]})
+        textos_h = []
+        for cuerpo in ("maestros", "secundaria"):
+            h = n["cuerpos"][cuerpo]["horas_lectivas"]
+            et = "maestros" if cuerpo == "maestros" else "secundaria"
+            if h.get("comprobacion") == "aproximado":
+                textos_h.append(f"{et}: cifra aproximada ({h['definicion']})")
+            elif h.get("comprobacion") == "resumen_sindical":
+                textos_h.append(f"{et}: cifra tomada de un resumen sindical de la norma oficial ({h['definicion']})")
+        if textos_h:
+            cautela_horas.append({"territorio": ine, "texto": "; ".join(textos_h).capitalize() + "."})
+    comunes = {"notas_fuente": [], "notas": [], "muestra_pequena": [], "rupturas": [], "definicion_difiere_es": []}
+    salida = {
+        "sueldo_docente": {"periodos": ["2026"], "cautela": cautela_sueldo},
+        "horas_lectivas": {"periodos": ["2026-27"], "cautela": cautela_horas},
+        "sueldo_por_hora": {"periodos": ["2026"], "cautela": cautela_sueldo + [x for x in cautela_horas if x["territorio"] not in {c["territorio"] for c in cautela_sueldo}]},
+    }
+    for ind, extra in salida.items():
+        (RAIZ / "src/data/observaciones" / f"{ind}.json").write_text(json.dumps({
+            "indicador_id": ind, **extra, **comunes,
+            "comprobacion": {"pares_comparados": len(filas[ind]), "descripcion": "importes de cada comunidad con su norma; partes estatales y totales publicados comprobados"},
+            "filas": sorted(filas[ind], key=lambda f: (f["territorio"], f["etapa"])),
+        }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print("Exportados: sueldo_docente, horas_lectivas, sueldo_por_hora")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,62 @@
+{
+  "id": "horas_lectivas",
+  "grupo": "profesorado",
+  "resumen": true,
+  "nombre": "Horas de clase a la semana del profesorado",
+  "corto": "Horas de clase a la semana",
+  "que": "de clase a la semana",
+  "unidad": "horas",
+  "unidad_txt": "horas de clase a la semana",
+  "dimensiones": [
+    {
+      "dim": "etapa",
+      "nombre": "Cuerpo",
+      "opciones": [
+        {
+          "id": "maestros",
+          "etiqueta": "Maestros, Infantil y Primaria"
+        },
+        {
+          "id": "secundaria",
+          "etiqueta": "Profesorado de secundaria, ESO, Bachillerato y FP"
+        }
+      ]
+    }
+  ],
+  "filas_ficha": [
+    {
+      "etapa": "maestros"
+    },
+    {
+      "etapa": "secundaria"
+    }
+  ],
+  "cautela_titulo": "Aviso",
+  "definicion": "Horas lectivas semanales de un docente a jornada completa en el curso 2026-2027, según las normas e instrucciones de cada comunidad.",
+  "numerador": "Horas o periodos lectivos semanales que fija cada comunidad para el cuerpo (en algunas, los recreos vigilados, los apoyos o las tutorías cuentan como lectivos).",
+  "denominador": "No hay: es una cantidad por semana.",
+  "no_mide": "No es la jornada completa: además de las clases hay horas complementarias en el centro y horas de preparación (la jornada es de 35 o 37,5 horas según la comunidad). Tampoco mide el número de alumnos ni la carga de trabajo.",
+  "fiabilidad": "B",
+  "fiabilidad_txt": "Recopilación propia de normas e instrucciones de cada comunidad; en algunas la cifra se deduce o sale de un resumen sindical (avisado).",
+  "estado": "definitivo",
+  "fuentes": [
+    {
+      "id": "normas_ccaa",
+      "corto": "Tablas y normas de retribuciones de cada comunidad (recopilación propia)",
+      "nombre": "Tablas oficiales de retribuciones docentes de 2026 y normas de cada comunidad (boletines oficiales, portales de transparencia y de educación), recopiladas a mano: cada importe, con su fuente y apartado, en el fichero de datos del proyecto",
+      "url": "https://github.com/SergioAnes/educacion-ccaa/blob/main/src/data/sueldos/normas.json"
+    }
+  ],
+  "espana": "No hay cifra para España: lo fija cada comunidad.",
+  "avisos": [
+    "Lo que cuenta como «hora lectiva» no es igual en todas: en unas incluye los recreos vigilados (por ejemplo, Madrid y Castilla y León), en otras, apoyos y tutorías, y en Navarra las sesiones de Infantil y Primaria son de 50 minutos.",
+    "En secundaria las horas pueden ampliarse excepcionalmente (19 a 21 según la comunidad), compensadas con menos horas complementarias; aquí se da la cifra general.",
+    "El horario es el mismo en Infantil y Primaria (maestros) y en ESO, Bachillerato y FP (profesorado de secundaria)."
+  ],
+  "rango": [
+    10,
+    30
+  ],
+  "revisado_hasta": "2026-27",
+  "sin_espana": true
+}

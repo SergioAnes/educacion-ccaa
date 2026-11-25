@@ -213,7 +213,12 @@ scripts de Python y se guardan como JSON en `src/data/`. La base es sanidad-ccaa
 ### Sueldos del profesorado por comunidad (EN CURSO, sin publicar; 25/11/2026)
 - ESTADO: estructura hecha (normas.json + calcular_sueldos.py). Analizadas: Madrid y Cataluña (caso «al empezar»).
   Plan acordado con el usuario: analizar las demás de una en una (guardando en git), y publicar al final con mapa,
-  horas lectivas y € por hora semanal. Hechas también: Comunitat Valenciana, País Vasco, Illes Balears, Castilla y León, Aragón, Galicia, Asturias, Cantabria, Castilla-La Mancha, Extremadura, Murcia, Navarra, La Rioja, Canarias y Andalucía (25/11/2026): LAS 17 ANALIZADAS. Siguiente: Andalucía (solo
+  horas lectivas y € por hora semanal. Hechas también: Comunitat Valenciana, País Vasco, Illes Balears, Castilla y León, Aragón, Galicia, Asturias, Cantabria, Castilla-La Mancha, Extremadura, Murcia, Navarra, La Rioja, Canarias y Andalucía (25/11/2026): LAS 17 ANALIZADAS.
+- WEB (preparada en local, commit SIN subir, 25/11/2026): calcular_sueldos.py exporta tres indicadores del tema
+  «Profesorado y aulas»: sueldo_docente (bruto anual al empezar), horas_lectivas (2026-27, unidad «horas») y
+  sueldo_por_hora. Sin cifra de España (`sin_espana: true` en la ficha: las variantes no exigen ES y la fila dice «sin cifra
+  para España»). Avisos por comunidad con † (`cautela_web` en normas.json; `cautela_titulo: "Aviso"` en la ficha). Falta
+  el visto bueno del usuario para subirlo. Siguiente: Andalucía (solo
   tabla 2024: buscar fuente oficial 2026) o el resto. El ct-gov-205 da error SSL en descargar.py: ya está guardado a mano.
 - Andalucía (RECONSTRUIDA, decisión del usuario: «intentar la A y señalarlo»; campo `"reconstruido": true`): específico
   2026 = componente básico de la tabla oficial 2024 × 1,04547 (factor 2024→2026 comprobado en 6 conceptos estatales:

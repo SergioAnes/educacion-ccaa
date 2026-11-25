@@ -1,0 +1,63 @@
+{
+  "id": "sueldo_por_hora",
+  "grupo": "profesorado",
+  "resumen": false,
+  "nombre": "Sueldo anual por cada hora semanal de clase",
+  "corto": "Sueldo por hora de clase",
+  "que": "al año por cada hora semanal de clase",
+  "unidad": "eur",
+  "unidad_txt": "euros al año por hora semanal de clase",
+  "dimensiones": [
+    {
+      "dim": "etapa",
+      "nombre": "Cuerpo",
+      "opciones": [
+        {
+          "id": "maestros",
+          "etiqueta": "Maestros, Infantil y Primaria"
+        },
+        {
+          "id": "secundaria",
+          "etiqueta": "Profesorado de secundaria, ESO, Bachillerato y FP"
+        }
+      ]
+    }
+  ],
+  "filas_ficha": [
+    {
+      "etapa": "maestros"
+    },
+    {
+      "etapa": "secundaria"
+    }
+  ],
+  "cautela_titulo": "Aviso",
+  "definicion": "Sueldo bruto anual al empezar dividido entre las horas de clase semanales: cuánto se paga al año por cada hora de clase a la semana.",
+  "numerador": "Sueldo bruto anual del profesorado al empezar (ver ese indicador).",
+  "denominador": "Horas de clase a la semana del curso 2026-2027 (ver ese indicador).",
+  "no_mide": "Es una cifra orientativa: lo que cuenta como hora lectiva no es igual en todas las comunidades, y el trabajo docente no son solo las clases.",
+  "fiabilidad": "B",
+  "fiabilidad_txt": "Cálculo propio con los dos indicadores anteriores; hereda sus avisos.",
+  "estado": "definitivo",
+  "fuentes": [
+    {
+      "id": "normas_ccaa",
+      "corto": "Tablas y normas de retribuciones de cada comunidad (recopilación propia)",
+      "nombre": "Tablas oficiales de retribuciones docentes de 2026 y normas de cada comunidad (boletines oficiales, portales de transparencia y de educación), recopiladas a mano: cada importe, con su fuente y apartado, en el fichero de datos del proyecto",
+      "url": "https://github.com/SergioAnes/educacion-ccaa/blob/main/src/data/sueldos/normas.json"
+    }
+  ],
+  "espana": "No hay cifra para España.",
+  "avisos": [
+    "Datos de 2026 recopilados de las tablas y normas de cada comunidad; las subidas anunciadas o acordadas para 2027 y años siguientes no se incluyen.",
+    "Es el sueldo bruto, antes de impuestos y cotizaciones, y sin ajustar por el coste de la vida.",
+    "Caso «al empezar»: funcionario de carrera sin antigüedad, sin sexenios, sin cargos, sin tutoría y sin complementos de zona o de centro.",
+    "Cálculo propio: divide dos cifras que ya llevan sus propios avisos (sueldo y horas)."
+  ],
+  "rango": [
+    1000,
+    4000
+  ],
+  "revisado_hasta": "2026",
+  "sin_espana": true
+}

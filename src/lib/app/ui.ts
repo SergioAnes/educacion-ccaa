@@ -30,6 +30,7 @@ export function iniciar(DATA: DatosApp): void {
     if (u === "eur") return nf(0).format(v) + " €";
     if (u === "indice") return nf(2).format(v);
     if (u === "dif_puntos") return (Math.abs(v) < 0.05 ? "" : v > 0 ? "+" : "−") + nf(1).format(Math.abs(v));
+    if (u === "horas") return (Number.isInteger(v) ? nf(0) : nf(1)).format(v) + " h";
     return nf(1).format(v);
   }
   // Diferencias: en puntos para porcentajes y PISA; en la misma unidad para lo demás (alumnos por profesor o por grupo)
@@ -106,7 +107,7 @@ export function iniciar(DATA: DatosApp): void {
     const t = [];
     if (pequena(ind, id)) t.push("Muestra pequeña: el Ministerio pide tomar sus cifras con precaución.");
     if (bajaFiab(ind, id, a, k)) t.push("Eurostat marca este dato como de baja fiabilidad.");
-    if (ind.cautelas[id]) t.push(`Aviso del INEE: ${ind.cautelas[id]}`);
+    if (ind.cautelas[id]) t.push(`${ind.cautela_titulo || "Aviso del INEE"}: ${ind.cautelas[id]}`);
     return t.join(" ");
   }
   // Intervalo al 95 % y comparación con España: 1 por encima, 0 no se distingue, −1 por debajo
@@ -424,7 +425,7 @@ export function iniciar(DATA: DatosApp): void {
     $("#p-titulo").textContent = o.length
       ? ind.intervalo ? `${ind.nombre}${varFrase(ind)}, ${etq(ind, a)}: cada comunidad ${ind.referencia_cero ? "con su margen de error" : "frente a España"}` : `${ind.nombre}${varFrase(ind)} en ${etq(ind, a)}: la cifra más alta, ${NOMBRE[o[0]]}; la más baja, ${NOMBRE[o.at(-1)]}`
       : `${ind.nombre}${varFrase(ind)} en ${etq(ind, a)}: sin dato por comunidad`;
-    $("#p-sub").textContent = `${ind.unidad === "pct" ? `Porcentaje ${ind.que}.` : ind.unidad === "puntos" ? "Puntuación media del alumnado de 15 años." : ind.unidad === "eur" ? `Euros ${ind.que}, del año ${etq(ind, a)}.` : ind.unidad === "indice" ? "Índice medio del alumnado de 15 años; la OCDE lo construye para que su media quede en torno a cero." : `Alumnos ${ind.que}.`}${ind.encuesta ? " Es una muestra: las diferencias pequeñas entre comunidades pueden deberse al azar." : ""}${esAvance(ind, a) ? " Dato de avance: puede cambiar." : ""} Pulsa una comunidad para elegirla como la tuya.`;
+    $("#p-sub").textContent = `${ind.unidad === "pct" ? `Porcentaje ${ind.que}.` : ind.unidad === "puntos" ? "Puntuación media del alumnado de 15 años." : ind.unidad === "eur" ? `Euros ${ind.que}, del año ${etq(ind, a)}.` : ind.unidad === "indice" ? "Índice medio del alumnado de 15 años; la OCDE lo construye para que su media quede en torno a cero." : ind.unidad === "horas" ? `Horas ${ind.que}, curso ${etq(ind, a)}.` : `Alumnos ${ind.que}.`}${ind.encuesta ? " Es una muestra: las diferencias pequeñas entre comunidades pueden deberse al azar." : ""}${esAvance(ind, a) ? " Dato de avance: puede cambiar." : ""} Pulsa una comunidad para elegirla como la tuya.`;
     $("#p-origen").innerHTML = origen(ind, a);
     const esca = tileMap($("#p-mapa"), vals, ind, { selIds: [S.com], anio: a, onClick: (id) => { S.com = id; render(); } });
     $("#p-leyenda").innerHTML = esca.leyenda;
@@ -930,7 +931,7 @@ export function iniciar(DATA: DatosApp): void {
     const delta = esNoComp ? `<span class="cautela">${esc(ind.no_comparable_txt || "Sin dato comparable")}. Aviso del INEE: ${esc(ind.noComparable[id])}</span>`
       : v == null ? "Sin dato para esta comunidad en la fuente." : frenteEspana(ind, v, a, k, id);
     return `<div class="ind${esNoComp ? " no-comp" : ""}">
-      <div><div class="n">${esc(titulo)}${esNoComp ? "" : marca(ind, id, a, k)}</div><div class="pos">${chipFiab(ind.fiabilidad, "span")} ${etqEstado(ind, a)} · España: ${fmt(e, ind.unidad)}${conCautela(ind, id, a, k) ? `<br>† ${esc(textoCautela(ind, id, a, k))}` : ""}${nn.length ? `<br>Nota de la fuente: ${esc(nn[0].texto)}` : ""}</div></div>
+      <div><div class="n">${esc(titulo)}${esNoComp ? "" : marca(ind, id, a, k)}</div><div class="pos">${chipFiab(ind.fiabilidad, "span")} ${etqEstado(ind, a)} · ${ind.sin_espana ? "sin cifra para España" : `España: ${fmt(e, ind.unidad)}`}${conCautela(ind, id, a, k) ? `<br>† ${esc(textoCautela(ind, id, a, k))}` : ""}${nn.length ? `<br>Nota de la fuente: ${esc(nn[0].texto)}` : ""}</div></div>
       <div><div class="val">${fmt(v, ind.unidad)}${er != null && !esNoComp ? `<span class="ic"> ${masMenos(er)}</span>` : ""}</div><div class="delta">${delta}</div>${c && !esNoComp ? `<div class="vs">Cambio: ${textoCambio(ind, c)}</div>` : ""}${vs ? `<div class="vs">${esc(NOMBRE[vs])}: ${vsNoComp ? esc(minus(ind.no_comparable_txt || "sin dato comparable")) : `${fmt(vv, ind.unidad)}${marca(ind, vs, a, k)}`}</div>` : ""}</div>
       <div class="strip">${strip}${esNoComp ? `<div class="pos">No se coloca entre las demás: la fuente pide no compararla.</div>` : ""}</div>
       <div class="spark">${spark}</div>
@@ -958,7 +959,7 @@ export function iniciar(DATA: DatosApp): void {
       if (v == null) return "";
       const etiq = `${esc(i.corto)}${sufijo(i, k) ? ` (${esc(sufijo(i, k))})` : ""}`;
       return noComp(i, id) ? `<li>${etiq}: <strong>${fmt(v, i.unidad)}</strong> en ${etq(i, a)}. <span class="cautela">${esc(i.no_comparable_txt || "Sin dato comparable")}: el INEE pide no compararla.</span></li>`
-        : `<li>${etiq}: <strong>${fmt(v, i.unidad)}</strong>${marca(i, id, a, k)} en ${etq(i, a)} (${frenteEspana(i, v, a, k, id)}).</li>`;
+        : `<li>${etiq}: <strong>${fmt(v, i.unidad)}</strong>${marca(i, id, a, k)} en ${etq(i, a)}${frenteEspana(i, v, a, k, id) ? ` (${frenteEspana(i, v, a, k, id)})` : ""}.</li>`;
     }).join("");
     $("#c-resumen").innerHTML = `<ul class="claves">${claves}</ul>` +
       (ciu ? `<span class="cautela">Ciudad autónoma: su educación la gestiona directamente el Ministerio y su muestra en las encuestas es muy pequeña. Se muestra aparte, sin compararla con las 17.</span>` : "");

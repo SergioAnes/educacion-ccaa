@@ -413,7 +413,8 @@
       },
       "avisos": [
         "La Comunidad de Madrid ha anunciado una carrera profesional horizontal con complementos de hasta 350 € (maestros) y 400 € (profesores) al mes desde 2027; es una propuesta y no está incluida."
-      ]
+      ],
+      "cautela_web": "Las dos pagas adicionales del complemento específico se dan por cobradas también por los docentes: la ley las fija para los funcionarios en general."
     },
     "09": {
       "nombre": "Cataluña",
@@ -533,7 +534,8 @@
       "avisos": [
         "Los acuerdos de 2026 prevén más subidas del complemento específico hasta llegar a un 30 % y que el complemento de mejora suba en 2028 y 2029; no están incluidas.",
         "Desde 2012 los sexenios («estadis») se cobran a los nueve años en lugar de a los seis; por eso el caso con antigüedad no se calcula todavía."
-      ]
+      ],
+      "cautela_web": "Incluye un pago único en mayo de 2026 (839 € maestros, 858 € secundaria), primer tramo de una subida que desde 2027 va en la nómina mensual."
     },
     "10": {
       "nombre": "Comunitat Valenciana",
@@ -665,7 +667,8 @@
       "avisos": [
         "La subida de septiembre de 2026 (75 €/mes) forma parte de un acuerdo de 200 €/mes: 75 € más en enero de 2027 y 50 € en enero de 2028, no incluidos. No se ha encontrado el acuerdo en el DOGV; la cifra sale de la tabla oficial de la Conselleria.",
         "La Conselleria avisa de que se sumará un 0,5 % si el IPC de 2026 llega al 1,5 % (Real Decreto-ley 14/2025)."
-      ]
+      ],
+      "cautela_web": "Las dos pagas adicionales del complemento específico se dan por cobradas también por los docentes: la ley las fija para los funcionarios en general. Incluye la subida de 75 € desde septiembre de 2026."
     },
     "16": {
       "nombre": "País Vasco",
@@ -794,7 +797,8 @@
         "En el País Vasco el docente que empieza ya cobra el segundo y el tercer sexenio («capitalizados»): en otras comunidades es pago por antigüedad. Sin ellos, el sueldo de entrada sería 4.434,78 € menor.",
         "El complemento de destino vasco es propio y más alto que el estatal (701,21 € en el nivel 21 y 880,09 € en el 24, frente a 592,11 y 729,14).",
         "La instrucción recuerda el posible 0,5 % adicional de 2026 si el IPC supera el 1,5 % (Real Decreto-ley 14/2025)."
-      ]
+      ],
+      "cautela_web": "Incluye el segundo y el tercer sexenio, que en el País Vasco se cobran desde el primer día (4.435 € al año), y un complemento de destino propio."
     },
     "04": {
       "nombre": "Illes Balears",
@@ -910,7 +914,8 @@
         "El complemento de la Comunidad Autónoma sube con la antigüedad (de 418,54 € a 619,04 € al mes); se toma el tramo de quien empieza.",
         "La jornada semanal en Baleares es de 35 horas, no de 37,5.",
         "No se cuentan los atrasos de 2020-2021 que se están pagando tras una sentencia del TSJ: son de años anteriores."
-      ]
+      ],
+      "cautela_web": "Incluye la indemnización por residencia de Mallorca, que cobra todo el personal público; en Menorca, Ibiza y Formentera es mayor."
     },
     "07": {
       "nombre": "Castilla y León",
@@ -1020,7 +1025,8 @@
         "En secundaria el acuerdo de horario habla de «18 o 19 periodos lectivos de forma mayoritaria»: los euros por hora se calculan con 18.",
         "Desde septiembre de 2026 los tutores cobran 20 € al mes (Orden EDU/1051/2026); no se incluye porque no todos son tutores.",
         "La jornada semanal en Castilla y León es de 35 horas."
-      ]
+      ],
+      "cautela_web": "Incluye una «consolidación» de unos 25-27 € al mes que la orden no dice a quién se aplica."
     },
     "02": {
       "nombre": "Aragón",
@@ -1330,7 +1336,8 @@
         "El complemento personal transitorio sube en septiembre de 2026 (de 43,85 € a 113,85 € al mes): el año 2026 lleva 8 meses de uno y 4 del otro; desde 2027, el año entero con el importe mayor.",
         "Asturias publica un complemento de destino un 1 % mayor que el estatal (598,09 € en el nivel 21 y 736,54 € en el 24).",
         "El complemento específico general es el mismo para maestros y profesores de secundaria."
-      ]
+      ],
+      "cautela_web": "Las dos pagas adicionales del complemento específico se dan por cobradas también por los docentes: la ley las fija para los funcionarios en general."
     },
     "06": {
       "nombre": "Cantabria",
@@ -1439,7 +1446,8 @@
       "avisos": [
         "El complemento específico general de Cantabria es el mismo para maestros y profesores de secundaria (875,10 € al mes) y es de los más altos.",
         "Las dos pagas adicionales del específico (1.750,20 € al año) no están confirmadas para docentes en una norma propia."
-      ]
+      ],
+      "cautela_web": "Las dos pagas adicionales del complemento específico se dan por cobradas también por los docentes: la ley las fija para los funcionarios en general."
     },
     "08": {
       "nombre": "Castilla-La Mancha",
@@ -1527,7 +1535,8 @@
       "avisos": [
         "El complemento específico general de Castilla-La Mancha es el mismo para maestros y profesores de secundaria (907,43 € al mes) y es de los más altos.",
         "La cifra de 23 horas de clase de los maestros sale de un resumen sindical: la orden de instrucciones no la da."
-      ]
+      ],
+      "cautela_web": "Las dos pagas adicionales del complemento específico se dan por cobradas también por los docentes: la ley las fija para los funcionarios en general."
     },
     "11": {
       "nombre": "Extremadura",
@@ -1738,7 +1747,8 @@
         "Murcia paga buena parte del sueldo docente como «productividad» (mensual y semestral) y no como complemento específico, que es más bajo que en otras comunidades.",
         "Importes de 2026 calculados: los de 2025 publicados en el BORM más la subida general del 1,5 % (no se ha encontrado la tabla docente de 2026); coinciden con la guía de CCOO de enero de 2026.",
         "No se incluye el tramo I de la carrera profesional horizontal (88,93 € al mes para maestros y 158,23 € para secundaria en 2025): depende de la progresión de cada docente."
-      ]
+      ],
+      "cautela_web": "Importes de 2026 calculados: los de 2025 publicados en el BORM más la subida general del 1,5 % (coinciden con la guía de CCOO de enero de 2026). Parte del sueldo se paga como «productividad»."
     },
     "15": {
       "nombre": "Navarra",
@@ -1798,7 +1808,8 @@
         "Navarra tiene un régimen retributivo propio: sueldo inicial por nivel (A para profesores de secundaria, B para maestros) y complemento específico docente en porcentaje del sueldo. No se separa en sueldo estatal, destino y específico.",
         "No se incluye el «grado» (se gana con antigüedad) ni el complemento especial del 5,45 %, que es solo para los maestros que dan clase en la ESO.",
         "En Infantil y Primaria las sesiones son de 50 minutos."
-      ]
+      ],
+      "cautela_web": "Navarra tiene un régimen de sueldos propio (sueldo por nivel y complemento docente en porcentaje); el complemento se calcula con el porcentaje de la ley foral."
     },
     "17": {
       "nombre": "La Rioja",
@@ -1882,7 +1893,8 @@
       "avisos": [
         "ANPE La Rioja da en noviembre de 2026 un específico de 837,85 € para secundaria (825,47 × 1,015), frente a 825,47 € en la tabla oficial de enero; no se ha encontrado la norma de esa posible subida y se usa la cifra oficial.",
         "Las horas de secundaria se deducen de la tabla oficial de reducciones de jornada (12 periodos con un tercio menos = 18)."
-      ]
+      ],
+      "cautela_web": "Para secundaria se usa la tabla oficial de enero (825,47 € de específico); una tabla sindical de noviembre da un 1,5 % más."
     },
     "05": {
       "nombre": "Canarias",
@@ -1993,7 +2005,8 @@
         "En Canarias el complemento específico de los maestros (818,45 €) es mayor que el de los profesores de secundaria (768,72 €).",
         "En las pagas extra el específico se cobra al 78 %.",
         "Canarias publica un complemento de destino algo mayor que el estatal (600,31 € en el nivel 21 y 739,26 € en el 24)."
-      ]
+      ],
+      "cautela_web": "Incluye la indemnización por residencia de isla mayor (Gran Canaria y Tenerife); en las islas menores es mayor."
     },
     "01": {
       "nombre": "Andalucía",
@@ -2083,7 +2096,8 @@
         "DATO RECONSTRUIDO: la Junta de Andalucía no ha publicado la tabla de retribuciones docentes de 2026; el complemento específico se ha calculado a partir de la tabla oficial de 2024 y de los acuerdos publicados en el BOJA, y coincide con la tabla de UGT de enero de 2026.",
         "En Andalucía el horario lectivo de los maestros es de un mínimo de 23,5 horas.",
         "La jornada semanal es de 35 horas."
-      ]
+      ],
+      "cautela_web": "Dato reconstruido: la Junta no ha publicado la tabla de 2026; se calcula con la tabla oficial de 2024 y los acuerdos publicados en el BOJA (coincide con la tabla de UGT de enero de 2026)."
     }
   }
 }

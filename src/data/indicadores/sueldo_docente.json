@@ -1,0 +1,65 @@
+{
+  "id": "sueldo_docente",
+  "grupo": "profesorado",
+  "resumen": true,
+  "nombre": "Sueldo bruto anual del profesorado al empezar",
+  "corto": "Sueldo del profesorado al empezar",
+  "que": "brutos al año",
+  "unidad": "eur",
+  "unidad_txt": "euros brutos al año",
+  "dimensiones": [
+    {
+      "dim": "etapa",
+      "nombre": "Cuerpo",
+      "opciones": [
+        {
+          "id": "maestros",
+          "etiqueta": "Maestros, Infantil y Primaria"
+        },
+        {
+          "id": "secundaria",
+          "etiqueta": "Profesorado de secundaria, ESO, Bachillerato y FP"
+        }
+      ]
+    }
+  ],
+  "filas_ficha": [
+    {
+      "etapa": "maestros"
+    },
+    {
+      "etapa": "secundaria"
+    }
+  ],
+  "cautela_titulo": "Aviso",
+  "definicion": "Lo que cobra en 2026 un funcionario docente de la enseñanza pública que empieza: maestro (Infantil y Primaria) o profesor de secundaria (ESO, Bachillerato y FP), en bruto y sumando las doce mensualidades y las pagas extra.",
+  "numerador": "Sueldo base, complemento de destino, complemento específico (con su parte autonómica) y los complementos que cobra todo el profesorado de esa comunidad desde el primer día, según las tablas oficiales de 2026 de cada comunidad, más las pagas extra y adicionales y los pagos únicos del año.",
+  "denominador": "No hay: es una cantidad por persona y año.",
+  "no_mide": "No es lo que se cobra en mano (faltan IRPF y cotizaciones) ni lo que cobra un docente con años de servicio, sexenios o cargos. No tiene en cuenta el coste de la vida ni las horas de clase de cada comunidad (ver «Horas de clase a la semana» y «Sueldo por hora de clase»).",
+  "fiabilidad": "B",
+  "fiabilidad_txt": "Recopilación propia de tablas y normas oficiales de cada comunidad; Andalucía y Murcia se han calculado porque no publican la tabla de 2026, y algunos conceptos se dan por supuestos (avisados).",
+  "estado": "definitivo",
+  "fuentes": [
+    {
+      "id": "normas_ccaa",
+      "corto": "Tablas y normas de retribuciones de cada comunidad (recopilación propia)",
+      "nombre": "Tablas oficiales de retribuciones docentes de 2026 y normas de cada comunidad (boletines oficiales, portales de transparencia y de educación), recopiladas a mano: cada importe, con su fuente y apartado, en el fichero de datos del proyecto",
+      "url": "https://github.com/SergioAnes/educacion-ccaa/blob/main/src/data/sueldos/normas.json"
+    }
+  ],
+  "espana": "No hay cifra para España: cada comunidad fija su parte del sueldo.",
+  "avisos": [
+    "No hay una cifra oficial para España: cada comunidad fija su parte del sueldo, así que no se calcula una media.",
+    "Datos de 2026 recopilados de las tablas y normas de cada comunidad; las subidas anunciadas o acordadas para 2027 y años siguientes no se incluyen.",
+    "Es el sueldo bruto, antes de impuestos y cotizaciones, y sin ajustar por el coste de la vida.",
+    "Caso «al empezar»: funcionario de carrera sin antigüedad, sin sexenios, sin cargos, sin tutoría y sin complementos de zona o de centro.",
+    "El sueldo base, la paga extra y el complemento de destino son iguales en casi toda España; lo que cambia es sobre todo el complemento específico. País Vasco, Asturias y Canarias tienen un complemento de destino propio, y Navarra, un régimen de sueldos propio.",
+    "Baleares y Canarias incluyen la indemnización por residencia de la isla mayor, que cobra todo el personal público."
+  ],
+  "rango": [
+    25000,
+    60000
+  ],
+  "revisado_hasta": "2026",
+  "sin_espana": true
+}
