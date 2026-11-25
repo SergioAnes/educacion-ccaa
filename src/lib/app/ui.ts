@@ -368,8 +368,8 @@ export function iniciar(DATA: DatosApp): void {
   }
 
   // ---------- DATOS ----------
-  function minigrafico(i) {
-    const k0 = i.variantes[0].clave;
+  function minigrafico(i, k0 = i.variantes[0].clave) {
+    if (i.sin_espana) return `<svg viewBox="0 0 122 30" aria-hidden="true"></svg>`;
     const serie = i.periodos.map((p) => dato(i, "ES", p, k0));
     const fin = serie.filter((x) => x != null);
     const lo = Math.min(...fin), hi = Math.max(...fin);
@@ -380,14 +380,25 @@ export function iniciar(DATA: DatosApp): void {
   }
   function selector(cont) {
     const tarjetas = indsTema().map((i) => {
-      const k0 = i.variantes[0].clave, a = ultimoCon(i, k0);
+      // La tarjeta elegida enseña lo que se ha elegido abajo (etapa, titularidad…); las demás, su primera variante
+      const k0 = i.id === S.ind ? varDe(i) : i.variantes[0].clave, a = ultimoCon(i, k0);
+      const tema = S.tema === "resumen" ? `${esc(NOMBRE_TEMA[i.grupo])} · ` : "";
+      const cab = `<span class="kpi-n">${esc(i.corto)}${sufijo(i, k0) ? ` · ${esc(sufijo(i, k0))}` : ""} ${chipFiab(i.fiabilidad, "span")}</span>`;
+      if (i.sin_espana) {
+        // Sin cifra para España: la horquilla entre comunidades
+        const o = ordenados(valores(i, a, k0)), vs = valores(i, a, k0);
+        const rango = o.length ? `${fmt(vs[o.at(-1)], i.unidad).replace(/ (€|h)$/, "")} – ${fmt(vs[o[0]], i.unidad)}` : "—";
+        return `<button type="button" class="kpi" data-id="${i.id}" aria-pressed="${i.id === S.ind}">
+        ${cab}<span class="kpi-v">${rango}</span>
+        <span class="kpi-mini">${minigrafico(i, k0)}</span><span class="kpi-s">${tema}De la comunidad más baja a la más alta, ${etqEstado(i, a)}<br><span class="kpi-c">Sin cifra para España</span></span></button>`;
+      }
       const v = dato(i, "ES", a, k0);
       const c = cambioDe(i, "ES", k0);
       const v0 = dato(i, "ES", primero(i), k0);
       const pie = c ? textoCambio(i, c) : primero(i) === a ? `Solo ${etq(i, a)} por comunidad` : `${fmtDif(i, v - v0)} desde ${etq(i, primero(i))}`;
       return `<button type="button" class="kpi" data-id="${i.id}" aria-pressed="${i.id === S.ind}">
-        <span class="kpi-n">${esc(i.corto)}${sufijo(i, k0) ? ` · ${esc(sufijo(i, k0))}` : ""} ${chipFiab(i.fiabilidad, "span")}</span><span class="kpi-v">${fmt(v, i.unidad)}</span>
-        <span class="kpi-mini">${minigrafico(i)}</span><span class="kpi-s">${S.tema === "resumen" ? `${esc(NOMBRE_TEMA[i.grupo])} · ` : ""}España, ${etqEstado(i, a)}<br><span class="kpi-c">${pie}</span></span></button>`;
+        ${cab}<span class="kpi-v">${fmt(v, i.unidad)}</span>
+        <span class="kpi-mini">${minigrafico(i, k0)}</span><span class="kpi-s">${tema}España, ${etqEstado(i, a)}<br><span class="kpi-c">${pie}</span></span></button>`;
     }).join("");
     const actual = IND[S.ind], k = varDe(actual), p = partes(k);
     // Un selector por dimensión; las opciones sin dato con las demás elecciones aparecen desactivadas
@@ -432,6 +443,11 @@ export function iniciar(DATA: DatosApp): void {
     barraAnios($("#p-anios"), ind, a, (x) => { S.anio = x; S.anioDe = S.ind; render(); });
     botonPNG($("#p-desc"), "Descargar mapa (PNG)", () => descargarPNG($("#p-mapa svg"), `mapa_${ind.id}_${etq(ind, a)}`, $("#p-titulo").textContent, $("#p-leyenda"), ind));
 
+    // Sin cifra para España, la comunidad se sitúa entre las demás: «5 de las 17 comunidades están por encima»
+    const porEncima = (ind, v, a) => {
+      const vs = valores(ind, a), n = ordenados(vs).length, m = IDS.filter((id) => vs[id] != null && vs[id] > v).length;
+      return m === 0 ? "Es la cifra más alta de las comunidades" : `${m} de las ${n} comunidades ${m === 1 ? "está" : "están"} por encima`;
+    };
     // Titulares, con «Tu comunidad» primero (con su propio desplegable)
     const v = dato(ind, S.com, a);
     const ficha = `<a href="#comunidad-${S.com.toLowerCase()}">Ver su ficha</a>`;
@@ -439,7 +455,7 @@ export function iniciar(DATA: DatosApp): void {
     const cC = cambioDe(ind, S.com);
     const tuya = noComp(ind, S.com) ? `<span class="cautela">${esc(ind.no_comparable_txt || "Sin dato comparable")}: ${esc(ind.noComparable[S.com])}</span> ${ficha}`
       : v == null ? `Sin dato en ${etq(ind, a)}. ${ficha}`
-      : `<strong>${fmt(v, ind.unidad)}</strong>${marca(ind, S.com, a)} en ${etq(ind, a)}: ${frenteEspana(ind, v, a, varDe(ind), S.com)}.${lineaIC(ind, S.com, a) ? ` ${lineaIC(ind, S.com, a)}.` : ""}${cC ? ` Cambio: ${textoCambio(ind, cC)}.` : ""}${conCautela(ind, S.com, a) ? ` <span class="cautela">† ${esc(textoCautela(ind, S.com, a))}</span>` : ""}${nn.length ? ` <span class="cautela">Nota de la fuente: ${esc(nn[0].texto)}</span>` : ""} ${ficha}`;
+      : `<strong>${fmt(v, ind.unidad)}</strong>${marca(ind, S.com, a)} en ${etq(ind, a)}${ind.sin_espana ? `. ${porEncima(ind, v, a)}` : `: ${frenteEspana(ind, v, a, varDe(ind), S.com)}`}.${lineaIC(ind, S.com, a) ? ` ${lineaIC(ind, S.com, a)}.` : ""}${cC ? ` Cambio: ${textoCambio(ind, cC)}.` : ""}${conCautela(ind, S.com, a) ? ` <span class="cautela">† ${esc(textoCautela(ind, S.com, a))}</span>` : ""}${nn.length ? ` <span class="cautela">Nota de la fuente: ${esc(nn[0].texto)}</span>` : ""} ${ficha}`;
     const opciones = [...IDS, ...IDS_CIU].slice().sort((x, y) => NOMBRE[x].localeCompare(NOMBRE[y], "es")).map((k) => `<option value="${k}" ${k === S.com ? "selected" : ""}>${esc(NOMBRE[k])}${CIUDADES[k] ? " (aparte)" : ""}</option>`).join("");
     $("#p-insights").innerHTML = `<div class="insight tuya"><label class="k" for="p-com">Tu comunidad</label><select id="p-com">${opciones}</select><p>${tuya}</p></div>` +
       titulares(ind, a).map((x) => `<div class="insight"><div class="k">${esc(x.k)}</div><p>${x.t}</p></div>`).join("");
