@@ -27,7 +27,8 @@
     "Euros de cada año, sin descontar la inflación.",
     "El último año publicado es 2024 (el INE lo publica cada mayo con dos años de retraso).",
     "Ceuta y Melilla no están en la tabla.",
-    "Para comparar con el sueldo del profesorado, mejor fijarse en la posición de cada comunidad frente a España que en la cifra: el sueldo docente es de 2026 y a jornada completa, y este es de 2024 e incluye el tiempo parcial. Usar la media a jornada completa (encuesta de 2022) cambiaría la posición de una comunidad frente a España como mucho en unos 3 puntos."
+    "Para comparar con el sueldo del profesorado, mejor fijarse en la posición de cada comunidad frente a España que en la cifra: el sueldo docente es de 2026 y a jornada completa, y este es de 2024 e incluye el tiempo parcial. Usar la media a jornada completa (encuesta de 2022) cambiaría la posición de una comunidad frente a España como mucho en unos 3 puntos.",
+    "Por qué las dos cifras se comportan distinto: el sueldo docente lo fija la administración y cambia poco entre comunidades (la mayor parte es estatal), mientras que el sueldo medio depende de los empleos que hay en cada comunidad. Por eso, donde los sueldos del resto de trabajadores son altos (Madrid, Navarra, Cataluña), el docente queda peor situado frente a sus vecinos, y al revés donde son bajos (Canarias, Extremadura)."
   ],
   "rango": [
     10000,
