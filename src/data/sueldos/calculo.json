@@ -773,6 +773,43 @@
         "No se incluye el «grado» (se gana con antigüedad) ni el complemento especial del 5,45 %, que es solo para los maestros que dan clase en la ESO.",
         "En Infantil y Primaria las sesiones son de 50 minutos."
       ]
+    },
+    "17": {
+      "nombre": "La Rioja",
+      "cuerpos": {
+        "maestros": {
+          "bruto_anual": 35849.32,
+          "componentes": {
+            "mensualidades": 31284.6,
+            "pagas_extra": 2933.88,
+            "pagas_adicionales_especifico": 1630.84,
+            "otros_recurrentes": 0,
+            "pagos_unicos_del_anio": 0
+          },
+          "otros": [],
+          "horas_lectivas": 23.0,
+          "horas_definicion": "23 horas lectivas, incluidos los recreos vigilados",
+          "euros_por_hora_semanal": 1558.67
+        },
+        "secundaria": {
+          "bruto_anual": 40123.52,
+          "componentes": {
+            "mensualidades": 35302.2,
+            "pagas_extra": 3170.38,
+            "pagas_adicionales_especifico": 1650.94,
+            "otros_recurrentes": 0,
+            "pagos_unicos_del_anio": 0
+          },
+          "otros": [],
+          "horas_lectivas": 18.0,
+          "horas_definicion": "18 periodos lectivos (deducido de la tabla de reducciones de jornada de las instrucciones)",
+          "euros_por_hora_semanal": 2229.08
+        }
+      },
+      "avisos": [
+        "ANPE La Rioja da en noviembre de 2026 un específico de 837,85 € para secundaria (825,47 × 1,015), frente a 825,47 € en la tabla oficial de enero; no se ha encontrado la norma de esa posible subida y se usa la cifra oficial.",
+        "Las horas de secundaria se deducen de la tabla oficial de reducciones de jornada (12 periodos con un tercio menos = 18)."
+      ]
     }
   }
 }

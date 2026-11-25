@@ -271,6 +271,26 @@
       "titulo": "Resolución 333/2026, de 26 de mayo, del director general de Educación y FP: instrucciones de organización y funcionamiento para 2026-2027",
       "url": "https://www.educacion.navarra.es/documents/27590/0/Resol+333-2026+INSTRUCCIONES+CURSO+2026-2027.pdf/7dc9d00a-5409-e128-52e6-34b1f875cc1a",
       "original": "sueldos/2026-11-25/na-resolucion-333-2026-instrucciones.pdf"
+    },
+    "ri_tabla": {
+      "titulo": "Gobierno de La Rioja, Consejería de Educación: retribuciones 2026 del personal de cuerpos docentes no universitarios (incremento del 1,5 %; «actualizada enero 2026»)",
+      "url": "https://www.larioja.org/edu-recursos-humanos/es/area-personal-docente",
+      "original": "sueldos/2026-11-25/ri-tabla-retribuciones-docentes-2026.pdf"
+    },
+    "ri_ley": {
+      "titulo": "Ley de Presupuestos Generales de La Rioja para 2026 (BOR n.º 252, 30/12/2025): las pagas extraordinarias incluyen sueldo, trienios, complemento de destino y complemento específico",
+      "url": "https://www.boe.es/ccaa/bor/2025/252/l22598-22880.pdf",
+      "original": "sueldos/2026-11-25/ri-ley-presupuestos-2026-bor-252.pdf"
+    },
+    "ri_instr": {
+      "titulo": "Instrucciones de 18 de junio de 2026 de la Dirección General de Gestión Educativa para el curso 2026/2027 (apartado 6.5, horario con reducción de jornada)",
+      "url": "https://www.larioja.org/edu-recursos-humanos/es/normativa-profesorado",
+      "original": "sueldos/2026-11-25/ri-instrucciones-18-06-2026.pdf"
+    },
+    "ri_anpe": {
+      "titulo": "ANPE La Rioja: retribuciones del personal docente 2026, actualizado a noviembre de 2026 (sindicato; no oficial)",
+      "url": "https://documentos.anperioja.es/Retribuciones_La_Rioja.pdf",
+      "original": "sueldos/2026-11-25/ri-anpe-retribuciones-2026-nov.pdf"
     }
   },
   "comunidades": {
@@ -1742,6 +1762,90 @@
         "Navarra tiene un régimen retributivo propio: sueldo inicial por nivel (A para profesores de secundaria, B para maestros) y complemento específico docente en porcentaje del sueldo. No se separa en sueldo estatal, destino y específico.",
         "No se incluye el «grado» (se gana con antigüedad) ni el complemento especial del 5,45 %, que es solo para los maestros que dan clase en la ESO.",
         "En Infantil y Primaria las sesiones son de 50 minutos."
+      ]
+    },
+    "17": {
+      "nombre": "La Rioja",
+      "estado": "analizada",
+      "cuerpos": {
+        "maestros": {
+          "grupo": "A2",
+          "sueldo_mensual": {
+            "valor": 1199.52,
+            "fuente": "ri_tabla",
+            "donde": "1.1"
+          },
+          "sueldo_paga_extra": {
+            "valor": 874.83,
+            "fuente": "ri_tabla",
+            "donde": "1.2"
+          },
+          "nivel_destino": "21",
+          "destino_mensual": {
+            "valor": 592.11,
+            "fuente": "ri_tabla",
+            "donde": "1.3, nivel 21"
+          },
+          "especifico_mensual": {
+            "valor": 815.42,
+            "fuente": "ri_tabla",
+            "donde": "1.3, componente general del complemento específico"
+          },
+          "especifico_pagas_adicionales": {
+            "valor": 2,
+            "fuente": "ri_ley",
+            "donde": "retribuciones del personal funcionario, b): pagas extraordinarias con complemento específico «o conceptos equivalentes en función del régimen retributivo de los colectivos»",
+            "comprobacion": "norma"
+          },
+          "otros_anuales": [],
+          "horas_lectivas": {
+            "valor": 23,
+            "fuente": "ri_instr",
+            "donde": "6.5 (con reducción de 1/3: 15 a 16 h) y Orden de julio de 2024 (BOR 24/7/2024)",
+            "definicion": "23 horas lectivas, incluidos los recreos vigilados"
+          }
+        },
+        "secundaria": {
+          "grupo": "A1",
+          "sueldo_mensual": {
+            "valor": 1387.24,
+            "fuente": "ri_tabla",
+            "donde": "1.1"
+          },
+          "sueldo_paga_extra": {
+            "valor": 856.05,
+            "fuente": "ri_tabla",
+            "donde": "1.2"
+          },
+          "nivel_destino": "24",
+          "destino_mensual": {
+            "valor": 729.14,
+            "fuente": "ri_tabla",
+            "donde": "1.3, nivel 24"
+          },
+          "especifico_mensual": {
+            "valor": 825.47,
+            "fuente": "ri_tabla",
+            "donde": "1.3, componente general del complemento específico"
+          },
+          "especifico_pagas_adicionales": {
+            "valor": 2,
+            "fuente": "ri_ley",
+            "donde": "retribuciones del personal funcionario, b): pagas extraordinarias con complemento específico «o conceptos equivalentes en función del régimen retributivo de los colectivos»",
+            "comprobacion": "norma"
+          },
+          "otros_anuales": [],
+          "horas_lectivas": {
+            "valor": 18,
+            "fuente": "ri_instr",
+            "donde": "6.5: con reducción de 1/3, 12 periodos; con 1/2, 9",
+            "definicion": "18 periodos lectivos (deducido de la tabla de reducciones de jornada de las instrucciones)"
+          }
+        }
+      },
+      "avisos": [
+        "ANPE La Rioja da en noviembre de 2026 un específico de 837,85 € para secundaria (825,47 × 1,015), frente a 825,47 € en la tabla oficial de enero; no se ha encontrado la norma de esa posible subida y se usa la cifra oficial.",
+        "Las horas de secundaria se deducen de la tabla oficial de reducciones de jornada (12 periodos con un tercio menos = 18)."
       ]
     }
   }

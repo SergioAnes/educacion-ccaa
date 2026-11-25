@@ -901,7 +901,7 @@
     "url": "https://www.iberley.es/legislacion/articulo-19-presupuestos-generales-ano-2026-navarra",
     "fecha_captura": "2026-11-25",
     "bytes": 158288,
-    "sha256": "d4437b5800eff0d1534a927d474706babf25d473a3c3f617569d01096ab4e368"
+    "sha256": "1a26dcd8f8f692b3e6777accb3e60ae5a207ef26ca12ab5ec9bf8496757412a7"
   },
   {
     "fuente": "sueldos",
@@ -934,6 +934,38 @@
     "fecha_captura": "2026-11-25",
     "bytes": 333951,
     "sha256": "37b4dee8aa571c77dcde219f88145a618e837b3355b18317821bc173b7102f2e"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/ri-anpe-retribuciones-2026-nov.pdf",
+    "url": "https://documentos.anperioja.es/Retribuciones_La_Rioja.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 522781,
+    "sha256": "c6bd26b303cc887b41880a2613d775f230258213c10a2b897ca33a89fca8acad"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/ri-instrucciones-18-06-2026.pdf",
+    "url": "https://www.larioja.org/larioja-client/cm/edu-recursos-humanos/images?idMmedia=1735625",
+    "fecha_captura": "2026-11-25",
+    "bytes": 460627,
+    "sha256": "2c15beb357be2112e258e9e9e6275e7061cc425d8c44ae8864c01a3482b7f5b5"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/ri-ley-presupuestos-2026-bor-252.pdf",
+    "url": "https://www.boe.es/ccaa/bor/2025/252/l22598-22880.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 2646675,
+    "sha256": "d40d0609a5850a6716a066454ec4064f95b7948bca6e9ccefd9bab1dd26510b6"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/ri-tabla-retribuciones-docentes-2026.pdf",
+    "url": "https://www.larioja.org/larioja-client/cm/edu-recursos-humanos/images?idMmedia=1698473",
+    "fecha_captura": "2026-11-25",
+    "bytes": 50424,
+    "sha256": "0bc386b8f069d49b2c31c330371e2708ba57b9fa80690c20480c8c4b05a0665a"
   },
   {
     "fuente": "sueldos",

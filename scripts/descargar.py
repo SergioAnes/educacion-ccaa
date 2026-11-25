@@ -145,6 +145,10 @@ FUENTES: dict[str, list[tuple[str, str]]] = {
         ("na-retribuciones-2026.pdf", "https://gobiernoabierto.navarra.es/sites/default/files/assets/files/pagina-interior/transparencia/Retribuciones2026.pdf"),
         ("na-resolucion-333-2026-instrucciones.pdf", "https://www.educacion.navarra.es/documents/27590/0/Resol+333-2026+INSTRUCCIONES+CURSO+2026-2027.pdf/7dc9d00a-5409-e128-52e6-34b1f875cc1a"),
         ("na-ley-foral-16-2025-art-19.html", "https://www.iberley.es/legislacion/articulo-19-presupuestos-generales-ano-2026-navarra"),
+        ("ri-tabla-retribuciones-docentes-2026.pdf", "https://www.larioja.org/larioja-client/cm/edu-recursos-humanos/images?idMmedia=1698473"),
+        ("ri-ley-presupuestos-2026-bor-252.pdf", "https://www.boe.es/ccaa/bor/2025/252/l22598-22880.pdf"),
+        ("ri-instrucciones-18-06-2026.pdf", "https://www.larioja.org/larioja-client/cm/edu-recursos-humanos/images?idMmedia=1735625"),
+        ("ri-anpe-retribuciones-2026-nov.pdf", "https://documentos.anperioja.es/Retribuciones_La_Rioja.pdf"),
         ("ar-instrucciones-ies-2026-27.pdf", "https://educa.aragon.es/documents/20126/6844128/CSVFV61LMW0LZ120XFIL+Instrucciones+curso+2026-2027+para+centros+educativos._03+IES+2026-2027+V8-(Instrucciones).pdf/ff9b76e8-b92f-291b-b736-6f093187162c"),
     ],
     # INEE: tablas del informe español de PISA 2025 (Excel dentro de un RAR)
