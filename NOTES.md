@@ -166,6 +166,11 @@ scripts de Python y se guardan como JSON en `src/data/`. La base es sanidad-ccaa
   la referencia implícita del ajuste varía entre territorios (0,11 a 0,41), así que el INEE usa otro modelo que sus
   tablas no detallan. Pendiente de encontrar su método (el informe español de 2025 no está en la web del INEE).
 
+### Chicas y chicos en PISA (`pisa_sexo`, tema «Equidad», publicado el 25/11/2026)
+- INEE, Tablas_cap_3, Figura 3.7: diferencia chicas − chicos por competencia, con ET; comprobado en los 66 casos.
+- Se clasifica frente a CERO, no frente a España (`referencia_cero` y `clases` en la ficha): «a favor de las chicas /
+  sin diferencia clara / a favor de los chicos», sin rojo. Textos en palabras, sin «A menos B».
+
 ### Descargas: ficheros que cambian sin cambiar
 - El servidor de EDUCAbase pone en cada .px la fecha de descarga (CREATION-DATE) y un SUBJECT-CODE que varía. Sin
   ignorarlos, cada descarga parecía un fichero nuevo: `descargar.py` compara el contenido sin esas dos líneas (el

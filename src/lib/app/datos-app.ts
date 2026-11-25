@@ -32,6 +32,8 @@ import brechaFicha from "@/data/indicadores/pisa_brecha_isec.json";
 import brechaObs from "@/data/observaciones/pisa_brecha_isec.json";
 import isecFicha from "@/data/indicadores/pisa_isec.json";
 import isecObs from "@/data/observaciones/pisa_isec.json";
+import sexoFicha from "@/data/indicadores/pisa_sexo.json";
+import sexoObs from "@/data/observaciones/pisa_sexo.json";
 import pisaFicha from "@/data/indicadores/pisa_puntuacion.json";
 import pisaObs from "@/data/observaciones/pisa_puntuacion.json";
 import pisaBajoFicha from "@/data/indicadores/pisa_bajo.json";
@@ -72,6 +74,10 @@ export type Ficha = {
   aditivo?: boolean;
   referencias?: Referencia[];
   no_comparable_txt?: string;
+  /** Intervalo frente a cero (no frente a España) y nombres de los tres grupos */
+  referencia_cero?: boolean;
+  clases?: Record<string, string>;
+  signos?: { pos: string; neg: string };
   rango: [number, number]; rango_nota?: string; revisado_hasta: string; revision?: string;
 };
 export type Fila = {
@@ -120,6 +126,7 @@ export const REGISTRO: { ficha: Ficha; obs: Observaciones }[] = [
   par(pisaAltoFicha, pisaAltoObs),
   par(isecFicha, isecObs),
   par(brechaFicha, brechaObs),
+  par(sexoFicha, sexoObs),
   par(abandonoFicha, abandonoObs),
   par(idoneidadFicha, idoneidadObs),
   par(repeticionFicha, repeticionObs),
@@ -177,6 +184,8 @@ export function textoComprobacion(obs: Observaciones): string {
     return `En cada curso y comunidad, pública + concertada + privada no concertada = total; la suma de las comunidades (con Ceuta y Melilla) da España; los ${nf(0).format(c.pares_comparados)} recuentos coinciden con la serie de alumnado del Ministerio, y el porcentaje de la pública, con el que publica el Ministerio.`;
   if (obs.indicador_id === "pisa_puntuacion")
     return "Las cifras de España y de las comunidades son las mismas en las tablas de 2025, en las de evolución y en las de diferencias entre ediciones, y cada diferencia publicada es la resta de sus dos medias. Excepción: en la tabla de ciencias 2015-2025, las diferencias de Castilla y León y de Castilla-La Mancha vienen intercambiadas (ver sus notas).";
+  if (obs.indicador_id === "pisa_sexo")
+    return "En cada territorio y competencia, la diferencia publicada es la puntuación de las chicas menos la de los chicos.";
   if (obs.indicador_id === "pisa_isec")
     return "Están las 17 comunidades, Ceuta, Melilla, España, la media de la OCDE y el total de la UE, tal como los publica el INEE.";
   if (obs.indicador_id === "pisa_brecha_isec")

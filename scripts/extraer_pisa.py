@@ -211,6 +211,19 @@ def main() -> None:
         isec = []
         for cod, (v, et, _) in tabla_simple(wb3["Figura 3.1"]).items():
             isec.append(fila("pisa_isec", cod, "2025", v, "indice", et, m["fecha_captura"], "total"))
+        # Diferencia entre chicas y chicos en cada competencia, con su ET (Figura 3.7). Por competencia: chicas, ET,
+        # chicos, ET, diferencia, ET. Comprobación: diferencia publicada = chicas − chicos.
+        sexo = []
+        for r in filas_hoja(wb3["Figura 3.7"]):
+            cod, _ = territorio(r[0]) if r and r[0] else (None, "")
+            nums = [x for x in r[1:] if isinstance(x, (int, float))]
+            if not cod or len(nums) < 18:
+                continue
+            for k, comp in enumerate(("ciencias", "lectura", "matematicas")):
+                chicas, _, chicos, _, dif, et = nums[6 * k:6 * k + 6]
+                if abs((chicas - chicos) - dif) > 0.05:
+                    errores.append(f"Figura 3.7 {cod} {comp}: diferencia {dif:.2f} y chicas − chicos = {chicas - chicos:.2f}")
+                sexo.append(fila("pisa_sexo", cod, "2025", dif, "dif_puntos", et, m["fecha_captura"], comp))
         wb3.close()
     # Ninguna tabla de 2025 puede perder una comunidad (p. ej. por una errata en el nombre: «Madrid, Comnidad de»)
     todos = {t["ine"] for t in TERRITORIOS}
@@ -245,6 +258,11 @@ def main() -> None:
     falta = {t["ine"] for t in TERRITORIOS} - {f["territorio"] for f in isec}
     if falta:
         sys.exit(f"Figura 3.1: faltan {sorted(falta)}")
+    for comp in ("ciencias", "lectura", "matematicas"):
+        falta = {t["ine"] for t in TERRITORIOS} - {f["territorio"] for f in sexo if f["competencia"] == comp}
+        if falta:
+            sys.exit(f"Figura 3.7 {comp}: faltan {sorted(falta)}")
+    guardar("pisa_sexo", sexo, {"comprobacion": {"pares_comparados": len(sexo), "descripcion": "diferencia publicada = chicas − chicos"}})
     guardar("pisa_isec", isec, {"comprobacion": {"pares_comparados": len(isec), "descripcion": "las 19 comunidades y ciudades, España, OCDE y UE"}})
     print("no comparable:", list(no_comparable), "| cautela:", list(cautela))
 

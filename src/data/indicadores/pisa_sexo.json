@@ -1,0 +1,103 @@
+{
+  "id": "pisa_sexo",
+  "grupo": "equidad",
+  "encuesta": true,
+  "intervalo": true,
+  "referencia_cero": true,
+  "clases": {
+    "1": "a favor de las chicas",
+    "0": "sin diferencia clara",
+    "-1": "a favor de los chicos"
+  },
+  "signos": {
+    "pos": "a favor de las chicas",
+    "neg": "a favor de los chicos"
+  },
+  "nombre": "PISA: diferencia entre chicas y chicos",
+  "corto": "Chicas y chicos (PISA)",
+  "que": "",
+  "unidad": "dif_puntos",
+  "unidad_txt": "puntos de diferencia",
+  "dimensiones": [
+    {
+      "dim": "competencia",
+      "nombre": "Competencia",
+      "opciones": [
+        {
+          "id": "ciencias",
+          "etiqueta": "Ciencias"
+        },
+        {
+          "id": "matematicas",
+          "etiqueta": "Matemáticas"
+        },
+        {
+          "id": "lectura",
+          "etiqueta": "Lectura"
+        }
+      ]
+    }
+  ],
+  "filas_ficha": [
+    {
+      "competencia": "ciencias"
+    },
+    {
+      "competencia": "matematicas"
+    },
+    {
+      "competencia": "lectura"
+    }
+  ],
+  "definicion": "Diferencia de puntuación entre chicas y chicos de 15 años en cada competencia de PISA. Positiva: las chicas sacan más; negativa: los chicos sacan más.",
+  "numerador": "Puntuación media de las chicas y puntuación media de los chicos de la muestra; la diferencia y su error típico los publica el INEE.",
+  "denominador": "Alumnado de 15 años representado por la muestra de PISA, separado por sexo.",
+  "no_mide": "No dice por qué hay diferencia ni si se debe a la escuela, a la familia o a otras cosas. Una comunidad «sin diferencia clara» puede tener una diferencia real pequeña que la muestra no permite ver.",
+  "fiabilidad": "A",
+  "fiabilidad_txt": "Evaluación internacional periódica de la OCDE, con el informe oficial del Ministerio. Es una muestra: cada cifra tiene margen de error.",
+  "estado": "definitivo",
+  "fuentes": [
+    {
+      "id": "inee_pisa",
+      "corto": "INEE (Ministerio de Educación), informe PISA 2025",
+      "nombre": "Instituto Nacional de Evaluación Educativa (Ministerio de Educación, Formación Profesional y Deportes): PISA 2025, informe español, tablas del capítulo 3 (Figura 3.7)",
+      "url": "https://www.educacionfpydeportes.gob.es/inee/evaluaciones-internacionales/pisa/pisa-2025.html"
+    },
+    {
+      "id": "ocde",
+      "corto": "OCDE",
+      "nombre": "OCDE: PISA (programa, documentación técnica y resultados)",
+      "url": "https://www.oecd.org/en/about/programmes/pisa.html"
+    }
+  ],
+  "referencias": [
+    {
+      "id": "OCDE",
+      "nombre": "media OCDE",
+      "fuente_id": "inee_pisa",
+      "ranking": true,
+      "evolucion": false
+    },
+    {
+      "id": "UE",
+      "nombre": "total UE",
+      "fuente_id": "inee_pisa",
+      "ranking": true,
+      "evolucion": false
+    }
+  ],
+  "espana": "Resultado de la muestra de toda España, publicado por el INEE.",
+  "avisos": [
+    "El color dice si la diferencia es clara teniendo en cuenta el margen de error (el intervalo al 95 % no incluye el cero), no si es grande o pequeña.",
+    "Al separar por sexo, cada grupo es la mitad de la muestra: los márgenes son mayores que en la puntuación total.",
+    "Cataluña: el INEE dice que, por el 23,2 % de alumnado excluido, sus datos no deben compararse con otros territorios ni con ediciones anteriores. No sale en el mapa ni en los gráficos; solo en su ficha, con ese aviso.",
+    "Murcia: el INEE dice que, con un 12,7 % de alumnado excluido, sus datos se pueden comparar, pero con cautela. Se marca con †.",
+    "Ceuta y Melilla se muestran aparte, como en el resto de la web."
+  ],
+  "no_comparable_txt": "Sin dato comparable",
+  "rango": [
+    -80,
+    80
+  ],
+  "revisado_hasta": "2025"
+}

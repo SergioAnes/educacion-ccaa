@@ -29,6 +29,7 @@ export function iniciar(DATA: DatosApp): void {
     if (u === "puntos") return nf(0).format(v);
     if (u === "eur") return nf(0).format(v) + " €";
     if (u === "indice") return nf(2).format(v);
+    if (u === "dif_puntos") return (Math.abs(v) < 0.05 ? "" : v > 0 ? "+" : "−") + nf(1).format(Math.abs(v));
     return nf(1).format(v);
   }
   // Diferencias: en puntos para porcentajes y PISA; en la misma unidad para lo demás (alumnos por profesor o por grupo)
@@ -37,11 +38,13 @@ export function iniciar(DATA: DatosApp): void {
     const signo = Math.abs(d) < 0.05 ? "≈ " : d > 0 ? "+" : "−";
     if (ind.unidad === "eur") return signo + nf(0).format(Math.abs(d)) + " €";
     if (ind.unidad === "indice") return (Math.abs(d) < 0.005 ? "≈ " : d > 0 ? "+" : "−") + nf(2).format(Math.abs(d));
-    return signo + nf(1).format(Math.abs(d)) + (ind.unidad === "pct" || ind.unidad === "puntos" ? " puntos" : "");
+    return signo + nf(1).format(Math.abs(d)) + (ind.unidad === "pct" || ind.unidad === "puntos" || ind.unidad === "dif_puntos" ? " puntos" : "");
   }
   const fmtCorto = (v, u) => fmt(v, u).replace(" %", "%");
   // La cifra con lo que mide: «12,8 % de los jóvenes…», «20,7 alumnos por grupo», «477 puntos»
-  const conQue = (ind, v) => ind.unidad === "ratio" ? `${fmt(v, ind.unidad)} alumnos ${ind.que}` : `${fmt(v, ind.unidad)} ${ind.que}`;
+  const conQue = (ind, v) => ind.unidad === "ratio" ? `${fmt(v, ind.unidad)} alumnos ${ind.que}`
+    : ind.unidad === "dif_puntos" && ind.signos ? (Math.abs(v) < 0.05 ? "sin diferencia" : `${nf(1).format(Math.abs(v))} puntos ${v > 0 ? ind.signos.pos : ind.signos.neg}`)
+    : `${fmt(v, ind.unidad)} ${ind.que}`;
   const unidadTxt = (ind) => ind.unidad === "pct" ? "En %" : `En ${ind.unidad_txt || "alumnos"}`;
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
@@ -109,18 +112,23 @@ export function iniciar(DATA: DatosApp): void {
   // Intervalo al 95 % y comparación con España: 1 por encima, 0 no se distingue, −1 por debajo
   const ic = (v, e) => [v - 1.96 * e, v + 1.96 * e];
   function claseIC(ind, id, a, k = varDe(ind)) {
-    const v = dato(ind, id, a, k), e = errorT(ind, id, a, k), es = espana(ind, a, k);
+    const v = dato(ind, id, a, k), e = errorT(ind, id, a, k), es = ind.referencia_cero ? 0 : espana(ind, a, k);
     if (!ind.intervalo || v == null || e == null || es == null) return null;
     const [lo, hi] = ic(v, e);
     return lo > es ? 1 : hi < es ? -1 : 0;
   }
   const TXT_CLASE = { 1: "por encima de España", 0: "no se distingue de España", "-1": "por debajo de España" };
+  const txtClase = (ind, c) => ind.clases?.[c] ?? TXT_CLASE[c];
+  const txtClaseCorto = (ind, c) => ind.clases?.[c] ?? TXT_CLASE[c].replace(" de España", "");
   // Margen al 95 %: una cifra decimal en puntos; dos si es pequeño (el índice socioeconómico)
   const masMenos = (e) => `±${nf(1.96 * e < 1 ? 2 : 1).format(1.96 * e)}`;
   const frenteEspana = (ind, v, a, k = varDe(ind), id = null) => {
     const e = espana(ind, a, k);
     if (v == null || e == null) return "";
-    if (ind.intervalo && id) { const c = claseIC(ind, id, a, k); if (c != null) return `${TXT_CLASE[c]} (${fmtDif(ind, v - e)}, con el margen de error)`; }
+    if (ind.intervalo && id) {
+      const c = claseIC(ind, id, a, k);
+      if (c != null) return ind.referencia_cero ? `${txtClase(ind, c)}, con el margen de error (España: ${conQue(ind, e)})` : `${txtClase(ind, c)} (${fmtDif(ind, v - e)}, con el margen de error)`;
+    }
     const d = v - e;
     if (Math.abs(d) < 0.05) return "igual que España";
     if (ind.unidad === "eur") return `${nf(0).format(Math.abs(d))} € ${d > 0 ? "más" : "menos"} que España (${nf(0).format(Math.abs(v / e - 1) * 100)} %)`;
@@ -172,7 +180,8 @@ export function iniciar(DATA: DatosApp): void {
     return matchMedia("(prefers-color-scheme: dark)").matches;
   }
   // Tres grupos frente a España (PISA): por encima, no se distingue, por debajo. Colores de sanidad-ccaa (Barómetro).
-  const COL_IC = () => ({ 1: "#184f95", 0: oscuro() ? "#4a4a46" : "#dedcd6", "-1": "#b8322f" });
+  // Frente a cero (chicas y chicos), sin rojo: ninguno de los dos lados es «peor»
+  const COL_IC = (ind) => ({ 1: "#184f95", 0: oscuro() ? "#4a4a46" : "#dedcd6", "-1": ind?.referencia_cero ? "#c2620e" : "#b8322f" });
   function textoSobre(hex) {
     const c = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255).map((v) => v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4);
     const L = 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2];
@@ -183,12 +192,12 @@ export function iniciar(DATA: DatosApp): void {
     const caja = (bg) => ({ bg, fg: textoSobre(bg) });
     if (!o.length) return { color: () => ({ bg: css("--grey-line"), fg: css("--fg") }), leyenda: "<span>Sin valores para las comunidades.</span>" };
     if (ind.intervalo) {
-      const cols = COL_IC();
+      const cols = COL_IC(ind);
       const n = (c) => o.filter((id) => claseIC(ind, id, a) === c).length;
       const sinComp = IDS.filter((id) => noComp(ind, id));
       return {
         color: (id) => caja(cols[claseIC(ind, id, a) ?? 0]),
-        leyenda: `<div class="clases">${[1, 0, -1].map((c) => `<span class="clase"><i style="background:${cols[c]}"></i><b>${TXT_CLASE[c].replace(" de España", "")}</b>(${n(c)})</span>`).join("")}</div><span class="pie">Frente a España (${fmt(espana(ind, a), ind.unidad)}), con el margen de error de la muestra: no es una clasificación del 1 al 17.${sinComp.length ? ` En gris, ${esc(lista(sinComp.map((k) => NOMBRE[k])))}: ${esc(minus(ind.no_comparable_txt || "sin dato comparable"))}.` : ""} † = con cautela.</span>`,
+        leyenda: `<div class="clases">${[1, 0, -1].map((c) => `<span class="clase"><i style="background:${cols[c]}"></i><b>${txtClaseCorto(ind, c)}</b>(${n(c)})</span>`).join("")}</div><span class="pie">${ind.referencia_cero ? "Según si la diferencia es clara teniendo en cuenta el margen de error de la muestra" : `Frente a España (${fmt(espana(ind, a), ind.unidad)}), con el margen de error de la muestra`}: no es una clasificación del 1 al 17.${sinComp.length ? ` En gris, ${esc(lista(sinComp.map((k) => NOMBRE[k])))}: ${esc(minus(ind.no_comparable_txt || "sin dato comparable"))}.` : ""} † = con cautela.</span>`,
       };
     }
     const cols = oscuro() ? [...Q_AZUL].reverse() : Q_AZUL;
@@ -320,7 +329,9 @@ export function iniciar(DATA: DatosApp): void {
     const nom = (id) => `<strong>${esc(NOMBRE[id])}</strong>${marca(ind, id, a)}`;
     if (ind.intervalo) {
       const n = (c) => o.filter((id) => claseIC(ind, id, a) === c).length;
-      out.push({ k: "Frente a España, con el margen de error", t: `<strong>${n(1)}</strong> comunidades por encima, <strong>${n(0)}</strong> que no se distinguen y <strong>${n(-1)}</strong> por debajo.${sinComp.length ? ` ${esc(lista(sinComp.map((id) => NOMBRE[id])))}: ${esc(minus(ind.no_comparable_txt || "sin dato comparable"))} (aviso del INEE).` : ""}` });
+      out.push({ k: ind.referencia_cero ? "Con el margen de error" : "Frente a España, con el margen de error", t: (ind.referencia_cero
+        ? `Comunidades ${txtClase(ind, 1)}: <strong>${n(1)}</strong>; ${txtClase(ind, 0)}: <strong>${n(0)}</strong>; ${txtClase(ind, -1)}: <strong>${n(-1)}</strong>.`
+        : `<strong>${n(1)}</strong> comunidades por encima, <strong>${n(0)}</strong> que no se distinguen y <strong>${n(-1)}</strong> por debajo.`) + `${sinComp.length ? ` ${esc(lista(sinComp.map((id) => NOMBRE[id])))}: ${esc(minus(ind.no_comparable_txt || "sin dato comparable"))} (aviso del INEE).` : ""}` });
       const conIC = (id) => `${fmt(vals[id], u)}, ${minus(lineaIC(ind, id, a))}`;
       out.push({ k: "Cifra más alta y más baja", t: `${nom(o[0])}: ${conIC(o[0])}. ${nom(o.at(-1))}: ${conIC(o.at(-1))}.` });
     } else {
@@ -411,7 +422,7 @@ export function iniciar(DATA: DatosApp): void {
     $("#p-intro").textContent = `Datos oficiales del Ministerio de Educación, el INEE, el INE y Eurostat. Cada cifra lleva su año o curso, su fuente y su fiabilidad. ${DATA.inds.length} indicadores en ${DATA.temas.length} temas; elige uno en las tarjetas.`;
     const vals = valores(ind, a), o = ordenados(vals);
     $("#p-titulo").textContent = o.length
-      ? ind.intervalo ? `${ind.nombre}${varFrase(ind)}, ${etq(ind, a)}: cada comunidad frente a España` : `${ind.nombre}${varFrase(ind)} en ${etq(ind, a)}: la cifra más alta, ${NOMBRE[o[0]]}; la más baja, ${NOMBRE[o.at(-1)]}`
+      ? ind.intervalo ? `${ind.nombre}${varFrase(ind)}, ${etq(ind, a)}: cada comunidad ${ind.referencia_cero ? "con su margen de error" : "frente a España"}` : `${ind.nombre}${varFrase(ind)} en ${etq(ind, a)}: la cifra más alta, ${NOMBRE[o[0]]}; la más baja, ${NOMBRE[o.at(-1)]}`
       : `${ind.nombre}${varFrase(ind)} en ${etq(ind, a)}: sin dato por comunidad`;
     $("#p-sub").textContent = `${ind.unidad === "pct" ? `Porcentaje ${ind.que}.` : ind.unidad === "puntos" ? "Puntuación media del alumnado de 15 años." : ind.unidad === "eur" ? `Euros ${ind.que}, del año ${etq(ind, a)}.` : ind.unidad === "indice" ? "Índice medio del alumnado de 15 años; la OCDE lo construye para que su media quede en torno a cero." : `Alumnos ${ind.que}.`}${ind.encuesta ? " Es una muestra: las diferencias pequeñas entre comunidades pueden deberse al azar." : ""}${esAvance(ind, a) ? " Dato de avance: puede cambiar." : ""} Pulsa una comunidad para elegirla como la tuya.`;
     $("#p-origen").innerHTML = origen(ind, a);
@@ -577,13 +588,13 @@ export function iniciar(DATA: DatosApp): void {
     const pasoEje = marcasEje[1] - marcasEje[0];
     const lo = marcasEje[0] > Math.min(...extremos) ? marcasEje[0] - pasoEje : marcasEje[0], hi = marcasEje.at(-1) < Math.max(...extremos) ? marcasEje.at(-1) + pasoEje : marcasEje.at(-1);
     const x = (v) => lab + ((v - lo) / (hi - lo || 1)) * (W - lab - der);
-    const fg = css("--fg"), muted = css("--muted"), line = css("--line"), surf = css("--surface"), cols = COL_IC();
+    const fg = css("--fg"), muted = css("--muted"), line = css("--line"), surf = css("--surface"), cols = COL_IC(ind);
     const colPunto = (c) => c === 0 ? css("--muted") : cols[c];
     let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(ind.nombre)} por comunidad, con su intervalo al 95 %">`;
     for (let t = lo; t <= hi + pasoEje / 2; t += pasoEje) s += `<line x1="${x(t)}" x2="${x(t)}" y1="${top - 4}" y2="${top + o.length * fila}" stroke="${line}"/><text x="${x(t)}" y="${top + o.length * fila + 14}" text-anchor="middle" font-size="10.5" fill="${muted}" class="num">${fmtCorto(+t.toFixed(6), ind.unidad)}</text>`;
     const punto = (id, y, cursiva) => {
       const v = dato(ind, id, a), er = errorT(ind, id, a), [l, h] = ic(v, er ?? 0), c = claseIC(ind, id, a), sel = colorSel(id);
-      return `<g class="barra" data-id="${id}" style="cursor:pointer" tabindex="0" role="button" aria-label="${esc(NOMBRE[id])}: ${esc(fmt(v, ind.unidad))}, ${esc(lineaIC(ind, id, a))}, ${esc(TXT_CLASE[c] ?? "")}">
+      return `<g class="barra" data-id="${id}" style="cursor:pointer" tabindex="0" role="button" aria-label="${esc(NOMBRE[id])}: ${esc(fmt(v, ind.unidad))}, ${esc(lineaIC(ind, id, a))}, ${esc(c == null ? "" : txtClase(ind, c))}">
         <rect x="0" y="${y}" width="${W}" height="${fila}" fill="transparent"/>
         <text x="${lab - 8}" y="${y + fila / 2 + 4}" text-anchor="end" font-size="12.5" fill="${sel ? fg : muted}" font-weight="${sel ? 700 : 400}" ${cursiva ? 'font-style="italic"' : ""}>${esc(NOMBRE[id])}${cursiva ? "*" : ""}${marca(ind, id, a)}</text>
         <line x1="${x(l)}" x2="${x(h)}" y1="${y + fila / 2}" y2="${y + fila / 2}" stroke="${sel || colPunto(c ?? 0)}" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
@@ -594,6 +605,7 @@ export function iniciar(DATA: DatosApp): void {
     const yb = top + o.length * fila;
     const ref = (v, txt, dash, dy) => `<line x1="${x(v)}" x2="${x(v)}" y1="${top - 4}" y2="${yb + 2}" stroke="${fg}" stroke-dasharray="${dash}" stroke-width="1.3"/><text x="${x(v)}" y="${yb + dy}" text-anchor="middle" font-size="11.5" fill="${muted}">${txt}: ${fmt(v, ind.unidad)}</text>`;
     s += ref(e, "España", "5 3", 28);
+    if (ind.referencia_cero && lo < 0 && hi > 0) s += `<line x1="${x(0)}" x2="${x(0)}" y1="${top - 4}" y2="${yb + 2}" stroke="${muted}" stroke-width="1.6"/><text x="${x(0)}" y="${yb + 44 + refs.length * 16}" text-anchor="middle" font-size="11.5" fill="${muted}">Sin diferencia</text>`;
     refs.forEach((q, i) => { s += ref(q.v, q.r.nombre, "1.5 2.5", 44 + i * 16); });
     if (ciu.length) {
       const y0 = yb + 26 + refs.length * 16 + 22;
@@ -602,7 +614,7 @@ export function iniciar(DATA: DatosApp): void {
     }
     s += `</svg>`;
     const sinComp = IDS.filter((id) => noComp(ind, id));
-    cont.innerHTML = s + `<p class="nota">Azul: por encima de España; gris: no se distingue; rojo: por debajo (el intervalo de la comunidad no incluye a España). † Con cautela, según el INEE.${sinComp.length ? ` ${esc(lista(sinComp.map((k) => NOMBRE[k])))}: ${esc(minus(ind.no_comparable_txt || "sin dato comparable"))}; no se muestra (aviso del INEE en «¿Qué mide esto?»).` : ""}</p>`;
+    cont.innerHTML = s + `<p class="nota">${ind.referencia_cero ? `Azul: ${txtClase(ind, 1)}; gris: ${txtClase(ind, 0)}; naranja: ${txtClase(ind, -1)} (el intervalo de la comunidad no incluye el cero).` : "Azul: por encima de España; gris: no se distingue; rojo: por debajo (el intervalo de la comunidad no incluye a España)."} † Con cautela, según el INEE.${sinComp.length ? ` ${esc(lista(sinComp.map((k) => NOMBRE[k])))}: ${esc(minus(ind.no_comparable_txt || "sin dato comparable"))}; no se muestra (aviso del INEE en «¿Qué mide esto?»).` : ""}</p>`;
     cont.querySelectorAll(".barra").forEach((g) => {
       const id = g.dataset.id;
       g.onclick = () => { if (!CIUDADES[id]) { alternarSel(id); render(); } };
@@ -765,7 +777,7 @@ export function iniciar(DATA: DatosApp): void {
     const comp = (id) => {
       const v = dato(ind, id, a);
       if (id === "ES" || v == null || e == null) return "";
-      if (ind.intervalo) { const c = claseIC(ind, id, a); return c == null ? "—" : TXT_CLASE[c].replace(" de España", ""); }
+      if (ind.intervalo) { const c = claseIC(ind, id, a); return c == null ? "—" : txtClaseCorto(ind, c); }
       return fmtDif(ind, v - e);
     };
     const fila = (id, cls = "") => {
@@ -773,7 +785,7 @@ export function iniciar(DATA: DatosApp): void {
       return `<tr class="${cls}${id === S.com ? " tuya" : ""}"><td>${esc(NOMBRE[id] || "España")}${marca(ind, id, a)}</td><td>${fmt(v, u)}</td>${ind.intervalo ? `<td>${er != null ? `${fmt(ic(v, er)[0], u)}–${fmt(ic(v, er)[1], u)}` : "—"}</td>` : ""}<td>${comp(id)}</td><td>${cambio(id)}</td></tr>`;
     };
     const cs = ind.cambios.find((c) => c.clave === varDe(ind));
-    const cab = `<tr><th>Territorio</th><th>${etq(ind, a)}</th>${ind.intervalo ? "<th>Intervalo al 95 %</th>" : ""}<th>Frente a España</th><th>${ind.intervalo ? (cs ? `Cambio desde ${cs.desde}` : "Cambio") : `Desde ${etq(ind, a0)}`}</th></tr>`;
+    const cab = `<tr><th>Territorio</th><th>${etq(ind, a)}</th>${ind.intervalo ? "<th>Intervalo al 95 %</th>" : ""}<th>${ind.referencia_cero ? "Con el margen de error" : "Frente a España"}</th><th>${ind.intervalo ? (cs ? `Cambio desde ${cs.desde}` : "Cambio") : `Desde ${etq(ind, a0)}`}</th></tr>`;
     const nCol = ind.intervalo ? 5 : 4;
     const refs = ind.refs.filter((r) => dato(ind, r.id, a) != null);
     const filaRef = (r) => { const v = dato(ind, r.id, a); return `<tr class="ref"><td>${esc(r.nombre.charAt(0).toUpperCase() + r.nombre.slice(1))}</td><td>${fmt(v, u)}</td>${ind.intervalo ? `<td>${errorT(ind, r.id, a) != null ? `${fmt(ic(v, errorT(ind, r.id, a))[0], u)}–${fmt(ic(v, errorT(ind, r.id, a))[1], u)}` : "—"}</td>` : ""}<td>${e == null ? "—" : fmtDif(ind, v - e)}</td><td>—</td></tr>`; };
