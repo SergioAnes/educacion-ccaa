@@ -66,6 +66,16 @@ FUENTES: dict[str, list[tuple[str, str]]] = {
         (f"todas_01_{a}-{a + 1}.px", f"{PX}/no-universitaria/alumnado/matriculado/{a}-{a + 1}-rd/gen-todas/l0/todas_01.px")
         for a in range(2011, 2025)
     ],
+    # EDUCAbase: número medio de alumnado por unidad (grupo) por etapa, y unidades y alumnado para comprobarlo
+    "unidades": [(Path(r).name, f"{PX}/{r}") for r in [
+        *[f"no-universitaria/centros/centrosyunid/series/unidades/l0/series_2_{n}.px" for n in ("02", "03", "04", "06", "07", "08", "09", "10")],
+        "no-universitaria/centros/centrosyunid/series/unidades/l0/series_1_04.px",   # unidades de Primaria
+        "no-universitaria/centros/centrosyunid/series/unidades/l0/series_1_06.px",   # unidades de ESO
+        "no-universitaria/alumnado/matriculado/series/AlumnadoGen/l0/alumnado_3_01.px",  # alumnado de Primaria
+        "no-universitaria/alumnado/matriculado/series/AlumnadoGen/l0/alumnado_4_01.px",  # alumnado de ESO
+    ]],
+    # INEE: tablas del informe español de PISA 2025 (Excel dentro de un RAR)
+    "pisa": [("tablas-informe-pisa-2025.rar", "https://www.educacionfpydeportes.gob.es/dam/jcr:4f7056b5-02d7-4e6d-a454-2caa3e04893f/tablas-informe-pisa-2025.rar")],
 }
 
 

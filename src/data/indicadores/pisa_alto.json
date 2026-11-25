@@ -1,0 +1,98 @@
+{
+  "grupo": "resultados",
+  "encuesta": true,
+  "intervalo": false,
+  "dimensiones": [
+    {
+      "dim": "competencia",
+      "nombre": "Competencia",
+      "opciones": [
+        {
+          "id": "ciencias",
+          "etiqueta": "Ciencias"
+        },
+        {
+          "id": "matematicas",
+          "etiqueta": "Matemáticas"
+        },
+        {
+          "id": "lectura",
+          "etiqueta": "Lectura"
+        }
+      ]
+    }
+  ],
+  "filas_ficha": [
+    {
+      "competencia": "ciencias"
+    },
+    {
+      "competencia": "matematicas"
+    },
+    {
+      "competencia": "lectura"
+    }
+  ],
+  "fiabilidad": "A",
+  "fiabilidad_txt": "Evaluación internacional periódica de la OCDE, con el informe oficial del Ministerio. Es una muestra: cada cifra tiene margen de error.",
+  "estado": "definitivo",
+  "fuentes": [
+    {
+      "id": "inee_pisa",
+      "corto": "INEE (Ministerio de Educación), informe PISA 2025",
+      "nombre": "Instituto Nacional de Evaluación Educativa (Ministerio de Educación, Formación Profesional y Deportes): PISA 2025, informe español, tablas del capítulo 2",
+      "url": "https://www.educacionfpydeportes.gob.es/inee/evaluaciones-internacionales/pisa/pisa-2025.html"
+    },
+    {
+      "id": "ocde",
+      "corto": "OCDE",
+      "nombre": "OCDE: PISA (programa, documentación técnica y resultados)",
+      "url": "https://www.oecd.org/en/about/programmes/pisa.html"
+    }
+  ],
+  "referencias": [
+    {
+      "id": "OCDE",
+      "nombre": "media OCDE",
+      "fuente_id": "inee_pisa",
+      "ranking": true,
+      "evolucion": false
+    },
+    {
+      "id": "UE",
+      "nombre": "total UE",
+      "fuente_id": "inee_pisa",
+      "ranking": true,
+      "evolucion": false
+    },
+    {
+      "id": "OCDE35",
+      "nombre": "media OCDE (35 países)",
+      "fuente_id": "inee_pisa",
+      "ranking": false,
+      "evolucion": true
+    }
+  ],
+  "espana": "Resultado de la muestra de toda España, publicado por el INEE (no la media de las comunidades).",
+  "no_comparable_txt": "Sin dato comparable",
+  "id": "pisa_alto",
+  "nombre": "PISA: alumnado con rendimiento alto",
+  "corto": "PISA: rendimiento alto",
+  "que": "del alumnado de 15 años",
+  "unidad": "pct",
+  "definicion": "Porcentaje del alumnado de 15 años en los niveles 5 y 6 de PISA, los más altos.",
+  "numerador": "Alumnado en los niveles 5 y 6 (suma de los dos niveles que publica el INEE).",
+  "denominador": "Alumnado de 15 años representado por la muestra.",
+  "no_mide": "No dice por qué ese alumnado llega a esos niveles.",
+  "avisos": [
+    "La fuente publica el error de cada nivel, no el de la suma: no damos margen de error. Son porcentajes pequeños, y las diferencias de pocas décimas no significan nada.",
+    "Cataluña: el INEE dice que, por el 23,2 % de alumnado excluido, sus datos no deben compararse con otros territorios ni con ediciones anteriores. No sale en el mapa ni en los gráficos; solo en su ficha, con ese aviso.",
+    "Murcia: el INEE dice que, con un 12,7 % de alumnado excluido, sus datos se pueden comparar, pero con cautela. Se marca con †.",
+    "Ceuta y Melilla se muestran aparte, como en el resto de la web."
+  ],
+  "rango": [
+    0,
+    100
+  ],
+  "revisado_hasta": "2025"
+}

@@ -20,9 +20,13 @@
     }
   ],
   "filas_ficha": [
-    "total|total",
-    "h|total",
-    "m|total"
+    {},
+    {
+      "sexo": "h"
+    },
+    {
+      "sexo": "m"
+    }
   ],
   "definicion": "Porcentaje de alumnos de 15 años que están en el curso que les corresponde por edad (4.º de ESO).",
   "numerador": "Alumnado de 15 años matriculado en el curso teórico de su edad.",

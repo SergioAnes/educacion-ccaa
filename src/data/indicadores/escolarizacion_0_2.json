@@ -7,7 +7,7 @@
   "que": "de los niños de 0 a 2 años",
   "unidad": "pct",
   "filas_ficha": [
-    "total|total"
+    {}
   ],
   "definicion": "Porcentaje de niños de 0 a 2 años matriculados en centros autorizados por la administración educativa, públicos o privados (tasa neta de escolarización).",
   "numerador": "Niños de 0, 1 y 2 años matriculados en Educación Infantil o Educación Especial en centros autorizados.",

@@ -21,9 +21,13 @@
     }
   ],
   "filas_ficha": [
-    "total|total",
-    "total|publica",
-    "total|privada"
+    {},
+    {
+      "titularidad": "publica"
+    },
+    {
+      "titularidad": "privada"
+    }
   ],
   "definicion": "Número medio de alumnos por cada profesor en Enseñanzas de Régimen General: todo el alumnado dividido entre todo el profesorado.",
   "numerador": "Alumnado de Régimen General.",
@@ -42,7 +46,7 @@
   ],
   "espana": "Dato oficial del Ministerio para el conjunto de España.",
   "avisos": [
-    "No confundir con alumnos por clase (por grupo): ver «Cómo leer los datos».",
+    "No confundir con alumnos por clase (por grupo), que está en este mismo tema: ver «Cómo leer los datos».",
     "«Privada» incluye la concertada y la no concertada: la tabla no las separa.",
     "El último curso es un avance."
   ],
@@ -50,5 +54,6 @@
     3,
     30
   ],
-  "revisado_hasta": "2025-26"
+  "revisado_hasta": "2025-26",
+  "unidad_txt": "alumnos por profesor"
 }

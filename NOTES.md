@@ -100,6 +100,49 @@ scripts de Python y se guardan como JSON en `src/data/`. La base es sanidad-ccaa
   (el brief citaba 71.348,8 M€ provisional).
 - Conciertos por comunidad: `series_07.px` (miles de euros). Pendiente decidir el denominador (no «coste por alumno»).
 
+## Fase 3: alumnos por clase y PISA 2025 (aprobada el 24/11/2026)
+
+### Alumnos por clase (`alumnos_unidad`, tema «Profesorado y aulas»)
+- EDUCAbase, «Número medio de alumnado por unidad», series `centros/centrosyunid/series/unidades/series_2_0x.px`: Infantil
+  0-2 y 3-5, Primaria, ESO, Bachillerato, FP básica, media y superior; desde 2005-06 (primer curso común); por titularidad,
+  y concertada / no concertada solo en Infantil 3-5, Primaria y ESO (no en el avance 2025-26: cada variante usa su
+  último curso con dato).
+- Comprobación: en Primaria y ESO, alumnado / unidades = media publicada en 2.348 de 2.520 casos; las diferencias se
+  repiten cada curso en las mismas comunidades (Cataluña, y España en la privada, que la incluye). El script solo se
+  para si aparece una diferencia nueva en el último curso.
+- Cifras sueltas extremas en la privada no concertada (Cantabria 2005-06, 68,2 en Primaria; Murcia 2017-18, 47,6 en
+  Infantil 3-5): son las publicadas; la ficha lo avisa. Rango plausible 1-70.
+
+### PISA 2025 (`pisa_puntuacion`, `pisa_bajo`, `pisa_alto`, tema «Resultados (PISA)»)
+- INEE, tablas del informe español (`tablas-informe-pisa-2025.rar`, Excel): ciencias (2.1), lectura (2.14), matemáticas
+  (2.18) con error típico; niveles (2.4, 2.15, 2.19); evolución de España y OCDE-35 (2.9, 2.17, 2.21); diferencias por
+  comunidad ciencias 2015-2025 (2.11) y matemáticas 2022-2025 (2.22). Hace falta UnRAR (WinRAR) para abrirlo.
+- Intervalo al 95 % = valor ± 1,96 ET. «Por encima / no se distingue / por debajo de España» según si el intervalo
+  de la comunidad incluye la cifra de España (aproximación, dicha en la web). Sin puestos.
+- Cataluña: nota (**) del INEE (23,2 % excluido, «no deben ser utilizados para comparaciones»): sin color, fuera de
+  gráficos y tablas comparativas; su cifra solo en su ficha, con el aviso (decisión del autor). Murcia: nota (*) (12,7 %,
+  «con la debida cautela»): †.
+- Erratas de la fuente detectadas por las comprobaciones:
+  - Figura 2.11: las diferencias (y su ET) de Castilla y León y Castilla-La Mancha están intercambiadas (las medias sí
+    cuadran). Se usa la resta de las medias, sin ET, con una nota.
+  - Nombres distintos entre hojas: «Madrid, Comnidad de», «Madrid, C. de», «Asturias», «Com. Valenciana»… (alias en
+    `territorios.json`). El script se para si una tabla de 2025 pierde una comunidad.
+- España no tiene lectura 2018 (la OCDE no la publicó). Por comunidad, solo ciencias 2015 y matemáticas 2022 además
+  de 2025. Ediciones anteriores completas por comunidad: solo con los microdatos del INEE (pendiente).
+- Niveles: «bajo» = por debajo del nivel 2; «alto» = niveles 5 y 6. Suma de niveles publicados, sin error de la suma.
+
+### Cambios de modelo
+- Dimensiones generales: sexo, titularidad, etapa y competencia (clave «sexo|titularidad|etapa|competencia»); fichas
+  con `dimensiones` (o `variantes`, las antiguas) y `filas_ficha` como objetos. Referencias (UE-27, media OCDE, total UE,
+  OCDE-35) en `referencias` de la ficha.
+
+### Pendiente (siguiente tanda, propuesta)
+- Tasa bruta de graduación (Las cifras de la educación, C2.9) y gasto público por alumno oficial (B4.6), con la
+  explicación de qué incluye «público y concertado».
+- Escolarización a 3 y 16-18 años, idoneidad a los 12, repetición en Primaria, NEE, FP.
+- Equidad con las tablas de PISA 2025 por comunidad (ISEC, diferencias por sexo, origen, titularidad).
+- PISA 2000-2022 por comunidad desde microdatos (reproduciendo antes las cifras publicadas).
+
 ## Fuentes que no se pueden descargar solas
 
 - EUR-Lex (objetivo de la UE para 2030, «menos del 9 %»): responde 202 vacío a las descargas automáticas. El objetivo está

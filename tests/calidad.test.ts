@@ -16,7 +16,7 @@ const jsons = (dir: string) => readdirSync(join(RAIZ, dir)).filter((f) => f.ends
 export function saltos(filas: Fila[], umbral = 0.15) {
   const series = new Map<string, Fila[]>();
   for (const f of filas) {
-    const k = [f.territorio, f.sexo, f.titularidad, f.etapa].join("|");
+    const k = [f.territorio, f.sexo, f.titularidad, f.etapa, f.competencia ?? "total"].join("|");
     series.set(k, [...(series.get(k) ?? []), f]);
   }
   const out: { serie: string; periodo: string; de: number; a: number }[] = [];
@@ -35,7 +35,7 @@ export function sumaCuadra(filas: Fila[], tolerancia = 0.5) {
   const grupos = new Map<string, { es?: number; suma: number; n: number }>();
   for (const f of filas) {
     if (f.territorio === "UE27") continue;
-    const k = [f.periodo, f.sexo, f.titularidad, f.etapa].join("|");
+    const k = [f.periodo, f.sexo, f.titularidad, f.etapa, f.competencia ?? "total"].join("|");
     const g = grupos.get(k) ?? { suma: 0, n: 0 };
     if (f.territorio === "00") g.es = f.valor; else { g.suma += f.valor; g.n++; }
     grupos.set(k, g);
@@ -121,17 +121,60 @@ describe("EDUCAbase", () => {
     for (const [k, v] of suma) expect(Math.abs(v - 100), k).toBeLessThan(0.001); // cada parte va redondeada a 4 decimales
   });
 
-  it("los recálculos coinciden en el último curso (si no, la tabla ha cambiado de formato)", () => {
-    for (const id of ["alumnos_profesor", "alumnado_extranjero"]) {
-      const o = obs(id), ult = o.periodos.at(-1);
+  it("en el último curso no aparecen diferencias nuevas en los recálculos (si no, la tabla ha cambiado de formato)", () => {
+    for (const id of ["alumnos_profesor", "alumnado_extranjero", "alumnos_unidad"]) {
+      const o = obs(id), [ant, ult] = o.periodos.slice(-2), difs = o.comprobacion.diferencias ?? [];
+      const clave = (d: { territorio: string; titularidad?: string; etapa?: string }) => `${d.territorio}|${d.titularidad}|${d.etapa ?? ""}`;
+      const antes = new Set(difs.filter((d) => d.periodo === ant).map(clave));
       expect(o.comprobacion.pares_comparados, id).toBeGreaterThan(400);
-      expect((o.comprobacion.diferencias ?? []).filter((d) => d.periodo === ult), id).toEqual([]);
+      expect(difs.filter((d) => d.periodo === ult && !antes.has(clave(d))), id).toEqual([]);
     }
   });
 
-  it("cada fila de «Tu comunidad» y cada variante tienen datos de España en el último periodo", () => {
+  it("alumnos por clase: las ocho etapas, con España en el último curso", () => {
+    const o = obs("alumnos_unidad"), ult = o.periodos.at(-1);
+    const etapas = new Set(o.filas.filter((f) => f.territorio === "00" && f.periodo === ult && f.titularidad === "total").map((f) => f.etapa));
+    expect([...etapas].sort()).toEqual(["bachillerato", "eso", "fp_basica", "fp_medio", "fp_superior", "infantil1", "infantil2", "primaria"]);
+  });
+
+  // 12 y no 17: en algunas comunidades no hay privada no concertada en ESO (repetición: 14 con dato)
+  it("cada variante tiene España y, en su último periodo con dato, al menos 12 comunidades", () => {
     const d = construirDatos();
-    for (const i of d.inds) for (const v of i.variantes) expect(i.serie[v.clave]?.ES?.at(-1), `${i.id} ${v.clave}`).not.toBeNull();
+    for (const i of d.inds) for (const v of i.variantes) {
+      const es = i.serie[v.clave].ES, k = es.map((x) => x != null).lastIndexOf(true);
+      const n = Object.entries(i.serie[v.clave]).filter(([id, s]) => id.length === 2 && id !== "ES" && s[k] != null).length;
+      expect(k, `${i.id} ${v.clave}`).toBeGreaterThanOrEqual(0);
+      expect(n, `${i.id} ${v.clave}`).toBeGreaterThanOrEqual(12);
+    }
+  });
+});
+
+describe("PISA 2025", () => {
+  const obs = (id: string) => REGISTRO.find((r) => r.ficha.id === id)!.obs;
+  const terr = ["00", ...Array.from({ length: 19 }, (_, i) => String(i + 1).padStart(2, "0"))];
+
+  it("las tres competencias, con las 19 comunidades y ciudades y España, cada una con su error típico", () => {
+    for (const comp of ["ciencias", "matematicas", "lectura"]) {
+      const f = obs("pisa_puntuacion").filas.filter((x) => x.periodo === "2025" && x.competencia === comp && terr.includes(x.territorio));
+      expect(f.map((x) => x.territorio).sort(), comp).toEqual(terr);
+      expect(f.every((x) => x.error_estandar != null && x.error_estandar > 0), comp).toBe(true);
+    }
+  });
+
+  it("Cataluña no es comparable y Murcia va con cautela, con el texto del INEE", () => {
+    for (const id of ["pisa_puntuacion", "pisa_bajo", "pisa_alto"]) {
+      expect(obs(id).no_comparable?.map((n) => n.territorio), id).toEqual(["09"]);
+      expect(obs(id).no_comparable?.[0].texto, id).toMatch(/no deben ser utilizados para comparaciones/);
+      expect(obs(id).cautela?.map((n) => n.territorio), id).toEqual(["14"]);
+    }
+    const d = construirDatos().inds.find((i) => i.id === "pisa_puntuacion")!;
+    expect(Object.keys(d.noComparable)).toEqual(["CT"]);
+  });
+
+  it("los cambios entre ediciones tienen su error, salvo los dos que la tabla trae intercambiados (y lo dicen)", () => {
+    const cambios = obs("pisa_puntuacion").cambios ?? [];
+    expect(cambios.length).toBeGreaterThan(30);
+    for (const c of cambios) expect(c.error_estandar != null || /intercambiadas/.test(c.nota ?? ""), c.territorio).toBe(true);
   });
 });
 

@@ -1,0 +1,118 @@
+{
+  "id": "alumnos_unidad",
+  "grupo": "profesorado",
+  "resumen": true,
+  "nombre": "Alumnos por clase",
+  "corto": "Alumnos por clase",
+  "que": "por grupo",
+  "unidad": "ratio",
+  "unidad_txt": "alumnos por grupo",
+  "dimensiones": [
+    {
+      "dim": "etapa",
+      "nombre": "Etapa",
+      "opciones": [
+        {
+          "id": "primaria",
+          "etiqueta": "Primaria"
+        },
+        {
+          "id": "infantil1",
+          "etiqueta": "Infantil 0-2"
+        },
+        {
+          "id": "infantil2",
+          "etiqueta": "Infantil 3-5"
+        },
+        {
+          "id": "eso",
+          "etiqueta": "ESO"
+        },
+        {
+          "id": "bachillerato",
+          "etiqueta": "Bachillerato"
+        },
+        {
+          "id": "fp_basica",
+          "etiqueta": "FP básica"
+        },
+        {
+          "id": "fp_medio",
+          "etiqueta": "FP grado medio"
+        },
+        {
+          "id": "fp_superior",
+          "etiqueta": "FP grado superior"
+        }
+      ]
+    },
+    {
+      "dim": "titularidad",
+      "nombre": "Titularidad",
+      "opciones": [
+        {
+          "id": "total",
+          "etiqueta": "Todos los centros"
+        },
+        {
+          "id": "publica",
+          "etiqueta": "Pública"
+        },
+        {
+          "id": "privada",
+          "etiqueta": "Privada"
+        },
+        {
+          "id": "concertada",
+          "etiqueta": "Concertada"
+        },
+        {
+          "id": "privada_no_concertada",
+          "etiqueta": "Privada no concertada"
+        }
+      ]
+    }
+  ],
+  "filas_ficha": [
+    {
+      "etapa": "infantil2"
+    },
+    {
+      "etapa": "primaria"
+    },
+    {
+      "etapa": "eso"
+    },
+    {
+      "etapa": "bachillerato"
+    }
+  ],
+  "definicion": "Número medio de alumnos por unidad escolar (grupo o aula) en cada etapa: todo el alumnado de la etapa dividido entre los grupos que la imparten.",
+  "numerador": "Alumnado matriculado en la etapa.",
+  "denominador": "Unidades (grupos) de esa etapa. Incluye las unidades mixtas, que juntan alumnos de varios cursos o ciclos.",
+  "no_mide": "No es el máximo legal ni el tamaño de cada clase: es una media, y en una misma comunidad hay grupos con muchos más y muchos menos alumnos. No es lo mismo que alumnos por profesor, que divide entre todo el profesorado.",
+  "fiabilidad": "A",
+  "fiabilidad_txt": "Estadística oficial anual: recuento de todo el alumnado y de todos los grupos.",
+  "estado": "definitivo",
+  "fuentes": [
+    {
+      "id": "mefd_educabase",
+      "corto": "Ministerio de Educación (EDUCAbase)",
+      "nombre": "Ministerio de Educación, Formación Profesional y Deportes: Estadística de las Enseñanzas no universitarias, número medio de alumnado por unidad",
+      "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/Tabla.htm?path=/no-universitaria/centros/centrosyunid/series/unidades/l0/&file=series_2_04.px"
+    }
+  ],
+  "espana": "Dato oficial del Ministerio para el conjunto de España.",
+  "avisos": [
+    "Concertada y privada no concertada solo se separan en Infantil 3-5, Primaria y ESO, y no en el avance del último curso.",
+    "En la privada no concertada hay muy pocos grupos en algunas comunidades: hay cifras sueltas muy altas o muy bajas (por ejemplo, Cantabria 2005-06 en Primaria, 68,2; Murcia 2017-18 en Infantil 3-5, 47,6). Son las publicadas.",
+    "En FP no se cuenta el alumnado matriculado solo para las prácticas en empresas (nota de la tabla).",
+    "El último curso es un avance."
+  ],
+  "rango": [
+    1,
+    70
+  ],
+  "rango_nota": "Cantabria, privada no concertada, Primaria, 2005-06: 68,2 (dato publicado).",
+  "revisado_hasta": "2025-26"
+}

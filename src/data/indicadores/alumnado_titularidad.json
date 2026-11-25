@@ -21,9 +21,15 @@
     }
   ],
   "filas_ficha": [
-    "total|publica",
-    "total|concertada",
-    "total|privada_no_concertada"
+    {
+      "titularidad": "publica"
+    },
+    {
+      "titularidad": "concertada"
+    },
+    {
+      "titularidad": "privada_no_concertada"
+    }
   ],
   "reparto": true,
   "definicion": "Porcentaje del alumnado de Enseñanzas de Régimen General (de Infantil a Bachillerato y FP) que estudia en centros públicos, en centros privados concertados o en centros privados no concertados.",

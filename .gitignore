@@ -18,3 +18,4 @@ datos-originales/**/*.sas7bdat
 
 # Lo genera Next.js al arrancar en modo desarrollo
 AGENTS.md
+datos-originales/**/*.rar

@@ -447,3 +447,11 @@ dl.mide dd { margin: 0; color: var(--muted); }
 .metodo .pliegue > summary { font-size: 0.98rem; }
 ul.difs { max-height: 220px; overflow: auto; font-size: 0.85em; }
 .kpi-n .fiab { width: 1.3em; height: 1.3em; font-size: 0.66rem; }
+/* Selectores de dimensión (etapa, titularidad, sexo, competencia) bajo las tarjetas */
+.dimsels { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; }
+.dimsel { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; }
+.dimsel-t { font-size: 0.78rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.dimsels .ayuda { margin: 0; }
+/* Margen de error junto a la cifra (PISA) y fila sin dato comparable */
+.ind .val .ic { font-family: var(--font-body); font-weight: 500; font-size: 0.78rem; color: var(--muted); }
+.ind.no-comp .val { color: var(--muted); }

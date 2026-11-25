@@ -62,8 +62,21 @@
     }
   ],
   "filas_ficha": [
-    "total|total",
-    "h|total",
-    "m|total"
+    {},
+    {
+      "sexo": "h"
+    },
+    {
+      "sexo": "m"
+    }
+  ],
+  "referencias": [
+    {
+      "id": "UE27",
+      "nombre": "UE-27",
+      "fuente_id": "eurostat",
+      "ranking": true,
+      "evolucion": true
+    }
   ]
 }

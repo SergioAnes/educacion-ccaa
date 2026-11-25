@@ -270,5 +270,109 @@
     "fecha_captura": "2026-11-24",
     "bytes": 100644,
     "sha256": "83b7056a7e7de92d86f06e4ad906ea1a6442fb32a6d458200d3a44d2f63f4b0f"
+  },
+  {
+    "fuente": "pisa",
+    "fichero": "pisa/2026-11-24/tablas-informe-pisa-2025.rar",
+    "url": "https://www.educacionfpydeportes.gob.es/dam/jcr:4f7056b5-02d7-4e6d-a454-2caa3e04893f/tablas-informe-pisa-2025.rar",
+    "fecha_captura": "2026-11-24",
+    "bytes": 2705760,
+    "sha256": "42731b8842dd2d0056e92d8f41b29ffe5db4bdf03cadfafac13568dfac1c53eb"
+  },
+  {
+    "fuente": "unidades",
+    "fichero": "unidades/2026-11-24/alumnado_3_01.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/series/AlumnadoGen/l0/alumnado_3_01.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 19501,
+    "sha256": "454204c6f46bd77364e7fb5dbb385125797b6610f8a44108b759fc1f04d2961b"
+  },
+  {
+    "fuente": "unidades",
+    "fichero": "unidades/2026-11-24/alumnado_4_01.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/series/AlumnadoGen/l0/alumnado_4_01.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 18207,
+    "sha256": "90e41a82384c602aaecb82e13e9bf174e911ec1d92cb9f10ca8abde02315111a"
+  },
+  {
+    "fuente": "unidades",
+    "fichero": "unidades/2026-11-24/series_1_04.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/centros/centrosyunid/series/unidades/l0/series_1_04.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 16738,
+    "sha256": "429726ddc5c829ea7f30c51939f3c0a6fc3303596d70a215aca222d56fe12292"
+  },
+  {
+    "fuente": "unidades",
+    "fichero": "unidades/2026-11-24/series_1_06.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/centros/centrosyunid/series/unidades/l0/series_1_06.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 15663,
+    "sha256": "2eeee6d841234e0ff6d8804bb31b109977899bc7c0b7362f68990279c1ca0ac6"
+  },
+  {
+    "fuente": "unidades",
+    "fichero": "unidades/2026-11-24/series_2_02.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/centros/centrosyunid/series/unidades/l0/series_2_02.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 8138,
+    "sha256": "4629f4bc0bbd87d57464d9e7b95d0bf06e5d7cf652d85d775d6118848df78f69"
+  },
+  {
+    "fuente": "unidades",
+    "fichero": "unidades/2026-11-24/series_2_03.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/centros/centrosyunid/series/unidades/l0/series_2_03.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 12256,
+    "sha256": "12d90acb500af6a50fe6a746e7273d59c600e211006d4f93ed04dae59bf07896"
+  },
+  {
+    "fuente": "unidades",
+    "fichero": "unidades/2026-11-24/series_2_04.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/centros/centrosyunid/series/unidades/l0/series_2_04.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 19926,
+    "sha256": "e07664d85a544847d9c0664d5cdfcc1226004b9d05a935bee25fcc54c1665307"
+  },
+  {
+    "fuente": "unidades",
+    "fichero": "unidades/2026-11-24/series_2_06.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/centros/centrosyunid/series/unidades/l0/series_2_06.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 19603,
+    "sha256": "4a59f736188b3a7278e9f415b0817995048d1be700a240674820adf2479ea452"
+  },
+  {
+    "fuente": "unidades",
+    "fichero": "unidades/2026-11-24/series_2_07.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/centros/centrosyunid/series/unidades/l0/series_2_07.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 7843,
+    "sha256": "13433eae1e807295c4a10542a284b1e1038f77073642e1b60bb7193cb24ffb5b"
+  },
+  {
+    "fuente": "unidades",
+    "fichero": "unidades/2026-11-24/series_2_08.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/centros/centrosyunid/series/unidades/l0/series_2_08.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 7241,
+    "sha256": "a18f80bfe2e6c66a986b22b9ac6f6d165258d6bd52d7304fb33a0e0ffd35d9a1"
+  },
+  {
+    "fuente": "unidades",
+    "fichero": "unidades/2026-11-24/series_2_09.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/centros/centrosyunid/series/unidades/l0/series_2_09.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 7966,
+    "sha256": "13cf41ac578ecff690d9b78a937b6e276863419d986cd544d98294ad3b3dfa7e"
+  },
+  {
+    "fuente": "unidades",
+    "fichero": "unidades/2026-11-24/series_2_10.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/centros/centrosyunid/series/unidades/l0/series_2_10.px",
+    "fecha_captura": "2026-11-24",
+    "bytes": 7974,
+    "sha256": "a36c569ba15da5774d92d4250dd0b972e4a0b28e1c1d419cff1609c436c60ab9"
   }
 ]

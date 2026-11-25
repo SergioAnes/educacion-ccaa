@@ -25,9 +25,13 @@
     }
   ],
   "filas_ficha": [
-    "total|total",
-    "total|publica",
-    "total|concertada"
+    {},
+    {
+      "titularidad": "publica"
+    },
+    {
+      "titularidad": "concertada"
+    }
   ],
   "definicion": "Porcentaje de alumnos de ESO (todos los cursos) que están repitiendo el curso en el que se matriculan.",
   "numerador": "Alumnado de ESO que repite curso.",

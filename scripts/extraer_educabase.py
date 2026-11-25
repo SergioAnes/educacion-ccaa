@@ -43,12 +43,22 @@ RUTAS = {
     "series03.px": "no-universitaria/profesorado/estadistica/series/l0",
     "series07.px": "no-universitaria/profesorado/estadistica/series/l0",
 }
+# Número medio de alumnado por unidad (grupo), por etapa: fuente «unidades» de descargar.py
+U = "no-universitaria/centros/centrosyunid/series/unidades/l0"
+ETAPAS_UNIDAD = {  # etapa -> tabla
+    "infantil1": "series_2_02.px", "infantil2": "series_2_03.px", "primaria": "series_2_04.px", "eso": "series_2_06.px",
+    "bachillerato": "series_2_07.px", "fp_basica": "series_2_08.px", "fp_medio": "series_2_09.px", "fp_superior": "series_2_10.px",
+}
+RUTAS.update({n: U for n in [*ETAPAS_UNIDAD.values(), "series_1_04.px", "series_1_06.px"]})
+RUTAS.update({"alumnado_3_01.px": RUTAS["alumnado_1_01.px"], "alumnado_4_01.px": RUTAS["alumnado_1_01.px"]})
+FUENTE_DE = {n: "unidades" for n in [*ETAPAS_UNIDAD.values(), "series_1_04.px", "series_1_06.px", "alumnado_3_01.px", "alumnado_4_01.px"]}
 SEXO = {"AMBOS SEXOS": "total", "HOMBRES": "h", "MUJERES": "m"}
 TITULARIDAD = {
     "TODOS LOS CENTROS": "total", "TOTAL": "total", "CENTROS PÚBLICOS": "publica", "CENTROS PRIVADOS": "privada",
     "CENTROS PRIVADOS TOTAL": "privada", "CENTROS PRIVADOS E. CONCERTADA": "concertada",
     "CENTROS PRIVADOS E. NO CONCERTADA": "privada_no_concertada",
     "ENSEÑANZA PRIVADA CONCERTADA": "concertada", "ENSEÑANZA PRIVADA NO CONCERTADA": "privada_no_concertada",
+    "CENTROS PRIVADOS CONCERTADOS": "concertada", "CENTROS PRIVADOS NO CONCERTADOS": "privada_no_concertada",
 }
 DESDE = "2000-01"  # las series largas se muestran desde este curso
 
@@ -90,7 +100,7 @@ def codigo(etiqueta: str) -> str | None:
 
 
 def tabla(nombre: str) -> tuple[dict, dict, dict]:
-    m = ultimo_original(FUENTE, nombre)
+    m = ultimo_original(FUENTE_DE.get(nombre, FUENTE), nombre)
     px = leer_px(m["ruta"])
     return px, celdas_px(px), m
 
@@ -102,9 +112,9 @@ def dim(px: dict, empieza: str) -> str:
     sys.exit(f"{px.get('TITLE')}: no hay dimensión «{empieza}»")
 
 
-def fila(ind, terr, periodo, valor, unidad, url, fecha, estado, sexo="total", titularidad="total"):
+def fila(ind, terr, periodo, valor, unidad, url, fecha, estado, sexo="total", titularidad="total", etapa="total"):
     return {"indicador_id": ind, "territorio": terr, "periodo": periodo, "titularidad": titularidad, "sexo": sexo,
-            "etapa": "total", "valor": valor, "unidad": unidad, "error_estandar": None, "estado": estado,
+            "etapa": etapa, "valor": valor, "unidad": unidad, "error_estandar": None, "estado": estado,
             "fuente_id": "mefd_educabase", "url_fuente": url, "fecha_captura": fecha}
 
 
@@ -163,7 +173,7 @@ def por_clave(filas: list[dict]) -> dict:
 
 def comprobar_cociente(nombre: str, publicado: dict, num: dict, den: dict, escala: float, tol: float, errores: list) -> dict:
     """Recalcula el dato publicado. Las diferencias se guardan (la web las enumera, sin explicarlas); solo se para si
-    aparece alguna en el último curso, que suele indicar un cambio de formato o un error de lectura."""
+    aparece alguna nueva en el último curso, que suele indicar un cambio de formato o un error de lectura."""
     n, difs = 0, []
     for k, v in publicado.items():
         if k in num and k in den and den[k]:
@@ -171,8 +181,12 @@ def comprobar_cociente(nombre: str, publicado: dict, num: dict, den: dict, escal
             calc = num[k] / den[k] * escala
             if abs(calc - v) > tol:
                 difs.append({"territorio": k[0], "periodo": k[1], "titularidad": k[3], "publicado": v, "calculado": round(calc, 3)})
-    ultimo = max(k[1] for k in publicado)
-    errores += [f"{nombre} {d}" for d in difs if d["periodo"] == ultimo]
+    # Solo se para si en el último curso aparece una diferencia nueva (comunidad y titularidad que no la tenían en el
+    # curso anterior): las que se repiten curso a curso son una forma de publicar de la fuente, no un error de lectura.
+    cursos = sorted({k[1] for k in publicado})
+    ultimo, anterior = cursos[-1], cursos[-2]
+    antes = {(d["territorio"], d["titularidad"]) for d in difs if d["periodo"] == anterior}
+    errores += [f"{nombre} {d}" for d in difs if d["periodo"] == ultimo and (d["territorio"], d["titularidad"]) not in antes]
     return {"pares_comparados": n, "coinciden": n - len(difs), "tolerancia": tol, "diferencias": sorted(difs, key=lambda d: (d["periodo"], d["territorio"]))}
 
 
@@ -234,7 +248,7 @@ def guardar(ind: str, filas: list[dict], notas: list[dict], comprobacion: dict) 
         "notas_fuente": [n["texto"] for n in notas], "notas": notas,
         "muestra_pequena": [], "rupturas": [], "definicion_difiere_es": [],
         "comprobacion": comprobacion,
-        "filas": sorted(filas, key=lambda f: (f["territorio"], f["sexo"], f["titularidad"], f["periodo"])),
+        "filas": sorted(filas, key=lambda f: (f["territorio"], f["etapa"], f["sexo"], f["titularidad"], f["periodo"])),
     })
     print(f"{ind}: {len(filas)} filas, {periodos[0]} a {periodos[-1]}; {comprobacion}")
 
@@ -256,6 +270,8 @@ def main() -> None:
         filas, px = serie(ind, nombre, unidad, fijos, desde)
         if ind == "escolarizacion_0_2":
             filas = [f for f in filas if f["sexo"] == "total"]  # el avance no trae el desglose por sexo
+        if ind == "repeticion_eso":
+            filas = [f for f in filas if f["titularidad"] != "privada"]  # concertada y no concertada van por separado
         guardar(ind, filas, notas_citadas(px), {"pares_comparados": 0, "descripcion": "dato publicado tal cual"})
 
     # Alumnos por profesor: publicado = alumnado / profesorado
@@ -270,6 +286,23 @@ def main() -> None:
     extr = por_clave(serie("x", "extran_02.px", "num")[0])
     c = comprobar_cociente("% extranjero", por_clave(filas), extr, alumnos, 100, 0.051, errores)
     guardar("alumnado_extranjero", filas, notas_citadas(px), {**c, "descripcion": "publicado = extranjeros (extran_02) / alumnado (alumnado_1_01)"})
+
+    # Alumnos por unidad (grupo) en cada etapa, desde 2005-06 (primer curso común a todas las etapas). Comprobación:
+    # en Primaria y ESO, alumnado / unidades = número medio publicado (las demás etapas no tienen las dos series).
+    filas, notas, comps = [], [], {}
+    for etapa, nombre in ETAPAS_UNIDAD.items():
+        fe, px = serie("alumnos_unidad", nombre, "ratio", desde="2005-06")
+        filas += [{**f, "etapa": etapa} for f in fe]
+        notas += [{**n, "etapa": etapa} for n in notas_citadas(px)]
+    for etapa, alum, unid in [("primaria", "alumnado_3_01.px", "series_1_04.px"), ("eso", "alumnado_4_01.px", "series_1_06.px")]:
+        pub = por_clave([f for f in filas if f["etapa"] == etapa])
+        comps[etapa] = comprobar_cociente(f"alumnos por unidad ({etapa})", pub, por_clave(serie("x", alum, "num", desde="2005-06")[0]),
+                                          por_clave(serie("x", unid, "num", desde="2005-06")[0]), 1, 0.051, errores)
+    guardar("alumnos_unidad", filas, notas, {
+        "pares_comparados": sum(c["pares_comparados"] for c in comps.values()),
+        "coinciden": sum(c["coinciden"] for c in comps.values()), "tolerancia": 0.051,
+        "diferencias": [{**d, "etapa": e} for e, c in comps.items() for d in c["diferencias"]],
+        "descripcion": "publicado = alumnado / unidades (Primaria y ESO)"})
 
     if errores:
         sys.exit("Comprobaciones fallidas:\n  " + "\n  ".join(errores[:40]) + (f"\n  … y {len(errores) - 40} más" if len(errores) > 40 else ""))

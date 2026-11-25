@@ -6,7 +6,7 @@
   "que": "del alumnado de Régimen General",
   "unidad": "pct",
   "filas_ficha": [
-    "total|total"
+    {}
   ],
   "definicion": "Porcentaje de alumnos con nacionalidad extranjera entre todo el alumnado de Enseñanzas de Régimen General.",
   "numerador": "Alumnado de nacionalidad extranjera matriculado en Régimen General.",

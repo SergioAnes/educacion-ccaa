@@ -1,0 +1,103 @@
+{
+  "grupo": "resultados",
+  "encuesta": true,
+  "intervalo": true,
+  "dimensiones": [
+    {
+      "dim": "competencia",
+      "nombre": "Competencia",
+      "opciones": [
+        {
+          "id": "ciencias",
+          "etiqueta": "Ciencias"
+        },
+        {
+          "id": "matematicas",
+          "etiqueta": "Matemáticas"
+        },
+        {
+          "id": "lectura",
+          "etiqueta": "Lectura"
+        }
+      ]
+    }
+  ],
+  "filas_ficha": [
+    {
+      "competencia": "ciencias"
+    },
+    {
+      "competencia": "matematicas"
+    },
+    {
+      "competencia": "lectura"
+    }
+  ],
+  "fiabilidad": "A",
+  "fiabilidad_txt": "Evaluación internacional periódica de la OCDE, con el informe oficial del Ministerio. Es una muestra: cada cifra tiene margen de error.",
+  "estado": "definitivo",
+  "fuentes": [
+    {
+      "id": "inee_pisa",
+      "corto": "INEE (Ministerio de Educación), informe PISA 2025",
+      "nombre": "Instituto Nacional de Evaluación Educativa (Ministerio de Educación, Formación Profesional y Deportes): PISA 2025, informe español, tablas del capítulo 2",
+      "url": "https://www.educacionfpydeportes.gob.es/inee/evaluaciones-internacionales/pisa/pisa-2025.html"
+    },
+    {
+      "id": "ocde",
+      "corto": "OCDE",
+      "nombre": "OCDE: PISA (programa, documentación técnica y resultados)",
+      "url": "https://www.oecd.org/en/about/programmes/pisa.html"
+    }
+  ],
+  "referencias": [
+    {
+      "id": "OCDE",
+      "nombre": "media OCDE",
+      "fuente_id": "inee_pisa",
+      "ranking": true,
+      "evolucion": false
+    },
+    {
+      "id": "UE",
+      "nombre": "total UE",
+      "fuente_id": "inee_pisa",
+      "ranking": true,
+      "evolucion": false
+    },
+    {
+      "id": "OCDE35",
+      "nombre": "media OCDE (35 países)",
+      "fuente_id": "inee_pisa",
+      "ranking": false,
+      "evolucion": true
+    }
+  ],
+  "espana": "Resultado de la muestra de toda España, publicado por el INEE (no la media de las comunidades).",
+  "no_comparable_txt": "Sin dato comparable",
+  "id": "pisa_puntuacion",
+  "resumen": true,
+  "nombre": "PISA: puntuación media",
+  "corto": "PISA",
+  "que": "puntos",
+  "unidad": "puntos",
+  "unidad_txt": "puntos PISA",
+  "definicion": "Puntuación media del alumnado de 15 años en ciencias, matemáticas y lectura en la evaluación PISA de la OCDE.",
+  "numerador": "Puntuación estimada de cada alumno de la muestra (la OCDE usa «valores plausibles»), ponderada para representar a toda la población.",
+  "denominador": "Alumnado de 15 años escolarizado a partir de 1.º de ESO. Solo las comunidades que amplían su muestra tienen resultado propio; en 2025, todas.",
+  "no_mide": "No mide todo lo que se aprende en la escuela ni el rendimiento de todo el sistema: es alumnado de 15 años en tres competencias. Las diferencias pequeñas no son significativas. Tampoco explica por qué una comunidad saca más o menos: influyen el nivel socioeconómico, la población y muchas otras cosas.",
+  "avisos": [
+    "PISA evalúa a una muestra del alumnado de 15 años, no a todo: cada cifra tiene margen de error. No damos puestos del 1 al 17.",
+    "Una comunidad está «por encima» o «por debajo» de España si su intervalo al 95 % (la cifra ± 1,96 veces su error típico) no incluye la cifra de España; si la incluye, «no se distingue». Es una aproximación: España incluye a la propia comunidad.",
+    "Cataluña: el INEE dice que, por el 23,2 % de alumnado excluido, sus datos no deben compararse con otros territorios ni con ediciones anteriores. No sale en el mapa ni en los gráficos; solo en su ficha, con ese aviso.",
+    "Murcia: el INEE dice que, con un 12,7 % de alumnado excluido, sus datos se pueden comparar, pero con cautela. Se marca con †.",
+    "Ceuta y Melilla se muestran aparte, como en el resto de la web.",
+    "En la evolución, la media OCDE es la de los 35 países con datos en todas las ediciones (OCDE-35), como en el informe; en 2025, la media de todos los países de la OCDE.",
+    "Por comunidad solo hay ediciones anteriores de ciencias (2015) y matemáticas (2022), las que compara el informe. España no tiene lectura en 2018: la OCDE no la publicó."
+  ],
+  "rango": [
+    300,
+    600
+  ],
+  "revisado_hasta": "2025"
+}
