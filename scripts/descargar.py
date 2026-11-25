@@ -13,6 +13,7 @@ from __future__ import annotations
 import datetime as dt
 import hashlib
 import json
+import re
 import sys
 import urllib.request
 from pathlib import Path
@@ -54,6 +55,10 @@ FUENTES: dict[str, list[tuple[str, str]]] = {
         "no-universitaria/alumnado/matriculado/series/AlumnadoGen/l0/alumnado_1_01.px",   # alumnado por titularidad
         "no-universitaria/alumnado/matriculado/series/gen-porcen-gen/l0/general_01.px",   # % en centros públicos
         "no-universitaria/alumnado/matriculado/series/gen-escolar/l0/escolar_05.px",      # escolarización 0-2 años
+        "no-universitaria/alumnado/matriculado/series/gen-escolar/l0/escolar_07.px",      # escolarización a los 3 años
+        "no-universitaria/alumnado/matriculado/series/gen-escolar/l0/escolar_12.px",      # a los 16 (metodología revisada)
+        "no-universitaria/alumnado/matriculado/series/gen-escolar/l0/escolar_16.px",      # a los 17
+        "no-universitaria/alumnado/matriculado/series/gen-escolar/l0/escolar_20.px",      # a los 18
         "no-universitaria/alumnado/matriculado/series/gen-idoneidad/l0/idoneidad_05.px",  # idoneidad a los 15 años
         "no-universitaria/alumnado/matriculado/series/gen-repetidores/l0/repetidores_03.px",  # repetición en ESO
         "no-universitaria/alumnado/matriculado/series/extranjeros/l0/extran_02.px",       # alumnado extranjero
@@ -89,6 +94,13 @@ def sha256(ruta: Path) -> str:
     return hashlib.sha256(ruta.read_bytes()).hexdigest()
 
 
+def huella_contenido(datos: bytes) -> str:
+    """sha256 sin las líneas CREATION-DATE y SUBJECT-CODE de los PC-Axis: el servidor del Ministerio pone la fecha de cada
+    descarga y un SUBJECT-CODE que cambia («null», «Alum», «RD»…), así que sin quitarlas cada día parecería un fichero
+    nuevo. El manifest guarda siempre el sha256 del fichero tal cual."""
+    return hashlib.sha256(re.sub(rb'(CREATION-DATE|SUBJECT-CODE)="[^"]*";\r?\n?', b"", datos)).hexdigest()
+
+
 def leer_manifest() -> list[dict]:
     return json.loads(MANIFEST.read_text(encoding="utf-8")) if MANIFEST.exists() else []
 
@@ -116,9 +128,12 @@ def main(fuentes: list[str]) -> None:
                 continue
             huella = hashlib.sha256(contenido).hexdigest()
             previos = [m for m in manifest if m["fuente"] == fuente and Path(m["fichero"]).name == nombre]
-            if previos and max(previos, key=lambda m: m["fecha_captura"])["sha256"] == huella:
-                print(f"{fuente}/{nombre}: sin cambios")
-                continue
+            if previos:
+                ultimo = max(previos, key=lambda m: m["fecha_captura"])
+                anterior = ORIGINALES / ultimo["fichero"]
+                if ultimo["sha256"] == huella or (anterior.exists() and huella_contenido(anterior.read_bytes()) == huella_contenido(contenido)):
+                    print(f"{fuente}/{nombre}: sin cambios")
+                    continue
             destino = ORIGINALES / fuente / hoy / nombre
             destino.parent.mkdir(parents=True, exist_ok=True)
             destino.write_bytes(contenido)

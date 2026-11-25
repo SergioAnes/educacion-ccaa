@@ -296,6 +296,38 @@
     "sha256": "83b7056a7e7de92d86f06e4ad906ea1a6442fb32a6d458200d3a44d2f63f4b0f"
   },
   {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-25/escolar_07.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/series/gen-escolar/l0/escolar_07.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 12549,
+    "sha256": "2ca453a4c5bbe0d65cb0ba0cd97e0e00f6d613915b64cbe9978d543153eb5cea"
+  },
+  {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-25/escolar_12.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/series/gen-escolar/l0/escolar_12.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 7764,
+    "sha256": "f1c08c09d66a584ed4ad27846ff95effbacd9c3b04a963476a6cca3c11e53912"
+  },
+  {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-25/escolar_16.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/series/gen-escolar/l0/escolar_16.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 7693,
+    "sha256": "de8bfb76accadfbe6f5bf3dd057161955789f9757adaa7c2fcef0f74128c98ac"
+  },
+  {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-25/escolar_20.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/series/gen-escolar/l0/escolar_20.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 7689,
+    "sha256": "47108af63b3e18ed882de3dfd258ef253074bf2dc20bb2f0097052559f275760"
+  },
+  {
     "fuente": "pisa",
     "fichero": "pisa/2026-11-24/tablas-informe-pisa-2025.rar",
     "url": "https://www.educacionfpydeportes.gob.es/dam/jcr:4f7056b5-02d7-4e6d-a454-2caa3e04893f/tablas-informe-pisa-2025.rar",

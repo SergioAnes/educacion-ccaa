@@ -151,6 +151,15 @@ scripts de Python y se guardan como JSON en `src/data/`. La base es sanidad-ccaa
 - Solo 2023: el Ministerio cambió en 2023 el cálculo del alumnado de FP y avisa de que afecta a la comparación.
 - No se calcula un coste «solo concertada» (regla 6 del brief): la ficha lo explica.
 
+### Escolarización por edad (`escolarizacion_edad`, tema «Centros y alumnado», publicada el 25/11/2026)
+- EDUCAbase, tasas netas a los 3 (`escolar_07`), 16, 17 y 18 años (`escolar_12/16/20`, metodología revisada), por sexo,
+  desde 2012-13 (población revisada del INE). A los 18 no cuenta la universidad: etiqueta «18 años, sin universidad».
+
+### Descargas: ficheros que cambian sin cambiar
+- El servidor de EDUCAbase pone en cada .px la fecha de descarga (CREATION-DATE) y un SUBJECT-CODE que varía. Sin
+  ignorarlos, cada descarga parecía un fichero nuevo: `descargar.py` compara el contenido sin esas dos líneas (el
+  manifest sigue guardando el sha256 real). Se quitaron 23 copias duplicadas del 25/11/2026.
+
 ### Pendiente (siguiente tanda, propuesta)
 - Tasa bruta de graduación (Las cifras de la educación, C2.9) y gasto público por alumno oficial (B4.6), con la
   explicación de qué incluye «público y concertado».

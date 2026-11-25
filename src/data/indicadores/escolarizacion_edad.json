@@ -1,0 +1,91 @@
+{
+  "id": "escolarizacion_edad",
+  "grupo": "centros",
+  "nombre": "Escolarización por edad",
+  "corto": "Escolarización por edad",
+  "que": "de la población de esa edad",
+  "unidad": "pct",
+  "dimensiones": [
+    {
+      "dim": "etapa",
+      "nombre": "Edad",
+      "opciones": [
+        {
+          "id": "edad_3",
+          "etiqueta": "3 años"
+        },
+        {
+          "id": "edad_16",
+          "etiqueta": "16 años"
+        },
+        {
+          "id": "edad_17",
+          "etiqueta": "17 años"
+        },
+        {
+          "id": "edad_18",
+          "etiqueta": "18 años, sin universidad"
+        }
+      ]
+    },
+    {
+      "dim": "sexo",
+      "nombre": "Sexo",
+      "opciones": [
+        {
+          "id": "total",
+          "etiqueta": "Total"
+        },
+        {
+          "id": "h",
+          "etiqueta": "Hombres"
+        },
+        {
+          "id": "m",
+          "etiqueta": "Mujeres"
+        }
+      ]
+    }
+  ],
+  "filas_ficha": [
+    {
+      "etapa": "edad_3"
+    },
+    {
+      "etapa": "edad_16"
+    },
+    {
+      "etapa": "edad_17"
+    },
+    {
+      "etapa": "edad_18"
+    }
+  ],
+  "definicion": "Porcentaje de la población de cada edad que está matriculada en enseñanzas no universitarias (tasa neta de escolarización).",
+  "numerador": "Alumnado de esa edad matriculado en centros autorizados. A los 3 años, Educación Infantil y Especial; de 16 a 18, Régimen General no universitario, Artes Plásticas y Diseño, Enseñanzas Deportivas y Artísticas Superiores, Música y Danza profesionales, idiomas (nivel avanzado, presencial) y educación de personas adultas.",
+  "denominador": "Población de esa edad de la comunidad (INE, población revisada desde 2012-13).",
+  "no_mide": "No incluye la universidad: a los 18 años, quien ya está en la universidad no cuenta como escolarizado, por eso la cifra es baja y no quiere decir que la mitad de los jóvenes no estudie. Tampoco dice si el alumnado va al curso que le corresponde (eso es la idoneidad).",
+  "fiabilidad": "A",
+  "fiabilidad_txt": "Estadística oficial anual (recuento del alumnado y población del INE).",
+  "estado": "definitivo",
+  "fuentes": [
+    {
+      "id": "mefd_educabase",
+      "corto": "Ministerio de Educación (EDUCAbase)",
+      "nombre": "Ministerio de Educación, Formación Profesional y Deportes: Estadística de las Enseñanzas no universitarias, tasas netas de escolarización por edad",
+      "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/Tabla.htm?path=/no-universitaria/alumnado/matriculado/series/gen-escolar/l0/&file=escolar_12.px"
+    }
+  ],
+  "espana": "Dato oficial del Ministerio para el conjunto de España.",
+  "avisos": [
+    "A los 18 años no se cuenta la universidad (nota de la tabla).",
+    "Se muestra desde 2012-13: desde ese curso el Ministerio calcula las tasas con la población revisada del INE.",
+    "Puede pasar ligeramente del 100 %: alumnado y población salen de fuentes distintas.",
+    "A los 3 años, el último curso es un avance; de 16 a 18, el último curso publicado es 2024-25."
+  ],
+  "rango": [
+    0,
+    110
+  ],
+  "revisado_hasta": "2025-26"
+}

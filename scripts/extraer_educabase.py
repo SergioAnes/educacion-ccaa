@@ -36,6 +36,7 @@ RUTAS = {
     "alumnado_1_01.px": "no-universitaria/alumnado/matriculado/series/AlumnadoGen/l0",
     "general_01.px": "no-universitaria/alumnado/matriculado/series/gen-porcen-gen/l0",
     "escolar_05.px": "no-universitaria/alumnado/matriculado/series/gen-escolar/l0",
+    **{f"escolar_{n}.px": "no-universitaria/alumnado/matriculado/series/gen-escolar/l0" for n in ("07", "12", "16", "20")},
     "idoneidad_05.px": "no-universitaria/alumnado/matriculado/series/gen-idoneidad/l0",
     "repetidores_03.px": "no-universitaria/alumnado/matriculado/series/gen-repetidores/l0",
     "extran_02.px": "no-universitaria/alumnado/matriculado/series/extranjeros/l0",
@@ -286,6 +287,15 @@ def main() -> None:
     extr = por_clave(serie("x", "extran_02.px", "num")[0])
     c = comprobar_cociente("% extranjero", por_clave(filas), extr, alumnos, 100, 0.051, errores)
     guardar("alumnado_extranjero", filas, notas_citadas(px), {**c, "descripcion": "publicado = extranjeros (extran_02) / alumnado (alumnado_1_01)"})
+
+    # Escolarización a los 3, 16, 17 y 18 años (tasas netas), desde 2012-13 como la de 0-2 años: desde ese curso las
+    # tablas usan la población revisada del INE (su nota 2). Las de 16-18 son de la «metodología revisada» (desde 2006-07).
+    filas, notas = [], []
+    for edad, nombre in (("edad_3", "escolar_07.px"), ("edad_16", "escolar_12.px"), ("edad_17", "escolar_16.px"), ("edad_18", "escolar_20.px")):
+        fe, px = serie("escolarizacion_edad", nombre, "pct", desde="2012-13")
+        filas += [{**f, "etapa": edad} for f in fe]
+        notas += [{**n, "etapa": edad} for n in notas_citadas(px)]
+    guardar("escolarizacion_edad", filas, notas, {"pares_comparados": 0, "descripcion": "dato publicado tal cual"})
 
     # Alumnos por unidad (grupo) en cada etapa, desde 2005-06 (primer curso común a todas las etapas). Comprobación:
     # en Primaria y ESO, alumnado / unidades = número medio publicado (las demás etapas no tienen las dos series).

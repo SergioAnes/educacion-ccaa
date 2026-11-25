@@ -26,6 +26,8 @@ import graduacionFicha from "@/data/indicadores/tasa_graduacion.json";
 import graduacionObs from "@/data/observaciones/tasa_graduacion.json";
 import gastoFicha from "@/data/indicadores/gasto_alumno.json";
 import gastoObs from "@/data/observaciones/gasto_alumno.json";
+import edadFicha from "@/data/indicadores/escolarizacion_edad.json";
+import edadObs from "@/data/observaciones/escolarizacion_edad.json";
 import pisaFicha from "@/data/indicadores/pisa_puntuacion.json";
 import pisaObs from "@/data/observaciones/pisa_puntuacion.json";
 import pisaBajoFicha from "@/data/indicadores/pisa_bajo.json";
@@ -105,6 +107,7 @@ const par = (ficha: unknown, obs: unknown) => ({ ficha: ficha as Ficha, obs: obs
 export const REGISTRO: { ficha: Ficha; obs: Observaciones }[] = [
   par(titularidadFicha, titularidadObs),
   par(escolarizacionFicha, escolarizacionObs),
+  par(edadFicha, edadObs),
   par(extranjeroFicha, extranjeroObs),
   par(unidadFicha, unidadObs),
   par(profesorFicha, profesorObs),
