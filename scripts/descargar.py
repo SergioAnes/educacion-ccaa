@@ -86,7 +86,11 @@ FUENTES: dict[str, list[tuple[str, str]]] = {
         ("c2.xlsx", "https://www.educacionfpydeportes.gob.es/dam/jcr:e9366cb1-7e92-438b-8a65-36bc8d8a0800/c2.xlsx"),  # C2.9 graduación
         ("b4.xlsx", "https://www.educacionfpydeportes.gob.es/dam/jcr:5d6ffa47-ff10-48d7-af1d-a43245a562cf/b4.xlsx"),  # B4.6 gasto por alumno
         ("b4.pdf", "https://www.educacionfpydeportes.gob.es/dam/jcr:889aecfe-3db1-4964-a3a8-5734c716234b/b4.pdf"),    # metodología de B4.6
+        ("b5.xlsx", "https://www.educacionfpydeportes.gob.es/dam/jcr:5fc7ccb7-8e3e-434e-903f-f7a1970eae13/b5.xlsx"),  # B5.3-B5.5 becas
+        ("b5.pdf", "https://www.educacionfpydeportes.gob.es/dam/jcr:84688174-3025-4371-87ea-cac6574c6431/b5.pdf"),    # notas de B5.5
     ],
+    # EDUCAbase: Estadística de Becas y Ayudas al estudio, tabla 2 (becarios por comunidad y administración que paga)
+    "becas": [("todas2_2023-2024.px", f"{PX}/economicas/becas/2023-2024/todasense/l0/todas2.px")],
     # INEE: tablas del informe español de PISA 2025 (Excel dentro de un RAR)
     "pisa": [("tablas-informe-pisa-2025.rar", "https://www.educacionfpydeportes.gob.es/dam/jcr:4f7056b5-02d7-4e6d-a454-2caa3e04893f/tablas-informe-pisa-2025.rar")],
 }

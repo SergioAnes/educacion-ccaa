@@ -1,0 +1,62 @@
+{
+  "id": "importe_becario",
+  "grupo": "financiacion",
+  "resumen": false,
+  "nombre": "Importe medio por becario en Bachillerato y FP",
+  "corto": "Importe medio de la beca",
+  "que": "por becario",
+  "unidad": "eur",
+  "unidad_txt": "euros por becario",
+  "dimensiones": [
+    {
+      "dim": "etapa",
+      "nombre": "Enseñanza",
+      "opciones": [
+        {
+          "id": "total",
+          "etiqueta": "Bachillerato y FP"
+        },
+        {
+          "id": "bachillerato",
+          "etiqueta": "Bachillerato"
+        },
+        {
+          "id": "fp",
+          "etiqueta": "FP"
+        }
+      ]
+    }
+  ],
+  "filas_ficha": [
+    {
+      "etapa": "total"
+    }
+  ],
+  "definicion": "Dinero de las becas y ayudas al estudio de Bachillerato y FP dividido entre el número de becarios, tal como lo publica el Ministerio.",
+  "numerador": "Importe de todas las becas y ayudas de Bachillerato y FP (grado básico, medio y superior) que conceden el Ministerio y la comunidad, en la comunidad donde se estudia.",
+  "denominador": "Becarios de esas enseñanzas. Quien tiene beca del Ministerio y de su comunidad cuenta dos veces (nota de la estadística de becas).",
+  "no_mide": "No es lo que recibe un becario típico: es una media que mezcla ayudas de cuantías muy distintas. Y donde muchos alumnos tienen dos becas, cada una cuenta como un becario distinto, así que la media sale más baja que lo que recibe cada alumno.",
+  "fiabilidad": "A",
+  "fiabilidad_txt": "Estadística oficial de becas y ayudas al estudio (registros de las administraciones que las conceden).",
+  "estado": "definitivo",
+  "fuentes": [
+    {
+      "id": "mefd_cifras",
+      "corto": "Ministerio de Educación (Las cifras de la educación)",
+      "nombre": "Ministerio de Educación, Formación Profesional y Deportes: Las cifras de la educación en España, edición 2026 (curso 2023-24), tablas B5.3, B5.4 y B5.5",
+      "url": "https://www.educacionfpydeportes.gob.es/servicios-al-ciudadano/estadisticas/indicadores/cifras-educacion-espana/2023-2024.html"
+    }
+  ],
+  "espana": "Dato oficial del Ministerio para el conjunto de España (incluye los datos de Galicia de 2020-21: ver la nota).",
+  "avisos": [
+    "Por ahora, solo el curso 2023-24, el de la edición 2026 de «Las cifras de la educación».",
+    "Euros de ese curso, sin descontar la inflación.",
+    "Galicia no tiene cifra: el Ministerio no dispone de los datos de su administración educativa.",
+    "Las becas propias de cada comunidad pueden ser de cuantías muy distintas a las del Ministerio; en «Alumnado de Bachillerato y FP con beca» está qué parte de los becarios lo es de su comunidad."
+  ],
+  "rango": [
+    300,
+    5000
+  ],
+  "revisado_hasta": "2023-24"
+}

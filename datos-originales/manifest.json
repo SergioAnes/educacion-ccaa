@@ -24,6 +24,14 @@
     "sha256": "f0e1b78e376d82e66c2b9a5a510edadb6bb1e1365b36d80ee54477bfe8e77660"
   },
   {
+    "fuente": "becas",
+    "fichero": "becas/2026-11-25/todas2_2023-2024.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/economicas/becas/2023-2024/todasense/l0/todas2.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 8803,
+    "sha256": "0aea6625cdc6ebddec996be1103e2a9992104c0419bc9bbdffe8c6de9dec9a3b"
+  },
+  {
     "fuente": "boe",
     "fichero": "boe/2026-11-24/BOE-A-1990-24172.xml",
     "url": "https://www.boe.es/diario_boe/xml.php?id=BOE-A-1990-24172",
@@ -102,6 +110,22 @@
     "fecha_captura": "2026-11-25",
     "bytes": 186900,
     "sha256": "e33aa51497943eba696f03614197781226abd0cbf051e1a7877adb534960d8d1"
+  },
+  {
+    "fuente": "cifras",
+    "fichero": "cifras/2026-11-25/b5.pdf",
+    "url": "https://www.educacionfpydeportes.gob.es/dam/jcr:84688174-3025-4371-87ea-cac6574c6431/b5.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 673044,
+    "sha256": "3a2086cf12c03e5ce661068fff2c83e1e453fda9bbffff71b1ef9140aeaf6831"
+  },
+  {
+    "fuente": "cifras",
+    "fichero": "cifras/2026-11-25/b5.xlsx",
+    "url": "https://www.educacionfpydeportes.gob.es/dam/jcr:5fc7ccb7-8e3e-434e-903f-f7a1970eae13/b5.xlsx",
+    "fecha_captura": "2026-11-25",
+    "bytes": 129375,
+    "sha256": "04640e324d44ca58032103b8a9dfba73431eb4829d32a1d742d85d529f00af3e"
   },
   {
     "fuente": "cifras",

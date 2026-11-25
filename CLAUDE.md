@@ -52,7 +52,9 @@ familia de `sanidad-ccaa` y `presupuestos-ccaa` (mismo estilo y mismas reglas). 
   (fuente «nee», tabla acnee_02 de cada curso, leída por posición: en 2024-25 repite la etiqueta «TOTAL»).
 - `extraer_pisa.py`: tablas del informe PISA 2025 del INEE (RAR; necesita UnRAR de WinRAR). Comprueba que las cifras
   cuadran entre hojas y que ninguna tabla pierde una comunidad (hay erratas de nombre en la fuente: alias).
-- `extraer_cifras.py`: tablas Excel de «Las cifras de la educación» (C2.9 graduación; fuente «cifras», xlsx solo en local).
+- `extraer_cifras.py`: tablas Excel de «Las cifras de la educación» (C2.9 graduación, B4.6 gasto por alumno, B5.5 becas en
+  Bachillerato y FP comprobadas con B5.3/B5.4; fuente «cifras», xlsx solo en local). Las becas usan también la tabla 2 de
+  EDUCAbase becas (fuente «becas») para el aviso de la ficha `becas_bach_fp`, que el script exige que cuadre.
 - `extraer_hitos.py`: leyes desde las fichas XML del BOE → `src/data/hitos.json`.
 - Un salto > 15 % frente al periodo anterior posterior a `revisado_hasta` hace fallar los tests: revisarlo y subir la fecha.
 

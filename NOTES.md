@@ -178,6 +178,18 @@ scripts de Python y se guardan como JSON en `src/data/`. La base es sanidad-ccaa
   España, no 3,4). Comprobado en 280 casos que el total de cada comunidad queda entre los de sus redes.
 - Notas del Ministerio ligadas a su curso (Canarias y La Rioja 2012-13, Comunitat Valenciana 2016-17).
 
+### Becas en Bachillerato y FP (`becas_bach_fp` e `importe_becario`, tema «Financiación», publicado el 25/11/2026)
+- «Las cifras de la educación» 2026, tabla B5.5 (curso 2023-24, el curso lo dice la cabecera del PDF): % de alumnado
+  becario e importe medio por becario, de todas las administraciones. Galicia «..» (su administración no da datos; el
+  total de España usa los de Galicia de 2020-21, nota de B5.3).
+- Comprobado: importe medio = importe (B5.4) / becarios (B5.3), con FP = básica + media + superior (57 casos, España
+  incluida); % total entre Bachillerato y FP.
+- No se usan la obligatoria (ayudas de libros y comedor de cada comunidad, no comparables: Navarra 1.938 becarios,
+  Cataluña 452.670) ni la universidad (va por comunidad de la universidad, no de residencia).
+- Quien tiene beca del Ministerio y de su comunidad cuenta dos veces (nota de la estadística). El aviso de la ficha cita
+  el % de becarios postobligatorios no universitarios de la propia comunidad (≥ 10 %; tabla 2 de EDUCAbase becas
+  2023-24): `extraer_cifras.py` falla si el texto de la ficha deja de cuadrar con los datos.
+
 ### Descargas: ficheros que cambian sin cambiar
 - El servidor de EDUCAbase pone en cada .px la fecha de descarga (CREATION-DATE) y un SUBJECT-CODE que varía. Sin
   ignorarlos, cada descarga parecía un fichero nuevo: `descargar.py` compara el contenido sin esas dos líneas (el

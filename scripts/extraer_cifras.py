@@ -7,6 +7,10 @@ Indicadores (salida en src/data/observaciones/):
     y grado superior), por sexo, cursos 2013-14, 2018-19 y 2023-24 (FP básica, solo los dos últimos). No se usan ESO de
     adultos ni las titulaciones universitarias (se asignan por la sede del rectorado, no por la residencia: nota 4).
 
+  - becas_bach_fp e importe_becario (tabla B5.5, curso 2023-24): % de alumnado becario e importe medio por becario en
+    Bachillerato y FP, de todas las administraciones (Ministerio y comunidades), tal cual los publica el Ministerio.
+    Se comprueba con B5.3 y B5.4 (importe / becarios) y con la tabla 2 de la estadística de becas (EDUCAbase).
+
 Comprobaciones: las 19 comunidades y ciudades y España en cada sexo; el valor de ambos sexos queda entre el de hombres
 y el de mujeres (con 0,1 de margen por redondeo); cabecera de enseñanzas y cursos como se espera.
 """
@@ -17,7 +21,7 @@ import sys
 
 import openpyxl
 
-from comun import TERRITORIOS, escribir_json, territorio, ultimo_original
+from comun import RAIZ, TERRITORIOS, celdas_px, escribir_json, leer_px, territorio, ultimo_original
 
 URL_CIFRAS = "https://www.educacionfpydeportes.gob.es/servicios-al-ciudadano/estadisticas/indicadores/cifras-educacion-espana/2023-2024.html"
 ENSENANZAS = {"Graduado en ESO": "eso", "Bachillerato": "bachillerato", "Profesional Básico": "fp_basica",
@@ -145,10 +149,183 @@ def gasto_alumno(errores: list) -> None:
     print(f"gasto_alumno: {len(obs)} filas, año {anio}; nota: {nota[:90]}…")
 
 
+ETAPAS_BECAS = {"TOTAL": "total", "BACHILLERATO": "bachillerato", "FORMACIÓN PROFESIONAL": "fp"}
+UMBRAL_AUTONOMICAS = 10  # % de becarios con beca de su comunidad a partir del cual se cita en el aviso de la ficha
+NOMBRES = {"01": "Andalucía", "02": "Aragón", "03": "Asturias", "04": "Illes Balears", "05": "Canarias", "06": "Cantabria",
+           "07": "Castilla y León", "08": "Castilla-La Mancha", "09": "Cataluña", "10": "Comunitat Valenciana", "11": "Extremadura",
+           "12": "Galicia", "13": "Madrid", "14": "Murcia", "15": "Navarra", "16": "País Vasco", "17": "La Rioja"}
+
+
+def _hoja(m: dict, nombre: str) -> list[list]:
+    wb = openpyxl.load_workbook(m["ruta"], read_only=True, data_only=True)
+    filas = [list(r) for r in wb[nombre].iter_rows(values_only=True)]
+    wb.close()
+    return filas
+
+
+def _num(v):
+    return float(v) if isinstance(v, (int, float)) else None
+
+
+def becas(errores: list) -> None:
+    """B5.5: % de alumnado becario e importe medio por becario en Bachillerato y FP (todas las administraciones)."""
+    m = ultimo_original("cifras", "b5.xlsx")
+    filas = _hoja(m, "B5.5")
+    i_cab = next(i for i, r in enumerate(filas) if any(limpio(x).upper() == "BACHILLERATO" for x in r))
+    etapa, cols = None, {}
+    for c, (e, med) in enumerate(zip(filas[i_cab], filas[i_cab + 1])):
+        if e:
+            etapa = ETAPAS_BECAS.get(limpio(e).upper())
+            if etapa is None:
+                errores.append(f"B5.5: enseñanza desconocida «{limpio(e)}»")
+        med = limpio(med)
+        if etapa and med:
+            ind = "becas_bach_fp" if med.startswith("% Alumnos") else "importe_becario" if med.startswith("Importe medio") else None
+            if ind is None:
+                errores.append(f"B5.5: medida desconocida «{med}»")
+            else:
+                cols[c] = (ind, etapa)
+    if len(cols) != 6:
+        errores.append(f"B5.5: se esperaban 6 columnas y hay {len(cols)}")
+        return
+    # El curso no va en el Excel: va en la cabecera del PDF («CURSO 2023-24»)
+    curso = "2023-24"
+    if f"CURSO {curso}" not in _texto_pdf(ultimo_original("cifras", "b5.pdf")["ruta"]):
+        errores.append(f"B5.5: el PDF no dice «CURSO {curso}»")
+    obs, sin_dato = [], []
+    for r in filas[i_cab + 2:]:
+        if not r or not r[0]:
+            continue
+        if str(r[0]).strip().startswith("("):
+            break
+        t = territorio(str(r[0]))
+        vals = {c: _num(r[c]) for c in cols}
+        if all(v is None for v in vals.values()):
+            sin_dato.append(t["ine"])
+            continue
+        for c, (ind, et) in cols.items():
+            if vals[c] is None:
+                errores.append(f"B5.5 {t['ine']}: falta {ind} {et}")
+                continue
+            obs.append({"indicador_id": ind, "territorio": t["ine"], "periodo": curso, "titularidad": "total", "sexo": "total",
+                        "etapa": et, "valor": round(vals[c], 4 if ind == "becas_bach_fp" else 2),
+                        "unidad": "pct" if ind == "becas_bach_fp" else "eur", "error_estandar": None, "estado": "definitivo",
+                        "fuente_id": "mefd_cifras", "url_fuente": URL_CIFRAS, "fecha_captura": m["fecha_captura"]})
+    val = {(f["indicador_id"], f["territorio"], f["etapa"]): f["valor"] for f in obs}
+    hay = sorted({f["territorio"] for f in obs})
+    # Comprobación 1: importe medio = importe (B5.4, miles de euros) / becarios (B5.3); FP = básica + media + superior
+    becarios, importes = _por_ensenanza(_hoja(m, "B5.3")), _por_ensenanza(_hoja(m, "B5.4"))
+    grupos = {"bachillerato": ["Bachillerato"], "fp": ["FP de Grado Básico", "FP de Grado Medio", "FP de Grado Superior"]}
+    grupos["total"] = grupos["bachillerato"] + grupos["fp"]
+    n_imp = 0
+    for ine in hay:
+        b, i = becarios.get(ine), importes.get(ine)
+        if not b or not i:
+            errores.append(f"B5.3/B5.4: falta {ine}")
+            continue
+        for et, cs in grupos.items():
+            calc = 1000 * sum(i[c] for c in cs) / sum(b[c] for c in cs)
+            n_imp += 1
+            if abs(calc - val[("importe_becario", ine, et)]) > 0.5:
+                errores.append(f"B5.5 {ine} {et}: importe medio {val[('importe_becario', ine, et)]} y B5.4/B5.3 dan {calc:.2f}")
+    # Comprobación 2: el % del total queda entre el de Bachillerato y el de FP
+    for ine in hay:
+        tot, ba, fp = (val[("becas_bach_fp", ine, e)] for e in ("total", "bachillerato", "fp"))
+        if not min(ba, fp) - 0.05 <= tot <= max(ba, fp) + 0.05:
+            errores.append(f"B5.5 {ine}: % total {tot} fuera de [{ba}, {fp}]")
+    todos = {t["ine"] for t in TERRITORIOS}
+    if todos - set(hay) - set(sin_dato):
+        errores.append(f"B5.5: faltan {sorted(todos - set(hay) - set(sin_dato))}")
+    # Nota de Galicia (en el Excel va en B5.3 y B5.4; en el PDF, también en B5.5)
+    nota_gal = next((re.sub(r"^\(\d+\)\s*", "", limpio(r[0])) for r in _hoja(m, "B5.3")
+                     if r and r[0] and str(r[0]).startswith("(") and "Galicia" in str(r[0])), None)
+    if sin_dato and not nota_gal:
+        errores.append(f"B5.5: sin dato {sin_dato} y sin nota que lo explique")
+    # La nota dice que el total de España incluye los datos de Galicia de 2020-21: se cita también en España
+    notas = [{"texto": nota_gal, "territorios": sin_dato + ["00"], "periodos": [curso]}] if nota_gal and sin_dato else []
+    # Peso de las becas de la propia comunidad (tabla 2 de la estadística de becas, enseñanzas postobligatorias no
+    # universitarias, curso 2023-24): cálculo propio para el aviso de la ficha; aquí se comprueba que el aviso cuadra.
+    autonomicas = _becas_autonomicas(errores)
+    citadas = sorted(((ine, p) for ine, p in autonomicas.items() if p >= UMBRAL_AUTONOMICAS), key=lambda x: -x[1])
+    frase = ", ".join(f"{NOMBRES[ine]} ({round(p):d} %)" for ine, p in citadas)
+    ficha = (RAIZ / "src/data/indicadores/becas_bach_fp.json").read_text(encoding="utf-8")
+    if frase not in ficha:
+        errores.append(f"La ficha becas_bach_fp debe citar, en este orden: «{frase}»")
+    for ind in ("becas_bach_fp", "importe_becario"):
+        filas_ind = sorted((f for f in obs if f["indicador_id"] == ind), key=lambda f: (f["territorio"], f["etapa"]))
+        escribir_json(f"observaciones/{ind}.json", {
+            "indicador_id": ind, "periodos": [curso], "notas_fuente": [n["texto"] for n in notas], "notas": notas,
+            "muestra_pequena": [], "rupturas": [], "definicion_difiere_es": [],
+            "becas_autonomicas": {ine: round(p, 1) for ine, p in sorted(autonomicas.items())},
+            "comprobacion": {"pares_comparados": n_imp, "descripcion": "importe medio = importe (B5.4) / becarios (B5.3); % total entre Bachillerato y FP"},
+            "filas": filas_ind,
+        })
+        print(f"{ind}: {len(filas_ind)} filas, curso {curso}; sin dato: {sin_dato}")
+    print(f"becas: {n_imp} importes medios comprobados; becas de la propia comunidad >= {UMBRAL_AUTONOMICAS} %: {frase}")
+
+
+def _texto_pdf(ruta) -> str:
+    import subprocess
+    try:
+        return subprocess.run(["pdftotext", "-layout", str(ruta), "-"], capture_output=True, check=True).stdout.decode("latin-1", "ignore")
+    except Exception as e:
+        raise SystemExit(f"No se pudo leer {ruta} con pdftotext: {e}")
+
+
+def _por_ensenanza(filas: list[list]) -> dict[str, dict[str, float]]:
+    """Primer bloque (valores absolutos) de B5.3 / B5.4: {territorio: {enseñanza: valor}}."""
+    i_cab = next(i for i, r in enumerate(filas) if r and r[0] is None and any(limpio(x) == "TOTAL" for x in r[1:] if x))
+    cab = [re.sub(r"\s*\(\d+\)$", "", re.sub(r"\s+", " ", str(x or "")).replace("- ", "").replace("-\n", "")).strip() for x in filas[i_cab]]
+    out: dict[str, dict[str, float]] = {}
+    empezado = False
+    for r in filas[i_cab + 1:]:
+        if r and r[0] and str(r[0]).strip() == "TOTAL":
+            if empezado:
+                break  # empieza el bloque de porcentajes
+            empezado = True
+        if not empezado or not r or not r[0] or str(r[0]).startswith(("(", "Sin especificar")):
+            continue
+        ine = "00" if str(r[0]).strip() == "TOTAL" else territorio(str(r[0]))["ine"]
+        nums = {cab[c]: _num(r[c]) for c in range(1, len(cab)) if cab[c]}
+        if all(v is not None for v in nums.values()):
+            out[ine] = nums
+    for c in ("Bachillerato", "FP de Grado Básico", "FP de Grado Medio", "FP de Grado Superior"):
+        if not out or c not in next(iter(out.values())):
+            raise SystemExit(f"B5.3/B5.4: no encuentro la columna «{c}» en {cab}")
+    return out
+
+
+def _becas_autonomicas(errores: list) -> dict[str, float]:
+    """% de los becarios de enseñanzas postobligatorias no universitarias que lo son de su comunidad (tabla 2)."""
+    m = ultimo_original("becas", "todas2_2023-2024.px")
+    px = leer_px(m["ruta"])
+    c = celdas_px(px)
+    e = "Enseñanzas postobligatorias no universitarias"
+    becarios = next(v for v in px['VALUES("Becarios, becas e importe")'] if v.startswith("BECARIOS"))
+    todas, minis, ccaa = px['VALUES("Nivel de administración educativa financiadora")']
+    out = {}
+    for et in px['VALUES("Comunidad autónoma de destino")']:
+        if et.startswith(("TOTAL", "Sin especificar", "UNED")):
+            continue
+        t = territorio(et)
+        if t["ine"] not in NOMBRES:
+            continue
+        tot, mi, ca = (c[(et, becarios, e, a)] for a in (todas, minis, ccaa))
+        if ca is None:
+            continue  # Galicia: sin datos de su administración
+        if tot != mi + ca:
+            errores.append(f"Becas tabla 2 {et}: total {tot} distinto de Ministerio {mi} + comunidad {ca}")
+        out[t["ine"]] = 100 * ca / tot
+    if len(out) != 16:
+        errores.append(f"Becas tabla 2: se esperaban 16 comunidades con datos y hay {len(out)}")
+    return out
+
+
 def main() -> None:
     errores: list[str] = []
     graduacion(errores)
     gasto_alumno(errores)
+    becas(errores)
     if errores:
         sys.exit("Comprobaciones fallidas:\n  " + "\n  ".join(errores))
 

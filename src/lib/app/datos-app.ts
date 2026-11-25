@@ -26,6 +26,10 @@ import graduacionFicha from "@/data/indicadores/tasa_graduacion.json";
 import graduacionObs from "@/data/observaciones/tasa_graduacion.json";
 import gastoFicha from "@/data/indicadores/gasto_alumno.json";
 import gastoObs from "@/data/observaciones/gasto_alumno.json";
+import becasFicha from "@/data/indicadores/becas_bach_fp.json";
+import becasObs from "@/data/observaciones/becas_bach_fp.json";
+import importeBecaFicha from "@/data/indicadores/importe_becario.json";
+import importeBecaObs from "@/data/observaciones/importe_becario.json";
 import edadFicha from "@/data/indicadores/escolarizacion_edad.json";
 import edadObs from "@/data/observaciones/escolarizacion_edad.json";
 import brechaFicha from "@/data/indicadores/pisa_brecha_isec.json";
@@ -135,6 +139,8 @@ export const REGISTRO: { ficha: Ficha; obs: Observaciones }[] = [
   par(repeticionFicha, repeticionObs),
   par(graduacionFicha, graduacionObs),
   par(gastoFicha, gastoObs),
+  par(becasFicha, becasObs),
+  par(importeBecaFicha, importeBecaObs),
 ];
 
 export const TERRITORIOS = territoriosJson as Territorio[];
@@ -189,6 +195,8 @@ export function textoComprobacion(obs: Observaciones): string {
     return "Las cifras de España y de las comunidades son las mismas en las tablas de 2025, en las de evolución y en las de diferencias entre ediciones, y cada diferencia publicada es la resta de sus dos medias. Excepción: en la tabla de ciencias 2015-2025, las diferencias de Castilla y León y de Castilla-La Mancha vienen intercambiadas (ver sus notas).";
   if (obs.indicador_id === "alumnado_nee")
     return `En cada curso y comunidad, el porcentaje de todos los centros queda entre los de sus redes (${nf(0).format(obs.comprobacion.pares_comparados)} comprobaciones), como corresponde a una media.`;
+  if (obs.indicador_id === "becas_bach_fp" || obs.indicador_id === "importe_becario")
+    return `Cada importe medio publicado es el importe total de las becas entre el número de becarios de las tablas del mismo capítulo (${nf(0).format(c.pares_comparados)} comprobaciones), y el porcentaje de Bachillerato y FP queda entre el de cada enseñanza.`;
   if (obs.indicador_id === "pisa_sexo")
     return "En cada territorio y competencia, la diferencia publicada es la puntuación de las chicas menos la de los chicos.";
   if (obs.indicador_id === "pisa_isec")
