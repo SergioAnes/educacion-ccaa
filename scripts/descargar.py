@@ -77,6 +77,8 @@ FUENTES: dict[str, list[tuple[str, str]]] = {
     # «Las cifras de la educación en España», edición 2026 (curso 2023-24): tablas en Excel por capítulo
     "cifras": [
         ("c2.xlsx", "https://www.educacionfpydeportes.gob.es/dam/jcr:e9366cb1-7e92-438b-8a65-36bc8d8a0800/c2.xlsx"),  # C2.9 graduación
+        ("b4.xlsx", "https://www.educacionfpydeportes.gob.es/dam/jcr:5d6ffa47-ff10-48d7-af1d-a43245a562cf/b4.xlsx"),  # B4.6 gasto por alumno
+        ("b4.pdf", "https://www.educacionfpydeportes.gob.es/dam/jcr:889aecfe-3db1-4964-a3a8-5734c716234b/b4.pdf"),    # metodología de B4.6
     ],
     # INEE: tablas del informe español de PISA 2025 (Excel dentro de un RAR)
     "pisa": [("tablas-informe-pisa-2025.rar", "https://www.educacionfpydeportes.gob.es/dam/jcr:4f7056b5-02d7-4e6d-a454-2caa3e04893f/tablas-informe-pisa-2025.rar")],

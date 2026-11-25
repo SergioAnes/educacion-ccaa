@@ -27,12 +27,14 @@ export function iniciar(DATA: DatosApp): void {
     if (v == null || !isFinite(v)) return "—";
     if (u === "pct") return nf(1).format(v) + " %";
     if (u === "puntos") return nf(0).format(v);
+    if (u === "eur") return nf(0).format(v) + " €";
     return nf(1).format(v);
   }
   // Diferencias: en puntos para porcentajes y PISA; en la misma unidad para lo demás (alumnos por profesor o por grupo)
   function fmtDif(ind, d) {
     if (d == null || !isFinite(d)) return "—";
     const signo = Math.abs(d) < 0.05 ? "≈ " : d > 0 ? "+" : "−";
+    if (ind.unidad === "eur") return signo + nf(0).format(Math.abs(d)) + " €";
     return signo + nf(1).format(Math.abs(d)) + (ind.unidad === "pct" || ind.unidad === "puntos" ? " puntos" : "");
   }
   const fmtCorto = (v, u) => fmt(v, u).replace(" %", "%");
@@ -118,6 +120,7 @@ export function iniciar(DATA: DatosApp): void {
     if (ind.intervalo && id) { const c = claseIC(ind, id, a, k); if (c != null) return `${TXT_CLASE[c]} (${fmtDif(ind, v - e)}, con el margen de error)`; }
     const d = v - e;
     if (Math.abs(d) < 0.05) return "igual que España";
+    if (ind.unidad === "eur") return `${nf(0).format(Math.abs(d))} € ${d > 0 ? "más" : "menos"} que España (${nf(0).format(Math.abs(v / e - 1) * 100)} %)`;
     return ind.unidad === "pct" || ind.unidad === "puntos" ? `${nf(1).format(Math.abs(d))} puntos ${d > 0 ? "por encima" : "por debajo"} de España` : `${nf(1).format(Math.abs(d))} ${d > 0 ? "más" : "menos"} que España`;
   };
   const cambioDe = (ind, id, k = varDe(ind)) => ind.cambios.find((c) => c.territorio === id && c.clave === k);
@@ -189,7 +192,8 @@ export function iniciar(DATA: DatosApp): void {
     const k = (id) => Math.min(4, Math.floor(asc.indexOf(id) * 5 / asc.length));
     const et = cols.map((_, c) => {
       const mi = asc.filter((id) => k(id) === c).map((id) => vals[id]);
-      return `<b class="num">${nf(1).format(Math.min(...mi))}–${nf(1).format(Math.max(...mi))}</b>${c === 0 ? "las que menos" : c === 4 ? "las que más" : ""}`;
+      const dd = ind.unidad === "eur" ? 0 : 1;
+      return `<b class="num">${nf(dd).format(Math.min(...mi))}–${nf(dd).format(Math.max(...mi))}</b>${c === 0 ? "las que menos" : c === 4 ? "las que más" : ""}`;
     });
     return {
       color: (id) => caja(cols[k(id)]),
@@ -405,7 +409,7 @@ export function iniciar(DATA: DatosApp): void {
     $("#p-titulo").textContent = o.length
       ? ind.intervalo ? `${ind.nombre}${varFrase(ind)}, ${etq(ind, a)}: cada comunidad frente a España` : `${ind.nombre}${varFrase(ind)} en ${etq(ind, a)}: la cifra más alta, ${NOMBRE[o[0]]}; la más baja, ${NOMBRE[o.at(-1)]}`
       : `${ind.nombre}${varFrase(ind)} en ${etq(ind, a)}: sin dato por comunidad`;
-    $("#p-sub").textContent = `${ind.unidad === "pct" ? `Porcentaje ${ind.que}.` : ind.unidad === "puntos" ? "Puntuación media del alumnado de 15 años." : `Alumnos ${ind.que}.`}${ind.encuesta ? " Es una muestra: las diferencias pequeñas entre comunidades pueden deberse al azar." : ""}${esAvance(ind, a) ? " Dato de avance: puede cambiar." : ""} Pulsa una comunidad para elegirla como la tuya.`;
+    $("#p-sub").textContent = `${ind.unidad === "pct" ? `Porcentaje ${ind.que}.` : ind.unidad === "puntos" ? "Puntuación media del alumnado de 15 años." : ind.unidad === "eur" ? `Euros ${ind.que}, del año ${etq(ind, a)}.` : `Alumnos ${ind.que}.`}${ind.encuesta ? " Es una muestra: las diferencias pequeñas entre comunidades pueden deberse al azar." : ""}${esAvance(ind, a) ? " Dato de avance: puede cambiar." : ""} Pulsa una comunidad para elegirla como la tuya.`;
     $("#p-origen").innerHTML = origen(ind, a);
     const esca = tileMap($("#p-mapa"), vals, ind, { selIds: [S.com], anio: a, onClick: (id) => { S.com = id; render(); } });
     $("#p-leyenda").innerHTML = esca.leyenda;
@@ -905,7 +909,8 @@ export function iniciar(DATA: DatosApp): void {
     const nn = notasDe(ind, id, etq(ind, a), k);
     const c = cambioDe(ind, id, k);
     const er = errorT(ind, id, a, k);
-    const delta = esNoComp ? `<span class="cautela">${esc(ind.no_comparable_txt || "Sin dato comparable")}. Aviso del INEE: ${esc(ind.noComparable[id])}</span>` : frenteEspana(ind, v, a, k, id);
+    const delta = esNoComp ? `<span class="cautela">${esc(ind.no_comparable_txt || "Sin dato comparable")}. Aviso del INEE: ${esc(ind.noComparable[id])}</span>`
+      : v == null ? "Sin dato para esta comunidad en la fuente." : frenteEspana(ind, v, a, k, id);
     return `<div class="ind${esNoComp ? " no-comp" : ""}">
       <div><div class="n">${esc(titulo)}${esNoComp ? "" : marca(ind, id, a, k)}</div><div class="pos">${chipFiab(ind.fiabilidad, "span")} ${etqEstado(ind, a)} · España: ${fmt(e, ind.unidad)}${conCautela(ind, id, a, k) ? `<br>† ${esc(textoCautela(ind, id, a, k))}` : ""}${nn.length ? `<br>Nota de la fuente: ${esc(nn[0].texto)}` : ""}</div></div>
       <div><div class="val">${fmt(v, ind.unidad)}${er != null && !esNoComp ? `<span class="ic"> ${masMenos(er)}</span>` : ""}</div><div class="delta">${delta}</div>${c && !esNoComp ? `<div class="vs">Cambio: ${textoCambio(ind, c)}</div>` : ""}${vs ? `<div class="vs">${esc(NOMBRE[vs])}: ${vsNoComp ? esc(minus(ind.no_comparable_txt || "sin dato comparable")) : `${fmt(vv, ind.unidad)}${marca(ind, vs, a, k)}`}</div>` : ""}</div>

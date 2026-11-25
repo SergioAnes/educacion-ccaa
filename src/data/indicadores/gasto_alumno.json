@@ -1,0 +1,61 @@
+{
+  "id": "gasto_alumno",
+  "grupo": "financiacion",
+  "resumen": true,
+  "nombre": "Gasto público por alumno",
+  "corto": "Gasto público por alumno",
+  "que": "por alumno",
+  "unidad": "eur",
+  "unidad_txt": "euros por alumno",
+  "dimensiones": [
+    {
+      "dim": "titularidad",
+      "nombre": "Alumnado",
+      "opciones": [
+        {
+          "id": "publica_y_concertada",
+          "etiqueta": "Pública y concertada"
+        },
+        {
+          "id": "publica",
+          "etiqueta": "Solo pública"
+        }
+      ]
+    }
+  ],
+  "filas_ficha": [
+    {
+      "titularidad": "publica_y_concertada"
+    },
+    {
+      "titularidad": "publica"
+    }
+  ],
+  "definicion": "Gasto público en enseñanza no universitaria de cada comunidad dividido entre su alumnado, en euros de 2023, tal como lo calcula el Ministerio con el método de la OCDE.",
+  "numerador": "Todo el gasto público en educación no universitaria hecho en la comunidad, lo financie la administración que lo financie, sin becas, sin capítulos financieros y sin la formación profesional para el empleo. En «solo pública» se le quita además lo que se paga en conciertos y subvenciones a los centros concertados.",
+  "denominador": "Alumnado en equivalentes a tiempo completo, media de los cursos 2022-23 y 2023-24: el de los centros públicos y concertados, o solo el de los públicos.",
+  "no_mide": "No es lo que cuesta una plaza en cada red ni dice si el dinero se gasta bien. Tampoco corrige, según el propio Ministerio, la dispersión geográfica, el reparto del alumnado entre etapas ni el peso de la oferta pública y privada. La diferencia entre las dos cifras no es el coste de una plaza concertada: esta web no calcula ese dato (ver «Cómo leer los datos»).",
+  "fiabilidad": "A",
+  "fiabilidad_txt": "Estadística oficial del Ministerio (Estadística del Gasto Público en Educación y de las Enseñanzas no universitarias).",
+  "estado": "definitivo",
+  "fuentes": [
+    {
+      "id": "mefd_cifras",
+      "corto": "Ministerio de Educación (Las cifras de la educación)",
+      "nombre": "Ministerio de Educación, Formación Profesional y Deportes: Las cifras de la educación en España, edición 2026, tabla B4.6 y notas del capítulo B4",
+      "url": "https://www.educacionfpydeportes.gob.es/servicios-al-ciudadano/estadisticas/indicadores/cifras-educacion-espana/2023-2024.html"
+    }
+  ],
+  "espana": "Dato oficial del Ministerio para el conjunto de España.",
+  "avisos": [
+    "Por ahora, solo 2023: en 2023 el Ministerio cambió la forma de contar el alumnado de FP, y avisa de que eso afecta a la comparación con años anteriores.",
+    "Euros de cada año, sin descontar la inflación.",
+    "Ceuta y Melilla no están en la tabla.",
+    "Son las dos cifras que publica el Ministerio. Esta web no calcula un «coste por alumno de la concertada»: lo que paga el concierto no es todo lo que cuesta esa plaza, y las dos redes no escolarizan al mismo alumnado."
+  ],
+  "rango": [
+    3000,
+    20000
+  ],
+  "revisado_hasta": "2023"
+}

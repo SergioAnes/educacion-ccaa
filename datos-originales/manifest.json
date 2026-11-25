@@ -89,6 +89,22 @@
   },
   {
     "fuente": "cifras",
+    "fichero": "cifras/2026-11-25/b4.pdf",
+    "url": "https://www.educacionfpydeportes.gob.es/dam/jcr:889aecfe-3db1-4964-a3a8-5734c716234b/b4.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 545629,
+    "sha256": "8368f9cd861d8cb53fa1ff409b7463e1a8da9dacce0023358d12f473aea3ea24"
+  },
+  {
+    "fuente": "cifras",
+    "fichero": "cifras/2026-11-25/b4.xlsx",
+    "url": "https://www.educacionfpydeportes.gob.es/dam/jcr:5d6ffa47-ff10-48d7-af1d-a43245a562cf/b4.xlsx",
+    "fecha_captura": "2026-11-25",
+    "bytes": 186900,
+    "sha256": "e33aa51497943eba696f03614197781226abd0cbf051e1a7877adb534960d8d1"
+  },
+  {
+    "fuente": "cifras",
     "fichero": "cifras/2026-11-25/c2.xlsx",
     "url": "https://www.educacionfpydeportes.gob.es/dam/jcr:e9366cb1-7e92-438b-8a65-36bc8d8a0800/c2.xlsx",
     "fecha_captura": "2026-11-25",

@@ -1,5 +1,5 @@
 [
-  { "id": "ES", "ine": "00", "nombre": "España", "abr": "ESP", "nuts2": "ES", "alias": ["TOTAL", "Total", "España"] },
+  { "id": "ES", "ine": "00", "nombre": "España", "abr": "ESP", "nuts2": "ES", "alias": ["TOTAL", "Total", "España", "TOTAL NACIONAL"] },
   { "id": "AN", "ine": "01", "nombre": "Andalucía", "abr": "AND", "nuts2": "ES61", "alias": ["Andalucía"] },
   { "id": "AR", "ine": "02", "nombre": "Aragón", "abr": "ARA", "nuts2": "ES24", "alias": ["Aragón"] },
   { "id": "AS", "ine": "03", "nombre": "Asturias", "abr": "AST", "nuts2": "ES12", "alias": ["Asturias, Principado de", "Asturias, P. de", "Asturias"] },

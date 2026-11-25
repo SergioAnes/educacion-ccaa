@@ -143,6 +143,14 @@ scripts de Python y se guardan como JSON en `src/data/`. La base es sanidad-ccaa
 - Comprobación: ambos sexos entre hombres y mujeres (276 casos); las 19 comunidades y ciudades y España.
 - Cataluña, FP básica: 0,0 % (2018-19) y 0,4 % (2023-24), cifras publicadas; la ficha lo dice sin explicarlo.
 
+### Gasto público por alumno (`gasto_alumno`, tema «Financiación», publicado el 25/11/2026)
+- «Las cifras de la educación», tabla B4.6 (`b4.xlsx`) y método del capítulo B4 (`b4.pdf`): 2023, 17 comunidades y
+  España (sin Ceuta ni Melilla). Dos cifras oficiales: «pública y concertada» y «solo pública» (sin conciertos ni
+  alumnado concertado). Método OCDE: todo el gasto público en la comunidad sin becas ni capítulos financieros;
+  alumnado en equivalentes a tiempo completo, media de dos cursos.
+- Solo 2023: el Ministerio cambió en 2023 el cálculo del alumnado de FP y avisa de que afecta a la comparación.
+- No se calcula un coste «solo concertada» (regla 6 del brief): la ficha lo explica.
+
 ### Pendiente (siguiente tanda, propuesta)
 - Tasa bruta de graduación (Las cifras de la educación, C2.9) y gasto público por alumno oficial (B4.6), con la
   explicación de qué incluye «público y concertado».

@@ -97,9 +97,58 @@ def graduacion(errores: list) -> None:
     print(f"tasa_graduacion: {len(obs)} filas, cursos {periodos}, {entre} comprobaciones; notas {[n['territorios'] for n in usadas]}")
 
 
+def gasto_alumno(errores: list) -> None:
+    """B4.6: gasto público por alumno en enseñanza no universitaria (euros), «público y concertado» y «público»."""
+    m = ultimo_original("cifras", "b4.xlsx")
+    wb = openpyxl.load_workbook(m["ruta"], read_only=True, data_only=True)
+    filas = [list(r) for r in wb["B4.6"].iter_rows(values_only=True)]
+    wb.close()
+    i_cab = next(i for i, r in enumerate(filas) if any("por alumno público y concertado" in limpio(x) for x in r))
+    cab = [limpio(x) for x in filas[i_cab]]
+    anios = [str(x).strip() for x in filas[i_cab + 1] if x]
+    c_pc = next(c for c, x in enumerate(cab) if "público y concertado" in x)
+    c_p = next(c for c, x in enumerate(cab) if x.startswith("Gasto público por alumno público") and "concertado" not in x)
+    if len(set(anios)) != 1 or not re.fullmatch(r"\d{4}", anios[0]):
+        errores.append(f"B4.6: años inesperados {anios}")
+        return
+    anio = anios[0]
+    obs = []
+    for r in filas[i_cab + 2:]:
+        if r and r[0] and str(r[0]).strip().startswith("("):
+            break  # empiezan las notas (que siguen en varias filas)
+        if not r or not r[0]:
+            continue
+        t = territorio(str(r[0]))
+        for c, tit in ((c_pc, "publica_y_concertada"), (c_p, "publica")):
+            v = r[c]
+            v = float(str(v).replace(".", "")) if isinstance(v, str) and re.fullmatch(r"[\d.]+", v.strip()) else v
+            if isinstance(v, (int, float)):
+                obs.append({"indicador_id": "gasto_alumno", "territorio": t["ine"], "periodo": anio, "titularidad": tit, "sexo": "total",
+                            "etapa": "total", "valor": float(v), "unidad": "eur", "error_estandar": None, "estado": "definitivo",
+                            "fuente_id": "mefd_cifras", "url_fuente": URL_CIFRAS, "fecha_captura": m["fecha_captura"]})
+    # Comprobaciones: las 17 comunidades y España en las dos columnas; España entre la menor y la mayor comunidad
+    ccaa = {f"{i:02d}" for i in range(1, 18)}
+    for tit in ("publica_y_concertada", "publica"):
+        hay = {f["territorio"]: f["valor"] for f in obs if f["titularidad"] == tit}
+        if ccaa - set(hay) or "00" not in hay:
+            errores.append(f"B4.6 {tit}: faltan {sorted((ccaa | {'00'}) - set(hay))}")
+        elif not min(hay[c] for c in ccaa) <= hay["00"] <= max(hay[c] for c in ccaa):
+            errores.append(f"B4.6 {tit}: España fuera del rango de las comunidades")
+    nota = " ".join(limpio(r[0]) for r in filas if r and r[0] and (str(r[0]).strip().startswith("(1)") or (obs and str(r[0]).strip()[:1].islower())))
+    escribir_json("observaciones/gasto_alumno.json", {
+        "indicador_id": "gasto_alumno", "periodos": [anio], "notas_fuente": [nota] if nota else [],
+        "notas": [{"texto": re.sub(r"^\(1\)\s*", "", nota), "territorios": [], "periodos": []}] if nota else [],
+        "muestra_pequena": [], "rupturas": [], "definicion_difiere_es": [],
+        "comprobacion": {"pares_comparados": len(obs), "descripcion": "17 comunidades y España en las dos columnas; España entre la menor y la mayor"},
+        "filas": sorted(obs, key=lambda f: (f["territorio"], f["titularidad"])),
+    })
+    print(f"gasto_alumno: {len(obs)} filas, año {anio}; nota: {nota[:90]}…")
+
+
 def main() -> None:
     errores: list[str] = []
     graduacion(errores)
+    gasto_alumno(errores)
     if errores:
         sys.exit("Comprobaciones fallidas:\n  " + "\n  ".join(errores))
 
