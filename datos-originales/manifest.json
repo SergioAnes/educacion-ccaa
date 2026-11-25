@@ -697,6 +697,30 @@
   },
   {
     "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/cn-instrucciones-ceip-2026-27.pdf",
+    "url": "https://www.educantabria.es/documents/d/educantabria/instrucciones-ceip-inicio-de-curso-26-27_vfinal_signed",
+    "fecha_captura": "2026-11-25",
+    "bytes": 2069828,
+    "sha256": "2d36fdac4518c74fee057e2d7395223bbe51078e950b65a3edaf476dbd621215"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/cn-instrucciones-ies-2026-27.pdf",
+    "url": "https://www.educantabria.es/documents/d/educantabria/instrucciones-ies-inicio-curso-26-27_vfinal_signed",
+    "fecha_captura": "2026-11-25",
+    "bytes": 2537096,
+    "sha256": "1c378ad6f9126ca3060d7893b89c041c6cd120e3ee1dd931e70c20daf3d7bcdc"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/cn-resolucion-nominas-docentes-2026.pdf",
+    "url": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=430558",
+    "fecha_captura": "2026-11-25",
+    "bytes": 433586,
+    "sha256": "6194b4b5bf87a26584e8089fc943cc346b7a193eda5c55c39102dae41614ff49"
+  },
+  {
+    "fuente": "sueldos",
     "fichero": "sueldos/2026-11-25/ct-doigc-personal-docent.pdf",
     "url": "https://documents.espai.educacio.gencat.cat/IPCNormativa/DOIGC/ORG_Personal_docent.pdf",
     "fecha_captura": "2026-11-25",
