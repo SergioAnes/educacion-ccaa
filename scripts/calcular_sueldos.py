@@ -73,7 +73,7 @@ def main() -> None:
             destino = dato(ine, cuerpo, "destino_mensual", x["destino_mensual"])
             especifico = dato(ine, cuerpo, "especifico_mensual", x["especifico_mensual"])
             n_adic = int(dato(ine, cuerpo, "especifico_pagas_adicionales", x["especifico_pagas_adicionales"]))
-            if x["especifico_pagas_adicionales"].get("comprobacion") == "supuesto":
+            if x["especifico_pagas_adicionales"].get("comprobacion") in ("supuesto", "calculo"):
                 supuestos.append(f"{c['nombre']}, {cuerpo}: pagas adicionales del específico ({x['especifico_pagas_adicionales'].get('nota', '')})")
             # Partes estatales
             destino_propio = bool(x["destino_mensual"].get("propio"))
@@ -98,7 +98,7 @@ def main() -> None:
                     errores.append(f"{c['nombre']} {cuerpo}: 14 × {campo} {mensual} no da el anual publicado {anual_pub[campo]}")
             otros = x.get("otros_anuales", [])
             for o in otros:
-                if o.get("comprobacion") == "supuesto":
+                if o.get("comprobacion") in ("supuesto", "calculo"):
                     supuestos.append(f"{c['nombre']}, {cuerpo}: {o.get('concepto')} ({o.get('donde', '')})")
                 if o.get("fuente") not in fuentes or not o.get("donde") or o.get("tipo") not in ("recurrente", "pago_unico_2026"):
                     errores.append(f"{c['nombre']} {cuerpo}: otro importe mal descrito: {o.get('concepto')}")
@@ -135,7 +135,7 @@ def main() -> None:
         for cuerpo, x in r["cuerpos"].items():
             print(f"{r['nombre']:10} {cuerpo:10} {x['bruto_anual']:10.2f} € al año ({x['horas_lectivas']:.0f} h de clase; "
                   f"{x['euros_por_hora_semanal']:.0f} € por hora semanal)  {x['componentes']}")
-    print(f"Supuestos sin norma explícita: {len(supuestos)}")
+    print(f"Supuestos sin norma explícita o importes calculados: {len(supuestos)}")
     for s in supuestos:
         print("  -", s[:160])
 

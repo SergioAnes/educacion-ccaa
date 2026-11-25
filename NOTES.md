@@ -213,7 +213,7 @@ scripts de Python y se guardan como JSON en `src/data/`. La base es sanidad-ccaa
 ### Sueldos del profesorado por comunidad (EN CURSO, sin publicar; 25/11/2026)
 - ESTADO: estructura hecha (normas.json + calcular_sueldos.py). Analizadas: Madrid y Cataluña (caso «al empezar»).
   Plan acordado con el usuario: analizar las demás de una en una (guardando en git), y publicar al final con mapa,
-  horas lectivas y € por hora semanal. Hechas también: Comunitat Valenciana, País Vasco, Illes Balears, Castilla y León, Aragón, Galicia, Asturias, Cantabria, Castilla-La Mancha y Extremadura (25/11/2026). Siguiente: Andalucía (solo
+  horas lectivas y € por hora semanal. Hechas también: Comunitat Valenciana, País Vasco, Illes Balears, Castilla y León, Aragón, Galicia, Asturias, Cantabria, Castilla-La Mancha, Extremadura y Murcia (25/11/2026). Siguiente: Andalucía (solo
   tabla 2024: buscar fuente oficial 2026) o el resto. El ct-gov-205 da error SSL en descargar.py: ya está guardado a mano.
 - Andalucía (pendiente, 25/11/2026): sin tabla oficial 2026 de la pública. Piezas: tabla «fiscalizada» de 10/7/2024
   (juntadeandalucia.es/educacion/portales/web/educacion/plantilla-docente-y-retribuciones); Acuerdo del Consejo de
@@ -221,6 +221,14 @@ scripts de Python y se guardan como JSON en `src/data/`. La base es sanidad-ccaa
   pagas, desde 1/9/2025; «culmina» la equiparación); subidas generales 2025 (+2,5 %) y 2026 (+1,5 %, Ley 8/2025 art. 17).
   Reconstruir = cálculo propio en varios pasos: decidir con el usuario. La resolución de concertada 2026 (BOJA 21,
   2/2/2026) NO sirve para la pública.
+- Murcia: sin tabla docente oficial de 2026 → importes de 2025 (Resolución 16/12/2025, BORM 18/12/2025, anexo XI) × 1,015,
+  marcados `calculo`; coinciden en los 7 conceptos con la guía de CCOO de enero de 2026. Estructura: específico bajo
+  (369,21) + productividad docente mensual (437,91 / 444,36) + productividad semestral en cada extra (524,07 + 240,24 /
+  295,87) + paga adicional del específico 260,96 (0 sexenios). Carrera horizontal tramo I no incluida. Horas: Acuerdo de
+  1/6/2023 (BORM 22/6/2023): 23 y 18 (Inspección 2026-27: hasta 19 si hace falta).
+- Descargas a mano (descargar.py da error con ellas; ya están en datos-originales y en el manifest): ct-gov-205-2026.pdf
+  (SSL), ex-tablas-retributivas-docentes-2026.pdf y mu-inspeccion-horarios-secundaria-2026-27.pdf (devuelven HTML a Python;
+  con curl funcionan).
 - Extremadura: tablas de la DG de Personal Docente 2026 (PROFEX; anuncio DOE 65, 7/4/2026; PDF copiado de ANPE): específico
   general 544,43 + autonómico 270,29 (incluye los +80 € del Acuerdo de 13/1/2026), iguales para todos, 14 pagas (columna
   P.A.C.E.). Horas: Instrucción 15/2026: maestros 23, secundaria 18 (hasta 21).

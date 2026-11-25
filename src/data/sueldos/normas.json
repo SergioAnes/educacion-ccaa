@@ -234,6 +234,27 @@
       "titulo": "Instrucción n.º 15/2026, de 24 de junio, de la Secretaría General de Educación, de inicio y desarrollo del curso 2026/2027",
       "url": "https://www.educarex.es/pub/cont/com/0054/documentos/Instrucciones_inicio_curso_26_27%28F%29%281%29.pdf",
       "original": "sueldos/2026-11-25/ex-instruccion-15-2026-inicio-curso.pdf"
+    },
+    "mu_borm_2025": {
+      "titulo": "Resolución de 16 de diciembre de 2025 (BORM n.º 291, 18/12/2025): retribuciones de 2025 (+2,5 %) del personal de la Administración General, anexo XI (cuerpos docentes)",
+      "url": "https://www.borm.es/services/anuncio/ano/2025/numero/6124/pdf",
+      "original": "sueldos/2026-11-25/mu-borm-resolucion-16-12-2025-retribuciones.pdf"
+    },
+    "mu_guia_ccoo": {
+      "titulo": "CCOO Región de Murcia: guía de retribuciones docentes, actualización de enero de 2026 (sindicato; no es fuente oficial)",
+      "url": "https://murcia.fe.ccoo.es/5374e343d0772497a4f17e7bc1b26533000063.pdf",
+      "original": "sueldos/2026-11-25/mu-guia-retribuciones-ccoo-enero-2026.pdf",
+      "nota": "Sus importes de 2026 coinciden con los de 2025 de la resolución oficial × 1,015 en los siete conceptos usados."
+    },
+    "mu_jornada": {
+      "titulo": "Acuerdo del Consejo de Gobierno de 1 de junio de 2023 de jornada del personal docente (BORM n.º 142, 22/6/2023)",
+      "url": "https://www.borm.es/services/anuncio/ano/2023/numero/3891/pdf?id=820185",
+      "original": "sueldos/2026-11-25/mu-borm-jornada-docente-2023.pdf"
+    },
+    "mu_inspeccion": {
+      "titulo": "Inspección de Educación: documento de apoyo a la revisión de horarios 2026-2027, Secundaria y FP (14/9/2026)",
+      "url": "https://www.carm.es/",
+      "original": "sueldos/2026-11-25/mu-inspeccion-horarios-secundaria-2026-27.pdf"
     }
   },
   "comunidades": {
@@ -1518,6 +1539,133 @@
       "avisos": [
         "Incluye la subida de 80 € brutos al mes desde enero de 2026 (Acuerdo de Consejo de Gobierno de 13/1/2026).",
         "El complemento específico (general + autonómico) es el mismo para maestros y profesores de secundaria."
+      ]
+    },
+    "14": {
+      "nombre": "Región de Murcia",
+      "estado": "analizada",
+      "cuerpos": {
+        "maestros": {
+          "grupo": "A2",
+          "sueldo_mensual": {
+            "valor": 1199.52,
+            "fuente": "mu_guia_ccoo",
+            "donde": "sueldo estatal 2026 (comprobado con el estatal)"
+          },
+          "sueldo_paga_extra": {
+            "valor": 874.83,
+            "fuente": "mu_guia_ccoo",
+            "donde": "paga extra estatal 2026"
+          },
+          "nivel_destino": "21",
+          "destino_mensual": {
+            "valor": 592.11,
+            "fuente": "mu_guia_ccoo",
+            "donde": "destino estatal nivel 21"
+          },
+          "especifico_mensual": {
+            "valor": 369.21,
+            "fuente": "mu_borm_2025",
+            "donde": "anexo XI 1.º (363,75 en 2025) × 1,015",
+            "comprobacion": "calculo",
+            "nota": "No se ha encontrado la tabla docente oficial de 2026: importe de 2025 de la resolución del BORM × 1,015 (subida general de 2026, Real Decreto-ley 14/2025); coincide con la guía de CCOO de enero de 2026."
+          },
+          "especifico_pagas_adicionales": {
+            "valor": 2,
+            "importe_cada_una": 260.96,
+            "fuente": "mu_borm_2025",
+            "donde": "anexo XI 4.º, «paga adicional del complemento específico», 0 sexenios (257,10 en 2025) × 1,015",
+            "comprobacion": "calculo",
+            "nota": "No se ha encontrado la tabla docente oficial de 2026: importe de 2025 de la resolución del BORM × 1,015 (subida general de 2026, Real Decreto-ley 14/2025); coincide con la guía de CCOO de enero de 2026."
+          },
+          "otros_anuales": [
+            {
+              "concepto": "Productividad docente mensual (cuantía mínima, 12 pagas)",
+              "importe": 5254.92,
+              "tipo": "recurrente",
+              "fuente": "mu_borm_2025",
+              "donde": "anexo XI 4.º (431.44 en 2025) × 1,015",
+              "comprobacion": "calculo"
+            },
+            {
+              "concepto": "Productividad semestral en cada paga extra (factor complemento específico + factor complemento de destino)",
+              "importe": 1528.62,
+              "tipo": "recurrente",
+              "fuente": "mu_borm_2025",
+              "donde": "anexo XI 4.º (516,33 + 236.69 en 2025) × 1,015",
+              "comprobacion": "calculo"
+            }
+          ],
+          "horas_lectivas": {
+            "valor": 23,
+            "fuente": "mu_jornada",
+            "donde": "punto 1 (en vigor desde septiembre de 2024)",
+            "definicion": "23 horas lectivas (Infantil y Primaria)"
+          }
+        },
+        "secundaria": {
+          "grupo": "A1",
+          "sueldo_mensual": {
+            "valor": 1387.24,
+            "fuente": "mu_guia_ccoo",
+            "donde": "sueldo estatal 2026 (comprobado con el estatal)"
+          },
+          "sueldo_paga_extra": {
+            "valor": 856.05,
+            "fuente": "mu_guia_ccoo",
+            "donde": "paga extra estatal 2026"
+          },
+          "nivel_destino": "24",
+          "destino_mensual": {
+            "valor": 729.14,
+            "fuente": "mu_guia_ccoo",
+            "donde": "destino estatal nivel 24"
+          },
+          "especifico_mensual": {
+            "valor": 369.21,
+            "fuente": "mu_borm_2025",
+            "donde": "anexo XI 1.º (363,75 en 2025) × 1,015",
+            "comprobacion": "calculo",
+            "nota": "No se ha encontrado la tabla docente oficial de 2026: importe de 2025 de la resolución del BORM × 1,015 (subida general de 2026, Real Decreto-ley 14/2025); coincide con la guía de CCOO de enero de 2026."
+          },
+          "especifico_pagas_adicionales": {
+            "valor": 2,
+            "importe_cada_una": 260.96,
+            "fuente": "mu_borm_2025",
+            "donde": "anexo XI 4.º, «paga adicional del complemento específico», 0 sexenios (257,10 en 2025) × 1,015",
+            "comprobacion": "calculo",
+            "nota": "No se ha encontrado la tabla docente oficial de 2026: importe de 2025 de la resolución del BORM × 1,015 (subida general de 2026, Real Decreto-ley 14/2025); coincide con la guía de CCOO de enero de 2026."
+          },
+          "otros_anuales": [
+            {
+              "concepto": "Productividad docente mensual (cuantía mínima, 12 pagas)",
+              "importe": 5332.32,
+              "tipo": "recurrente",
+              "fuente": "mu_borm_2025",
+              "donde": "anexo XI 4.º (437.79 en 2025) × 1,015",
+              "comprobacion": "calculo"
+            },
+            {
+              "concepto": "Productividad semestral en cada paga extra (factor complemento específico + factor complemento de destino)",
+              "importe": 1639.88,
+              "tipo": "recurrente",
+              "fuente": "mu_borm_2025",
+              "donde": "anexo XI 4.º (516,33 + 291.5 en 2025) × 1,015",
+              "comprobacion": "calculo"
+            }
+          ],
+          "horas_lectivas": {
+            "valor": 18,
+            "fuente": "mu_jornada",
+            "donde": "punto 1 (en vigor desde septiembre de 2024)",
+            "definicion": "18 horas lectivas; hasta 19 periodos si la distribución del centro lo exige (Inspección, 2026-27)"
+          }
+        }
+      },
+      "avisos": [
+        "Murcia paga buena parte del sueldo docente como «productividad» (mensual y semestral) y no como complemento específico, que es más bajo que en otras comunidades.",
+        "Importes de 2026 calculados: los de 2025 publicados en el BORM más la subida general del 1,5 % (no se ha encontrado la tabla docente de 2026); coinciden con la guía de CCOO de enero de 2026.",
+        "No se incluye el tramo I de la carrera profesional horizontal (88,93 € al mes para maestros y 158,23 € para secundaria en 2025): depende de la progresión de cada docente."
       ]
     }
   }

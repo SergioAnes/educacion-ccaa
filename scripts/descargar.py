@@ -138,6 +138,10 @@ FUENTES: dict[str, list[tuple[str, str]]] = {
         ("ex-doe-65-2026-anuncio-tablas.pdf", "https://doe.juntaex.es/pdfs/doe/2026/650o/26080505.pdf"),
         ("ex-tablas-retributivas-docentes-2026.pdf", "https://anpeextremadura.es/openFile.php?link=retribuciones%2F12%2Fretribuciones-2026_t1779992191_12_a.pdf"),
         ("ex-instruccion-15-2026-inicio-curso.pdf", "https://www.educarex.es/pub/cont/com/0054/documentos/Instrucciones_inicio_curso_26_27%28F%29%281%29.pdf"),
+        ("mu-borm-resolucion-16-12-2025-retribuciones.pdf", "https://www.borm.es/services/anuncio/ano/2025/numero/6124/pdf"),
+        ("mu-guia-retribuciones-ccoo-enero-2026.pdf", "https://murcia.fe.ccoo.es/5374e343d0772497a4f17e7bc1b26533000063.pdf"),
+        ("mu-borm-jornada-docente-2023.pdf", "https://www.borm.es/services/anuncio/ano/2023/numero/3891/pdf?id=820185"),
+        ("mu-inspeccion-horarios-secundaria-2026-27.pdf", "https://www.carm.es/web/descarga?ARCHIVO=DOCUMENTO+APOYO+HORARIOS+SECUNDARIA+2026-2027_260812.pdf&ALIAS=ARCH&IDCONTENIDO=178976&IDTIPO=60&RASTRO=c794%24m5042"),
         ("ar-instrucciones-ies-2026-27.pdf", "https://educa.aragon.es/documents/20126/6844128/CSVFV61LMW0LZ120XFIL+Instrucciones+curso+2026-2027+para+centros+educativos._03+IES+2026-2027+V8-(Instrucciones).pdf/ff9b76e8-b92f-291b-b736-6f093187162c"),
     ],
     # INEE: tablas del informe español de PISA 2025 (Excel dentro de un RAR)

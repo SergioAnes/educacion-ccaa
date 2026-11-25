@@ -18,7 +18,13 @@
     "Cantabria, maestros: pagas adicionales del específico (La resolución da como anual 12 × 875,10; la ley de presupuestos añade dos pagas adicionales del específico para el personal funcionario de la administración general, sin artículo propio para los docentes. Si no se cobraran, se restarían 1.750,20 €.)",
     "Cantabria, secundaria: pagas adicionales del específico (La resolución da como anual 12 × 875,10; la ley de presupuestos añade dos pagas adicionales del específico para el personal funcionario de la administración general, sin artículo propio para los docentes. Si no se cobraran, se restarían 1.750,20 €.)",
     "Castilla-La Mancha, maestros: pagas adicionales del específico (La ley lo dice para el personal funcionario de la Administración de la Junta; la Orden 194/2025 (devengo) incluye el específico en las pagas extra, sin precisar el importe docente.)",
-    "Castilla-La Mancha, secundaria: pagas adicionales del específico (La ley lo dice para el personal funcionario de la Administración de la Junta; la Orden 194/2025 (devengo) incluye el específico en las pagas extra, sin precisar el importe docente.)"
+    "Castilla-La Mancha, secundaria: pagas adicionales del específico (La ley lo dice para el personal funcionario de la Administración de la Junta; la Orden 194/2025 (devengo) incluye el específico en las pagas extra, sin precisar el importe docente.)",
+    "Región de Murcia, maestros: pagas adicionales del específico (No se ha encontrado la tabla docente oficial de 2026: importe de 2025 de la resolución del BORM × 1,015 (subida general de 2026, Real Decreto-ley 14/2025); coincide con la guía de CCOO de enero de 2026.)",
+    "Región de Murcia, maestros: Productividad docente mensual (cuantía mínima, 12 pagas) (anexo XI 4.º (431.44 en 2025) × 1,015)",
+    "Región de Murcia, maestros: Productividad semestral en cada paga extra (factor complemento específico + factor complemento de destino) (anexo XI 4.º (516,33 + 236.69 en 2025) × 1,015)",
+    "Región de Murcia, secundaria: pagas adicionales del específico (No se ha encontrado la tabla docente oficial de 2026: importe de 2025 de la resolución del BORM × 1,015 (subida general de 2026, Real Decreto-ley 14/2025); coincide con la guía de CCOO de enero de 2026.)",
+    "Región de Murcia, secundaria: Productividad docente mensual (cuantía mínima, 12 pagas) (anexo XI 4.º (437.79 en 2025) × 1,015)",
+    "Región de Murcia, secundaria: Productividad semestral en cada paga extra (factor complemento específico + factor complemento de destino) (anexo XI 4.º (516,33 + 291.5 en 2025) × 1,015)"
   ],
   "comunidades": {
     "13": {
@@ -658,6 +664,78 @@
       "avisos": [
         "Incluye la subida de 80 € brutos al mes desde enero de 2026 (Acuerdo de Consejo de Gobierno de 13/1/2026).",
         "El complemento específico (general + autonómico) es el mismo para maestros y profesores de secundaria."
+      ]
+    },
+    "14": {
+      "nombre": "Región de Murcia",
+      "cuerpos": {
+        "maestros": {
+          "bruto_anual": 36169.42,
+          "componentes": {
+            "mensualidades": 25930.08,
+            "pagas_extra": 2933.88,
+            "pagas_adicionales_especifico": 521.92,
+            "otros_recurrentes": 6783.54,
+            "pagos_unicos_del_anio": 0
+          },
+          "otros": [
+            {
+              "concepto": "Productividad docente mensual (cuantía mínima, 12 pagas)",
+              "importe": 5254.92,
+              "tipo": "recurrente",
+              "fuente": "mu_borm_2025",
+              "donde": "anexo XI 4.º (431.44 en 2025) × 1,015",
+              "comprobacion": "calculo"
+            },
+            {
+              "concepto": "Productividad semestral en cada paga extra (factor complemento específico + factor complemento de destino)",
+              "importe": 1528.62,
+              "tipo": "recurrente",
+              "fuente": "mu_borm_2025",
+              "donde": "anexo XI 4.º (516,33 + 236.69 en 2025) × 1,015",
+              "comprobacion": "calculo"
+            }
+          ],
+          "horas_lectivas": 23.0,
+          "horas_definicion": "23 horas lectivas (Infantil y Primaria)",
+          "euros_por_hora_semanal": 1572.58
+        },
+        "secundaria": {
+          "bruto_anual": 40491.58,
+          "componentes": {
+            "mensualidades": 29827.08,
+            "pagas_extra": 3170.38,
+            "pagas_adicionales_especifico": 521.92,
+            "otros_recurrentes": 6972.2,
+            "pagos_unicos_del_anio": 0
+          },
+          "otros": [
+            {
+              "concepto": "Productividad docente mensual (cuantía mínima, 12 pagas)",
+              "importe": 5332.32,
+              "tipo": "recurrente",
+              "fuente": "mu_borm_2025",
+              "donde": "anexo XI 4.º (437.79 en 2025) × 1,015",
+              "comprobacion": "calculo"
+            },
+            {
+              "concepto": "Productividad semestral en cada paga extra (factor complemento específico + factor complemento de destino)",
+              "importe": 1639.88,
+              "tipo": "recurrente",
+              "fuente": "mu_borm_2025",
+              "donde": "anexo XI 4.º (516,33 + 291.5 en 2025) × 1,015",
+              "comprobacion": "calculo"
+            }
+          ],
+          "horas_lectivas": 18.0,
+          "horas_definicion": "18 horas lectivas; hasta 19 periodos si la distribución del centro lo exige (Inspección, 2026-27)",
+          "euros_por_hora_semanal": 2249.53
+        }
+      },
+      "avisos": [
+        "Murcia paga buena parte del sueldo docente como «productividad» (mensual y semestral) y no como complemento específico, que es más bajo que en otras comunidades.",
+        "Importes de 2026 calculados: los de 2025 publicados en el BORM más la subida general del 1,5 % (no se ha encontrado la tabla docente de 2026); coinciden con la guía de CCOO de enero de 2026.",
+        "No se incluye el tramo I de la carrera profesional horizontal (88,93 € al mes para maestros y 158,23 € para secundaria en 2025): depende de la progresión de cada docente."
       ]
     }
   }

@@ -693,7 +693,7 @@
     "url": "https://bocyl.jcyl.es/boletines/2026/01/05/pdf/BOCYL-D-05012026-2-2.pdf",
     "fecha_captura": "2026-11-25",
     "bytes": 1469706,
-    "sha256": "d8aa8074f3f7bfedd0f99032c1be8f52d7d84defb1d39c533351b269868ebacf"
+    "sha256": "0b96985f569164216dc842e3b82c987e93dfd735ef95aff0e8408358db217b62"
   },
   {
     "fuente": "sueldos",
@@ -862,6 +862,38 @@
     "fecha_captura": "2026-11-25",
     "bytes": 1159304,
     "sha256": "debbfbd9b80d60738362476d966e2a354e61bee895164ffe0a007d57c4699851"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/mu-borm-jornada-docente-2023.pdf",
+    "url": "https://www.borm.es/services/anuncio/ano/2023/numero/3891/pdf?id=820185",
+    "fecha_captura": "2026-11-25",
+    "bytes": 366509,
+    "sha256": "43095b61a5ef99203794a1c42060624ac9ad6568b95af14ccbd212260005be64"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/mu-borm-resolucion-16-12-2025-retribuciones.pdf",
+    "url": "https://www.borm.es/services/anuncio/ano/2025/numero/6124/pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 538778,
+    "sha256": "a0437d1c8eff5a084bab0cd70dada24e189c444bbc4ba6e1f928fc48793488c3"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/mu-guia-retribuciones-ccoo-enero-2026.pdf",
+    "url": "https://murcia.fe.ccoo.es/5374e343d0772497a4f17e7bc1b26533000063.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 1980886,
+    "sha256": "176ef43839edf0c48c5dd51d0771d3ad1a16f08390f865e8adca29d81b9697f9"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/mu-inspeccion-horarios-secundaria-2026-27.pdf",
+    "url": "https://www.carm.es/web/descarga?ARCHIVO=DOCUMENTO+APOYO+HORARIOS+SECUNDARIA+2026-2027_260812.pdf&ALIAS=ARCH&IDCONTENIDO=178976&IDTIPO=60&RASTRO=c794%24m5042",
+    "fecha_captura": "2026-11-25",
+    "bytes": 1108448,
+    "sha256": "9ebec181ca98e515fb6dfc5c07a12c244c2ce47c256c5999e0b0b1510e3e5d41"
   },
   {
     "fuente": "sueldos",
