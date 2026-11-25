@@ -171,6 +171,13 @@ scripts de Python y se guardan como JSON en `src/data/`. La base es sanidad-ccaa
 - Se clasifica frente a CERO, no frente a España (`referencia_cero` y `clases` en la ficha): «a favor de las chicas /
   sin diferencia clara / a favor de los chicos», sin rojo. Textos en palabras, sin «A menos B».
 
+### Necesidades educativas especiales (`alumnado_nee`, tema «Equidad», publicado el 25/11/2026)
+- EDUCAbase, tabla acnee_02 de cada curso (2011-12 a 2024-25): % de alumnado con NEE por titularidad/financiación.
+  Recuento oficial, no muestra (fiabilidad A).
+- Lectura por posición: en 2024-25 la tabla repite la etiqueta «TOTAL» (la primera es el total de verdad: 4,0 % en
+  España, no 3,4). Comprobado en 280 casos que el total de cada comunidad queda entre los de sus redes.
+- Notas del Ministerio ligadas a su curso (Canarias y La Rioja 2012-13, Comunitat Valenciana 2016-17).
+
 ### Descargas: ficheros que cambian sin cambiar
 - El servidor de EDUCAbase pone en cada .px la fecha de descarga (CREATION-DATE) y un SUBJECT-CODE que varía. Sin
   ignorarlos, cada descarga parecía un fichero nuevo: `descargar.py` compara el contenido sin esas dos líneas (el
@@ -179,7 +186,7 @@ scripts de Python y se guardan como JSON en `src/data/`. La base es sanidad-ccaa
 ### Pendiente (siguiente tanda, propuesta)
 - Tasa bruta de graduación (Las cifras de la educación, C2.9) y gasto público por alumno oficial (B4.6), con la
   explicación de qué incluye «público y concertado».
-- Escolarización a 3 y 16-18 años, idoneidad a los 12, repetición en Primaria, NEE, FP.
+- Escolarización a 3 y 16-18 años, idoneidad a los 12, repetición en Primaria, FP.
 - Equidad con las tablas de PISA 2025 por comunidad (ISEC, diferencias por sexo, origen, titularidad).
 - PISA 2000-2022 por comunidad desde microdatos (reproduciendo antes las cifras publicadas).
 

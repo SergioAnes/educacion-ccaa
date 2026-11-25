@@ -328,6 +328,118 @@
     "sha256": "47108af63b3e18ed882de3dfd258ef253074bf2dc20bb2f0097052559f275760"
   },
   {
+    "fuente": "nee",
+    "fichero": "nee/2026-11-25/acnee_02_2011-2012.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/apoyo/2011-2012/acnee/l0/acnee_02.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 6882,
+    "sha256": "60860f7745914b00a2772cd91d9ec72b57580cdb59fbef514af4653b38a59093"
+  },
+  {
+    "fuente": "nee",
+    "fichero": "nee/2026-11-25/acnee_02_2012-2013.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/apoyo/2012-2013/acnee/l0/acnee_02.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 7061,
+    "sha256": "bf53322594e19bb13e964a336192a5f62f1c50a62d38ce154a434edb6e6e5251"
+  },
+  {
+    "fuente": "nee",
+    "fichero": "nee/2026-11-25/acnee_02_2013-2014.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/apoyo/2013-2014/acnee/l0/acnee_02.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 6889,
+    "sha256": "697d39453161caac0cc44f9fa7bd0c335d573762c3ad0f34922fea3bec68115e"
+  },
+  {
+    "fuente": "nee",
+    "fichero": "nee/2026-11-25/acnee_02_2014-2015.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/apoyo/2014-2015/acnee/l0/acnee_02.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 8286,
+    "sha256": "1e4ca92ee1709aff2a50e9517972b1591924746403bfd8ae334be993c18b54ab"
+  },
+  {
+    "fuente": "nee",
+    "fichero": "nee/2026-11-25/acnee_02_2015-2016.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/apoyo/2015-2016/acnee/l0/acnee_02.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 7781,
+    "sha256": "61b4deaa996937fbd1422f8b6679684ab1cd4bc356d8a669af336be1f10d625c"
+  },
+  {
+    "fuente": "nee",
+    "fichero": "nee/2026-11-25/acnee_02_2016-2017.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/apoyo/2016-2017/acnee/l0/acnee_02.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 7911,
+    "sha256": "131969034fb918fb10e6d1f0a9f4842db8d9ac72e9823adb2bfbd6405842c185"
+  },
+  {
+    "fuente": "nee",
+    "fichero": "nee/2026-11-25/acnee_02_2017-2018.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/apoyo/2017-2018/acnee/l0/acnee_02.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 7294,
+    "sha256": "fc0f96cd7c605ad4cbfcbcae02727fa140927fcce7aab3ef4854a755acf0fa14"
+  },
+  {
+    "fuente": "nee",
+    "fichero": "nee/2026-11-25/acnee_02_2018-2019.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/apoyo/2018-2019/acnee/l0/acnee_02.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 7304,
+    "sha256": "4e4fe4ccb0242fad97eadf6536654c5a2f07c59f8d9cedc704afb152aa58e033"
+  },
+  {
+    "fuente": "nee",
+    "fichero": "nee/2026-11-25/acnee_02_2019-2020.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/apoyo/2019-2020/acnee/l0/acnee_02.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 7327,
+    "sha256": "876652e000c91b213f7ed490f8c7d44a40d824c4c916c2d675b1501610f8ac53"
+  },
+  {
+    "fuente": "nee",
+    "fichero": "nee/2026-11-25/acnee_02_2020-2021.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/apoyo/2020-2021/acnee/l0/acnee_02.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 7355,
+    "sha256": "8c3be8f12ba80909f3a6ea4657e2c938b01fdfdc148e3b5df8544c4e9e5e6d3b"
+  },
+  {
+    "fuente": "nee",
+    "fichero": "nee/2026-11-25/acnee_02_2021-2022.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/apoyo/2021-2022/acnee/l0/acnee_02.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 7312,
+    "sha256": "8d7a6c88dff7532878f691ed251549b9cce439e1761e06a5d1491bb86b9888ed"
+  },
+  {
+    "fuente": "nee",
+    "fichero": "nee/2026-11-25/acnee_02_2022-2023.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/apoyo/2022-2023/acnee/l0/acnee_02.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 7333,
+    "sha256": "d5ef90c691405df10dca6e4402c8828415031d4c9172d408d75a6dedcbfcab6b"
+  },
+  {
+    "fuente": "nee",
+    "fichero": "nee/2026-11-25/acnee_02_2023-2024.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/apoyo/2023-2024/acnee/l0/acnee_02.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 7329,
+    "sha256": "41422a980635f2e2f35c8fefdefcb07633857b78c12938b9b0cf93eeffd04f03"
+  },
+  {
+    "fuente": "nee",
+    "fichero": "nee/2026-11-25/acnee_02_2024-2025.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/apoyo/2024-2025/acnee/l0/acnee_02.px",
+    "fecha_captura": "2026-11-25",
+    "bytes": 7337,
+    "sha256": "b33f9431fd07fff5339db5e2317cfe4c1b982be04fd6f2fc5739a355ff4767b7"
+  },
+  {
     "fuente": "pisa",
     "fichero": "pisa/2026-11-24/tablas-informe-pisa-2025.rar",
     "url": "https://www.educacionfpydeportes.gob.es/dam/jcr:4f7056b5-02d7-4e6d-a454-2caa3e04893f/tablas-informe-pisa-2025.rar",

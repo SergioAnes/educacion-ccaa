@@ -297,6 +297,49 @@ def main() -> None:
         notas += [{**n, "etapa": edad} for n in notas_citadas(px)]
     guardar("escolarizacion_edad", filas, notas, {"pares_comparados": 0, "descripcion": "dato publicado tal cual"})
 
+    # Alumnado con necesidades educativas especiales (NEE): % sobre todo el alumnado, por titularidad/financiación, de
+    # la tabla acnee_02 de cada curso. Se lee por posición: en 2024-25 hay dos columnas de enseñanza llamadas «TOTAL»
+    # (la primera es la del total; la segunda, la del alumnado en unidades ordinarias).
+    import itertools, json as _json
+    TIT_NEE = {"TODOS LOS CENTROS": "total", "CENTROS PÚBLICOS": "publica", "CENTROS PRIVADOS-ENSEÑANZA CONCERTADA": "concertada",
+               "CENTROS PRIVADOS-ENSEÑANZA NO CONCERTADA": "privada_no_concertada"}
+    man = _json.loads((Path(__file__).parent.parent / "datos-originales/manifest.json").read_text(encoding="utf-8"))
+    filas, notas, comprob = [], {}, 0
+    for nombre in sorted({Path(m["fichero"]).name for m in man if m["fuente"] == "nee"}):
+        m = ultimo_original("nee", nombre)
+        px = leer_px(m["ruta"])
+        a = re.search(r"(\d{4})-(\d{4})", nombre)
+        per = f"{a.group(1)}-{a.group(2)[2:]}"
+        vars_ = px["STUB"] + px["HEADING"]
+        cats = [px[f'VALUES("{v}")'] for v in vars_]
+        if vars_ != ["Titularidad/financiación", "Comunidad autónoma", "Enseñanza"] or sin_llamadas(cats[2][0]).upper() != "TOTAL":
+            errores.append(f"{nombre}: estructura inesperada {vars_} / {cats[2][:2]}")
+            continue
+        val = dict(zip(itertools.product(*[range(len(c)) for c in cats]), px["DATA"]))
+        url = f"https://estadisticas.educacion.gob.es/EducaJaxiPx/Tabla.htm?path=/no-universitaria/alumnado/apoyo/{a.group(1)}-{a.group(2)}/acnee/l0/&file=acnee_02.px"
+        por = {}
+        for it, t in enumerate(cats[0]):
+            tit = TIT_NEE.get(sin_llamadas(t).upper())
+            for ic_, c in enumerate(cats[1]):
+                v = val[(it, ic_, 0)]
+                if tit and v is not None:
+                    cod = territorio(c)["ine"]
+                    por[(cod, tit)] = v
+                    filas.append(fila("alumnado_nee", cod, per, v, "pct", url, m["fecha_captura"], "definitivo", titularidad=tit))
+        for n, texto in notas_de(px).items():
+            terrs = sorted({territorio(c)["ine"] for c in cats[1] if n in llamadas(c)})
+            previa = notas.get(texto, {"periodos": []})["periodos"]
+            # Las notas que citan a una comunidad valen para el curso del fichero donde aparecen
+            notas[texto] = {"texto": texto, "territorios": terrs, "periodos": sorted(set(previa) | {per}) if terrs else []}
+        # El total de todos los centros es una media de las redes: tiene que quedar entre la menor y la mayor
+        for cod in {k[0] for k in por}:
+            redes = [por[(cod, t)] for t in ("publica", "concertada", "privada_no_concertada") if (cod, t) in por]
+            if (cod, "total") in por and redes:
+                comprob += 1
+                if not min(redes) - 0.1 <= por[(cod, "total")] <= max(redes) + 0.1:
+                    errores.append(f"{nombre} {cod}: total {por[(cod, 'total')]} fuera de {redes}")
+    guardar("alumnado_nee", filas, list(notas.values()), {"pares_comparados": comprob, "descripcion": "el total de cada comunidad queda entre los porcentajes de sus redes"})
+
     # Alumnos por unidad (grupo) en cada etapa, desde 2005-06 (primer curso común a todas las etapas). Comprobación:
     # en Primaria y ESO, alumnado / unidades = número medio publicado (las demás etapas no tienen las dos series).
     filas, notas, comps = [], [], {}

@@ -48,7 +48,8 @@ familia de `sanidad-ccaa` y `presupuestos-ccaa` (mismo estilo y mismas reglas). 
   idoneidad a los 15, repetición en ESO). Recalcula lo que puede; guarda las diferencias (la web las enumera) y se para
   solo si las hay en el último curso. Notas de cada tabla con las comunidades y cursos que las citan.
 - Gasto: el «% del PIB» por administración de EDUCAbase es sobre el PIB de España, no el regional: no usarlo para comparar.
-- `extraer_educabase.py` también genera `alumnos_unidad` (alumnos por grupo por etapa, fuente «unidades»).
+- `extraer_educabase.py` también genera `alumnos_unidad` (alumnos por grupo por etapa, fuente «unidades») y `alumnado_nee`
+  (fuente «nee», tabla acnee_02 de cada curso, leída por posición: en 2024-25 repite la etiqueta «TOTAL»).
 - `extraer_pisa.py`: tablas del informe PISA 2025 del INEE (RAR; necesita UnRAR de WinRAR). Comprueba que las cifras
   cuadran entre hojas y que ninguna tabla pierde una comunidad (hay erratas de nombre en la fuente: alias).
 - `extraer_cifras.py`: tablas Excel de «Las cifras de la educación» (C2.9 graduación; fuente «cifras», xlsx solo en local).

@@ -34,6 +34,8 @@ import isecFicha from "@/data/indicadores/pisa_isec.json";
 import isecObs from "@/data/observaciones/pisa_isec.json";
 import sexoFicha from "@/data/indicadores/pisa_sexo.json";
 import sexoObs from "@/data/observaciones/pisa_sexo.json";
+import neeFicha from "@/data/indicadores/alumnado_nee.json";
+import neeObs from "@/data/observaciones/alumnado_nee.json";
 import pisaFicha from "@/data/indicadores/pisa_puntuacion.json";
 import pisaObs from "@/data/observaciones/pisa_puntuacion.json";
 import pisaBajoFicha from "@/data/indicadores/pisa_bajo.json";
@@ -127,6 +129,7 @@ export const REGISTRO: { ficha: Ficha; obs: Observaciones }[] = [
   par(isecFicha, isecObs),
   par(brechaFicha, brechaObs),
   par(sexoFicha, sexoObs),
+  par(neeFicha, neeObs),
   par(abandonoFicha, abandonoObs),
   par(idoneidadFicha, idoneidadObs),
   par(repeticionFicha, repeticionObs),
@@ -184,6 +187,8 @@ export function textoComprobacion(obs: Observaciones): string {
     return `En cada curso y comunidad, pública + concertada + privada no concertada = total; la suma de las comunidades (con Ceuta y Melilla) da España; los ${nf(0).format(c.pares_comparados)} recuentos coinciden con la serie de alumnado del Ministerio, y el porcentaje de la pública, con el que publica el Ministerio.`;
   if (obs.indicador_id === "pisa_puntuacion")
     return "Las cifras de España y de las comunidades son las mismas en las tablas de 2025, en las de evolución y en las de diferencias entre ediciones, y cada diferencia publicada es la resta de sus dos medias. Excepción: en la tabla de ciencias 2015-2025, las diferencias de Castilla y León y de Castilla-La Mancha vienen intercambiadas (ver sus notas).";
+  if (obs.indicador_id === "alumnado_nee")
+    return `En cada curso y comunidad, el porcentaje de todos los centros queda entre los de sus redes (${nf(0).format(obs.comprobacion.pares_comparados)} comprobaciones), como corresponde a una media.`;
   if (obs.indicador_id === "pisa_sexo")
     return "En cada territorio y competencia, la diferencia publicada es la puntuación de las chicas menos la de los chicos.";
   if (obs.indicador_id === "pisa_isec")

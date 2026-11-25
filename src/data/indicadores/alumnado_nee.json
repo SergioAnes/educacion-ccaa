@@ -1,0 +1,68 @@
+{
+  "id": "alumnado_nee",
+  "grupo": "equidad",
+  "resumen": true,
+  "nombre": "Alumnado con necesidades educativas especiales",
+  "corto": "Necesidades educativas especiales",
+  "que": "del alumnado",
+  "unidad": "pct",
+  "dimensiones": [
+    {
+      "dim": "titularidad",
+      "nombre": "Titularidad",
+      "opciones": [
+        {
+          "id": "total",
+          "etiqueta": "Todos los centros"
+        },
+        {
+          "id": "publica",
+          "etiqueta": "Pública"
+        },
+        {
+          "id": "concertada",
+          "etiqueta": "Concertada"
+        },
+        {
+          "id": "privada_no_concertada",
+          "etiqueta": "Privada no concertada"
+        }
+      ]
+    }
+  ],
+  "filas_ficha": [
+    {},
+    {
+      "titularidad": "publica"
+    },
+    {
+      "titularidad": "concertada"
+    }
+  ],
+  "definicion": "Porcentaje del alumnado que tiene necesidades educativas especiales asociadas a discapacidad o a trastornos graves, tanto en Educación Especial como integrado en aulas ordinarias.",
+  "numerador": "Alumnado con necesidades educativas especiales: el de Educación Especial (centros específicos y aulas específicas en centros ordinarios) y el escolarizado en unidades ordinarias.",
+  "denominador": "Todo el alumnado matriculado en esa red de centros y comunidad.",
+  "no_mide": "No es todo el alumnado que necesita apoyo: no incluye altas capacidades, incorporación tardía o dificultades de aprendizaje, que son otras categorías. Cuánto alumnado se identifica depende también de los criterios y los procedimientos de cada comunidad, así que las diferencias entre comunidades no son solo diferencias en el alumnado. Tampoco explica por qué una red escolariza más que otra.",
+  "fiabilidad": "A",
+  "fiabilidad_txt": "Estadística oficial anual: recuento de todo el alumnado, no una muestra.",
+  "estado": "definitivo",
+  "fuentes": [
+    {
+      "id": "mefd_educabase",
+      "corto": "Ministerio de Educación (EDUCAbase)",
+      "nombre": "Ministerio de Educación, Formación Profesional y Deportes: Estadística de las Enseñanzas no universitarias, alumnado con necesidades educativas especiales por titularidad/financiación (tabla 2 de cada curso)",
+      "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/Tabla.htm?path=/no-universitaria/alumnado/apoyo/2024-2025/acnee/l0/&file=acnee_02.px"
+    }
+  ],
+  "espana": "Dato oficial del Ministerio para el conjunto de España.",
+  "avisos": [
+    "La serie empieza en 2011-12, el primer curso con esta tabla en EDUCAbase.",
+    "En la privada no concertada hay poco alumnado en algunas comunidades y los porcentajes son muy bajos o cero.",
+    "Algunos cursos repiten datos de un curso anterior en alguna comunidad: lo dicen las notas de la fuente."
+  ],
+  "rango": [
+    0,
+    20
+  ],
+  "revisado_hasta": "2024-25"
+}

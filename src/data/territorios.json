@@ -16,7 +16,7 @@
   { "id": "MC", "ine": "14", "nombre": "Murcia", "abr": "MUR", "nuts2": "ES62", "alias": ["Murcia, Región de", "Murcia, R. de"] },
   { "id": "NC", "ine": "15", "nombre": "Navarra", "abr": "NAV", "nuts2": "ES22", "alias": ["Navarra, Comunidad Foral de", "NAVARRA (Comunidad Foral de)", "Navarra, C. F. de"] },
   { "id": "PV", "ine": "16", "nombre": "País Vasco", "abr": "PVA", "nuts2": "ES21", "alias": ["País Vasco"] },
-  { "id": "RI", "ine": "17", "nombre": "La Rioja", "abr": "RIO", "nuts2": "ES23", "alias": ["Rioja, La"] },
+  { "id": "RI", "ine": "17", "nombre": "La Rioja", "abr": "RIO", "nuts2": "ES23", "alias": ["Rioja, La", "Rioja (La)"] },
   { "id": "CE", "ine": "18", "nombre": "Ceuta", "abr": "CEU", "nuts2": "ES63", "alias": ["Ceuta"], "ciudad": true },
   { "id": "ML", "ine": "19", "nombre": "Melilla", "abr": "MEL", "nuts2": "ES64", "alias": ["Melilla"], "ciudad": true }
 ]

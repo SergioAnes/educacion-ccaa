@@ -79,6 +79,8 @@ FUENTES: dict[str, list[tuple[str, str]]] = {
         "no-universitaria/alumnado/matriculado/series/AlumnadoGen/l0/alumnado_3_01.px",  # alumnado de Primaria
         "no-universitaria/alumnado/matriculado/series/AlumnadoGen/l0/alumnado_4_01.px",  # alumnado de ESO
     ]],
+    # EDUCAbase: % de alumnado con necesidades educativas especiales por titularidad/financiación (un fichero por curso)
+    "nee": [(f"acnee_02_{a}-{a + 1}.px", f"{PX}/no-universitaria/alumnado/apoyo/{a}-{a + 1}/acnee/l0/acnee_02.px") for a in range(2011, 2025)],
     # «Las cifras de la educación en España», edición 2026 (curso 2023-24): tablas en Excel por capítulo
     "cifras": [
         ("c2.xlsx", "https://www.educacionfpydeportes.gob.es/dam/jcr:e9366cb1-7e92-438b-8a65-36bc8d8a0800/c2.xlsx"),  # C2.9 graduación
@@ -125,6 +127,11 @@ def main(fuentes: list[str]) -> None:
             except Exception as e:  # una fuente caída no impide guardar las demás
                 fallos.append(f"{fuente}/{nombre}: {e}")
                 print(f"{fuente}/{nombre}: ERROR {e}")
+                continue
+            # Si una tabla no existe, el servidor redirige a una página web con código 200: que no se guarde como .px
+            if nombre.endswith(".px") and not contenido.lstrip().startswith(b"AXIS-VERSION"):
+                fallos.append(f"{fuente}/{nombre}: no es un PC-Axis (¿tabla inexistente?)")
+                print(f"{fuente}/{nombre}: ERROR no es un PC-Axis")
                 continue
             huella = hashlib.sha256(contenido).hexdigest()
             previos = [m for m in manifest if m["fuente"] == fuente and Path(m["fichero"]).name == nombre]
