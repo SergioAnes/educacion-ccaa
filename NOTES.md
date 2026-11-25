@@ -213,7 +213,13 @@ scripts de Python y se guardan como JSON en `src/data/`. La base es sanidad-ccaa
 ### Sueldos del profesorado por comunidad (EN CURSO, sin publicar; 25/11/2026)
 - ESTADO: estructura hecha (normas.json + calcular_sueldos.py). Analizadas: Madrid y Cataluña (caso «al empezar»).
   Plan acordado con el usuario: analizar las demás de una en una (guardando en git), y publicar al final con mapa,
-  horas lectivas y € por hora semanal. Siguiente: Comunitat Valenciana. Pendiente: Andalucía solo tiene tabla 2024.
+  horas lectivas y € por hora semanal. Hechas también: Comunitat Valenciana (25/11/2026). Siguiente: Andalucía (solo
+  tabla 2024: buscar fuente oficial 2026) o el resto. El ct-gov-205 da error SSL en descargar.py: ya está guardado a mano.
+- Valencia: tablas DOGV 27/2/2026 (Tabla 2 docentes; el PDF etiqueta mal la fila de sueldo y destino) + subida de 75 €/mes
+  desde sept. 2026 (tabla oficial de la Conselleria: enero + 75 = septiembre, comprobado; acuerdo del Consell de 8/9/2026
+  no encontrado en el DOGV, solo prensa; 200 € en total hasta 2028). Específico en 14 pagas: Ley 6/2025 art. 34.1.d
+  (régimen Ley 4/2021; supuesto para docentes). Horas: 23 maestros y 18 secundaria (resoluciones de inicio de curso
+  DOGV 10407, Decreto 58/2021).
 - Madrid, pagas adicionales del específico para docentes: SUPUESTO (guía ANPE; ninguna norma madrileña lo dice para
   docentes: Orden art. 5.4 y Ley 6/2025 art. 21.1.d son del régimen de la Ley 1/1986; art. 23 mantiene la estructura).
 - No hay fuente oficial única por comunidad. OCDE (EAG, DSD_EAG_SAL_STA): solo España (2025, USD PPA; relativo a

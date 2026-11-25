@@ -68,6 +68,32 @@
       "titulo": "ANPE-Madrid: Guía del profesorado 2025-2026 (sindicato; no es fuente oficial)",
       "url": "https://documentos.anpemadrid.es/guia_profesorado.pdf",
       "nota": "Dice que las pagas adicionales de los docentes son el 100 % del complemento específico más formación y componentes singulares."
+    },
+    "vc_brutos": {
+      "titulo": "Conselleria de Educación: retribuciones brutas del personal docente en función de trienios y sexenios a partir de septiembre de 2026 (actualizado a 01/09/2026)",
+      "url": "https://ceice.gva.es/es/web/rrhh-educacion/retribucions",
+      "original": "sueldos/2026-11-25/vc-salarios-brutos-sept-2026.pdf",
+      "nota": "Sueldo mensual bruto total; incluye la subida de 75 € de septiembre. Nota al pie: +0,5 % si el IPC de 2026 llega al 1,5 % (RDL 14/2025)."
+    },
+    "vc_tablas_dogv": {
+      "titulo": "Acuerdo de 27 de febrero de 2026, del Consell, de publicación de las tablas retributivas (DOGV n.º 10312 bis), Anexo I, Tabla 2 (personal docente, vigencia desde 01/01/2026)",
+      "url": "https://dogv.gva.es/datos/2026/02/27/pdf/2026_6352_es.pdf",
+      "original": "sueldos/2026-11-25/vc-dogv-tablas-retributivas-2026.pdf"
+    },
+    "vc_ley_presupuestos": {
+      "titulo": "Ley 6/2025, de 30 de mayo, de presupuestos de la Generalitat para 2025 (prorrogada en 2026), art. 34.1.d",
+      "url": "https://www.boe.es/eli/es-vc/l/2025/05/30/6/dof/spa/pdf",
+      "original": "sueldos/2026-11-25/vc-ley-presupuestos-2025.pdf"
+    },
+    "vc_instr_secundaria": {
+      "titulo": "Resolución de 15 de julio de 2026, de la Secretaría Autonómica de Educación, instrucciones de ESO y Bachillerato para 2026-2027 (DOGV n.º 10407)",
+      "url": "https://dogv.gva.es/datos/2026/07/17/pdf/2026_24443_es.pdf",
+      "original": "sueldos/2026-11-25/vc-instrucciones-secundaria-2026-27.pdf"
+    },
+    "vc_instr_primaria": {
+      "titulo": "Resolución de 15 de julio de 2026, de la Secretaría Autonómica de Educación, instrucciones de Infantil de segundo ciclo y Primaria para 2026-2027 (DOGV n.º 10407)",
+      "url": "https://dogv.gva.es/datos/2026/07/17/pdf/2026_24423_es.pdf",
+      "original": "sueldos/2026-11-25/vc-instrucciones-infantil-primaria-2026-27.pdf"
     }
   },
   "comunidades": {
@@ -274,6 +300,138 @@
       "avisos": [
         "Los acuerdos de 2026 prevén más subidas del complemento específico hasta llegar a un 30 % y que el complemento de mejora suba en 2028 y 2029; no están incluidas.",
         "Desde 2012 los sexenios («estadis») se cobran a los nueve años en lugar de a los seis; por eso el caso con antigüedad no se calcula todavía."
+      ]
+    },
+    "10": {
+      "nombre": "Comunitat Valenciana",
+      "estado": "analizada",
+      "cuerpos": {
+        "maestros": {
+          "grupo": "A2",
+          "sueldo_mensual": {
+            "valor": 1199.52,
+            "fuente": "vc_tablas_dogv",
+            "donde": "Tabla 2, primera fila de la columna del cuerpo (sueldo y complemento de destino; el PDF la etiqueta «específico base»)"
+          },
+          "sueldo_paga_extra": {
+            "valor": 874.83,
+            "fuente": "vc_tablas_dogv",
+            "donde": "Tabla 1, sueldo base extra"
+          },
+          "nivel_destino": "21",
+          "destino_mensual": {
+            "valor": 592.11,
+            "fuente": "vc_tablas_dogv",
+            "donde": "Tabla 2, primera fila de la columna del cuerpo (nivel 21)"
+          },
+          "especifico_mensual": {
+            "valor": 737.37,
+            "fuente": "vc_tablas_dogv",
+            "donde": "Tabla 2, código 6531"
+          },
+          "especifico_pagas_adicionales": {
+            "valor": 2,
+            "fuente": "vc_ley_presupuestos",
+            "donde": "art. 34.1.d",
+            "comprobacion": "supuesto",
+            "nota": "El art. 34.1.d de la Ley 6/2025 reparte el específico en 14 pagas para el personal funcionario de la Ley 4/2021 (función pública valenciana); no hay artículo propio para los docentes, aunque sus tablas se publican en el mismo acuerdo."
+          },
+          "otros_anuales": [
+            {
+              "concepto": "Subida de 75 €/mes desde septiembre de 2026 (4 mensualidades; 75 € en 2027 y 50 € en 2028 más, según el acuerdo, no incluidos)",
+              "importe": 300.0,
+              "tipo": "recurrente",
+              "fuente": "vc_brutos",
+              "donde": "tabla «Hasta 3 años»: total de septiembre = enero + 75"
+            },
+            {
+              "concepto": "Los 75 € también en la paga adicional de diciembre",
+              "importe": 75.0,
+              "tipo": "recurrente",
+              "fuente": "vc_brutos",
+              "donde": "no lo dice: se supone que la subida va en el complemento específico autonómico (prensa) y que este se cobra en 14 pagas",
+              "comprobacion": "supuesto"
+            }
+          ],
+          "horas_lectivas": {
+            "valor": 23,
+            "fuente": "vc_instr_primaria",
+            "donde": "6.1 (Decreto 58/2021)",
+            "definicion": "23 horas lectivas; jornada lectiva del alumnado de 25 h, incluido el patio"
+          }
+        },
+        "secundaria": {
+          "grupo": "A1",
+          "sueldo_mensual": {
+            "valor": 1387.24,
+            "fuente": "vc_tablas_dogv",
+            "donde": "Tabla 2, primera fila de la columna del cuerpo (sueldo y complemento de destino; el PDF la etiqueta «específico base»)"
+          },
+          "sueldo_paga_extra": {
+            "valor": 856.05,
+            "fuente": "vc_tablas_dogv",
+            "donde": "Tabla 1, sueldo base extra"
+          },
+          "nivel_destino": "24",
+          "destino_mensual": {
+            "valor": 729.14,
+            "fuente": "vc_tablas_dogv",
+            "donde": "Tabla 2, primera fila de la columna del cuerpo (nivel 24)"
+          },
+          "especifico_mensual": {
+            "valor": 741.97,
+            "fuente": "vc_tablas_dogv",
+            "donde": "Tabla 2, código 2231"
+          },
+          "especifico_pagas_adicionales": {
+            "valor": 2,
+            "fuente": "vc_ley_presupuestos",
+            "donde": "art. 34.1.d",
+            "comprobacion": "supuesto",
+            "nota": "El art. 34.1.d de la Ley 6/2025 reparte el específico en 14 pagas para el personal funcionario de la Ley 4/2021 (función pública valenciana); no hay artículo propio para los docentes, aunque sus tablas se publican en el mismo acuerdo."
+          },
+          "otros_anuales": [
+            {
+              "concepto": "Subida de 75 €/mes desde septiembre de 2026 (4 mensualidades; 75 € en 2027 y 50 € en 2028 más, según el acuerdo, no incluidos)",
+              "importe": 300.0,
+              "tipo": "recurrente",
+              "fuente": "vc_brutos",
+              "donde": "tabla «Hasta 3 años»: total de septiembre = enero + 75"
+            },
+            {
+              "concepto": "Los 75 € también en la paga adicional de diciembre",
+              "importe": 75.0,
+              "tipo": "recurrente",
+              "fuente": "vc_brutos",
+              "donde": "no lo dice: se supone que la subida va en el complemento específico autonómico (prensa) y que este se cobra en 14 pagas",
+              "comprobacion": "supuesto"
+            }
+          ],
+          "horas_lectivas": {
+            "valor": 18,
+            "fuente": "vc_instr_secundaria",
+            "donde": "6.1 (Decreto 58/2021)",
+            "definicion": "18 horas lectivas, ampliables a 20 con compensación de 2 complementarias por cada una"
+          }
+        }
+      },
+      "totales_mensuales_publicados": {
+        "maestros": {
+          "valor": 2604.0,
+          "mas": 75.0,
+          "fuente": "vc_brutos",
+          "donde": "«Hasta 3 años», maestros/as (A2)"
+        },
+        "secundaria": {
+          "valor": 2933.35,
+          "mas": 75.0,
+          "fuente": "vc_brutos",
+          "donde": "«Hasta 3 años», profesores/as (A1)"
+        }
+      },
+      "avisos": [
+        "La subida de septiembre de 2026 (75 €/mes) forma parte de un acuerdo de 200 €/mes: 75 € más en enero de 2027 y 50 € en enero de 2028, no incluidos. No se ha encontrado el acuerdo en el DOGV; la cifra sale de la tabla oficial de la Conselleria.",
+        "La Conselleria avisa de que se sumará un 0,5 % si el IPC de 2026 llega al 1,5 % (Real Decreto-ley 14/2025)."
       ]
     }
   }

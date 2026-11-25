@@ -81,10 +81,18 @@ def main() -> None:
                 if abs(v - ref) > 0.005:
                     errores.append(f"{c['nombre']} {cuerpo}: {campo} {v} distinto del estatal {ref}")
             tot_pub = c.get("totales_mensuales_publicados", {}).get(cuerpo)
-            if tot_pub is not None and abs(sueldo + destino + especifico - tot_pub) > 0.005:
-                errores.append(f"{c['nombre']} {cuerpo}: {sueldo} + {destino} + {especifico} no da el total publicado {tot_pub}")
+            if isinstance(tot_pub, dict):  # total publicado que ya incluye una subida posterior («mas»)
+                if tot_pub.get("fuente") not in fuentes:
+                    errores.append(f"{c['nombre']} {cuerpo}: total publicado sin fuente")
+                mas, tot_pub = tot_pub.get("mas", 0.0), tot_pub["valor"]
+            else:
+                mas = 0.0
+            if tot_pub is not None and abs(sueldo + destino + especifico + mas - tot_pub) > 0.005:
+                errores.append(f"{c['nombre']} {cuerpo}: {sueldo} + {destino} + {especifico} + {mas} no da el total publicado {tot_pub}")
             otros = x.get("otros_anuales", [])
             for o in otros:
+                if o.get("comprobacion") == "supuesto":
+                    supuestos.append(f"{c['nombre']}, {cuerpo}: {o.get('concepto')} ({o.get('donde', '')})")
                 if o.get("fuente") not in fuentes or not o.get("donde") or o.get("tipo") not in ("recurrente", "pago_unico_2026"):
                     errores.append(f"{c['nombre']} {cuerpo}: otro importe mal descrito: {o.get('concepto')}")
             h = x.get("horas_lectivas", {})

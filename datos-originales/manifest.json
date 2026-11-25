@@ -672,6 +672,46 @@
     "sha256": "debbfbd9b80d60738362476d966e2a354e61bee895164ffe0a007d57c4699851"
   },
   {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/vc-dogv-tablas-retributivas-2026.pdf",
+    "url": "https://dogv.gva.es/datos/2026/02/27/pdf/2026_6352_es.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 2067339,
+    "sha256": "ace29b919500224f55c03f03b91c84819c9bec0ca0c901cb30b6aa59a64b866c"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/vc-instrucciones-infantil-primaria-2026-27.pdf",
+    "url": "https://dogv.gva.es/datos/2026/07/17/pdf/2026_24423_es.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 882114,
+    "sha256": "30e854638323a59c89aa09bc693f98d6964e529da173d284842ea7eb9686de7b"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/vc-instrucciones-secundaria-2026-27.pdf",
+    "url": "https://dogv.gva.es/datos/2026/07/17/pdf/2026_24443_es.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 971584,
+    "sha256": "53e0211aafa3a20af768e9283cb8089b3bbf255e88a5704f495bde703fb34365"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/vc-ley-presupuestos-2025.pdf",
+    "url": "https://www.boe.es/eli/es-vc/l/2025/05/30/6/dof/spa/pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 5580742,
+    "sha256": "651226e6f0fc3a667ef398a81e168d899cb92d8cbc57a48405cfe1bfa82eb64f"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/vc-salarios-brutos-sept-2026.pdf",
+    "url": "https://ceice.gva.es/documents/162909733/164256878/Salarios+brutos+2026.pdf/416d6ef4-1505-4ce7-23e1-cfde522c2fe8",
+    "fecha_captura": "2026-11-25",
+    "bytes": 96488,
+    "sha256": "a0d4d9963ce28b9ca73a08e905ac568e5b2b011a759175a72c6d00aa10ab1aed"
+  },
+  {
     "fuente": "unidades",
     "fichero": "unidades/2026-11-24/alumnado_3_01.px",
     "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/series/AlumnadoGen/l0/alumnado_3_01.px",

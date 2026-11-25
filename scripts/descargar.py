@@ -108,6 +108,11 @@ FUENTES: dict[str, list[tuple[str, str]]] = {
         ("ct-gov-205-2026.pdf", "https://portaldogc.gencat.cat/utilsEADOP/PDF/9719/2164754.pdf"),
         ("ct-projecte-llei-pressupostos-2026.pdf", "https://www.parlament.cat/document/bopc/442982007.pdf"),
         ("ct-doigc-personal-docent.pdf", "https://documents.espai.educacio.gencat.cat/IPCNormativa/DOIGC/ORG_Personal_docent.pdf"),
+        ("vc-salarios-brutos-sept-2026.pdf", "https://ceice.gva.es/documents/162909733/164256878/Salarios+brutos+2026.pdf/416d6ef4-1505-4ce7-23e1-cfde522c2fe8"),
+        ("vc-dogv-tablas-retributivas-2026.pdf", "https://dogv.gva.es/datos/2026/02/27/pdf/2026_6352_es.pdf"),
+        ("vc-ley-presupuestos-2025.pdf", "https://www.boe.es/eli/es-vc/l/2025/05/30/6/dof/spa/pdf"),
+        ("vc-instrucciones-secundaria-2026-27.pdf", "https://dogv.gva.es/datos/2026/07/17/pdf/2026_24443_es.pdf"),
+        ("vc-instrucciones-infantil-primaria-2026-27.pdf", "https://dogv.gva.es/datos/2026/07/17/pdf/2026_24423_es.pdf"),
     ],
     # INEE: tablas del informe español de PISA 2025 (Excel dentro de un RAR)
     "pisa": [("tablas-informe-pisa-2025.rar", "https://www.educacionfpydeportes.gob.es/dam/jcr:4f7056b5-02d7-4e6d-a454-2caa3e04893f/tablas-informe-pisa-2025.rar")],

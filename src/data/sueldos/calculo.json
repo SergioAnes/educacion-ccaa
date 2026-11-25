@@ -6,7 +6,11 @@
   },
   "supuestos": [
     "Madrid, maestros: pagas adicionales del específico (Ninguna norma madrileña lo dice expresamente para docentes: la Orden de nóminas (art. 5.4) y la Ley de Presupuestos 2026 (art. 21.1.d) lo establecen para el régimen general de la Ley 1/1986, y el art. 23 dice que los demás funcionarios mantienen su estructura retributiva (la estatal reparte el específico en 14 pagas).)",
-    "Madrid, secundaria: pagas adicionales del específico (Ninguna norma madrileña lo dice expresamente para docentes: la Orden de nóminas (art. 5.4) y la Ley de Presupuestos 2026 (art. 21.1.d) lo establecen para el régimen general de la Ley 1/1986, y el art. 23 dice que los demás funcionarios mantienen su estructura retributiva (la estatal reparte el específico en 14 pagas).)"
+    "Madrid, secundaria: pagas adicionales del específico (Ninguna norma madrileña lo dice expresamente para docentes: la Orden de nóminas (art. 5.4) y la Ley de Presupuestos 2026 (art. 21.1.d) lo establecen para el régimen general de la Ley 1/1986, y el art. 23 dice que los demás funcionarios mantienen su estructura retributiva (la estatal reparte el específico en 14 pagas).)",
+    "Comunitat Valenciana, maestros: pagas adicionales del específico (El art. 34.1.d de la Ley 6/2025 reparte el específico en 14 pagas para el personal funcionario de la Ley 4/2021 (función pública valenciana); no hay artículo propio para los docentes, aunque sus tablas se publican en el mismo acuerdo.)",
+    "Comunitat Valenciana, maestros: Los 75 € también en la paga adicional de diciembre (no lo dice: se supone que la subida va en el complemento específico autonómico (prensa) y que este se cobra en 14 pagas)",
+    "Comunitat Valenciana, secundaria: pagas adicionales del específico (El art. 34.1.d de la Ley 6/2025 reparte el específico en 14 pagas para el personal funcionario de la Ley 4/2021 (función pública valenciana); no hay artículo propio para los docentes, aunque sus tablas se publican en el mismo acuerdo.)",
+    "Comunitat Valenciana, secundaria: Los 75 € también en la paga adicional de diciembre (no lo dice: se supone que la subida va en el complemento específico autonómico (prensa) y que este se cobra en 14 pagas)"
   ],
   "comunidades": {
     "13": {
@@ -110,6 +114,75 @@
       "avisos": [
         "Los acuerdos de 2026 prevén más subidas del complemento específico hasta llegar a un 30 % y que el complemento de mejora suba en 2028 y 2029; no están incluidas.",
         "Desde 2012 los sexenios («estadis») se cobran a los nueve años en lugar de a los seis; por eso el caso con antigüedad no se calcula todavía."
+      ]
+    },
+    "10": {
+      "nombre": "Comunitat Valenciana",
+      "cuerpos": {
+        "maestros": {
+          "bruto_anual": 35131.62,
+          "componentes": {
+            "mensualidades": 30348.0,
+            "pagas_extra": 2933.88,
+            "pagas_adicionales_especifico": 1474.74,
+            "otros_recurrentes": 375.0,
+            "pagos_unicos_del_anio": 0
+          },
+          "otros": [
+            {
+              "concepto": "Subida de 75 €/mes desde septiembre de 2026 (4 mensualidades; 75 € en 2027 y 50 € en 2028 más, según el acuerdo, no incluidos)",
+              "importe": 300.0,
+              "tipo": "recurrente",
+              "fuente": "vc_brutos",
+              "donde": "tabla «Hasta 3 años»: total de septiembre = enero + 75"
+            },
+            {
+              "concepto": "Los 75 € también en la paga adicional de diciembre",
+              "importe": 75.0,
+              "tipo": "recurrente",
+              "fuente": "vc_brutos",
+              "donde": "no lo dice: se supone que la subida va en el complemento específico autonómico (prensa) y que este se cobra en 14 pagas",
+              "comprobacion": "supuesto"
+            }
+          ],
+          "horas_lectivas": 23.0,
+          "horas_definicion": "23 horas lectivas; jornada lectiva del alumnado de 25 h, incluido el patio",
+          "euros_por_hora_semanal": 1527.46
+        },
+        "secundaria": {
+          "bruto_anual": 39329.52,
+          "componentes": {
+            "mensualidades": 34300.2,
+            "pagas_extra": 3170.38,
+            "pagas_adicionales_especifico": 1483.94,
+            "otros_recurrentes": 375.0,
+            "pagos_unicos_del_anio": 0
+          },
+          "otros": [
+            {
+              "concepto": "Subida de 75 €/mes desde septiembre de 2026 (4 mensualidades; 75 € en 2027 y 50 € en 2028 más, según el acuerdo, no incluidos)",
+              "importe": 300.0,
+              "tipo": "recurrente",
+              "fuente": "vc_brutos",
+              "donde": "tabla «Hasta 3 años»: total de septiembre = enero + 75"
+            },
+            {
+              "concepto": "Los 75 € también en la paga adicional de diciembre",
+              "importe": 75.0,
+              "tipo": "recurrente",
+              "fuente": "vc_brutos",
+              "donde": "no lo dice: se supone que la subida va en el complemento específico autonómico (prensa) y que este se cobra en 14 pagas",
+              "comprobacion": "supuesto"
+            }
+          ],
+          "horas_lectivas": 18.0,
+          "horas_definicion": "18 horas lectivas, ampliables a 20 con compensación de 2 complementarias por cada una",
+          "euros_por_hora_semanal": 2184.97
+        }
+      },
+      "avisos": [
+        "La subida de septiembre de 2026 (75 €/mes) forma parte de un acuerdo de 200 €/mes: 75 € más en enero de 2027 y 50 € en enero de 2028, no incluidos. No se ha encontrado el acuerdo en el DOGV; la cifra sale de la tabla oficial de la Conselleria.",
+        "La Conselleria avisa de que se sumará un 0,5 % si el IPC de 2026 llega al 1,5 % (Real Decreto-ley 14/2025)."
       ]
     }
   }
