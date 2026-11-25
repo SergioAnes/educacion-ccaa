@@ -88,6 +88,14 @@
     "sha256": "3b38545b5fd76a311bf101e536806bd68731886a13432646eb6cf64a374cfbf4"
   },
   {
+    "fuente": "cifras",
+    "fichero": "cifras/2026-11-25/c2.xlsx",
+    "url": "https://www.educacionfpydeportes.gob.es/dam/jcr:e9366cb1-7e92-438b-8a65-36bc8d8a0800/c2.xlsx",
+    "fecha_captura": "2026-11-25",
+    "bytes": 210922,
+    "sha256": "09407060d55c9a669ad4f8f284c153f04b28ca23873abeb47a8685ee317b399d"
+  },
+  {
     "fuente": "educabase",
     "fichero": "educabase/2026-11-24/alumnado_1_01.px",
     "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/series/AlumnadoGen/l0/alumnado_1_01.px",

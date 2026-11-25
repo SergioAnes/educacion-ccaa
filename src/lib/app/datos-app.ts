@@ -22,6 +22,8 @@ import idoneidadFicha from "@/data/indicadores/idoneidad_15.json";
 import idoneidadObs from "@/data/observaciones/idoneidad_15.json";
 import repeticionFicha from "@/data/indicadores/repeticion_eso.json";
 import repeticionObs from "@/data/observaciones/repeticion_eso.json";
+import graduacionFicha from "@/data/indicadores/tasa_graduacion.json";
+import graduacionObs from "@/data/observaciones/tasa_graduacion.json";
 import pisaFicha from "@/data/indicadores/pisa_puntuacion.json";
 import pisaObs from "@/data/observaciones/pisa_puntuacion.json";
 import pisaBajoFicha from "@/data/indicadores/pisa_bajo.json";
@@ -110,6 +112,7 @@ export const REGISTRO: { ficha: Ficha; obs: Observaciones }[] = [
   par(abandonoFicha, abandonoObs),
   par(idoneidadFicha, idoneidadObs),
   par(repeticionFicha, repeticionObs),
+  par(graduacionFicha, graduacionObs),
 ];
 
 export const TERRITORIOS = territoriosJson as Territorio[];

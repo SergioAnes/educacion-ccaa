@@ -51,6 +51,7 @@ familia de `sanidad-ccaa` y `presupuestos-ccaa` (mismo estilo y mismas reglas). 
 - `extraer_educabase.py` también genera `alumnos_unidad` (alumnos por grupo por etapa, fuente «unidades»).
 - `extraer_pisa.py`: tablas del informe PISA 2025 del INEE (RAR; necesita UnRAR de WinRAR). Comprueba que las cifras
   cuadran entre hojas y que ninguna tabla pierde una comunidad (hay erratas de nombre en la fuente: alias).
+- `extraer_cifras.py`: tablas Excel de «Las cifras de la educación» (C2.9 graduación; fuente «cifras», xlsx solo en local).
 - `extraer_hitos.py`: leyes desde las fichas XML del BOE → `src/data/hitos.json`.
 - Un salto > 15 % frente al periodo anterior posterior a `revisado_hasta` hace fallar los tests: revisarlo y subir la fecha.
 

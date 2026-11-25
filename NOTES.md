@@ -136,6 +136,13 @@ scripts de Python y se guardan como JSON en `src/data/`. La base es sanidad-ccaa
   con `dimensiones` (o `variantes`, las antiguas) y `filas_ficha` como objetos. Referencias (UE-27, media OCDE, total UE,
   OCDE-35) en `referencias` de la ficha.
 
+### Tasa bruta de graduación (`tasa_graduacion`, tema «Trayectorias», publicada el 25/11/2026)
+- «Las cifras de la educación en España», edición 2026, tabla C2.9 (`c2.xlsx`, solo en local): ESO, Bachillerato, FP
+  básica, Técnico y Técnico superior, por sexo; cursos 2013-14, 2018-19 y 2023-24 (FP básica, los dos últimos).
+- Fuera: ESO de adultos y títulos universitarios (asignados por la sede del rectorado). Puede superar el 100 %.
+- Comprobación: ambos sexos entre hombres y mujeres (276 casos); las 19 comunidades y ciudades y España.
+- Cataluña, FP básica: 0,0 % (2018-19) y 0,4 % (2023-24), cifras publicadas; la ficha lo dice sin explicarlo.
+
 ### Pendiente (siguiente tanda, propuesta)
 - Tasa bruta de graduación (Las cifras de la educación, C2.9) y gasto público por alumno oficial (B4.6), con la
   explicación de qué incluye «público y concertado».

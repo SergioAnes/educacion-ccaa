@@ -1,0 +1,96 @@
+{
+  "id": "tasa_graduacion",
+  "grupo": "trayectorias",
+  "resumen": true,
+  "nombre": "Tasa bruta de graduación",
+  "corto": "Graduación",
+  "que": "de la población de la edad de graduación",
+  "unidad": "pct",
+  "dimensiones": [
+    {
+      "dim": "etapa",
+      "nombre": "Titulación",
+      "opciones": [
+        {
+          "id": "eso",
+          "etiqueta": "Graduado en ESO"
+        },
+        {
+          "id": "bachillerato",
+          "etiqueta": "Bachillerato"
+        },
+        {
+          "id": "fp_basica",
+          "etiqueta": "FP básica"
+        },
+        {
+          "id": "fp_medio",
+          "etiqueta": "Técnico (grado medio)"
+        },
+        {
+          "id": "fp_superior",
+          "etiqueta": "Técnico superior"
+        }
+      ]
+    },
+    {
+      "dim": "sexo",
+      "nombre": "Sexo",
+      "opciones": [
+        {
+          "id": "total",
+          "etiqueta": "Total"
+        },
+        {
+          "id": "h",
+          "etiqueta": "Hombres"
+        },
+        {
+          "id": "m",
+          "etiqueta": "Mujeres"
+        }
+      ]
+    }
+  ],
+  "filas_ficha": [
+    {
+      "etapa": "eso"
+    },
+    {
+      "etapa": "bachillerato"
+    },
+    {
+      "etapa": "fp_medio"
+    },
+    {
+      "etapa": "fp_superior"
+    }
+  ],
+  "definicion": "Personas que obtienen cada título en un curso, en relación con toda la población que tiene la edad teórica de terminar esa etapa.",
+  "numerador": "Alumnado que obtiene el título en el curso (en ESO, en régimen ordinario; no se incluye la ESO de personas adultas).",
+  "denominador": "Población de la edad teórica de graduación en esa etapa (no el alumnado matriculado). Por eso puede superar el 100 % y no es el porcentaje de alumnos que aprueban.",
+  "no_mide": "No es el porcentaje de alumnos que terminan con éxito: cuenta títulos frente a población de una edad, y quien termina más tarde o se muda cuenta en otro curso o en otra comunidad. Tampoco dice qué pasa con quien no se gradúa.",
+  "fiabilidad": "A",
+  "fiabilidad_txt": "Estadística oficial del Ministerio (recuento de titulados y población).",
+  "estado": "definitivo",
+  "fuentes": [
+    {
+      "id": "mefd_cifras",
+      "corto": "Ministerio de Educación (Las cifras de la educación)",
+      "nombre": "Ministerio de Educación, Formación Profesional y Deportes: Las cifras de la educación en España, edición 2026 (curso 2023-24), tabla C2.9",
+      "url": "https://www.educacionfpydeportes.gob.es/servicios-al-ciudadano/estadisticas/indicadores/cifras-educacion-espana/2023-2024.html"
+    }
+  ],
+  "espana": "Dato oficial del Ministerio para el conjunto de España.",
+  "avisos": [
+    "La tabla da tres cursos: 2013-14, 2018-19 y 2023-24 (FP básica, solo los dos últimos). Entre ellos no hay datos en esta fuente.",
+    "«Técnico» y «Técnico superior» incluyen también los títulos de Artes Plásticas y Diseño y de Enseñanzas Deportivas de ese grado (notas de la tabla).",
+    "Cataluña tiene una tasa de FP básica cercana a cero (0,0 % en 2018-19 y 0,4 % en 2023-24): es la cifra publicada.",
+    "No se incluyen los títulos universitarios: la tabla los asigna a la comunidad donde está el rectorado de la universidad, no donde vive el alumno."
+  ],
+  "rango": [
+    0,
+    130
+  ],
+  "revisado_hasta": "2023-24"
+}
