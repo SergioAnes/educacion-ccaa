@@ -28,6 +28,8 @@ import gastoFicha from "@/data/indicadores/gasto_alumno.json";
 import gastoObs from "@/data/observaciones/gasto_alumno.json";
 import edadFicha from "@/data/indicadores/escolarizacion_edad.json";
 import edadObs from "@/data/observaciones/escolarizacion_edad.json";
+import brechaFicha from "@/data/indicadores/pisa_brecha_isec.json";
+import brechaObs from "@/data/observaciones/pisa_brecha_isec.json";
 import pisaFicha from "@/data/indicadores/pisa_puntuacion.json";
 import pisaObs from "@/data/observaciones/pisa_puntuacion.json";
 import pisaBajoFicha from "@/data/indicadores/pisa_bajo.json";
@@ -114,6 +116,7 @@ export const REGISTRO: { ficha: Ficha; obs: Observaciones }[] = [
   par(pisaFicha, pisaObs),
   par(pisaBajoFicha, pisaBajoObs),
   par(pisaAltoFicha, pisaAltoObs),
+  par(brechaFicha, brechaObs),
   par(abandonoFicha, abandonoObs),
   par(idoneidadFicha, idoneidadObs),
   par(repeticionFicha, repeticionObs),
@@ -171,6 +174,8 @@ export function textoComprobacion(obs: Observaciones): string {
     return `En cada curso y comunidad, pública + concertada + privada no concertada = total; la suma de las comunidades (con Ceuta y Melilla) da España; los ${nf(0).format(c.pares_comparados)} recuentos coinciden con la serie de alumnado del Ministerio, y el porcentaje de la pública, con el que publica el Ministerio.`;
   if (obs.indicador_id === "pisa_puntuacion")
     return "Las cifras de España y de las comunidades son las mismas en las tablas de 2025, en las de evolución y en las de diferencias entre ediciones, y cada diferencia publicada es la resta de sus dos medias. Excepción: en la tabla de ciencias 2015-2025, las diferencias de Castilla y León y de Castilla-La Mancha vienen intercambiadas (ver sus notas).";
+  if (obs.indicador_id === "pisa_brecha_isec")
+    return "En cada territorio, la diferencia publicada es la resta de las puntuaciones del cuarto más favorecido y del menos favorecido.";
   if (obs.indicador_id.startsWith("pisa_"))
     return "Los porcentajes de todos los niveles de cada territorio suman 100 (con la tolerancia del redondeo).";
   if (c.coinciden != null)

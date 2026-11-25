@@ -1,0 +1,63 @@
+{
+  "id": "pisa_brecha_isec",
+  "grupo": "equidad",
+  "resumen": true,
+  "encuesta": true,
+  "intervalo": true,
+  "nombre": "PISA: brecha socioeconómica en ciencias",
+  "corto": "Brecha socioeconómica (PISA)",
+  "que": "puntos",
+  "unidad": "puntos",
+  "unidad_txt": "puntos PISA",
+  "definicion": "Diferencia de puntuación en ciencias entre el alumnado del cuarto con el índice socioeconómico y cultural (ISEC) más alto de su comunidad y el del cuarto más bajo.",
+  "numerador": "Puntuación media en ciencias del cuarto más favorecido menos la del cuarto menos favorecido. El ISEC lo calcula la OCDE con los estudios y la ocupación de los padres y los recursos del hogar.",
+  "denominador": "Alumnado de 15 años de la muestra de PISA, repartido en cuatro grupos iguales según su ISEC dentro de cada comunidad.",
+  "no_mide": "No dice que el origen social cause la diferencia, ni si una brecha pequeña se debe a que el alumnado favorecido saca menos o el desfavorecido saca más: hay que mirarlo junto a la puntuación. Tampoco compara el nivel socioeconómico de una comunidad con el de otra.",
+  "fiabilidad": "A",
+  "fiabilidad_txt": "Evaluación internacional periódica de la OCDE, con el informe oficial del Ministerio. Es una muestra: cada cifra tiene margen de error.",
+  "estado": "definitivo",
+  "fuentes": [
+    {
+      "id": "inee_pisa",
+      "corto": "INEE (Ministerio de Educación), informe PISA 2025",
+      "nombre": "Instituto Nacional de Evaluación Educativa (Ministerio de Educación, Formación Profesional y Deportes): PISA 2025, informe español, tablas del capítulo 3 (Figura 3.3)",
+      "url": "https://www.educacionfpydeportes.gob.es/inee/evaluaciones-internacionales/pisa/pisa-2025.html"
+    },
+    {
+      "id": "ocde",
+      "corto": "OCDE",
+      "nombre": "OCDE: PISA (programa, documentación técnica y resultados)",
+      "url": "https://www.oecd.org/en/about/programmes/pisa.html"
+    }
+  ],
+  "referencias": [
+    {
+      "id": "OCDE",
+      "nombre": "media OCDE",
+      "fuente_id": "inee_pisa",
+      "ranking": true,
+      "evolucion": false
+    },
+    {
+      "id": "UE",
+      "nombre": "total UE",
+      "fuente_id": "inee_pisa",
+      "ranking": true,
+      "evolucion": false
+    }
+  ],
+  "espana": "Resultado de la muestra de toda España, publicado por el INEE.",
+  "avisos": [
+    "Solo en ciencias, la competencia principal de PISA 2025; es la que publica el INEE por comunidad.",
+    "«Por encima de España» quiere decir aquí una brecha mayor; «por debajo», menor. Es una comparación, no una valoración.",
+    "Cataluña: el INEE dice que, por el 23,2 % de alumnado excluido, sus datos no deben compararse con otros territorios ni con ediciones anteriores. No sale en el mapa ni en los gráficos; solo en su ficha, con ese aviso.",
+    "Murcia: el INEE dice que, con un 12,7 % de alumnado excluido, sus datos se pueden comparar, pero con cautela. Se marca con †.",
+    "Ceuta y Melilla se muestran aparte, como en el resto de la web."
+  ],
+  "no_comparable_txt": "Sin dato comparable",
+  "rango": [
+    0,
+    200
+  ],
+  "revisado_hasta": "2025"
+}

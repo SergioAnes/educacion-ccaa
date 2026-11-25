@@ -193,6 +193,20 @@ def main() -> None:
                     if abs(previo - v) > 0.01:
                         errores.append(f"{hoja}: España {desde} {v} frente a {previo} en la tabla de evolución")
         wb.close()  # en modo lectura el Excel queda abierto; Windows no deja borrar la carpeta temporal si no
+        # Equidad (capítulo 3): diferencia en ciencias entre el cuarto más favorecido y el menos favorecido del índice
+        # socioeconómico (ISEC), con su ET (Figura 3.3). Comprobación: diferencia publicada = cuarto 4 − cuarto 1.
+        wb3 = openpyxl.load_workbook(Path(tmp) / "Tablas_cap_3.xlsx", read_only=True, data_only=True)
+        brecha = []
+        for r in filas_hoja(wb3["Figura 3.3"]):
+            cod, _ = territorio(r[0]) if r and r[0] else (None, "")
+            nums = [x for x in r[1:] if isinstance(x, (int, float))]
+            if not cod or len(nums) < 10:
+                continue
+            q1, q4, dif, et = nums[0], nums[6], nums[8], nums[9]
+            if abs((q4 - q1) - dif) > 0.05:
+                errores.append(f"Figura 3.3 {cod}: diferencia {dif:.2f} y cuarto 4 − cuarto 1 = {q4 - q1:.2f}")
+            brecha.append({**fila("pisa_brecha_isec", cod, "2025", dif, "puntos", et, m["fecha_captura"], "total")})
+        wb3.close()
     # Ninguna tabla de 2025 puede perder una comunidad (p. ej. por una errata en el nombre: «Madrid, Comnidad de»)
     todos = {t["ine"] for t in TERRITORIOS}
     for nombre, filas in (("puntuación", punt), ("rendimiento bajo", bajo), ("rendimiento alto", alto)):
@@ -219,6 +233,10 @@ def main() -> None:
             "comprobacion": {"pares_comparados": len(todos_cambios), "descripcion": "mismos valores en las tablas de 2025, de evolución y de diferencias; diferencia publicada = 2025 − edición anterior"}})
     guardar("pisa_bajo", bajo, {"comprobacion": {"pares_comparados": len(bajo), "descripcion": "los niveles de cada territorio suman 100"}})
     guardar("pisa_alto", alto, {"comprobacion": {"pares_comparados": len(alto), "descripcion": "los niveles de cada territorio suman 100"}})
+    falta = {t["ine"] for t in TERRITORIOS} - {f["territorio"] for f in brecha}
+    if falta:
+        sys.exit(f"Figura 3.3: faltan {sorted(falta)}")
+    guardar("pisa_brecha_isec", brecha, {"comprobacion": {"pares_comparados": len(brecha), "descripcion": "diferencia publicada = cuarto 4 − cuarto 1"}})
     print("no comparable:", list(no_comparable), "| cautela:", list(cautela))
 
 

@@ -155,6 +155,11 @@ scripts de Python y se guardan como JSON en `src/data/`. La base es sanidad-ccaa
 - EDUCAbase, tasas netas a los 3 (`escolar_07`), 16, 17 y 18 años (`escolar_12/16/20`, metodología revisada), por sexo,
   desde 2012-13 (población revisada del INE). A los 18 no cuenta la universidad: etiqueta «18 años, sin universidad».
 
+### Brecha socioeconómica en PISA (`pisa_brecha_isec`, tema «Equidad», publicada el 25/11/2026)
+- INEE, PISA 2025, Tablas_cap_3, Figura 3.3: diferencia en ciencias entre el cuarto más alto y el más bajo del ISEC,
+  con ET; comprobado que = cuarto 4 − cuarto 1 en los 22 territorios. Cataluña y Murcia, como en el resto de PISA.
+- «Por encima de España» = brecha mayor; la ficha lo aclara (comparación, no valoración).
+
 ### Descargas: ficheros que cambian sin cambiar
 - El servidor de EDUCAbase pone en cada .px la fecha de descarga (CREATION-DATE) y un SUBJECT-CODE que varía. Sin
   ignorarlos, cada descarga parecía un fichero nuevo: `descargar.py` compara el contenido sin esas dos líneas (el
