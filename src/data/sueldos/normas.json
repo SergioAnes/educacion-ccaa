@@ -197,6 +197,27 @@
       "titulo": "Instrucciones de inicio de curso 2026-2027, institutos de Educación Secundaria (Consejería de Educación de Cantabria)",
       "url": "https://www.educantabria.es/centros/instrucciones-de-inicio-y-fin-de-curso",
       "original": "sueldos/2026-11-25/cn-instrucciones-ies-2026-27.pdf"
+    },
+    "cm_anexo_iii": {
+      "titulo": "Orden 194/2025, de 29 de diciembre, de normas de ejecución de los presupuestos de 2026 (DOCM n.º 3, 7/1/2026), anexo III: conceptos retributivos del personal docente",
+      "url": "https://docm.jccm.es/",
+      "original": "sueldos/2026-11-25/cm-orden-194-2025-anexo-iii-docentes.pdf",
+      "nota": "Copia del DOCM descargada de ANPE Castilla-La Mancha (la página del DOCM no da enlace estable); el original de la orden completa también está guardado."
+    },
+    "cm_ley": {
+      "titulo": "Ley 5/2025, de 19 de diciembre, de Presupuestos Generales de Castilla-La Mancha para 2026 (DOCM n.º 250, 29/12/2025): pagas extraordinarias",
+      "url": "https://docm.jccm.es/",
+      "original": "sueldos/2026-11-25/cm-ley-5-2025-presupuestos.pdf"
+    },
+    "cm_orden_104": {
+      "titulo": "Orden 104/2026, de 3 de julio, de instrucciones para el curso 2026/2027 (DOCM n.º 130, 10/7/2026), art. 6",
+      "url": "https://docm.jccm.es/portaldocm/descargarArchivo.do?ruta=2026%2F07%2F10%2Fpdf%2F2026_5253.pdf&tipo=rutaDocm",
+      "original": "sueldos/2026-11-25/cm-orden-104-2026-instrucciones.pdf"
+    },
+    "cm_orden_194": {
+      "titulo": "Orden 194/2025, de 29 de diciembre, de normas de ejecución de los presupuestos de 2026 (DOCM n.º 3, 7/1/2026), anexo I: retribuciones de 2026 (con el +1,5 %)",
+      "url": "https://docm.jccm.es/",
+      "original": "sueldos/2026-11-25/cm-orden-194-2025.pdf"
     }
   },
   "comunidades": {
@@ -1309,6 +1330,94 @@
       "avisos": [
         "El complemento específico general de Cantabria es el mismo para maestros y profesores de secundaria (875,10 € al mes) y es de los más altos.",
         "Las dos pagas adicionales del específico (1.750,20 € al año) no están confirmadas para docentes en una norma propia."
+      ]
+    },
+    "08": {
+      "nombre": "Castilla-La Mancha",
+      "estado": "analizada",
+      "cuerpos": {
+        "maestros": {
+          "grupo": "A2",
+          "sueldo_mensual": {
+            "valor": 1199.52,
+            "fuente": "cm_orden_194",
+            "donde": "anexo I A: sueldo mensual 2026"
+          },
+          "sueldo_paga_extra": {
+            "valor": 874.83,
+            "fuente": "cm_orden_194",
+            "donde": "anexo I A: sueldo en pagas extraordinarias 2026"
+          },
+          "nivel_destino": "21",
+          "destino_mensual": {
+            "valor": 592.11,
+            "fuente": "cm_orden_194",
+            "donde": "anexo I B: complemento de destino nivel 21"
+          },
+          "especifico_mensual": {
+            "valor": 907.43,
+            "fuente": "cm_anexo_iii",
+            "donde": "anexo III, 1: componente general (específico de la Comunidad + general), mensualidad ordinaria; igual para maestros y secundaria"
+          },
+          "especifico_pagas_adicionales": {
+            "valor": 2,
+            "fuente": "cm_ley",
+            "donde": "retribuciones del personal funcionario, b) 3.º: cada paga extra incluye «una mensualidad del complemento específico»",
+            "comprobacion": "supuesto",
+            "nota": "La ley lo dice para el personal funcionario de la Administración de la Junta; la Orden 194/2025 (devengo) incluye el específico en las pagas extra, sin precisar el importe docente."
+          },
+          "otros_anuales": [],
+          "horas_lectivas": {
+            "valor": 23,
+            "fuente": "cm_orden_104",
+            "donde": "art. 6",
+            "definicion": "23 horas lectivas «con carácter general» (UGT); la Orden 104/2026 compensa con dos periodos lectivos a quien supere el horario de referencia",
+            "comprobacion": "resumen_sindical",
+            "fuente_resumen": "https://educacion.fespugtclm.es/instrucciones-26-27/"
+          }
+        },
+        "secundaria": {
+          "grupo": "A1",
+          "sueldo_mensual": {
+            "valor": 1387.24,
+            "fuente": "cm_orden_194",
+            "donde": "anexo I A: sueldo mensual 2026"
+          },
+          "sueldo_paga_extra": {
+            "valor": 856.05,
+            "fuente": "cm_orden_194",
+            "donde": "anexo I A: sueldo en pagas extraordinarias 2026"
+          },
+          "nivel_destino": "24",
+          "destino_mensual": {
+            "valor": 729.14,
+            "fuente": "cm_orden_194",
+            "donde": "anexo I B: complemento de destino nivel 24"
+          },
+          "especifico_mensual": {
+            "valor": 907.43,
+            "fuente": "cm_anexo_iii",
+            "donde": "anexo III, 1: componente general (específico de la Comunidad + general), mensualidad ordinaria; igual para maestros y secundaria"
+          },
+          "especifico_pagas_adicionales": {
+            "valor": 2,
+            "fuente": "cm_ley",
+            "donde": "retribuciones del personal funcionario, b) 3.º: cada paga extra incluye «una mensualidad del complemento específico»",
+            "comprobacion": "supuesto",
+            "nota": "La ley lo dice para el personal funcionario de la Administración de la Junta; la Orden 194/2025 (devengo) incluye el específico en las pagas extra, sin precisar el importe docente."
+          },
+          "otros_anuales": [],
+          "horas_lectivas": {
+            "valor": 18,
+            "fuente": "cm_orden_104",
+            "donde": "art. 6",
+            "definicion": "18 periodos lectivos semanales; si se superan, 2 horas complementarias menos por cada uno"
+          }
+        }
+      },
+      "avisos": [
+        "El complemento específico general de Castilla-La Mancha es el mismo para maestros y profesores de secundaria (907,43 € al mes) y es de los más altos.",
+        "La cifra de 23 horas de clase de los maestros sale de un resumen sindical: la orden de instrucciones no la da."
       ]
     }
   }

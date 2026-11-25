@@ -693,7 +693,39 @@
     "url": "https://bocyl.jcyl.es/boletines/2026/01/05/pdf/BOCYL-D-05012026-2-2.pdf",
     "fecha_captura": "2026-11-25",
     "bytes": 1469706,
-    "sha256": "d8aa8074f3f7bfedd0f99032c1be8f52d7d84defb1d39c533351b269868ebacf"
+    "sha256": "0b96985f569164216dc842e3b82c987e93dfd735ef95aff0e8408358db217b62"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/cm-ley-5-2025-presupuestos.pdf",
+    "url": "https://anpecastillalamancha.es/openFile.php?link=notices/att/7/leypresupuestosclm_2026_t1767869346_7_1.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 1078420,
+    "sha256": "82825f88bd3d59ce802395e06b16a3a669e9d4509e22d73023c901387fb83b86"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/cm-orden-104-2026-instrucciones.pdf",
+    "url": "https://docm.jccm.es/portaldocm/descargarArchivo.do?ruta=2026%2F07%2F10%2Fpdf%2F2026_5253.pdf&tipo=rutaDocm",
+    "fecha_captura": "2026-11-25",
+    "bytes": 357036,
+    "sha256": "cfa360fba7f4ebf4f875c6eaa8d58142613dc9bd42cabe1977651771b5b4bac3"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/cm-orden-194-2025-anexo-iii-docentes.pdf",
+    "url": "https://anpecastillalamancha.es/openFile.php?link=notices/att/7/anexo-iii---conceptosretributivospersonaldocente_e_t1767869514_7_3.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 125412,
+    "sha256": "6beda34917c31d4246fa55e849ef3e1e02427966678e27a360df0510aa077e0f"
+  },
+  {
+    "fuente": "sueldos",
+    "fichero": "sueldos/2026-11-25/cm-orden-194-2025.pdf",
+    "url": "https://anpecastillalamancha.es/openFile.php?link=notices/att/7/orden-194_2025normas-ejecucion-presupuestos-2026_t1767869346_7_2.pdf",
+    "fecha_captura": "2026-11-25",
+    "bytes": 1686377,
+    "sha256": "ca6799a13febb52c8b4f84a04581a2ff7ae6cb45f937b62cacdad88d8f6cfbe6"
   },
   {
     "fuente": "sueldos",

@@ -213,7 +213,7 @@ scripts de Python y se guardan como JSON en `src/data/`. La base es sanidad-ccaa
 ### Sueldos del profesorado por comunidad (EN CURSO, sin publicar; 25/11/2026)
 - ESTADO: estructura hecha (normas.json + calcular_sueldos.py). Analizadas: Madrid y Cataluña (caso «al empezar»).
   Plan acordado con el usuario: analizar las demás de una en una (guardando en git), y publicar al final con mapa,
-  horas lectivas y € por hora semanal. Hechas también: Comunitat Valenciana, País Vasco, Illes Balears, Castilla y León, Aragón, Galicia, Asturias y Cantabria (25/11/2026). Siguiente: Andalucía (solo
+  horas lectivas y € por hora semanal. Hechas también: Comunitat Valenciana, País Vasco, Illes Balears, Castilla y León, Aragón, Galicia, Asturias, Cantabria y Castilla-La Mancha (25/11/2026). Siguiente: Andalucía (solo
   tabla 2024: buscar fuente oficial 2026) o el resto. El ct-gov-205 da error SSL en descargar.py: ya está guardado a mano.
 - Andalucía (pendiente, 25/11/2026): sin tabla oficial 2026 de la pública. Piezas: tabla «fiscalizada» de 10/7/2024
   (juntadeandalucia.es/educacion/portales/web/educacion/plantilla-docente-y-retribuciones); Acuerdo del Consejo de
@@ -221,6 +221,11 @@ scripts de Python y se guardan como JSON en `src/data/`. La base es sanidad-ccaa
   pagas, desde 1/9/2025; «culmina» la equiparación); subidas generales 2025 (+2,5 %) y 2026 (+1,5 %, Ley 8/2025 art. 17).
   Reconstruir = cálculo propio en varios pasos: decidir con el usuario. La resolución de concertada 2026 (BOJA 21,
   2/2/2026) NO sirve para la pública.
+- Castilla-La Mancha: Orden 194/2025 (DOCM 7/1/2026): anexo I (básicas y destino 2026) y anexo III (específico general
+  907,43 = autonómico + general, igual para todos). Ojo: la Ley 5/2025 trae sueldos SIN las subidas: no citarla para
+  importes. Extras con una mensualidad del específico (ley, funcionarios en general → supuesto). Horas: Orden 104/2026
+  art. 6: secundaria 18; maestros 23 según UGT (la orden no lo dice → `resumen_sindical`). Originales del DOCM copiados de
+  ANPE-CLM (el DOCM no da enlace estable para la Orden 194).
 - Cantabria: Resolución de 30/1/2026 (BOC 6/2/2026): específico general 875,10 igual para todos (la resolución da anual =
   12 × mensual; la Ley 2/2024 art. 23 añade 2 pagas adicionales para funcionarios en general → supuesto, ±1.750 €);
   complemento de fomento a la formación 35,77 €/mes hasta el primer sexenio. Horas (instrucciones 2026-27): maestros 24

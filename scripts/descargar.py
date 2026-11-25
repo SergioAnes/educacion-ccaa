@@ -131,6 +131,10 @@ FUENTES: dict[str, list[tuple[str, str]]] = {
         ("cn-resolucion-nominas-docentes-2026.pdf", "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=430558"),
         ("cn-instrucciones-ceip-2026-27.pdf", "https://www.educantabria.es/documents/d/educantabria/instrucciones-ceip-inicio-de-curso-26-27_vfinal_signed"),
         ("cn-instrucciones-ies-2026-27.pdf", "https://www.educantabria.es/documents/d/educantabria/instrucciones-ies-inicio-curso-26-27_vfinal_signed"),
+        ("cm-orden-194-2025-anexo-iii-docentes.pdf", "https://anpecastillalamancha.es/openFile.php?link=notices/att/7/anexo-iii---conceptosretributivospersonaldocente_e_t1767869514_7_3.pdf"),
+        ("cm-orden-194-2025.pdf", "https://anpecastillalamancha.es/openFile.php?link=notices/att/7/orden-194_2025normas-ejecucion-presupuestos-2026_t1767869346_7_2.pdf"),
+        ("cm-ley-5-2025-presupuestos.pdf", "https://anpecastillalamancha.es/openFile.php?link=notices/att/7/leypresupuestosclm_2026_t1767869346_7_1.pdf"),
+        ("cm-orden-104-2026-instrucciones.pdf", "https://docm.jccm.es/portaldocm/descargarArchivo.do?ruta=2026%2F07%2F10%2Fpdf%2F2026_5253.pdf&tipo=rutaDocm"),
         ("ar-instrucciones-ies-2026-27.pdf", "https://educa.aragon.es/documents/20126/6844128/CSVFV61LMW0LZ120XFIL+Instrucciones+curso+2026-2027+para+centros+educativos._03+IES+2026-2027+V8-(Instrucciones).pdf/ff9b76e8-b92f-291b-b736-6f093187162c"),
     ],
     # INEE: tablas del informe español de PISA 2025 (Excel dentro de un RAR)

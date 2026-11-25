@@ -16,7 +16,9 @@
     "Asturias, maestros: pagas adicionales del específico (La ley lo dice para el personal funcionario en general; no hay artículo propio de los docentes sobre las pagas.)",
     "Asturias, secundaria: pagas adicionales del específico (La ley lo dice para el personal funcionario en general; no hay artículo propio de los docentes sobre las pagas.)",
     "Cantabria, maestros: pagas adicionales del específico (La resolución da como anual 12 × 875,10; la ley de presupuestos añade dos pagas adicionales del específico para el personal funcionario de la administración general, sin artículo propio para los docentes. Si no se cobraran, se restarían 1.750,20 €.)",
-    "Cantabria, secundaria: pagas adicionales del específico (La resolución da como anual 12 × 875,10; la ley de presupuestos añade dos pagas adicionales del específico para el personal funcionario de la administración general, sin artículo propio para los docentes. Si no se cobraran, se restarían 1.750,20 €.)"
+    "Cantabria, secundaria: pagas adicionales del específico (La resolución da como anual 12 × 875,10; la ley de presupuestos añade dos pagas adicionales del específico para el personal funcionario de la administración general, sin artículo propio para los docentes. Si no se cobraran, se restarían 1.750,20 €.)",
+    "Castilla-La Mancha, maestros: pagas adicionales del específico (La ley lo dice para el personal funcionario de la Administración de la Junta; la Orden 194/2025 (devengo) incluye el específico en las pagas extra, sin precisar el importe docente.)",
+    "Castilla-La Mancha, secundaria: pagas adicionales del específico (La ley lo dice para el personal funcionario de la Administración de la Junta; la Orden 194/2025 (devengo) incluye el específico en las pagas extra, sin precisar el importe docente.)"
   ],
   "comunidades": {
     "13": {
@@ -582,6 +584,43 @@
       "avisos": [
         "El complemento específico general de Cantabria es el mismo para maestros y profesores de secundaria (875,10 € al mes) y es de los más altos.",
         "Las dos pagas adicionales del específico (1.750,20 € al año) no están confirmadas para docentes en una norma propia."
+      ]
+    },
+    "08": {
+      "nombre": "Castilla-La Mancha",
+      "cuerpos": {
+        "maestros": {
+          "bruto_anual": 37137.46,
+          "componentes": {
+            "mensualidades": 32388.72,
+            "pagas_extra": 2933.88,
+            "pagas_adicionales_especifico": 1814.86,
+            "otros_recurrentes": 0,
+            "pagos_unicos_del_anio": 0
+          },
+          "otros": [],
+          "horas_lectivas": 23.0,
+          "horas_definicion": "23 horas lectivas «con carácter general» (UGT); la Orden 104/2026 compensa con dos periodos lectivos a quien supere el horario de referencia",
+          "euros_por_hora_semanal": 1614.67
+        },
+        "secundaria": {
+          "bruto_anual": 41270.96,
+          "componentes": {
+            "mensualidades": 36285.72,
+            "pagas_extra": 3170.38,
+            "pagas_adicionales_especifico": 1814.86,
+            "otros_recurrentes": 0,
+            "pagos_unicos_del_anio": 0
+          },
+          "otros": [],
+          "horas_lectivas": 18.0,
+          "horas_definicion": "18 periodos lectivos semanales; si se superan, 2 horas complementarias menos por cada uno",
+          "euros_por_hora_semanal": 2292.83
+        }
+      },
+      "avisos": [
+        "El complemento específico general de Castilla-La Mancha es el mismo para maestros y profesores de secundaria (907,43 € al mes) y es de los más altos.",
+        "La cifra de 23 horas de clase de los maestros sale de un resumen sindical: la orden de instrucciones no la da."
       ]
     }
   }
