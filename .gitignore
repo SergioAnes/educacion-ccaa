@@ -15,6 +15,8 @@ datos-originales/**/*.xlsx
 datos-originales/**/*.zip
 datos-originales/**/*.sav
 datos-originales/**/*.sas7bdat
+# CSV de la OCDE (todo el mundo, varios MB): en local
+datos-originales/ocde/**/*.csv
 
 # Lo genera Next.js al arrancar en modo desarrollo
 AGENTS.md
