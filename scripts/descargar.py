@@ -165,6 +165,13 @@ FUENTES: dict[str, list[tuple[str, str]]] = {
         ("28213.px", "https://www.ine.es/jaxiT3/files/t/es/px/28213.px"),
         ("36848.px", "https://www.ine.es/jaxiT3/files/t/es/px/36848.px"),
     ],
+    # OCDE, Education at a Glance (Data Explorer, SDMX): sueldos legales del profesorado, su evolución y el tiempo de
+    # enseñanza. Contexto internacional de España (una cifra para el país; no hay datos por comunidad)
+    "ocde": [
+        ("eag-sueldos-legales.csv", "https://sdmx.oecd.org/public/rest/data/OECD.EDU.IMEP,DSD_EAG_SAL_STA@DF_TCH,2.1/all?format=csvfilewithlabels"),
+        ("eag-evolucion-sueldos.csv", "https://sdmx.oecd.org/public/rest/data/OECD.EDU.IMEP,DSD_EAG_SAL_TREND@DF_TCH_STA,2.1/all?format=csvfilewithlabels"),
+        ("eag-tiempo-ensenanza.csv", "https://sdmx.oecd.org/public/rest/data/OECD.EDU.IMEP,DSD_EAG_WT@DF_STA_TCH,2.0/all?format=csvfilewithlabels"),
+    ],
     # Sueldos con 15 años de servicio: normas sobre sexenios, grados y carrera que no estaban en «sueldos»
     "sueldos_antiguedad": [
         ("ct-ordre-edf-56-2025-estadis.pdf", "https://portaldogc.gencat.cat/utilsEADOP/AppJava/PdfProviderServlet?documentId=1011571&type=01&language=ca_ES"),

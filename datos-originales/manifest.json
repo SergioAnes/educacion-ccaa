@@ -632,6 +632,30 @@
     "sha256": "b33f9431fd07fff5339db5e2317cfe4c1b982be04fd6f2fc5739a355ff4767b7"
   },
   {
+    "fuente": "ocde",
+    "fichero": "ocde/2026-11-26/eag-evolucion-sueldos.csv",
+    "url": "https://sdmx.oecd.org/public/rest/data/OECD.EDU.IMEP,DSD_EAG_SAL_TREND@DF_TCH_STA,2.1/all?format=csvfilewithlabels",
+    "fecha_captura": "2026-11-26",
+    "bytes": 9366591,
+    "sha256": "26b55166dbc4a1bb498d68769b43f44625842e953d25e5064f9c1f4ebc646a45"
+  },
+  {
+    "fuente": "ocde",
+    "fichero": "ocde/2026-11-26/eag-sueldos-legales.csv",
+    "url": "https://sdmx.oecd.org/public/rest/data/OECD.EDU.IMEP,DSD_EAG_SAL_STA@DF_TCH,2.1/all?format=csvfilewithlabels",
+    "fecha_captura": "2026-11-26",
+    "bytes": 3785125,
+    "sha256": "f6fb872e63f88a1593c74f7afa3335ac6b22756717b2b8aca241dd0ea16a6830"
+  },
+  {
+    "fuente": "ocde",
+    "fichero": "ocde/2026-11-26/eag-tiempo-ensenanza.csv",
+    "url": "https://sdmx.oecd.org/public/rest/data/OECD.EDU.IMEP,DSD_EAG_WT@DF_STA_TCH,2.0/all?format=csvfilewithlabels",
+    "fecha_captura": "2026-11-26",
+    "bytes": 517545,
+    "sha256": "f73cfa18dba9ed27884f1c258e1d0190860a5d76530c65df9e962d356c5b4bfa"
+  },
+  {
     "fuente": "pisa",
     "fichero": "pisa/2026-11-24/tablas-informe-pisa-2025.rar",
     "url": "https://www.educacionfpydeportes.gob.es/dam/jcr:4f7056b5-02d7-4e6d-a454-2caa3e04893f/tablas-informe-pisa-2025.rar",

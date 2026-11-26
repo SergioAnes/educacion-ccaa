@@ -346,6 +346,23 @@ export function iniciar(DATA: DatosApp): void {
   function pararPlay() { if (timer) { clearInterval(timer); timer = null; } }
 
   // ---------- titulares (solo cifras, sin valorar) ----------
+  // España frente a la OCDE (Education at a Glance): una cifra para el país, aparte de los datos por comunidad
+  function tarjetaOcde(ind) {
+    const O = DATA.ocde;
+    if (!ind.ocde || !O) return null;
+    const cuerpo = partes(varDe(ind)).etapa === "secundaria" ? "secundaria" : "maestros";
+    const quien = cuerpo === "secundaria" ? "un profesor de ESO" : "un maestro de primaria";
+    const n0 = (v) => nf(0).format(v);
+    const fuente = ` <a href="${O.url_informe}">OCDE, ${esc(O.edicion)}</a>.`;
+    if (ind.ocde === "horas") {
+      const h = O.horas_clase_anio[cuerpo], w = O.horas_trabajo_anio[cuerpo];
+      return { k: `España en la OCDE (${O.anio})`, t: `En ${O.anio}, ${quien} daba en España <strong>${n0(h.ES)} horas de clase al año</strong>; la media de la OCDE era ${n0(h.OCDE)} y la de la Unión Europea, ${n0(h.UE)}. Su jornada legal era de ${n0(w.ES)} horas al año (OCDE: ${n0(w.OCDE)}).${fuente}` };
+    }
+    const s = O.sueldos_ppa[cuerpo][ind.ocde], ev = O.evolucion_real_desde_2015_pct[cuerpo][ind.ocde];
+    const cuando = ind.ocde === "al_empezar" ? "que empezaba" : "con 15 años de experiencia";
+    const cambio = (p) => Math.abs(p) < 1 ? "prácticamente lo mismo que en 2015" : `un ${n0(Math.abs(p))} % ${p > 0 ? "más" : "menos"} que en 2015`;
+    return { k: `España en la OCDE (${O.anio})`, t: `En ${O.anio}, ${quien} ${cuando} cobraba en España <strong>${n0(s.ES)} $</strong> en paridad de poder adquisitivo; la media de la OCDE era ${n0(s.OCDE)} $ y la de la Unión Europea, ${n0(s.UE)} $. Descontada la inflación, en España cobraba ${cambio(ev.ES)}; en la media de la OCDE, ${cambio(ev.OCDE)}.${fuente}` };
+  }
   function titulares(ind, a) {
     const vals = valores(ind, a), o = ordenados(vals), u = ind.unidad, k = varDe(ind);
     const out = [];
@@ -392,6 +409,8 @@ export function iniciar(DATA: DatosApp): void {
       out.push({ k: `España desde ${etq(ind, a0)}`, t: `De ${fmt(e0, u)} a ${fmt(e, u)} (${fmtDif(ind, e - e0)}).` +
         (rup.length ? ` Entre medias hay ${rup.length === 1 ? "una ruptura" : "rupturas"} de serie (${lista([...new Set(rup)].map(String))}): la comparación es aproximada.` : "") });
     }
+    const oc = tarjetaOcde(ind);
+    if (oc) out.push(oc);
     return out;
   }
 

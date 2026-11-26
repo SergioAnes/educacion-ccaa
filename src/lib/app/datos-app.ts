@@ -6,6 +6,7 @@
 import territoriosJson from "@/data/territorios.json";
 import mapaJson from "@/data/mapa-ccaa.json";
 import hitosJson from "@/data/hitos.json";
+import ocdeJson from "@/data/ocde.json";
 import abandonoFicha from "@/data/indicadores/abandono_temprano.json";
 import abandonoObs from "@/data/observaciones/abandono.json";
 import titularidadFicha from "@/data/indicadores/alumnado_titularidad.json";
@@ -100,6 +101,8 @@ export type Ficha = {
   cautela_titulo?: string;
   /** Sueldos docentes: en «Tu comunidad» y en la ficha se sitúan frente al sueldo medio de los trabajadores (INE) */
   compara_sueldo_medio?: boolean;
+  /** Tarjeta «España en la OCDE»: qué cifra de ocde.json enseña (sueldo al empezar, con 15 años u horas de clase) */
+  ocde?: "al_empezar" | "con_15_anios" | "horas";
   /** Intervalo frente a cero (no frente a España) y nombres de los tres grupos */
   referencia_cero?: boolean;
   clases?: Record<string, string>;
@@ -337,6 +340,8 @@ export type DatosApp = {
   temas: { id: string; nombre: string }[];
   inds: IndApp[];
   hitos: Hito[];
+  /** España frente a la OCDE (Education at a Glance): una cifra para el país, como contexto de sueldos y horas */
+  ocde: typeof ocdeJson;
 };
 
 export function construirDatos(): DatosApp {
@@ -349,5 +354,6 @@ export function construirDatos(): DatosApp {
     temas: TEMAS.filter((t) => inds.some((i) => i.grupo === t.id)),
     inds,
     hitos: (hitosJson as Hito[]).map(({ id, corto, tipo, titulo, fecha, anio, url }) => ({ id, corto, tipo, titulo, fecha, anio, url })),
+    ocde: ocdeJson,
   };
 }

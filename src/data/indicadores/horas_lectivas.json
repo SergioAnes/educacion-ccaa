@@ -45,18 +45,26 @@
       "corto": "Tablas y normas de retribuciones de cada comunidad (recopilación propia)",
       "nombre": "Tablas oficiales de retribuciones docentes de 2026 y normas de cada comunidad (boletines oficiales, portales de transparencia y de educación), recopiladas a mano: cada importe, con su fuente y apartado, en el fichero de datos del proyecto",
       "url": "https://github.com/SergioAnes/educacion-ccaa/blob/main/src/data/sueldos/normas.json"
+    },
+    {
+      "id": "ocde_eag",
+      "corto": "OCDE (Education at a Glance 2026)",
+      "nombre": "OCDE: Education at a Glance 2026, indicador D3 (sueldos legales del profesorado) y D4 (tiempo de enseñanza); datos del OECD Data Explorer. Solo para la tarjeta «España en la OCDE».",
+      "url": "https://www.oecd.org/en/publications/education-at-a-glance-2026_b4968bbc-en/full-report/how-much-are-teachers-and-school-heads-paid_a6233c97.html"
     }
   ],
   "espana": "No hay cifra para España: lo fija cada comunidad.",
   "avisos": [
     "Lo que cuenta como «hora lectiva» no es igual en todas: en unas incluye los recreos vigilados (por ejemplo, Madrid y Castilla y León), en otras, apoyos y tutorías, y en Navarra las sesiones de Infantil y Primaria son de 50 minutos.",
     "En secundaria las horas pueden ampliarse excepcionalmente (19 a 21 según la comunidad), compensadas con menos horas complementarias; aquí se da la cifra general.",
-    "El horario es el mismo en Infantil y Primaria (maestros) y en ESO, Bachillerato y FP (profesorado de secundaria)."
+    "El horario es el mismo en Infantil y Primaria (maestros) y en ESO, Bachillerato y FP (profesorado de secundaria).",
+    "La tarjeta «España en la OCDE» da las horas de clase al año que fija la norma (OCDE, 2025), una sola cifra para España: no se compara con las horas semanales de cada comunidad, que se cuentan de otra forma."
   ],
   "rango": [
     10,
     30
   ],
   "revisado_hasta": "2026-27",
-  "sin_espana": true
+  "sin_espana": true,
+  "ocde": "horas"
 }

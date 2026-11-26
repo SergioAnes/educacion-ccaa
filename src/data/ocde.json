@@ -1,0 +1,124 @@
+{
+ "edicion": "Education at a Glance 2026",
+ "anio": "2025",
+ "url_informe": "https://www.oecd.org/en/publications/education-at-a-glance-2026_b4968bbc-en/full-report/how-much-are-teachers-and-school-heads-paid_a6233c97.html",
+ "url_datos": "https://data-explorer.oecd.org/vis?df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_EAG_SAL_STA%40DF_TCH&df[ag]=OECD.EDU.IMEP",
+ "fecha_captura": "2026-11-26",
+ "sueldos_ppa": {
+  "maestros": {
+   "al_empezar": {
+    "ES": 59526.0,
+    "OCDE": 48257.0,
+    "UE": 47717.0,
+    "ES_euros": 35030.0
+   },
+   "con_15_anios": {
+    "ES": 69047.0,
+    "OCDE": 64766.0,
+    "UE": 63317.0,
+    "ES_euros": 40633.0
+   },
+   "maximo": {
+    "ES": 85216.0,
+    "OCDE": 76802.0,
+    "UE": 76129.0,
+    "ES_euros": 50148.0
+   }
+  },
+  "secundaria": {
+   "al_empezar": {
+    "ES": 66772.0,
+    "OCDE": 49514.0,
+    "UE": 48782.0,
+    "ES_euros": 39294.0
+   },
+   "con_15_anios": {
+    "ES": 77440.0,
+    "OCDE": 65472.0,
+    "UE": 63374.0,
+    "ES_euros": 45572.0
+   },
+   "maximo": {
+    "ES": 95292.0,
+    "OCDE": 77862.0,
+    "UE": 76248.0,
+    "ES_euros": 56077.0
+   }
+  }
+ },
+ "evolucion_real_desde_2015_pct": {
+  "maestros": {
+   "al_empezar": {
+    "ES": -0.8,
+    "OCDE": 19.3,
+    "UE": 21.8
+   },
+   "con_15_anios": {
+    "ES": 0.0,
+    "OCDE": 11.2,
+    "UE": 10.6
+   }
+  },
+  "secundaria": {
+   "al_empezar": {
+    "ES": -0.3,
+    "OCDE": 17.9,
+    "UE": 21.3
+   },
+   "con_15_anios": {
+    "ES": 0.4,
+    "OCDE": 10.5,
+    "UE": 9.9
+   }
+  }
+ },
+ "horas_clase_anio": {
+  "maestros": {
+   "ES": 828,
+   "OCDE": 770,
+   "UE": 694
+  },
+  "secundaria": {
+   "ES": 642,
+   "OCDE": 710,
+   "UE": 629
+  }
+ },
+ "horas_trabajo_anio": {
+  "maestros": {
+   "ES": 1385,
+   "OCDE": 1564,
+   "UE": 1533
+  },
+  "secundaria": {
+   "ES": 1385,
+   "OCDE": 1579,
+   "UE": 1554
+  }
+ },
+ "comprobacion": {
+  "paridad_espana": 1.69929,
+  "contraste_con_la_web": {
+   "maestros_al_empezar": {
+    "media_17_web_2026": 36483,
+    "espana_ocde_2025": 35030.0,
+    "diferencia_pct": 4.1
+   },
+   "maestros_con_15_anios": {
+    "media_17_web_2026": 42143,
+    "espana_ocde_2025": 40633.0,
+    "diferencia_pct": 3.7
+   },
+   "secundaria_al_empezar": {
+    "media_17_web_2026": 40894,
+    "espana_ocde_2025": 39294.0,
+    "diferencia_pct": 4.1
+   },
+   "secundaria_con_15_anios": {
+    "media_17_web_2026": 47229,
+    "espana_ocde_2025": 45572.0,
+    "diferencia_pct": 3.6
+   }
+  }
+ }
+}

@@ -72,6 +72,11 @@ familia de `sanidad-ccaa` y `presupuestos-ccaa` (mismo estilo y mismas reglas). 
   «ees»), comprobado con la nota de prensa y los coeficientes de variación. Las fichas con `compara_sueldo_medio` sitúan
   el sueldo docente frente a él SIN dividir uno por otro (años distintos y tiempo parcial): cada cifra frente a su
   referencia (España / media de las 17).
+- `extraer_ocde.py`: España frente a la OCDE (Education at a Glance, SDMX del Data Explorer, fuente «ocde») →
+  `src/data/ocde.json`: sueldos legales en dólares PPA (al empezar, 15 años, máximo), evolución real desde 2015 y horas
+  de clase al año. Una sola cifra para España (no hay comunidades): va en la tarjeta «España en la OCDE» de las fichas con
+  `ocde`, nunca mezclada con los datos por comunidad. Maestros = CINE 1; secundaria = CINE 24 (comprobado que en España
+  Infantil = Primaria y ESO = Bachillerato).
 - `extraer_hitos.py`: leyes desde las fichas XML del BOE → `src/data/hitos.json`.
 - Un salto > 15 % frente al periodo anterior posterior a `revisado_hasta` hace fallar los tests: revisarlo y subir la fecha.
 

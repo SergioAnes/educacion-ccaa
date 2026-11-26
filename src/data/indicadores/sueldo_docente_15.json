@@ -45,6 +45,12 @@
       "corto": "Tablas y normas de retribuciones de cada comunidad (recopilación propia)",
       "nombre": "Tablas oficiales de retribuciones docentes de 2026 y normas de cada comunidad (boletines oficiales, portales de transparencia y de educación), recopiladas a mano: cada importe, con su fuente y apartado, en el fichero de datos del proyecto",
       "url": "https://github.com/SergioAnes/educacion-ccaa/blob/main/src/data/sueldos/normas.json"
+    },
+    {
+      "id": "ocde_eag",
+      "corto": "OCDE (Education at a Glance 2026)",
+      "nombre": "OCDE: Education at a Glance 2026, indicador D3 (sueldos legales del profesorado) y D4 (tiempo de enseñanza); datos del OECD Data Explorer. Solo para la tarjeta «España en la OCDE».",
+      "url": "https://www.oecd.org/en/publications/education-at-a-glance-2026_b4968bbc-en/full-report/how-much-are-teachers-and-school-heads-paid_a6233c97.html"
     }
   ],
   "espana": "No hay cifra para España: cada comunidad fija su parte del sueldo.",
@@ -60,7 +66,8 @@
     "Cataluña: desde 2024 los estadis (sexenios) vuelven a ser cada 6 años; entre 2012 y 2023 hacían falta 9 para el primero. La deuda de esos años, que se pagará desde 2027, no se incluye.",
     "Es el caso del funcionario de carrera. Un interino con 15 años cobra los trienios (Estatuto Básico, art. 25.2), pero en general no la carrera profesional, que el art. 25.1 no incluye para los interinos (en Murcia el tramo I es «del personal funcionario docente de carrera»; en Baleares, en cambio, la convocatoria de 2026 admite interinos), y el reconocimiento de sus sexenios depende de cada comunidad: no se ha comprobado una a una.",
     "La comparación con el sueldo medio de los trabajadores de cada comunidad (INE, 2024) se hace frente a España en las dos cifras, no dividiendo una entre otra: el sueldo docente es de 2026 y a jornada completa, y el sueldo medio es de 2024 e incluye el tiempo parcial.",
-    "Por qué las dos cifras se comportan distinto: el sueldo docente lo fija la administración y cambia poco entre comunidades (la mayor parte es estatal), mientras que el sueldo medio depende de los empleos que hay en cada comunidad. Por eso, donde los sueldos del resto de trabajadores son altos (Madrid, Navarra, Cataluña), el docente queda peor situado frente a sus vecinos, y al revés donde son bajos (Canarias, Extremadura)."
+    "Por qué las dos cifras se comportan distinto: el sueldo docente lo fija la administración y cambia poco entre comunidades (la mayor parte es estatal), mientras que el sueldo medio depende de los empleos que hay en cada comunidad. Por eso, donde los sueldos del resto de trabajadores son altos (Madrid, Navarra, Cataluña), el docente queda peor situado frente a sus vecinos, y al revés donde son bajos (Canarias, Extremadura).",
+    "La tarjeta «España en la OCDE» usa una sola cifra para España (la media de las comunidades que calcula el Ministerio para la OCDE), de 2025 y en dólares en paridad de poder adquisitivo, para poder comparar países. No se compara con las cifras de cada comunidad, que son de 2026 y en euros. Maestros = primaria; profesorado de secundaria = ESO (en España, Infantil cobra igual que Primaria y Bachillerato igual que ESO). La evolución descuenta la inflación como lo hace la OCDE."
   ],
   "rango": [
     25000,
@@ -68,5 +75,6 @@
   ],
   "revisado_hasta": "2026",
   "sin_espana": true,
-  "compara_sueldo_medio": true
+  "compara_sueldo_medio": true,
+  "ocde": "con_15_anios"
 }
