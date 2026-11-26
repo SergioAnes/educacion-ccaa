@@ -456,6 +456,22 @@
     "sha256": "47108af63b3e18ed882de3dfd258ef253074bf2dc20bb2f0097052559f275760"
   },
   {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-26/series05.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/profesorado/estadistica/series/l0/series05.px",
+    "fecha_captura": "2026-11-26",
+    "bytes": 18953,
+    "sha256": "632ce3079935a1e7e40e1cb5b3e8564e14d27786351c87f006240c85354443bd"
+  },
+  {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-26/series06.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/profesorado/estadistica/series/l0/series06.px",
+    "fecha_captura": "2026-11-26",
+    "bytes": 13281,
+    "sha256": "05253216a67e139eab5052bee5e4280100f9eff6c1d5bcb73496eb64908a33ab"
+  },
+  {
     "fuente": "ees",
     "fichero": "ees/2026-11-26/28191.px",
     "url": "https://www.ine.es/jaxiT3/files/t/es/px/28191.px",

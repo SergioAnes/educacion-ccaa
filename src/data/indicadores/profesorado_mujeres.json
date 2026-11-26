@@ -1,0 +1,58 @@
+{
+  "id": "profesorado_mujeres",
+  "grupo": "profesorado",
+  "resumen": false,
+  "nombre": "Mujeres en el profesorado",
+  "corto": "Mujeres en el profesorado",
+  "que": "del profesorado",
+  "unidad": "pct",
+  "variantes": [
+    {
+      "titularidad": "total",
+      "etiqueta": "Todos los centros"
+    },
+    {
+      "titularidad": "publica",
+      "etiqueta": "Pública"
+    },
+    {
+      "titularidad": "privada",
+      "etiqueta": "Privada (con la concertada)"
+    }
+  ],
+  "filas_ficha": [
+    {},
+    {
+      "titularidad": "publica"
+    },
+    {
+      "titularidad": "privada"
+    }
+  ],
+  "definicion": "Porcentaje de mujeres en el profesorado de Enseñanzas de Régimen General (de Infantil a Bachillerato y FP).",
+  "numerador": "Profesoras de Régimen General.",
+  "denominador": "Todo el profesorado de Régimen General. Cuenta personas, no jornadas completas.",
+  "no_mide": "No distingue etapas: en Infantil y Primaria hay muchas más mujeres que en secundaria, así que el porcentaje de cada comunidad depende también de cuánto pesa cada etapa. Tampoco dice nada de los cargos directivos.",
+  "fiabilidad": "A",
+  "fiabilidad_txt": "Estadística oficial anual (recuento del profesorado).",
+  "estado": "definitivo",
+  "fuentes": [
+    {
+      "id": "mefd_educabase",
+      "corto": "Ministerio de Educación (EDUCAbase)",
+      "nombre": "Ministerio de Educación, Formación Profesional y Deportes: Estadística del Profesorado, porcentaje de profesorado mujeres (serie 6) y profesorado por sexo (serie 5)",
+      "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/Tabla.htm?path=/no-universitaria/profesorado/estadistica/series/l0/&file=series06.px"
+    }
+  ],
+  "espana": "Dato oficial del Ministerio para el conjunto de España.",
+  "avisos": [
+    "«Privada» incluye la concertada y la no concertada: la tabla no las separa.",
+    "Galicia incluye desde 2012-13 al profesorado de los centros del primer ciclo de Infantil (nota de la tabla).",
+    "Andalucía (2018-19) y el País Vasco (2010-11 a 2015-16) cambiaron la forma de calcular sus datos (notas de la tabla)."
+  ],
+  "rango": [
+    40,
+    95
+  ],
+  "revisado_hasta": "2024-25"
+}

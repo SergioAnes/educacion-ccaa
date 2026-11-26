@@ -10,6 +10,7 @@ Indicadores:
   - escolarizacion_0_2: tasa neta de escolarización de 0 a 2 años (publicada), por sexo.
   - alumnado_extranjero: % de alumnado extranjero en Régimen General (publicado).
   - alumnos_profesor: número medio de alumnos por profesor (publicado), por titularidad.
+  - profesorado_mujeres: % de mujeres en el profesorado de Régimen General (publicado), por titularidad.
   - idoneidad_15: tasa de idoneidad a los 15 años (publicada), por sexo.
   - repeticion_eso: tasa de alumnado repetidor en ESO, todos los cursos (publicada), por titularidad/financiación.
 
@@ -43,6 +44,8 @@ RUTAS = {
     "extran_04.px": "no-universitaria/alumnado/matriculado/series/extranjeros/l0",
     "series03.px": "no-universitaria/profesorado/estadistica/series/l0",
     "series07.px": "no-universitaria/profesorado/estadistica/series/l0",
+    "series05.px": "no-universitaria/profesorado/estadistica/series/l0",
+    "series06.px": "no-universitaria/profesorado/estadistica/series/l0",
 }
 # Número medio de alumnado por unidad (grupo), por etapa: fuente «unidades» de descargar.py
 U = "no-universitaria/centros/centrosyunid/series/unidades/l0"
@@ -53,7 +56,7 @@ ETAPAS_UNIDAD = {  # etapa -> tabla
 RUTAS.update({n: U for n in [*ETAPAS_UNIDAD.values(), "series_1_04.px", "series_1_06.px"]})
 RUTAS.update({"alumnado_3_01.px": RUTAS["alumnado_1_01.px"], "alumnado_4_01.px": RUTAS["alumnado_1_01.px"]})
 FUENTE_DE = {n: "unidades" for n in [*ETAPAS_UNIDAD.values(), "series_1_04.px", "series_1_06.px", "alumnado_3_01.px", "alumnado_4_01.px"]}
-SEXO = {"AMBOS SEXOS": "total", "HOMBRES": "h", "MUJERES": "m"}
+SEXO = {"AMBOS SEXOS": "total", "TOTAL": "total", "HOMBRES": "h", "MUJERES": "m"}
 TITULARIDAD = {
     "TODOS LOS CENTROS": "total", "TOTAL": "total", "CENTROS PÚBLICOS": "publica", "CENTROS PRIVADOS": "privada",
     "CENTROS PRIVADOS TOTAL": "privada", "CENTROS PRIVADOS E. CONCERTADA": "concertada",
@@ -281,6 +284,15 @@ def main() -> None:
     profes = por_clave(serie("x", "series03.px", "num")[0])
     c = comprobar_cociente("alumnos por profesor", por_clave(filas), alumnos, profes, 1, 0.051, errores)
     guardar("alumnos_profesor", filas, notas_citadas(px), {**c, "descripcion": "publicado = alumnado (alumnado_1_01) / profesorado (series03)"})
+
+    # % de profesorado mujeres (publicado, por titularidad); el total se comprueba con los recuentos por sexo (series05)
+    filas, px = serie("profesorado_mujeres", "series06.px", "pct")
+    por_sexo = serie("x", "series05.px", "num")[0]
+    mujeres = {(f["territorio"], f["periodo"], "total", "total"): f["valor"] for f in por_sexo if f["sexo"] == "m"}
+    total = {(f["territorio"], f["periodo"], "total", "total"): f["valor"] for f in por_sexo if f["sexo"] == "total"}
+    publicado = {k: v for k, v in por_clave(filas).items() if k[3] == "total"}
+    c = comprobar_cociente("% profesorado mujeres", publicado, mujeres, total, 100, 0.051, errores)
+    guardar("profesorado_mujeres", filas, notas_citadas(px), {**c, "descripcion": "publicado = mujeres / total (series05), en todos los centros"})
 
     # % de alumnado extranjero: publicado = extranjeros / alumnado
     filas, px = serie("alumnado_extranjero", "extran_04.px", "pct")
