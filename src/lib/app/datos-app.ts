@@ -43,6 +43,8 @@ import sueldoMedioFicha from "@/data/indicadores/sueldo_medio.json";
 import sueldoMedioObs from "@/data/observaciones/sueldo_medio.json";
 import mujeresFicha from "@/data/indicadores/profesorado_mujeres.json";
 import mujeresObs from "@/data/observaciones/profesorado_mujeres.json";
+import edadProfFicha from "@/data/indicadores/profesorado_edad.json";
+import edadProfObs from "@/data/observaciones/profesorado_edad.json";
 import horasFicha from "@/data/indicadores/horas_lectivas.json";
 import horasObs from "@/data/observaciones/horas_lectivas.json";
 import porHoraFicha from "@/data/indicadores/sueldo_por_hora.json";
@@ -158,6 +160,7 @@ export const REGISTRO: { ficha: Ficha; obs: Observaciones }[] = [
   par(porHoraFicha, porHoraObs),
   par(sueldoMedioFicha, sueldoMedioObs),
   par(mujeresFicha, mujeresObs),
+  par(edadProfFicha, edadProfObs),
   par(pisaFicha, pisaObs),
   par(pisaBajoFicha, pisaBajoObs),
   par(pisaAltoFicha, pisaAltoObs),
@@ -236,6 +239,8 @@ export function textoComprobacion(obs: Observaciones): string {
     return "Cada importe sale de la tabla o norma de su comunidad (con su apartado en el fichero de datos del proyecto). Se comprueba que el sueldo base, la paga extra y el complemento de destino son los estatales (salvo donde la comunidad tiene uno propio, que se avisa) y que las sumas coinciden con los totales mensuales o anuales cuando la comunidad los publica.";
   if (obs.indicador_id === "sueldo_medio")
     return "Las cifras de 2024 de España, País Vasco, Madrid, Navarra y Extremadura coinciden con la nota de prensa del INE (28/5/2026), y el coeficiente de variación de cada dato está por debajo del 5 %. Usar la media a jornada completa de la encuesta de 2022 cambiaría la posición de una comunidad frente a España como mucho 3,3 puntos.";
+  if (obs.indicador_id === "profesorado_edad")
+    return `En cada curso, los tramos de edad suman el total y las comunidades suman España (${nf(0).format(c.pares_comparados)} comprobaciones). Se descuenta el profesorado sin edad registrada y no se da la cifra cuando pasa del 5 %.`;
   if (obs.indicador_id === "empleo_fp")
     return `Las ${nf(0).format(c.iguales_f19 ?? 0)} cifras de los titulados de 2020-21 en grado medio y superior coinciden con las de «Las cifras de la educación» (tabla F1.9); en cada caso, el total queda entre hombres y mujeres, y la tasa de alta en algún momento de marzo no es menor que la media del mes.`;
   if (obs.indicador_id === "pisa_sexo")

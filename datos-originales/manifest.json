@@ -240,6 +240,118 @@
     "sha256": "a897b42361383a445b84a61212741770dc92eb8c8084815924fcd9b756ecc75c"
   },
   {
+    "fuente": "edad_profesorado",
+    "fichero": "edad_profesorado/2026-11-26/edad_2011-2012.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/profesorado/estadistica/2011-2012-rd/reggen/l0/reggen05.px",
+    "fecha_captura": "2026-11-26",
+    "bytes": 29321,
+    "sha256": "2b52ace2709fb45a4f1a3c7826ab552ce8ae1314fc521e54712f696fa8a80640"
+  },
+  {
+    "fuente": "edad_profesorado",
+    "fichero": "edad_profesorado/2026-11-26/edad_2012-2013.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/profesorado/estadistica/2012-2013-rd/reggen/l0/reggen05.px",
+    "fecha_captura": "2026-11-26",
+    "bytes": 29131,
+    "sha256": "f639936488af0fea5d933fc2e7d9a239e7dd35a3ef045f4fb471d29bab7606bb"
+  },
+  {
+    "fuente": "edad_profesorado",
+    "fichero": "edad_profesorado/2026-11-26/edad_2013-2014.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/profesorado/estadistica/2013-2014-rd/reggen/l0/reggen05.px",
+    "fecha_captura": "2026-11-26",
+    "bytes": 29141,
+    "sha256": "321d95aeedf5a66c1ed7fb1ef845f9688728f975f0af17f2d05243f24cb82d1a"
+  },
+  {
+    "fuente": "edad_profesorado",
+    "fichero": "edad_profesorado/2026-11-26/edad_2014-2015.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/profesorado/estadistica/2014-2015-rd/reggen/l0/reggen05.px",
+    "fecha_captura": "2026-11-26",
+    "bytes": 29246,
+    "sha256": "fb79546c736599ff799f89fac38bd7efac5d3f1f560971dd2e2fc13b8dc7e399"
+  },
+  {
+    "fuente": "edad_profesorado",
+    "fichero": "edad_profesorado/2026-11-26/edad_2015-2016.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/profesorado/estadistica/2015-2016-rd/reggen/l0/reggen05.px",
+    "fecha_captura": "2026-11-26",
+    "bytes": 29228,
+    "sha256": "14318f8b00f527de079bbf418f252dad5956cfaf47f90e5eac2c0505e38c2178"
+  },
+  {
+    "fuente": "edad_profesorado",
+    "fichero": "edad_profesorado/2026-11-26/edad_2016-2017.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/profesorado/estadistica/2016-2017-rd/reggen/l0/reggen05.px",
+    "fecha_captura": "2026-11-26",
+    "bytes": 29161,
+    "sha256": "2a9e9cae6a6e38b60ebf2c23b5954cbf6697a7606f6cdd15c40227852aa329ce"
+  },
+  {
+    "fuente": "edad_profesorado",
+    "fichero": "edad_profesorado/2026-11-26/edad_2017-2018.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/profesorado/estadistica/2017-2018-rd/reggen/l0/reggen05.px",
+    "fecha_captura": "2026-11-26",
+    "bytes": 28942,
+    "sha256": "25496fe49ec85e900661b2938c947c440a6171fa3adf24f1bc5e99ed8d7e1173"
+  },
+  {
+    "fuente": "edad_profesorado",
+    "fichero": "edad_profesorado/2026-11-26/edad_2018-2019.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/profesorado/estadistica/2018-2019-rd/reggen/l0/reggen05.px",
+    "fecha_captura": "2026-11-26",
+    "bytes": 29203,
+    "sha256": "eff4c0c5e0b47dc68e10a9753173bafd4f0fe74e5b0cbdb186138854a5d20d4a"
+  },
+  {
+    "fuente": "edad_profesorado",
+    "fichero": "edad_profesorado/2026-11-26/edad_2019-2020.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/profesorado/estadistica/2019-2020-rd/reggen/l0/reggen05.px",
+    "fecha_captura": "2026-11-26",
+    "bytes": 29012,
+    "sha256": "980c7bb9d50becc0e8ec0497f287fe1049ffecf5bdefadae2b8ce74ce77803a9"
+  },
+  {
+    "fuente": "edad_profesorado",
+    "fichero": "edad_profesorado/2026-11-26/edad_2020-2021.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/profesorado/estadistica/2020-2021-rd/reggen/l0/reggen_1_05.px",
+    "fecha_captura": "2026-11-26",
+    "bytes": 29024,
+    "sha256": "11f943e869ee40e19803b2c8da024ba39c1accd5d1926ec3cfb743dd47c94bfe"
+  },
+  {
+    "fuente": "edad_profesorado",
+    "fichero": "edad_profesorado/2026-11-26/edad_2021-2022.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/profesorado/estadistica/2021-2022-rd/reggen/l0/reggen_1_07.px",
+    "fecha_captura": "2026-11-26",
+    "bytes": 29168,
+    "sha256": "baa40079cef15daa327518cbc73a99f7f41e656a14e8cb1e23c01ab98cd591ae"
+  },
+  {
+    "fuente": "edad_profesorado",
+    "fichero": "edad_profesorado/2026-11-26/edad_2022-2023.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/profesorado/estadistica/2022-2023-rd/reggen/l0/reggen_1_07.px",
+    "fecha_captura": "2026-11-26",
+    "bytes": 29212,
+    "sha256": "05cb9a179eab39a50f21e2b2df2b191e507c5e794a8da66366b6f3998caf13c7"
+  },
+  {
+    "fuente": "edad_profesorado",
+    "fichero": "edad_profesorado/2026-11-26/edad_2023-2024.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/profesorado/estadistica/2023-2024-rd/reggen/l0/reggen_1_07.px",
+    "fecha_captura": "2026-11-26",
+    "bytes": 29306,
+    "sha256": "5e628e37020c3cec4c616a4931eb1e7b53aad230ed9890bdb263e6ae8a46702d"
+  },
+  {
+    "fuente": "edad_profesorado",
+    "fichero": "edad_profesorado/2026-11-26/edad_2024-2025.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/profesorado/estadistica/2024-2025-rd/reggen/l0/reggen_1_07.px",
+    "fecha_captura": "2026-11-26",
+    "bytes": 29352,
+    "sha256": "a342d3efaa6420727a90afacd6003dc74fcf33f6fd544da644401b4ee5beee94"
+  },
+  {
     "fuente": "educabase",
     "fichero": "educabase/2026-11-24/alumnado_1_01.px",
     "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/alumnado/matriculado/series/AlumnadoGen/l0/alumnado_1_01.px",

@@ -82,6 +82,12 @@ FUENTES: dict[str, list[tuple[str, str]]] = {
         "no-universitaria/alumnado/matriculado/series/AlumnadoGen/l0/alumnado_4_01.px",  # alumnado de ESO
     ]],
     # EDUCAbase: % de alumnado con necesidades educativas especiales por titularidad/financiación (un fichero por curso)
+    # Profesorado de Régimen General por titularidad, comunidad, sexo y edad (una tabla por curso; cambia de nombre)
+    "edad_profesorado": [
+        (f"edad_{a}-{a + 1}.px", f"{PX}/no-universitaria/profesorado/estadistica/{a}-{a + 1}-rd/reggen/l0/"
+         + ("reggen05.px" if a <= 2019 else "reggen_1_05.px" if a == 2020 else "reggen_1_07.px"))
+        for a in range(2011, 2025)
+    ],
     "nee": [(f"acnee_02_{a}-{a + 1}.px", f"{PX}/no-universitaria/alumnado/apoyo/{a}-{a + 1}/acnee/l0/acnee_02.px") for a in range(2011, 2025)],
     # «Las cifras de la educación en España», edición 2026 (curso 2023-24): tablas en Excel por capítulo
     "cifras": [

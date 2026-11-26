@@ -1,0 +1,78 @@
+{
+  "id": "profesorado_edad",
+  "grupo": "profesorado",
+  "resumen": false,
+  "nombre": "Edad del profesorado",
+  "corto": "Edad del profesorado",
+  "que": "del profesorado",
+  "unidad": "pct",
+  "dimensiones": [
+    {
+      "dim": "etapa",
+      "nombre": "Edad",
+      "opciones": [
+        {
+          "id": "mayores_50",
+          "etiqueta": "50 años o más"
+        },
+        {
+          "id": "menores_30",
+          "etiqueta": "Menos de 30 años"
+        }
+      ]
+    },
+    {
+      "dim": "titularidad",
+      "nombre": "Titularidad",
+      "opciones": [
+        {
+          "id": "total",
+          "etiqueta": "Todos los centros"
+        },
+        {
+          "id": "publica",
+          "etiqueta": "Pública"
+        },
+        {
+          "id": "privada",
+          "etiqueta": "Privada (con la concertada)"
+        }
+      ]
+    }
+  ],
+  "filas_ficha": [
+    {
+      "etapa": "mayores_50"
+    },
+    {
+      "etapa": "menores_30"
+    }
+  ],
+  "definicion": "Porcentaje del profesorado de Enseñanzas de Régimen General que tiene 50 años o más (o menos de 30).",
+  "numerador": "Profesorado de esa edad (50 a 59, 60 a 64 y 65 y más; o menos de 30).",
+  "denominador": "Profesorado con la edad registrada (se descuenta el de «no consta edad»). Cuenta personas, no jornadas completas.",
+  "no_mide": "No es una previsión de jubilaciones ni dice cuántas plazas habrá que cubrir. No distingue etapas ni cuerpos.",
+  "fiabilidad": "A",
+  "fiabilidad_txt": "Estadística oficial anual (recuento del profesorado por edad); el porcentaje lo calcula esta web.",
+  "estado": "definitivo",
+  "fuentes": [
+    {
+      "id": "mefd_educabase",
+      "corto": "Ministerio de Educación (EDUCAbase)",
+      "nombre": "Ministerio de Educación, Formación Profesional y Deportes: Estadística del Profesorado, «Profesorado por titularidad del centro, comunidad autónoma/provincia, sexo y edad» (tabla de cada curso)",
+      "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/Tabla.htm?path=/no-universitaria/profesorado/estadistica/2024-2025-rd/reggen/l0/&file=reggen_1_07.px"
+    }
+  ],
+  "espana": "Dato oficial del Ministerio para el conjunto de España (recuentos); el porcentaje es cálculo propio.",
+  "avisos": [
+    "Cálculo propio con los recuentos del Ministerio: cada tramo de edad dividido entre el profesorado con la edad registrada. Comprobado en cada curso que los tramos suman el total y que las comunidades suman España.",
+    "Desde 2013-14: en 2011-12 y 2012-13 la Comunidad Valenciana no registra la edad de su profesorado.",
+    "No se da la cifra cuando falta la edad de más del 5 % del profesorado: pasa en la privada de Ceuta y Melilla casi todos los cursos, en la de Canarias en 2013-14 y en la de Andalucía en 2023-24 y 2024-25.",
+    "«Privada» incluye la concertada y la no concertada: la tabla no las separa."
+  ],
+  "rango": [
+    0,
+    70
+  ],
+  "revisado_hasta": "2024-25"
+}

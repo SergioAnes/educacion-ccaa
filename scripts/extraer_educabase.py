@@ -11,6 +11,8 @@ Indicadores:
   - alumnado_extranjero: % de alumnado extranjero en Régimen General (publicado).
   - alumnos_profesor: número medio de alumnos por profesor (publicado), por titularidad.
   - profesorado_mujeres: % de mujeres en el profesorado de Régimen General (publicado), por titularidad.
+  - profesorado_edad: % del profesorado con 50 años o más y con menos de 30 (cálculo propio sobre el que tiene la edad
+    registrada, de la tabla por sexo y edad de cada curso, 2013-14 en adelante), por titularidad.
   - idoneidad_15: tasa de idoneidad a los 15 años (publicada), por sexo.
   - repeticion_eso: tasa de alumnado repetidor en ESO, todos los cursos (publicada), por titularidad/financiación.
 
@@ -257,6 +259,93 @@ def guardar(ind: str, filas: list[dict], notas: list[dict], comprobacion: dict) 
     print(f"{ind}: {len(filas)} filas, {periodos[0]} a {periodos[-1]}; {comprobacion}")
 
 
+# ---------- Edad del profesorado (una tabla por curso, fuente «edad_profesorado») ----------
+TRAMOS_EDAD = ["Menos de 30 años", "De 30 a 39", "De 40 a 49", "De 50 a 59", "De 60 a 64", "65 y más", "No consta edad"]
+EDAD_DESDE = 2013  # 2011-12 y 2012-13: la Comunidad Valenciana no da la edad de nadie (todo «No consta edad»)
+TIT_EDAD = {"TODOS LOS CENTROS": "total", "CENTROS PÚBLICOS": "publica", "CENTROS PRIVADOS": "privada"}
+
+
+def terr_edad(etiqueta: str) -> str | None:
+    """Código INE de una fila de la tabla de edad, o None si es una provincia. Las comunidades vienen en mayúsculas
+    («01 ANDALUCÍA», «ANDALUCÍA (1)», «NAVARRA (Comunidad Foral de)»); las provincias, no («Almería», «Valencia/València»)."""
+    e = re.sub(r"\s*\(\d+\)\s*$", "", etiqueta.replace(" ", " ")).strip()
+    if e.upper() in ("TOTAL", "TODOS", "00 TOTAL"):
+        return "00"
+    e = re.sub(r"^\d\d\s+", "", e)
+    nombre = re.sub(r"\s*\([^)]*\)", "", e).strip()
+    if nombre != nombre.upper():
+        return None
+    nombre = nombre.upper()
+    alias = {a.upper(): t["ine"] for t in POR_ALIAS.values() for a in t["alias"] + [t["nombre"]]}
+    if nombre not in alias:
+        sys.exit(f"edad del profesorado: comunidad desconocida «{etiqueta}»")
+    return alias[nombre]
+
+
+def edad_profesorado(errores: list) -> tuple[list, list, dict]:
+    """% del profesorado con 50 años o más y con menos de 30, sobre el que tiene la edad registrada, por titularidad."""
+    filas, notas, comprobados, max_nc, omitidas = [], [], 0, (0.0, ""), []
+    for a in range(EDAD_DESDE, 2025):
+        nombre = f"edad_{a}-{a + 1}.px"
+        m = ultimo_original("edad_profesorado", nombre)
+        px = leer_px(m["ruta"])
+        celdas = celdas_px(px)
+        if px["STUB"] != ["Titularidad del centro", "Comunidad autónoma/provincia"] or px["HEADING"] != ["Sexo", "Edad"] or px['VALUES("Edad")'] != ["TOTAL", *TRAMOS_EDAD]:
+            sys.exit(f"{nombre}: la tabla ha cambiado de estructura")
+        labs = {}
+        for etq in px['VALUES("Comunidad autónoma/provincia")']:
+            k = terr_edad(etq)
+            if k:
+                labs[k] = etq
+        if sorted(labs) != [f"{i:02d}" for i in range(20)]:
+            sys.exit(f"{nombre}: faltan comunidades: {sorted(set(f'{i:02d}' for i in range(20)) - set(labs))}")
+        per = f"{a}-{str(a + 1)[2:]}"
+        fichero = re.search(r"[^/]+\.px$", m["url"]).group(0)
+        url = URL_TABLA.format(ruta=f"no-universitaria/profesorado/estadistica/{a}-{a + 1}-rd/reggen/l0", fichero=fichero)
+        for tit_px, tit in TIT_EDAD.items():
+            g = lambda k, tramo: celdas[(tit_px, labs[k], "AMBOS SEXOS", tramo)] or 0
+            if abs(sum(g(k, "TOTAL") for k in labs if k != "00") - g("00", "TOTAL")) > 0.5:
+                errores.append(f"{nombre} {tit_px}: la suma de las comunidades no da España")
+            for k in labs:
+                total, nc = g(k, "TOTAL"), g(k, "No consta edad")
+                if abs(sum(g(k, t) for t in TRAMOS_EDAD) - total) > 0.5:
+                    errores.append(f"{nombre} {tit_px} {k}: los tramos de edad no suman el total")
+                if not total:
+                    continue
+                comprobados += 1
+                if nc / total > max_nc[0]:
+                    max_nc = (nc / total, f"{k} {per} {tit}")
+                if nc / total > 0.05:  # falta la edad de más del 5 %: el porcentaje no es fiable, no se publica
+                    omitidas.append({"territorio": k, "periodo": per, "titularidad": tit, "no_consta_pct": round(100 * nc / total, 1)})
+                    continue
+                conocida = total - nc
+                for etapa, tramos in (("mayores_50", TRAMOS_EDAD[3:6]), ("menores_30", TRAMOS_EDAD[:1])):
+                    filas.append(fila("profesorado_edad", k, per, round(100 * sum(g(k, t) for t in tramos) / conocida, 2), "pct",
+                                      url, m["fecha_captura"], "definitivo", titularidad=tit, etapa=etapa))
+        for n in notas_citadas_edad(px, labs, per):
+            notas.append(n)
+    # Una nota que se repite curso a curso, una sola vez con todos sus cursos
+    juntas: dict = {}
+    for n in notas:
+        j = juntas.setdefault((n["texto"], tuple(n["territorios"])), {"texto": n["texto"], "territorios": n["territorios"], "periodos": []})
+        j["periodos"] += n["periodos"]
+    notas = list(juntas.values())
+    return filas, notas, {"pares_comparados": comprobados, "descripcion": "cada curso: tramos de edad = total, suma de comunidades = España; % sobre el profesorado con edad registrada",
+                          "no_consta_maximo": {"pct": round(100 * max_nc[0], 2), "donde": max_nc[1]},
+                          "omitidas_por_no_consta": omitidas}
+
+
+def notas_citadas_edad(px: dict, labs: dict, per: str) -> list[dict]:
+    """Notas de la tabla de un curso, con las comunidades que las citan (llamadas «(n)» en su nombre)."""
+    textos = notas_de(px)
+    out = []
+    for n, texto in textos.items():
+        terrs = sorted(k for k, etq in labs.items() if n in llamadas(etq) and k != "00")
+        if terrs:
+            out.append({"texto": texto, "territorios": terrs, "periodos": [per]})
+    return out
+
+
 def main() -> None:
     errores: list[str] = []
 
@@ -293,6 +382,9 @@ def main() -> None:
     publicado = {k: v for k, v in por_clave(filas).items() if k[3] == "total"}
     c = comprobar_cociente("% profesorado mujeres", publicado, mujeres, total, 100, 0.051, errores)
     guardar("profesorado_mujeres", filas, notas_citadas(px), {**c, "descripcion": "publicado = mujeres / total (series05), en todos los centros"})
+
+    filas, notas, comp = edad_profesorado(errores)
+    guardar("profesorado_edad", filas, notas, comp)
 
     # % de alumnado extranjero: publicado = extranjeros / alumnado
     filas, px = serie("alumnado_extranjero", "extran_04.px", "pct")
