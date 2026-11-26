@@ -584,6 +584,14 @@
     "sha256": "05253216a67e139eab5052bee5e4280100f9eff6c1d5bcb73496eb64908a33ab"
   },
   {
+    "fuente": "educabase",
+    "fichero": "educabase/2026-11-26/series_1_1.px",
+    "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/files/_px/es/px/no-universitaria/centros/tic/seriesNEW/l0/series_1_1.px",
+    "fecha_captura": "2026-11-26",
+    "bytes": 9444,
+    "sha256": "2c91bbd01f340ccc24c2511ebbab3a5abed519ee4c353bd4923db6f65955e7f8"
+  },
+  {
     "fuente": "ees",
     "fichero": "ees/2026-11-26/28191.px",
     "url": "https://www.ine.es/jaxiT3/files/t/es/px/28191.px",

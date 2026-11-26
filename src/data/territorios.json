@@ -3,7 +3,7 @@
   { "id": "AN", "ine": "01", "nombre": "Andalucía", "abr": "AND", "nuts2": "ES61", "alias": ["Andalucía"] },
   { "id": "AR", "ine": "02", "nombre": "Aragón", "abr": "ARA", "nuts2": "ES24", "alias": ["Aragón"] },
   { "id": "AS", "ine": "03", "nombre": "Asturias", "abr": "AST", "nuts2": "ES12", "alias": ["Asturias, Principado de", "Asturias, P. de", "Asturias"] },
-  { "id": "IB", "ine": "04", "nombre": "Illes Balears", "abr": "BAL", "nuts2": "ES53", "alias": ["Balears, Illes"] },
+  { "id": "IB", "ine": "04", "nombre": "Illes Balears", "abr": "BAL", "nuts2": "ES53", "alias": ["Balears, Illes", "Balears , Illes"] },
   { "id": "CN", "ine": "05", "nombre": "Canarias", "abr": "CAN", "nuts2": "ES70", "alias": ["Canarias"] },
   { "id": "CB", "ine": "06", "nombre": "Cantabria", "abr": "CNT", "nuts2": "ES13", "alias": ["Cantabria"] },
   { "id": "CL", "ine": "07", "nombre": "Castilla y León", "abr": "CYL", "nuts2": "ES41", "alias": ["Castilla y León"] },

@@ -67,6 +67,7 @@ FUENTES: dict[str, list[tuple[str, str]]] = {
         "no-universitaria/profesorado/estadistica/series/l0/series07.px",                 # alumnos por profesor
         "no-universitaria/profesorado/estadistica/series/l0/series05.px",                 # profesorado por sexo
         "no-universitaria/profesorado/estadistica/series/l0/series06.px",                 # % de profesorado mujeres
+        "no-universitaria/centros/tic/seriesNEW/l0/series_1_1.px",                        # alumnos por ordenador (TIC)
     ]] + [
         # Alumnado por titularidad/financiación (pública, concertada, privada no concertada): un fichero por curso.
         # Antes de 2011-12 la tabla no está en este formato.

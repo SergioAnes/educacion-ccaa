@@ -1,0 +1,60 @@
+{
+  "id": "alumnos_ordenador",
+  "grupo": "centros",
+  "resumen": false,
+  "nombre": "Alumnos por ordenador",
+  "corto": "Alumnos por ordenador",
+  "que": "por ordenador",
+  "unidad": "ratio",
+  "unidad_txt": "alumnos por ordenador",
+  "variantes": [
+    {
+      "titularidad": "total",
+      "etiqueta": "Todos los centros"
+    },
+    {
+      "titularidad": "publica",
+      "etiqueta": "Pública"
+    },
+    {
+      "titularidad": "privada",
+      "etiqueta": "Privada (con la concertada)"
+    }
+  ],
+  "filas_ficha": [
+    {},
+    {
+      "titularidad": "publica"
+    },
+    {
+      "titularidad": "privada"
+    }
+  ],
+  "definicion": "Número medio de alumnos por cada ordenador que el centro destina a la enseñanza y el aprendizaje, según la estadística de la sociedad de la información y la comunicación en los centros educativos.",
+  "numerador": "Alumnado de los centros de Régimen General.",
+  "denominador": "Ordenadores (de sobremesa, portátiles o tabletas) destinados preferentemente al profesorado y a la docencia con alumnos.",
+  "no_mide": "No dice si los ordenadores funcionan, cuánto se usan ni cómo, ni cuenta los dispositivos que lleva el propio alumnado. Menos alumnos por ordenador significa más equipos, no mejor uso.",
+  "fiabilidad": "A",
+  "fiabilidad_txt": "Estadística oficial del Ministerio (encuesta a todos los centros).",
+  "estado": "definitivo",
+  "fuentes": [
+    {
+      "id": "mefd_educabase",
+      "corto": "Ministerio de Educación (EDUCAbase)",
+      "nombre": "Ministerio de Educación, Formación Profesional y Deportes: Estadística de la Sociedad de la Información y la Comunicación en los centros educativos, serie 1.1",
+      "url": "https://estadisticas.educacion.gob.es/EducaJaxiPx/Tabla.htm?path=/no-universitaria/centros/tic/seriesNEW/l0/&file=series_1_1.px"
+    }
+  ],
+  "espana": "Dato oficial del Ministerio para el conjunto de España.",
+  "avisos": [
+    "Desde 2014-15 la estadística es cada dos años: no hay datos de los cursos impares.",
+    "El País Vasco no tiene dato de 2024-25 en la tabla del Ministerio (su último dato es de 2022-23).",
+    "Algunos datos son de otro curso, según las notas de la tabla (Baleares 2009-10 es de 2008-09; Cantabria 2011-12, de 2010-11; Murcia 2018-19, de 2019-20).",
+    "«Privada» incluye la concertada y la no concertada: la tabla no las separa."
+  ],
+  "rango": [
+    0.3,
+    80
+  ],
+  "revisado_hasta": "2024-25"
+}

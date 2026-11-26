@@ -45,6 +45,8 @@ import mujeresFicha from "@/data/indicadores/profesorado_mujeres.json";
 import mujeresObs from "@/data/observaciones/profesorado_mujeres.json";
 import edadProfFicha from "@/data/indicadores/profesorado_edad.json";
 import edadProfObs from "@/data/observaciones/profesorado_edad.json";
+import ordenadorFicha from "@/data/indicadores/alumnos_ordenador.json";
+import ordenadorObs from "@/data/observaciones/alumnos_ordenador.json";
 import horasFicha from "@/data/indicadores/horas_lectivas.json";
 import horasObs from "@/data/observaciones/horas_lectivas.json";
 import porHoraFicha from "@/data/indicadores/sueldo_por_hora.json";
@@ -161,6 +163,7 @@ export const REGISTRO: { ficha: Ficha; obs: Observaciones }[] = [
   par(sueldoMedioFicha, sueldoMedioObs),
   par(mujeresFicha, mujeresObs),
   par(edadProfFicha, edadProfObs),
+  par(ordenadorFicha, ordenadorObs),
   par(pisaFicha, pisaObs),
   par(pisaBajoFicha, pisaBajoObs),
   par(pisaAltoFicha, pisaAltoObs),

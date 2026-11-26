@@ -10,6 +10,7 @@ Indicadores:
   - escolarizacion_0_2: tasa neta de escolarización de 0 a 2 años (publicada), por sexo.
   - alumnado_extranjero: % de alumnado extranjero en Régimen General (publicado).
   - alumnos_profesor: número medio de alumnos por profesor (publicado), por titularidad.
+  - alumnos_ordenador: número medio de alumnos por ordenador destinado a la enseñanza (publicado, estadística TIC).
   - profesorado_mujeres: % de mujeres en el profesorado de Régimen General (publicado), por titularidad.
   - profesorado_edad: % del profesorado con 50 años o más y con menos de 30 (cálculo propio sobre el que tiene la edad
     registrada, de la tabla por sexo y edad de cada curso, 2013-14 en adelante), por titularidad.
@@ -48,6 +49,7 @@ RUTAS = {
     "series07.px": "no-universitaria/profesorado/estadistica/series/l0",
     "series05.px": "no-universitaria/profesorado/estadistica/series/l0",
     "series06.px": "no-universitaria/profesorado/estadistica/series/l0",
+    "series_1_1.px": "no-universitaria/centros/tic/seriesNEW/l0",
 }
 # Número medio de alumnado por unidad (grupo), por etapa: fuente «unidades» de descargar.py
 U = "no-universitaria/centros/centrosyunid/series/unidades/l0"
@@ -65,6 +67,7 @@ TITULARIDAD = {
     "CENTROS PRIVADOS E. NO CONCERTADA": "privada_no_concertada",
     "ENSEÑANZA PRIVADA CONCERTADA": "concertada", "ENSEÑANZA PRIVADA NO CONCERTADA": "privada_no_concertada",
     "CENTROS PRIVADOS CONCERTADOS": "concertada", "CENTROS PRIVADOS NO CONCERTADOS": "privada_no_concertada",
+    "CENTROS PÚBLICOS DE E. PRIMARIA": "publica_primaria", "CENTROS PÚBLICOS DE E. SECUNDARIA": "publica_secundaria",
 }
 DESDE = "2000-01"  # las series largas se muestran desde este curso
 
@@ -385,6 +388,11 @@ def main() -> None:
 
     filas, notas, comp = edad_profesorado(errores)
     guardar("profesorado_edad", filas, notas, comp)
+
+    # Alumnos por ordenador destinado a la enseñanza (estadística TIC, bienal desde 2014-15), publicado tal cual
+    filas, px = serie("alumnos_ordenador", "series_1_1.px", "ratio", desde="2002-03")
+    filas = [f for f in filas if f["titularidad"] in ("total", "publica", "privada")]
+    guardar("alumnos_ordenador", filas, notas_citadas(px), {"pares_comparados": 0, "descripcion": "dato publicado tal cual"})
 
     # % de alumnado extranjero: publicado = extranjeros / alumnado
     filas, px = serie("alumnado_extranjero", "extran_04.px", "pct")
