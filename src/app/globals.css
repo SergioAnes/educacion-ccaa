@@ -457,9 +457,30 @@ ul.difs { max-height: 220px; overflow: auto; font-size: 0.85em; }
 /* Margen de error junto a la cifra (PISA) y fila sin dato comparable */
 .ind .val .ic { font-family: var(--font-body); font-weight: 500; font-size: 0.78rem; color: var(--muted); }
 .ind.no-comp .val { color: var(--muted); }
+.solo-movil { display: none; }
 @media (max-width: 640px) {
   .solo-escritorio { display: none; }
+  .solo-movil { display: revert; }
+  .brand small { display: none; }
+  .intro { padding-top: 12px; gap: 12px; }
+  .intro h1 { font-size: clamp(1.45rem, 6.8vw, 1.7rem); }
+  .intro-nota { margin-top: 4px; color: var(--muted); }
+  .intro-nota summary { padding-block: 4px; min-height: 32px; color: var(--accent); cursor: pointer; }
+  .seg.temas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .seg.temas button { min-height: 40px; padding: 4px; line-height: 1.2; }
+  .seg.temas button:last-child { grid-column: 1 / -1; }
+  .leyenda .pie, .dimsels .ayuda, .ayuda-rango { display: none; }
+  .insights { gap: 8px; }
+  .insight.tuya { padding: 12px 16px; }
   .brand { width: 100%; }
   .brand-linea { justify-content: space-between; gap: 8px; }
   .contacto-x { padding-block: 6px; }
 }
+.insight.insight-contexto { padding: 12px 16px; }
+.insight-contexto .pliegue { margin: 0; }
+.insight-contexto dl { margin: 0; }
+.insight-contexto dl > div { padding-top: 10px; }
+.insight-contexto dl > div + div { margin-top: 10px; border-top: 1px solid var(--line); }
+.insight-contexto dd { margin: 3px 0 0; font-size: 0.9rem; line-height: 1.45; }
+.insight-contexto strong { font-size: inherit; }
+.aviso-movil summary { color: var(--note, var(--muted)); cursor: pointer; width: fit-content; }

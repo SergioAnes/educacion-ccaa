@@ -25,16 +25,20 @@ export const ESQUELETO = `<div class="wrap">
     <div class="intro">
       <div class="intro-cab">
         <div>
-          <h1>¿Cómo está la educación en tu comunidad?</h1>
-          <p id="p-intro"></p>
+          <h1><span class="solo-escritorio">¿Cómo está la educación en tu comunidad?</span><span class="solo-movil">Educación en tu comunidad</span></h1>
+          <p class="solo-escritorio" id="p-intro"></p>
+          <details class="intro-nota solo-movil">
+            <summary>Qué datos recoge la web</summary>
+            <p id="p-intro-movil"></p>
+          </details>
         </div>
       </div>
       <div class="selector" id="sel-datos"></div>
     </div>
     <div class="portada-grid">
       <div class="panel">
-        <h2 id="p-titulo"></h2>
-        <p class="sub" id="p-sub"></p>
+        <h2><span class="solo-escritorio" id="p-titulo"></span><span class="solo-movil" id="p-titulo-movil"></span></h2>
+        <p class="sub"><span class="solo-escritorio" id="p-sub"></span><span class="solo-movil" id="p-sub-movil"></span></p>
         <div class="origen" id="p-origen"></div>
         <div class="tilemap" id="p-mapa"></div>
         <div class="leyenda" id="p-leyenda"></div>

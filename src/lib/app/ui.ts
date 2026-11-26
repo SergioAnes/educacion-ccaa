@@ -19,6 +19,8 @@ export function iniciar(DATA: DatosApp): void {
   const IND = Object.fromEntries(DATA.inds.map((i) => [i.id, i]));
   const TEMAS = [{ id: "resumen", nombre: "Resumen" }, ...DATA.temas];
   const NOMBRE_TEMA = Object.fromEntries(TEMAS.map((t) => [t.id, t.nombre]));
+  // Nombres cortos de los temas para el móvil
+  const TEMA_CORTO = { centros: "Centros", profesorado: "Profesorado", resultados: "PISA" };
   const DIMS = ["sexo", "titularidad", "etapa", "competencia"];
   const PARAM = { sexo: "sexo", titularidad: "tit", etapa: "etapa", competencia: "comp" };
 
@@ -454,7 +456,7 @@ export function iniciar(DATA: DatosApp): void {
       const posible = actual.variantes.some((v) => { const q = partes(v.clave); return q[x.dim] === op.id && masImportantes.every((m) => q[m] === p[m]); });
       return `<button type="button" data-dim="${x.dim}" data-op="${op.id}" aria-pressed="${p[x.dim] === op.id}" ${posible ? "" : 'disabled title="Sin dato para esta combinación"'}>${esc(op.etiqueta)}</button>`;
     }).join("")}</div></div>`).join("");
-    cont.innerHTML = `<div class="seg temas" role="group" aria-label="Tema">${TEMAS.map((t) => `<button type="button" data-g="${t.id}" aria-pressed="${t.id === S.tema}">${esc(t.nombre)}</button>`).join("")}</div>
+    cont.innerHTML = `<div class="seg temas" role="group" aria-label="Tema">${TEMAS.map((t) => `<button type="button" data-g="${t.id}" aria-pressed="${t.id === S.tema}">${TEMA_CORTO[t.id] ? `<span class="solo-escritorio">${esc(t.nombre)}</span><span class="solo-movil">${TEMA_CORTO[t.id]}</span>` : esc(t.nombre)}</button>`).join("")}</div>
       <div class="kpis">${tarjetas}</div>` +
       (selectores ? `<div class="dimsels">${selectores}${actual.reparto ? `<span class="ayuda">La vista «Reparto» enseña las tres partes juntas.</span>` : ""}</div>` : "");
     cont.querySelectorAll(".seg.temas button").forEach((b) => b.onclick = () => {
@@ -479,11 +481,16 @@ export function iniciar(DATA: DatosApp): void {
     if (ind.intervalo && !ordenados(valores(ind, a)).length) a = ultimo(ind);
     selector($("#sel-datos"));
     $("#p-intro").textContent = `Datos oficiales del Ministerio de Educación, el INEE, el INE, Eurostat y las normas de cada comunidad. Cada cifra lleva su año o curso, su fuente y su fiabilidad. ${DATA.inds.length} indicadores en ${DATA.temas.length} temas; elige uno en las tarjetas.`;
+    $("#p-intro-movil").textContent = $("#p-intro").textContent;
     const vals = valores(ind, a), o = ordenados(vals);
     $("#p-titulo").textContent = o.length
       ? ind.intervalo ? `${ind.nombre}${varFrase(ind)}, ${etq(ind, a)}: cada comunidad ${ind.referencia_cero ? "con su margen de error" : "frente a España"}` : `${ind.nombre}${varFrase(ind)} en ${etq(ind, a)}: la cifra más alta, ${NOMBRE[o[0]]}; la más baja, ${NOMBRE[o.at(-1)]}`
       : `${ind.nombre}${varFrase(ind)} en ${etq(ind, a)}: sin dato por comunidad`;
     $("#p-sub").textContent = `${ind.unidad === "pct" ? `Porcentaje ${ind.que}.` : ind.unidad === "puntos" ? "Puntuación media del alumnado de 15 años." : ind.unidad === "eur" ? `Euros ${ind.que}, del año ${etq(ind, a)}.` : ind.unidad === "indice" ? "Índice medio del alumnado de 15 años; la OCDE lo construye para que su media quede en torno a cero." : ind.unidad === "horas" ? `Horas ${ind.que}, curso ${etq(ind, a)}.` : `Alumnos ${ind.que}.`}${ind.encuesta ? " Es una muestra: las diferencias pequeñas entre comunidades pueden deberse al azar." : ""}${esAvance(ind, a) ? " Dato de avance: puede cambiar." : ""} Pulsa una comunidad para elegirla como la tuya.`;
+    // En el móvil, título corto (qué dato y qué variante) y una línea con el periodo y la unidad
+    const suf = sufijo(ind, varDe(ind));
+    $("#p-titulo-movil").textContent = `${ind.corto}${suf ? ` · ${suf}` : ""}`;
+    $("#p-sub-movil").textContent = `${etqEstado(ind, a)} · ${unidadTxt(ind)}`;
     $("#p-origen").innerHTML = origen(ind, a);
     const esca = tileMap($("#p-mapa"), vals, ind, { selIds: [S.com], anio: a, onClick: (id) => { S.com = id; render(); } });
     $("#p-leyenda").innerHTML = esca.leyenda;
@@ -495,12 +502,22 @@ export function iniciar(DATA: DatosApp): void {
     const ficha = `<a href="#comunidad-${S.com.toLowerCase()}">Ver su ficha</a>`;
     const nn = notasDe(ind, S.com, etq(ind, a));
     const cC = cambioDe(ind, S.com);
+    // Lo largo de «Tu comunidad» (comparación con el sueldo medio, avisos y notas): en el ordenador, en la tarjeta;
+    // en el móvil, dentro de «Comparaciones y contexto», para que la tarjeta se quede en la cifra
+    const largos = v == null || noComp(ind, S.com) ? [] : [
+      fraseSueldoMedio(ind, S.com, v, a) && { k: "Frente al sueldo medio", t: `${fraseSueldoMedio(ind, S.com, v, a)}.`, html: `${fraseSueldoMedio(ind, S.com, v, a)}.` },
+      conCautela(ind, S.com, a) && { k: `† ${NOMBRE[S.com]}`, t: `<span class="cautela">${esc(textoCautela(ind, S.com, a))}</span>`, html: `<span class="cautela">† ${esc(textoCautela(ind, S.com, a))}</span>` },
+      nn.length && { k: "Nota de la fuente", t: `<span class="cautela">${esc(nn[0].texto)}</span>`, html: `<span class="cautela">Nota de la fuente: ${esc(nn[0].texto)}</span>` },
+    ].filter(Boolean);
     const tuya = noComp(ind, S.com) ? `<span class="cautela">${esc(ind.no_comparable_txt || "Sin dato comparable")}: ${esc(ind.noComparable[S.com])}</span> ${ficha}`
       : v == null ? `Sin dato en ${etq(ind, a)}. ${ficha}`
-      : `<strong>${fmt(v, ind.unidad)}</strong>${marca(ind, S.com, a)} en ${etq(ind, a)}${ind.sin_espana ? `. ${porEncima(ind, v, a)}` : `: ${frenteEspana(ind, v, a, varDe(ind), S.com)}`}.${fraseSueldoMedio(ind, S.com, v, a) ? ` ${fraseSueldoMedio(ind, S.com, v, a)}.` : ""}${lineaIC(ind, S.com, a) ? ` ${lineaIC(ind, S.com, a)}.` : ""}${cC ? ` Cambio: ${textoCambio(ind, cC)}.` : ""}${conCautela(ind, S.com, a) ? ` <span class="cautela">† ${esc(textoCautela(ind, S.com, a))}</span>` : ""}${nn.length ? ` <span class="cautela">Nota de la fuente: ${esc(nn[0].texto)}</span>` : ""} ${ficha}`;
+      : `<strong>${fmt(v, ind.unidad)}</strong>${marca(ind, S.com, a)} en ${etq(ind, a)}${ind.sin_espana ? `. ${porEncima(ind, v, a)}` : `: ${frenteEspana(ind, v, a, varDe(ind), S.com)}`}.${lineaIC(ind, S.com, a) ? ` ${lineaIC(ind, S.com, a)}.` : ""}${cC ? ` Cambio: ${textoCambio(ind, cC)}.` : ""}<span class="solo-escritorio">${largos.map((x) => ` ${x.html}`).join("")}</span> ${ficha}`;
     const opciones = [...IDS, ...IDS_CIU].slice().sort((x, y) => NOMBRE[x].localeCompare(NOMBRE[y], "es")).map((k) => `<option value="${k}" ${k === S.com ? "selected" : ""}>${esc(NOMBRE[k])}${CIUDADES[k] ? " (aparte)" : ""}</option>`).join("");
+    // El resto de titulares: tarjetas en el ordenador; en el móvil, plegados en «Comparaciones y contexto» (como sanidad)
+    const tits = titulares(ind, a);
     $("#p-insights").innerHTML = `<div class="insight tuya"><label class="k" for="p-com">Tu comunidad</label><select id="p-com">${opciones}</select><p>${tuya}</p></div>` +
-      titulares(ind, a).map((x) => `<div class="insight"><div class="k">${esc(x.k)}</div><p>${x.t}</p></div>`).join("");
+      tits.map((x) => `<div class="insight solo-escritorio"><div class="k">${esc(x.k)}</div><p>${x.t}</p></div>`).join("") +
+      (tits.length || largos.length ? `<div class="insight insight-contexto solo-movil">${plegable("comparaciones-dato", "Comparaciones y contexto", `<dl>${[...largos, ...tits].map((x) => `<div><dt class="k">${esc(x.k)}</dt><dd>${x.t}</dd></div>`).join("")}</dl>`)}</div>` : "");
     $("#p-com").onchange = (e) => { S.com = e.target.value; render(); };
 
     renderDetalle(ind, a);
@@ -959,7 +976,8 @@ export function iniciar(DATA: DatosApp): void {
   const avisoUnaVez = (txt, vistos) => {
     if (vistos?.has(txt)) return "<br>† Mismo aviso que arriba.";
     vistos?.add(txt);
-    return `<br>† ${esc(txt)}`;
+    // En el móvil, plegado: la fila se queda en la cifra y el aviso se abre al tocarlo
+    return `<br><span class="solo-escritorio">† ${esc(txt)}</span><details class="aviso-movil solo-movil"><summary>† Aviso</summary>${esc(txt)}</details>`;
   };
   // «vistos»: avisos ya mostrados en la ficha; si se repiten (las filas de los sueldos), solo se remite al de arriba
   function filaInd(ind, id, vs, k, vistos = null) {
