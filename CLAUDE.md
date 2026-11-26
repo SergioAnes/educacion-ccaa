@@ -77,6 +77,10 @@ familia de `sanidad-ccaa` y `presupuestos-ccaa` (mismo estilo y mismas reglas). 
   de clase al año. Una sola cifra para España (no hay comunidades): va en la tarjeta «España en la OCDE» de las fichas con
   `ocde`, nunca mezclada con los datos por comunidad. Maestros = CINE 1; secundaria = CINE 24 (comprobado que en España
   Infantil = Primaria y ESO = Bachillerato).
+- Profesorado (EDUCAbase): % de mujeres (series06, comprobado con series05) y edad (tabla «sexo y edad» de cada curso,
+  fuente «edad_profesorado»; cambia de nombre: reggen05 / reggen_1_05 / reggen_1_07; desde 2013-14 porque Valencia no
+  registra la edad antes; sin cifra si «no consta edad» > 5 %). Interinos: NO hay tabla oficial por comunidad
+  (EDUCAbase no da la situación administrativa; el BEPSAP no separa la docencia de las CCAA): decirlo, no estimarlo.
 - `extraer_hitos.py`: leyes desde las fichas XML del BOE → `src/data/hitos.json`.
 - Un salto > 15 % frente al periodo anterior posterior a `revisado_hasta` hace fallar los tests: revisarlo y subir la fecha.
 

@@ -1058,7 +1058,7 @@ export function iniciar(DATA: DatosApp): void {
         <div class="filas">${filas}</div>
         <div class="notas-min">${plegable(`ficha-${t.id}`, "¿Qué mide esto?", inds.map((i) => `<h3>${esc(i.nombre)}</h3>${queMide(i, `ficha-${i.id}`)}`).join(""))}</div></div>`;
     }).join("");
-    $("#c-bloques").innerHTML = temas + `<div class="bloque"><h2>Lo que todavía no está</h2><p class="sub">Iremos añadiendo más datos oficiales, como la comparación de España con otros países de la OCDE, siempre con su fuente. Si un dato no existe, lo diremos.</p></div>`;
+    $("#c-bloques").innerHTML = temas + `<div class="bloque"><h2>Lo que todavía no está</h2><p class="sub">Iremos añadiendo más datos oficiales, siempre con su fuente. Si un dato no existe, lo diremos: por ejemplo, no hay una tabla oficial con el porcentaje de profesorado interino de cada comunidad (la estadística del Ministerio no distingue la situación administrativa y el boletín de personal público no separa la docencia de las comunidades).</p></div>`;
   }
 
   // ---------- CÓMO LEER LOS DATOS ----------
